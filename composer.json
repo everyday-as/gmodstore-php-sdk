@@ -1,0 +1,31 @@
+{
+  "name": "everyday/gmodstore-php-sdk",
+  "type": "library",
+  "description": "The GmodStore PHP SDK for communication with the GmodStore API through PHP",
+  "keywords": [
+    "gmodstore",
+    "php",
+    "sdk",
+    "api"
+  ],
+  "homepage": "https://github.com/Everyday-AS/gmodstore-php-sdk",
+  "authors": [
+    {
+      "name": "Everyday AS and contributors",
+      "email": "system@everyday.no",
+      "homepage": "https://everyday.no"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Everyday\\GmodStoreSDK\\": "lib/"
+    }
+  }
+}
