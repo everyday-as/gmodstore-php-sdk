@@ -26,7 +26,7 @@ To install the library through composer, run the following command:
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/gmodstore-sdk/vendor/autoload.php');
+require_once('/path/to/gmodstore-sdk/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -108,15 +108,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
 ## ApiKeyAuth
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
-
-
-## Author
-
-
-
