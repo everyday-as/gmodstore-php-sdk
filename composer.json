@@ -1,7 +1,7 @@
 {
   "name": "everyday/gmodstore-sdk",
   "type": "library",
-  "license": "LICENSE",
+  "license": "MIT",
   "description": "The GmodStore PHP SDK for communication with the GmodStore API through PHP",
   "keywords": [
     "gmodstore",
