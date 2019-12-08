@@ -35,18 +35,21 @@ Please follow the [installation procedure](#installation--usage) first. Here is 
 
 ```php
 <?php
+
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_key = 'REPLACE ME';
 
+// create a configuration using our $api_key
 $config = new \Everyday\GmodStoreSDK\Configuration();
 $config->setApiKey('Authorization', $api_key);
 $config->setApiKeyPrefix('Authorization', 'Bearer');
 
+// initialize an instance of the AddonsApi
 $addonsApi = new \Everyday\GmodStoreSDK\Api\AddonsApi(null, $config);
 
+// grab addons with the relation 'team'
 die(var_dump($addonsApi->addonsGet(['team'])->getData()));
-?>
 ```
 
 ## Documentation for API Endpoints
