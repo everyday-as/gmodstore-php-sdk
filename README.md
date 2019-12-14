@@ -101,6 +101,25 @@ Class | Method | HTTP request | Description
  - [AddonVersion](docs/Model/AddonVersion.md)
  - [Ban](docs/Model/Ban.md)
  - [Error](docs/Model/Error.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
+ - [InlineResponse2001](docs/Model/InlineResponse2001.md)
+ - [InlineResponse20010](docs/Model/InlineResponse20010.md)
+ - [InlineResponse20011](docs/Model/InlineResponse20011.md)
+ - [InlineResponse20012](docs/Model/InlineResponse20012.md)
+ - [InlineResponse20013](docs/Model/InlineResponse20013.md)
+ - [InlineResponse2002](docs/Model/InlineResponse2002.md)
+ - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+ - [InlineResponse2004](docs/Model/InlineResponse2004.md)
+ - [InlineResponse2005](docs/Model/InlineResponse2005.md)
+ - [InlineResponse2006](docs/Model/InlineResponse2006.md)
+ - [InlineResponse2007](docs/Model/InlineResponse2007.md)
+ - [InlineResponse2008](docs/Model/InlineResponse2008.md)
+ - [InlineResponse2009](docs/Model/InlineResponse2009.md)
+ - [InlineResponse201](docs/Model/InlineResponse201.md)
+ - [InlineResponse2011](docs/Model/InlineResponse2011.md)
+ - [InlineResponse2012](docs/Model/InlineResponse2012.md)
+ - [InlineResponse2013](docs/Model/InlineResponse2013.md)
+ - [InlineResponseDefault](docs/Model/InlineResponseDefault.md)
  - [OrderItem](docs/Model/OrderItem.md)
  - [OrderItemPrice](docs/Model/OrderItemPrice.md)
  - [PermissionGroup](docs/Model/PermissionGroup.md)
@@ -111,8 +130,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
+
 ## ApiKeyAuth
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+
