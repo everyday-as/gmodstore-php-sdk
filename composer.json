@@ -26,5 +26,5 @@
     },
     "autoload": {
         "psr-4": { "Everyday\\GmodStoreSDK\\" : "lib/" }
-    },
+    }
 }
