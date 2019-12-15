@@ -56,7 +56,7 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
 'name' => 'string',
 'avatar' => 'string',
 'country_code' => 'string',
@@ -281,7 +281,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -291,7 +291,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */
