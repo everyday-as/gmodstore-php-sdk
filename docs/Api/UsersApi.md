@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**usersUserIdGet**](UsersApi.md#usersuseridget) | **GET** /users/{user_id} | Fetch a single user
 
 # **usersMeGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20010 usersMeGet($with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse20011 usersMeGet($with)
 
 Fetches the current user (API Key Owner)
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersUserIdGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20010 usersUserIdGet($user_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse20011 usersUserIdGet($user_id, $with)
 
 Fetch a single user
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 

@@ -979,7 +979,7 @@ class AddonCouponsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2002
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2003
      */
     public function addonsAddonIdCouponsGet($addon_id, $with = null)
     {
@@ -997,11 +997,11 @@ class AddonCouponsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function addonsAddonIdCouponsGetWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2003';
         $request = $this->addonsAddonIdCouponsGetRequest($addon_id, $with);
 
         try {
@@ -1053,7 +1053,7 @@ class AddonCouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2002',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1105,7 +1105,7 @@ class AddonCouponsApi
      */
     public function addonsAddonIdCouponsGetAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2003';
         $request = $this->addonsAddonIdCouponsGetRequest($addon_id, $with);
 
         return $this->client

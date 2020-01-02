@@ -96,7 +96,7 @@ class AddonVersionsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2006
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2007
      */
     public function addonsAddonIdVersionsGet($addon_id, $with = null)
     {
@@ -114,11 +114,11 @@ class AddonVersionsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function addonsAddonIdVersionsGetWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2006';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
         $request = $this->addonsAddonIdVersionsGetRequest($addon_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2006',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2007',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class AddonVersionsApi
      */
     public function addonsAddonIdVersionsGetAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2006';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
         $request = $this->addonsAddonIdVersionsGetRequest($addon_id, $with);
 
         return $this->client
@@ -716,7 +716,7 @@ class AddonVersionsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2007
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2008
      */
     public function addonsAddonIdVersionsVersionIdDownloadGet($addon_id, $version_id)
     {
@@ -734,11 +734,11 @@ class AddonVersionsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function addonsAddonIdVersionsVersionIdDownloadGetWithHttpInfo($addon_id, $version_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
         $request = $this->addonsAddonIdVersionsVersionIdDownloadGetRequest($addon_id, $version_id);
 
         try {
@@ -790,7 +790,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2007',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2008',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -842,7 +842,7 @@ class AddonVersionsApi
      */
     public function addonsAddonIdVersionsVersionIdDownloadGetAsyncWithHttpInfo($addon_id, $version_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
         $request = $this->addonsAddonIdVersionsVersionIdDownloadGetRequest($addon_id, $version_id);
 
         return $this->client

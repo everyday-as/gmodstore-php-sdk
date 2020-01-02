@@ -56,8 +56,8 @@ class AddonPrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'original' => '\Everyday\GmodStoreSDK\Model\AddonPriceOriginal',
-'purchase' => '\Everyday\GmodStoreSDK\Model\AddonPriceOriginal'    ];
+        'original' => '\Everyday\GmodStoreSDK\Model\Money',
+'purchase' => '\Everyday\GmodStoreSDK\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -205,7 +205,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Gets original
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonPriceOriginal
+     * @return \Everyday\GmodStoreSDK\Model\Money
      */
     public function getOriginal()
     {
@@ -215,7 +215,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Sets original
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonPriceOriginal $original original
+     * @param \Everyday\GmodStoreSDK\Model\Money $original original
      *
      * @return $this
      */
@@ -229,7 +229,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Gets purchase
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonPriceOriginal
+     * @return \Everyday\GmodStoreSDK\Model\Money
      */
     public function getPurchase()
     {
@@ -239,7 +239,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Sets purchase
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonPriceOriginal $purchase purchase
+     * @param \Everyday\GmodStoreSDK\Model\Money $purchase purchase
      *
      * @return $this
      */

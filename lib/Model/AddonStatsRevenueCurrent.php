@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * AddonStatsRevenueCurrent
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * AddonStatsRevenueCurrent Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'AddonStats_revenue_current';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'day' => '\Everyday\GmodStoreSDK\Model\Money',
+'month' => '\Everyday\GmodStoreSDK\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'day' => null,
+'month' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'day' => 'day',
+'month' => 'month'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'day' => 'setDay',
+'month' => 'setMonth'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'day' => 'getDay',
+'month' => 'getMonth'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +174,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['day'] = isset($data['day']) ? $data['day'] : null;
+        $this->container['month'] = isset($data['month']) ? $data['month'] : null;
     }
 
     /**
@@ -197,25 +203,49 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets day
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\Money
      */
-    public function getData()
+    public function getDay()
     {
-        return $this->container['data'];
+        return $this->container['day'];
     }
 
     /**
-     * Sets data
+     * Sets day
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\Money $day day
      *
      * @return $this
      */
-    public function setData($data)
+    public function setDay($day)
     {
-        $this->container['data'] = $data;
+        $this->container['day'] = $day;
+
+        return $this;
+    }
+
+    /**
+     * Gets month
+     *
+     * @return \Everyday\GmodStoreSDK\Model\Money
+     */
+    public function getMonth()
+    {
+        return $this->container['month'];
+    }
+
+    /**
+     * Sets month
+     *
+     * @param \Everyday\GmodStoreSDK\Model\Money $month month
+     *
+     * @return $this
+     */
+    public function setMonth($month)
+    {
+        $this->container['month'] = $month;
 
         return $this;
     }

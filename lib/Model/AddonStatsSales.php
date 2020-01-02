@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * AddonStatsSales
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * AddonStatsSales Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class AddonStatsSales implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'AddonStats_sales';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'current' => '\Everyday\GmodStoreSDK\Model\AddonStatsSalesCurrent'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'current' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +93,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'current' => 'current'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +101,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'current' => 'setCurrent'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +109,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'current' => 'getCurrent'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +169,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['current'] = isset($data['current']) ? $data['current'] : null;
     }
 
     /**
@@ -197,25 +197,25 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets current
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsSalesCurrent
      */
-    public function getData()
+    public function getCurrent()
     {
-        return $this->container['data'];
+        return $this->container['current'];
     }
 
     /**
-     * Sets data
+     * Sets current
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsSalesCurrent $current current
      *
      * @return $this
      */
-    public function setData($data)
+    public function setCurrent($current)
     {
-        $this->container['data'] = $data;
+        $this->container['current'] = $current;
 
         return $this;
     }

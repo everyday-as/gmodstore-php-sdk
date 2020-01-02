@@ -57,7 +57,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'price' => '\Everyday\GmodStoreSDK\Model\OrderItemPrice',
+'price' => '\Everyday\GmodStoreSDK\Model\Money',
 'reversed_at' => '\DateTime'    ];
 
     /**
@@ -241,7 +241,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return \Everyday\GmodStoreSDK\Model\OrderItemPrice
+     * @return \Everyday\GmodStoreSDK\Model\Money
      */
     public function getPrice()
     {
@@ -251,7 +251,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \Everyday\GmodStoreSDK\Model\OrderItemPrice $price price
+     * @param \Everyday\GmodStoreSDK\Model\Money $price price
      *
      * @return $this
      */

@@ -56,7 +56,7 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\User'    ];
+        'data' => '\Everyday\GmodStoreSDK\Model\TeamUser[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStoreSDK\Model\User
+     * @return \Everyday\GmodStoreSDK\Model\TeamUser[]
      */
     public function getData()
     {
@@ -209,7 +209,7 @@ class InlineResponse20010 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStoreSDK\Model\User $data data
+     * @param \Everyday\GmodStoreSDK\Model\TeamUser[] $data data
      *
      * @return $this
      */

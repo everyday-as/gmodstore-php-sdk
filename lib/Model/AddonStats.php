@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * AddonStats
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * AddonStats Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class AddonStats implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'AddonStats';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'revenue' => '\Everyday\GmodStoreSDK\Model\AddonStatsRevenue',
+'views' => '\Everyday\GmodStoreSDK\Model\AddonStatsViews',
+'sales' => '\Everyday\GmodStoreSDK\Model\AddonStatsSales'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +66,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'revenue' => null,
+'views' => null,
+'sales' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +97,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'revenue' => 'revenue',
+'views' => 'views',
+'sales' => 'sales'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +107,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'revenue' => 'setRevenue',
+'views' => 'setViews',
+'sales' => 'setSales'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +117,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'revenue' => 'getRevenue',
+'views' => 'getViews',
+'sales' => 'getSales'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +179,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['revenue'] = isset($data['revenue']) ? $data['revenue'] : null;
+        $this->container['views'] = isset($data['views']) ? $data['views'] : null;
+        $this->container['sales'] = isset($data['sales']) ? $data['sales'] : null;
     }
 
     /**
@@ -197,25 +209,73 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets revenue
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsRevenue
      */
-    public function getData()
+    public function getRevenue()
     {
-        return $this->container['data'];
+        return $this->container['revenue'];
     }
 
     /**
-     * Sets data
+     * Sets revenue
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsRevenue $revenue revenue
      *
      * @return $this
      */
-    public function setData($data)
+    public function setRevenue($revenue)
     {
-        $this->container['data'] = $data;
+        $this->container['revenue'] = $revenue;
+
+        return $this;
+    }
+
+    /**
+     * Gets views
+     *
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsViews
+     */
+    public function getViews()
+    {
+        return $this->container['views'];
+    }
+
+    /**
+     * Sets views
+     *
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsViews $views views
+     *
+     * @return $this
+     */
+    public function setViews($views)
+    {
+        $this->container['views'] = $views;
+
+        return $this;
+    }
+
+    /**
+     * Gets sales
+     *
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsSales
+     */
+    public function getSales()
+    {
+        return $this->container['sales'];
+    }
+
+    /**
+     * Sets sales
+     *
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsSales $sales sales
+     *
+     * @return $this
+     */
+    public function setSales($sales)
+    {
+        $this->container['sales'] = $sales;
 
         return $this;
     }

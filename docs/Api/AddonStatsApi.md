@@ -1,15 +1,15 @@
-# Everyday\GmodStoreSDK\UserBansApi
+# Everyday\GmodStoreSDK\AddonStatsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdBansGet**](UserBansApi.md#usersuseridbansget) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+[**addonsAddonIdStatsGet**](AddonStatsApi.md#addonsaddonidstatsget) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
-# **usersUserIdBansGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20013 usersUserIdBansGet($user_id)
+# **addonsAddonIdStatsGet**
+> \Everyday\GmodStoreSDK\Model\InlineResponse2002 addonsAddonIdStatsGet($addon_id)
 
-Fetch all active bans associated with this user
+Fetch all the stats for an addon
 
 ### Example
 ```php
@@ -20,19 +20,19 @@ $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApi
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new Everyday\GmodStoreSDK\Api\UserBansApi(
+$apiInstance = new Everyday\GmodStoreSDK\Api\AddonStatsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
+$addon_id = 789; // int | Id of the addon
 
 try {
-    $result = $apiInstance->usersUserIdBansGet($user_id);
+    $result = $apiInstance->addonsAddonIdStatsGet($addon_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserBansApi->usersUserIdBansGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddonStatsApi->addonsAddonIdStatsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
+ **addon_id** | **int**| Id of the addon |
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

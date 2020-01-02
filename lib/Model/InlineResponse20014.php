@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * InlineResponse20014
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * InlineResponse20014 Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class InlineResponse20014 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'inline_response_200_14';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'data' => '\Everyday\GmodStoreSDK\Model\UserBadgeLegend[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\UserBadgeLegend[]
      */
     public function getData()
     {
@@ -209,7 +209,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\UserBadgeLegend[] $data data
      *
      * @return $this
      */

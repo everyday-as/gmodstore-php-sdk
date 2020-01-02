@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * AddonStatsRevenue
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * AddonStatsRevenue Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class AddonStatsRevenue implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'AddonStats_revenue';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'current' => '\Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent',
+'previous' => '\Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent',
+'total' => '\Everyday\GmodStoreSDK\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +66,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'current' => null,
+'previous' => null,
+'total' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +97,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'current' => 'current',
+'previous' => 'previous',
+'total' => 'total'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +107,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'current' => 'setCurrent',
+'previous' => 'setPrevious',
+'total' => 'setTotal'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +117,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'current' => 'getCurrent',
+'previous' => 'getPrevious',
+'total' => 'getTotal'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +179,9 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['current'] = isset($data['current']) ? $data['current'] : null;
+        $this->container['previous'] = isset($data['previous']) ? $data['previous'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -197,25 +209,73 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets current
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent
      */
-    public function getData()
+    public function getCurrent()
     {
-        return $this->container['data'];
+        return $this->container['current'];
     }
 
     /**
-     * Sets data
+     * Sets current
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent $current current
      *
      * @return $this
      */
-    public function setData($data)
+    public function setCurrent($current)
     {
-        $this->container['data'] = $data;
+        $this->container['current'] = $current;
+
+        return $this;
+    }
+
+    /**
+     * Gets previous
+     *
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent
+     */
+    public function getPrevious()
+    {
+        return $this->container['previous'];
+    }
+
+    /**
+     * Sets previous
+     *
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent $previous previous
+     *
+     * @return $this
+     */
+    public function setPrevious($previous)
+    {
+        $this->container['previous'] = $previous;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return \Everyday\GmodStoreSDK\Model\Money
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param \Everyday\GmodStoreSDK\Model\Money $total total
+     *
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

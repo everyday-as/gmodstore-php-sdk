@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2007
+ * AddonStatsViews
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * InlineResponse2007 Class Doc Comment
+ * AddonStatsViews Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2007 implements ModelInterface, ArrayAccess
+class AddonStatsViews implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_7';
+    protected static $swaggerModelName = 'AddonStats_views';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\AddonVersion[]'    ];
+        'current' => '\Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent',
+'previous' => '\Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null    ];
+        'current' => null,
+'previous' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'    ];
+        'current' => 'current',
+'previous' => 'previous'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'    ];
+        'current' => 'setCurrent',
+'previous' => 'setPrevious'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'    ];
+        'current' => 'getCurrent',
+'previous' => 'getPrevious'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +174,8 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['current'] = isset($data['current']) ? $data['current'] : null;
+        $this->container['previous'] = isset($data['previous']) ? $data['previous'] : null;
     }
 
     /**
@@ -197,25 +203,49 @@ class InlineResponse2007 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets current
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion[]
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent
      */
-    public function getData()
+    public function getCurrent()
     {
-        return $this->container['data'];
+        return $this->container['current'];
     }
 
     /**
-     * Sets data
+     * Sets current
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion[] $data data
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent $current current
      *
      * @return $this
      */
-    public function setData($data)
+    public function setCurrent($current)
     {
-        $this->container['data'] = $data;
+        $this->container['current'] = $current;
+
+        return $this;
+    }
+
+    /**
+     * Gets previous
+     *
+     * @return \Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent
+     */
+    public function getPrevious()
+    {
+        return $this->container['previous'];
+    }
+
+    /**
+     * Sets previous
+     *
+     * @param \Everyday\GmodStoreSDK\Model\AddonStatsViewsCurrent $previous previous
+     *
+     * @return $this
+     */
+    public function setPrevious($previous)
+    {
+        $this->container['previous'] = $previous;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AddonPriceOriginal
+ * AddonStatsSalesCurrent
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * AddonPriceOriginal Class Doc Comment
+ * AddonStatsSalesCurrent Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddonPriceOriginal implements ModelInterface, ArrayAccess
+class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Addon_price_original';
+    protected static $swaggerModelName = 'AddonStats_sales_current';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amount' => 'int',
-'currency' => 'string'    ];
+        'day' => 'string',
+'week' => 'string',
+'month' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +66,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amount' => null,
-'currency' => null    ];
+        'day' => 'integer',
+'week' => 'integer',
+'month' => 'integer'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +97,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-'currency' => 'currency'    ];
+        'day' => 'day',
+'week' => 'week',
+'month' => 'month'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +107,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-'currency' => 'setCurrency'    ];
+        'day' => 'setDay',
+'week' => 'setWeek',
+'month' => 'setMonth'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +117,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-'currency' => 'getCurrency'    ];
+        'day' => 'getDay',
+'week' => 'getWeek',
+'month' => 'getMonth'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +179,9 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['day'] = isset($data['day']) ? $data['day'] : null;
+        $this->container['week'] = isset($data['week']) ? $data['week'] : null;
+        $this->container['month'] = isset($data['month']) ? $data['month'] : null;
     }
 
     /**
@@ -203,49 +209,73 @@ class AddonPriceOriginal implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets amount
+     * Gets day
      *
-     * @return int
+     * @return string
      */
-    public function getAmount()
+    public function getDay()
     {
-        return $this->container['amount'];
+        return $this->container['day'];
     }
 
     /**
-     * Sets amount
+     * Sets day
      *
-     * @param int $amount amount
+     * @param string $day day
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setDay($day)
     {
-        $this->container['amount'] = $amount;
+        $this->container['day'] = $day;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets week
      *
      * @return string
      */
-    public function getCurrency()
+    public function getWeek()
     {
-        return $this->container['currency'];
+        return $this->container['week'];
     }
 
     /**
-     * Sets currency
+     * Sets week
      *
-     * @param string $currency currency
+     * @param string $week week
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setWeek($week)
     {
-        $this->container['currency'] = $currency;
+        $this->container['week'] = $week;
+
+        return $this;
+    }
+
+    /**
+     * Gets month
+     *
+     * @return string
+     */
+    public function getMonth()
+    {
+        return $this->container['month'];
+    }
+
+    /**
+     * Sets month
+     *
+     * @param string $month month
+     *
+     * @return $this
+     */
+    public function setMonth($month)
+    {
+        $this->container['month'] = $month;
 
         return $this;
     }

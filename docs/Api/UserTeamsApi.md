@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**usersUserIdTeamsGet**](UserTeamsApi.md#usersuseridteamsget) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
 
 # **usersUserIdTeamsGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20011 usersUserIdTeamsGet($user_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse20012 usersUserIdTeamsGet($user_id, $with)
 
 Fetch all the teams of a user
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
 
 ### Authorization
 

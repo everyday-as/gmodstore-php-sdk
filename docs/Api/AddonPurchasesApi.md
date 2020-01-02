@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**addonsAddonIdPurchasesUserIdPut**](AddonPurchasesApi.md#addonsaddonidpurchasesuseridput) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
 
 # **addonsAddonIdPurchasesGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2003 addonsAddonIdPurchasesGet($addon_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse2004 addonsAddonIdPurchasesGet($addon_id, $with)
 
 Fetch all purchases of an addon
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

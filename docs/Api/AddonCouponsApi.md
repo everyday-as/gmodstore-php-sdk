@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addonsAddonIdCouponsGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2002 addonsAddonIdCouponsGet($addon_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse2003 addonsAddonIdCouponsGet($addon_id, $with)
 
 Fetch all the coupons for an addon
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

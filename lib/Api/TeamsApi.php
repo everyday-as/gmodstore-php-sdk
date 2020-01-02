@@ -96,7 +96,7 @@ class TeamsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2008
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2009
      */
     public function teamsTeamIdGet($team_id, $with = null)
     {
@@ -114,11 +114,11 @@ class TeamsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
     public function teamsTeamIdGetWithHttpInfo($team_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2009';
         $request = $this->teamsTeamIdGetRequest($team_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class TeamsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2008',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2009',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class TeamsApi
      */
     public function teamsTeamIdGetAsyncWithHttpInfo($team_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2009';
         $request = $this->teamsTeamIdGetRequest($team_id, $with);
 
         return $this->client

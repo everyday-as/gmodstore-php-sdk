@@ -96,7 +96,7 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2004
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2005
      */
     public function addonsAddonIdReviewsGet($addon_id, $with = null)
     {
@@ -114,11 +114,11 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
     public function addonsAddonIdReviewsGetWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2005';
         $request = $this->addonsAddonIdReviewsGetRequest($addon_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class AddonReviewsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2004',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2005',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class AddonReviewsApi
      */
     public function addonsAddonIdReviewsGetAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2005';
         $request = $this->addonsAddonIdReviewsGetRequest($addon_id, $with);
 
         return $this->client
@@ -384,7 +384,7 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2005
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2006
      */
     public function addonsAddonIdReviewsReviewIdGet($addon_id, $review_id, $with = null)
     {
@@ -403,11 +403,11 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function addonsAddonIdReviewsReviewIdGetWithHttpInfo($addon_id, $review_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2005';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2006';
         $request = $this->addonsAddonIdReviewsReviewIdGetRequest($addon_id, $review_id, $with);
 
         try {
@@ -459,7 +459,7 @@ class AddonReviewsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2005',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2006',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -513,7 +513,7 @@ class AddonReviewsApi
      */
     public function addonsAddonIdReviewsReviewIdGetAsyncWithHttpInfo($addon_id, $review_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2005';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2006';
         $request = $this->addonsAddonIdReviewsReviewIdGetRequest($addon_id, $review_id, $with);
 
         return $this->client

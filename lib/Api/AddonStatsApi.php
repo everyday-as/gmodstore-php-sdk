@@ -1,6 +1,6 @@
 <?php
 /**
- * TeamUsersApi
+ * AddonStatsApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Everyday\GmodStoreSDK\HeaderSelector;
 use Everyday\GmodStoreSDK\ObjectSerializer;
 
 /**
- * TeamUsersApi Class Doc Comment
+ * AddonStatsApi Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStoreSDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TeamUsersApi
+class AddonStatsApi
 {
     /**
      * @var ClientInterface
@@ -87,39 +87,37 @@ class TeamUsersApi
     }
 
     /**
-     * Operation teamsTeamIdUsersGet
+     * Operation addonsAddonIdStatsGet
      *
-     * Fetch all the users in the given team
+     * Fetch all the stats for an addon
      *
-     * @param  int $team_id Id of the team (required)
-     * @param  string[] $with The relations you want to fetch with the TeamUser schema (optional)
+     * @param  int $addon_id Id of the addon (required)
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20010
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2002
      */
-    public function teamsTeamIdUsersGet($team_id, $with = null)
+    public function addonsAddonIdStatsGet($addon_id)
     {
-        list($response) = $this->teamsTeamIdUsersGetWithHttpInfo($team_id, $with);
+        list($response) = $this->addonsAddonIdStatsGetWithHttpInfo($addon_id);
         return $response;
     }
 
     /**
-     * Operation teamsTeamIdUsersGetWithHttpInfo
+     * Operation addonsAddonIdStatsGetWithHttpInfo
      *
-     * Fetch all the users in the given team
+     * Fetch all the stats for an addon
      *
-     * @param  int $team_id Id of the team (required)
-     * @param  string[] $with The relations you want to fetch with the TeamUser schema (optional)
+     * @param  int $addon_id Id of the addon (required)
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function teamsTeamIdUsersGetWithHttpInfo($team_id, $with = null)
+    public function addonsAddonIdStatsGetWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
-        $request = $this->teamsTeamIdUsersGetRequest($team_id, $with);
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
+        $request = $this->addonsAddonIdStatsGetRequest($addon_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -170,7 +168,7 @@ class TeamUsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse20010',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -189,19 +187,18 @@ class TeamUsersApi
     }
 
     /**
-     * Operation teamsTeamIdUsersGetAsync
+     * Operation addonsAddonIdStatsGetAsync
      *
-     * Fetch all the users in the given team
+     * Fetch all the stats for an addon
      *
-     * @param  int $team_id Id of the team (required)
-     * @param  string[] $with The relations you want to fetch with the TeamUser schema (optional)
+     * @param  int $addon_id Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function teamsTeamIdUsersGetAsync($team_id, $with = null)
+    public function addonsAddonIdStatsGetAsync($addon_id)
     {
-        return $this->teamsTeamIdUsersGetAsyncWithHttpInfo($team_id, $with)
+        return $this->addonsAddonIdStatsGetAsyncWithHttpInfo($addon_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,20 +207,19 @@ class TeamUsersApi
     }
 
     /**
-     * Operation teamsTeamIdUsersGetAsyncWithHttpInfo
+     * Operation addonsAddonIdStatsGetAsyncWithHttpInfo
      *
-     * Fetch all the users in the given team
+     * Fetch all the stats for an addon
      *
-     * @param  int $team_id Id of the team (required)
-     * @param  string[] $with The relations you want to fetch with the TeamUser schema (optional)
+     * @param  int $addon_id Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function teamsTeamIdUsersGetAsyncWithHttpInfo($team_id, $with = null)
+    public function addonsAddonIdStatsGetAsyncWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
-        $request = $this->teamsTeamIdUsersGetRequest($team_id, $with);
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
+        $request = $this->addonsAddonIdStatsGetRequest($addon_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,43 +259,35 @@ class TeamUsersApi
     }
 
     /**
-     * Create request for operation 'teamsTeamIdUsersGet'
+     * Create request for operation 'addonsAddonIdStatsGet'
      *
-     * @param  int $team_id Id of the team (required)
-     * @param  string[] $with The relations you want to fetch with the TeamUser schema (optional)
+     * @param  int $addon_id Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function teamsTeamIdUsersGetRequest($team_id, $with = null)
+    protected function addonsAddonIdStatsGetRequest($addon_id)
     {
-        // verify the required parameter 'team_id' is set
-        if ($team_id === null || (is_array($team_id) && count($team_id) === 0)) {
+        // verify the required parameter 'addon_id' is set
+        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $team_id when calling teamsTeamIdUsersGet'
+                'Missing the required parameter $addon_id when calling addonsAddonIdStatsGet'
             );
         }
 
-        $resourcePath = '/teams/{team_id}/users';
+        $resourcePath = '/addons/{addon_id}/stats';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if (is_array($with)) {
-            $with = ObjectSerializer::serializeCollection($with, 'csv', true);
-        }
-        if ($with !== null) {
-            $queryParams['with'] = ObjectSerializer::toQueryValue($with);
-        }
 
         // path params
-        if ($team_id !== null) {
+        if ($addon_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'team_id' . '}',
-                ObjectSerializer::toPathValue($team_id),
+                '{' . 'addon_id' . '}',
+                ObjectSerializer::toPathValue($addon_id),
                 $resourcePath
             );
         }

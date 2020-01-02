@@ -95,7 +95,7 @@ class UsersApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20010
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20011
      */
     public function usersMeGet($with = null)
     {
@@ -112,11 +112,11 @@ class UsersApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersMeGetWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
         $request = $this->usersMeGetRequest($with);
 
         try {
@@ -168,7 +168,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse20010',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse20011',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class UsersApi
      */
     public function usersMeGetAsyncWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
         $request = $this->usersMeGetRequest($with);
 
         return $this->client
@@ -364,7 +364,7 @@ class UsersApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20010
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20011
      */
     public function usersUserIdGet($user_id, $with = null)
     {
@@ -382,11 +382,11 @@ class UsersApi
      *
      * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUserIdGetWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
         $request = $this->usersUserIdGetRequest($user_id, $with);
 
         try {
@@ -438,7 +438,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse20010',
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse20011',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -490,7 +490,7 @@ class UsersApi
      */
     public function usersUserIdGetAsyncWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
         $request = $this->usersUserIdGetRequest($user_id, $with);
 
         return $this->client

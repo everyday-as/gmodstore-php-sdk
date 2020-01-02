@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersUserIdBadgesGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20013 usersUserIdBadgesGet($user_id)
+> \Everyday\GmodStoreSDK\Model\InlineResponse20014 usersUserIdBadgesGet($user_id)
 
 Fetch all the badges a user has
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Everyday\GmodStoreSDK\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
