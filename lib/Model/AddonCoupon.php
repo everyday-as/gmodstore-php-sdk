@@ -62,7 +62,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
 'max_uses' => 'int',
 'expires_at' => '\DateTime',
 'created_at' => '\DateTime',
-'updated_at' => 'int',
+'updated_at' => '\DateTime',
 'addon' => '\Everyday\GmodStoreSDK\Model\Addon'    ];
 
     /**
@@ -406,7 +406,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     /**
      * Gets updated_at
      *
-     * @return int
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -416,7 +416,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     /**
      * Sets updated_at
      *
-     * @param int $updated_at updated_at
+     * @param \DateTime $updated_at updated_at
      *
      * @return $this
      */
