@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addonsAddonIdVersionsPost**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2012 addonsAddonIdVersionsPost($name, $changelog, $file, $addon_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse2012 addonsAddonIdVersionsPost($name, $changelog, $file, $release_type, $addon_id, $with)
 
 Create a new version for an addon
 
@@ -87,11 +87,12 @@ $apiInstance = new Everyday\GmodStoreSDK\Api\AddonVersionsApi(
 $name = "name_example"; // string | 
 $changelog = "changelog_example"; // string | 
 $file = "file_example"; // string | 
+$release_type = "release_type_example"; // string | 
 $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonVersion schema
 
 try {
-    $result = $apiInstance->addonsAddonIdVersionsPost($name, $changelog, $file, $addon_id, $with);
+    $result = $apiInstance->addonsAddonIdVersionsPost($name, $changelog, $file, $release_type, $addon_id, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->addonsAddonIdVersionsPost: ', $e->getMessage(), PHP_EOL;
@@ -106,6 +107,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **changelog** | **string**|  |
  **file** | **string****string**|  |
+ **release_type** | **string**|  |
  **addon_id** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonVersion schema | [optional]
 
@@ -235,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addonsAddonIdVersionsVersionIdPut**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2012 addonsAddonIdVersionsVersionIdPut($name, $changelog, $file, $addon_id, $version_id, $with)
+> \Everyday\GmodStoreSDK\Model\InlineResponse2012 addonsAddonIdVersionsVersionIdPut($name, $changelog, $release_type, $addon_id, $version_id, $with)
 
 Update a version of an addon
 
@@ -256,13 +258,13 @@ $apiInstance = new Everyday\GmodStoreSDK\Api\AddonVersionsApi(
 );
 $name = "name_example"; // string | 
 $changelog = "changelog_example"; // string | 
-$file = "file_example"; // string | 
+$release_type = "release_type_example"; // string | 
 $addon_id = 789; // int | Id of the addon
 $version_id = 789; // int | Id of the version
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonVersion schema
 
 try {
-    $result = $apiInstance->addonsAddonIdVersionsVersionIdPut($name, $changelog, $file, $addon_id, $version_id, $with);
+    $result = $apiInstance->addonsAddonIdVersionsVersionIdPut($name, $changelog, $release_type, $addon_id, $version_id, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->addonsAddonIdVersionsVersionIdPut: ', $e->getMessage(), PHP_EOL;
@@ -276,7 +278,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**|  |
  **changelog** | **string**|  |
- **file** | **string****string**|  |
+ **release_type** | **string**|  |
  **addon_id** | **int**| Id of the addon |
  **version_id** | **int**| Id of the version |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonVersion schema | [optional]
