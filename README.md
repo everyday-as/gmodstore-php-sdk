@@ -145,12 +145,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## ApiKeyAuth
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
-
 ## bearerAuth
 
 
