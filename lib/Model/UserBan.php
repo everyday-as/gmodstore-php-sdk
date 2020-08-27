@@ -1,6 +1,6 @@
 <?php
 /**
- * NewUserBadge
+ * UserBan
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * NewUserBadge Class Doc Comment
+ * UserBan Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NewUserBadge implements ModelInterface, ArrayAccess
+class UserBan implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class NewUserBadge implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'NewUserBadge';
+    protected static $swaggerModelName = 'UserBan';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'badge' => 'string'    ];
+        'user_id' => 'int',
+'reason' => 'string',
+'unban_reason' => 'string',
+'properties' => '\Everyday\GmodStore\Sdk\Model\UserBanProperties',
+'start' => '\DateTime',
+'end' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +69,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'badge' => null    ];
+        'user_id' => 'int64',
+'reason' => null,
+'unban_reason' => null,
+'properties' => null,
+'start' => 'date-time',
+'end' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +103,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'badge' => 'badge'    ];
+        'user_id' => 'user_id',
+'reason' => 'reason',
+'unban_reason' => 'unban_reason',
+'properties' => 'properties',
+'start' => 'start',
+'end' => 'end'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +116,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'badge' => 'setBadge'    ];
+        'user_id' => 'setUserId',
+'reason' => 'setReason',
+'unban_reason' => 'setUnbanReason',
+'properties' => 'setProperties',
+'start' => 'setStart',
+'end' => 'setEnd'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +129,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'badge' => 'getBadge'    ];
+        'user_id' => 'getUserId',
+'reason' => 'getReason',
+'unban_reason' => 'getUnbanReason',
+'properties' => 'getProperties',
+'start' => 'getStart',
+'end' => 'getEnd'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +194,12 @@ class NewUserBadge implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['badge'] = isset($data['badge']) ? $data['badge'] : null;
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['unban_reason'] = isset($data['unban_reason']) ? $data['unban_reason'] : null;
+        $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
+        $this->container['start'] = isset($data['start']) ? $data['start'] : null;
+        $this->container['end'] = isset($data['end']) ? $data['end'] : null;
     }
 
     /**
@@ -181,9 +211,6 @@ class NewUserBadge implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['badge'] === null) {
-            $invalidProperties[] = "'badge' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -200,25 +227,145 @@ class NewUserBadge implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets badge
+     * Gets user_id
      *
-     * @return string
+     * @return int
      */
-    public function getBadge()
+    public function getUserId()
     {
-        return $this->container['badge'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets badge
+     * Sets user_id
      *
-     * @param string $badge badge
+     * @param int $user_id user_id
      *
      * @return $this
      */
-    public function setBadge($badge)
+    public function setUserId($user_id)
     {
-        $this->container['badge'] = $badge;
+        $this->container['user_id'] = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     *
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     *
+     * @param string $reason reason
+     *
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets unban_reason
+     *
+     * @return string
+     */
+    public function getUnbanReason()
+    {
+        return $this->container['unban_reason'];
+    }
+
+    /**
+     * Sets unban_reason
+     *
+     * @param string $unban_reason unban_reason
+     *
+     * @return $this
+     */
+    public function setUnbanReason($unban_reason)
+    {
+        $this->container['unban_reason'] = $unban_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets properties
+     *
+     * @return \Everyday\GmodStore\Sdk\Model\UserBanProperties
+     */
+    public function getProperties()
+    {
+        return $this->container['properties'];
+    }
+
+    /**
+     * Sets properties
+     *
+     * @param \Everyday\GmodStore\Sdk\Model\UserBanProperties $properties properties
+     *
+     * @return $this
+     */
+    public function setProperties($properties)
+    {
+        $this->container['properties'] = $properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets start
+     *
+     * @return \DateTime
+     */
+    public function getStart()
+    {
+        return $this->container['start'];
+    }
+
+    /**
+     * Sets start
+     *
+     * @param \DateTime $start start
+     *
+     * @return $this
+     */
+    public function setStart($start)
+    {
+        $this->container['start'] = $start;
+
+        return $this;
+    }
+
+    /**
+     * Gets end
+     *
+     * @return \DateTime
+     */
+    public function getEnd()
+    {
+        return $this->container['end'];
+    }
+
+    /**
+     * Sets end
+     *
+     * @param \DateTime $end end
+     *
+     * @return $this
+     */
+    public function setEnd($end)
+    {
+        $this->container['end'] = $end;
 
         return $this;
     }

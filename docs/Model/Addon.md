@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
-**active** | **bool** |  | 
-**name** | **string** |  | 
-**short_description** | **string** |  | 
-**description** | **string** |  | 
-**requirements** | **string[]** |  | 
-**price** | [**\Everyday\GmodStore\Sdk\Model\AddonPrice**](AddonPrice.md) |  | 
-**images** | [**\Everyday\GmodStore\Sdk\Model\AddonImages**](AddonImages.md) |  | 
-**slug** | **string** |  | 
-**route** | **string** |  | 
-**created_at** | [**\DateTime**](\DateTime.md) |  | 
-**updated_at** | [**\DateTime**](\DateTime.md) |  | 
+**id** | **int** |  | [optional] 
+**active** | **bool** |  | [optional] 
+**name** | **string** |  | [optional] 
+**short_description** | **string** |  | [optional] 
+**description** | **string** |  | [optional] 
+**requirements** | **string[]** |  | [optional] 
+**price** | [**\Everyday\GmodStore\Sdk\Model\AddonPrice**](AddonPrice.md) |  | [optional] 
+**images** | [**\Everyday\GmodStore\Sdk\Model\AddonImages**](AddonImages.md) |  | [optional] 
+**slug** | **string** |  | [optional] 
+**route** | **string** |  | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **latest_version** | [**\Everyday\GmodStore\Sdk\Model\AddonVersion**](AddonVersion.md) |  | [optional] 
 **team** | [**\Everyday\GmodStore\Sdk\Model\Team**](Team.md) |  | [optional] 
 

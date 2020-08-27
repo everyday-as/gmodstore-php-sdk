@@ -31,7 +31,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
 );
 $body = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase | 
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
     $result = $apiInstance->createAddonPurchase($body, $addon_id, $with);
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Everyday\GmodStore\Sdk\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
 
@@ -86,8 +86,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     $config
 );
 $addon_id = 789; // int | Id of the addon
-$user_id = "user_id_example"; // string | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
+$user_id = 789; // int | Id of the user
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
     $result = $apiInstance->getAddonPurchase($addon_id, $user_id, $with);
@@ -103,8 +103,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
- **user_id** | **string**| Id of the user |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
+ **user_id** | **int**| Id of the user |
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
 
@@ -142,7 +142,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     $config
 );
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
     $result = $apiInstance->listAddonPurchases($addon_id, $with);
@@ -158,7 +158,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
 
@@ -195,10 +195,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase | 
+$body = new \Everyday\GmodStore\Sdk\Model\AddonPurchase(); // \Everyday\GmodStore\Sdk\Model\AddonPurchase | 
 $addon_id = 789; // int | Id of the addon
-$user_id = "user_id_example"; // string | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
+$user_id = 789; // int | Id of the user
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
     $result = $apiInstance->updateAddonPurchase($body, $addon_id, $user_id, $with);
@@ -213,10 +213,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase**](../Model/UpdateAddonPurchase.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\AddonPurchase**](../Model/AddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
- **user_id** | **string**| Id of the user |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
+ **user_id** | **int**| Id of the user |
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
 

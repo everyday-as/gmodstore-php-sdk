@@ -173,6 +173,14 @@ class AddonStatsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),

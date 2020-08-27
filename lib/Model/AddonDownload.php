@@ -182,9 +182,6 @@ class AddonDownload implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
         return $invalidProperties;
     }
 

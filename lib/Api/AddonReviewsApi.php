@@ -93,7 +93,7 @@ class AddonReviewsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $review_id Id of the review (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -112,7 +112,7 @@ class AddonReviewsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $review_id Id of the review (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -177,6 +177,14 @@ class AddonReviewsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -197,7 +205,7 @@ class AddonReviewsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $review_id Id of the review (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -219,7 +227,7 @@ class AddonReviewsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $review_id Id of the review (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -271,7 +279,7 @@ class AddonReviewsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $review_id Id of the review (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -397,7 +405,7 @@ class AddonReviewsApi
      * Fetch all the reviews of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -415,7 +423,7 @@ class AddonReviewsApi
      * Fetch all the reviews of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -480,6 +488,14 @@ class AddonReviewsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -499,7 +515,7 @@ class AddonReviewsApi
      * Fetch all the reviews of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -520,7 +536,7 @@ class AddonReviewsApi
      * Fetch all the reviews of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -571,7 +587,7 @@ class AddonReviewsApi
      * Create request for operation 'listAddonReviews'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonReview schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

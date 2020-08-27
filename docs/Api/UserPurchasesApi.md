@@ -26,8 +26,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
+$user_id = 789; // int | Id of the user
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
     $result = $apiInstance->listUserPurchases($user_id, $with);
@@ -42,8 +42,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
+ **user_id** | **int**| Id of the user |
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
 

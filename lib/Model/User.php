@@ -56,12 +56,12 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
+        'id' => 'int',
 'name' => 'string',
 'avatar' => 'string',
 'country_code' => 'string',
 'slug' => 'string',
-'ban_properties' => 'string[]',
+'ban_properties' => '\Everyday\GmodStore\Sdk\Model\UserBanProperties',
 'group' => '\Everyday\GmodStore\Sdk\Model\PermissionGroup'    ];
 
     /**
@@ -70,7 +70,7 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
+        'id' => 'int64',
 'name' => null,
 'avatar' => 'uri',
 'country_code' => null,
@@ -182,38 +182,7 @@ class User implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const BAN_PROPERTIES_EVERYTHING = 'everything';
-const BAN_PROPERTIES_ADDONCREATE = 'addon.create';
-const BAN_PROPERTIES_ADDONPURCHASE = 'addon.purchase';
-const BAN_PROPERTIES_ADDONDOWNLOAD = 'addon.download';
-const BAN_PROPERTIES_ADDONREVIEW = 'addon.review';
-const BAN_PROPERTIES_ADDONCOMMENT = 'addon.comment';
-const BAN_PROPERTIES_JOBCREATE = 'job.create';
-const BAN_PROPERTIES_JOBAPPLY = 'job.apply';
-const BAN_PROPERTIES_JOBREVIEW = 'job.review';
-const BAN_PROPERTIES_JOBCOMMENT = 'job.comment';
-const BAN_PROPERTIES_BANAPPEAL = 'ban.appeal';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getBanPropertiesAllowableValues()
-    {
-        return [
-            self::BAN_PROPERTIES_EVERYTHING,
-self::BAN_PROPERTIES_ADDONCREATE,
-self::BAN_PROPERTIES_ADDONPURCHASE,
-self::BAN_PROPERTIES_ADDONDOWNLOAD,
-self::BAN_PROPERTIES_ADDONREVIEW,
-self::BAN_PROPERTIES_ADDONCOMMENT,
-self::BAN_PROPERTIES_JOBCREATE,
-self::BAN_PROPERTIES_JOBAPPLY,
-self::BAN_PROPERTIES_JOBREVIEW,
-self::BAN_PROPERTIES_JOBCOMMENT,
-self::BAN_PROPERTIES_BANAPPEAL,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -248,21 +217,6 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['avatar'] === null) {
-            $invalidProperties[] = "'avatar' can't be null";
-        }
-        if ($this->container['slug'] === null) {
-            $invalidProperties[] = "'slug' can't be null";
-        }
-        if ($this->container['ban_properties'] === null) {
-            $invalidProperties[] = "'ban_properties' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -281,7 +235,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Gets id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -291,7 +245,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -401,7 +355,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Gets ban_properties
      *
-     * @return string[]
+     * @return \Everyday\GmodStore\Sdk\Model\UserBanProperties
      */
     public function getBanProperties()
     {
@@ -411,21 +365,12 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Sets ban_properties
      *
-     * @param string[] $ban_properties ban_properties
+     * @param \Everyday\GmodStore\Sdk\Model\UserBanProperties $ban_properties ban_properties
      *
      * @return $this
      */
     public function setBanProperties($ban_properties)
     {
-        $allowedValues = $this->getBanPropertiesAllowableValues();
-        if (array_diff($ban_properties, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'ban_properties', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['ban_properties'] = $ban_properties;
 
         return $this;

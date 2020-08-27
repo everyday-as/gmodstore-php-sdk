@@ -238,12 +238,6 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         if ($this->container['expires_at'] === null) {
             $invalidProperties[] = "'expires_at' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -368,7 +362,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     /**
      * Sets expires_at
      *
-     * @param \DateTime $expires_at expires_at
+     * @param \DateTime $expires_at A future date less than 2 weeks from today
      *
      * @return $this
      */

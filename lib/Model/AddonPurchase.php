@@ -214,12 +214,6 @@ class AddonPurchase implements ModelInterface, ArrayAccess
         if ($this->container['revoked'] === null) {
             $invalidProperties[] = "'revoked' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
         return $invalidProperties;
     }
 

@@ -193,12 +193,6 @@ class TeamUser implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['team_id'] === null) {
-            $invalidProperties[] = "'team_id' can't be null";
-        }
-        if ($this->container['primary'] === null) {
-            $invalidProperties[] = "'primary' can't be null";
-        }
         return $invalidProperties;
     }
 

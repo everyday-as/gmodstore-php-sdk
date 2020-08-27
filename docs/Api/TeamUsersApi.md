@@ -27,7 +27,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\TeamUsersApi(
     $config
 );
 $team_id = 789; // int | Id of the team
-$with = array("with_example"); // string[] | The relations you want to fetch with the TeamUser schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `TeamUser`
 
 try {
     $result = $apiInstance->listTeamUsers($team_id, $with);
@@ -43,7 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **int**| Id of the team |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the TeamUser schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;TeamUser&#x60; | [optional]
 
 ### Return type
 

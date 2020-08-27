@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserBans**](UserBansApi.md#listuserbans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 # **listUserBans**
-> \Everyday\GmodStore\Sdk\Model\BanListResponse listUserBans($user_id)
+> \Everyday\GmodStore\Sdk\Model\UserBanListResponse listUserBans($user_id)
 
 Fetch all active bans associated with this user
 
@@ -26,7 +26,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBansApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
+$user_id = 789; // int | Id of the user
 
 try {
     $result = $apiInstance->listUserBans($user_id);
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
+ **user_id** | **int**| Id of the user |
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\BanListResponse**](../Model/BanListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\UserBanListResponse**](../Model/UserBanListResponse.md)
 
 ### Authorization
 

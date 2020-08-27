@@ -59,7 +59,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => 'string',
 'changelog' => 'string',
 'file' => 'string',
-'release_type' => 'string'    ];
+'release_type' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -167,26 +167,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const RELEASE_TYPE_STABLE = 'stable';
-const RELEASE_TYPE_BETA = 'beta';
-const RELEASE_TYPE_ALPHA = 'alpha';
-const RELEASE_TYPE__PRIVATE = 'private';
-const RELEASE_TYPE_DEMO = 'demo';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getReleaseTypeAllowableValues()
-    {
-        return [
-            self::RELEASE_TYPE_STABLE,
-self::RELEASE_TYPE_BETA,
-self::RELEASE_TYPE_ALPHA,
-self::RELEASE_TYPE__PRIVATE,
-self::RELEASE_TYPE_DEMO,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -227,14 +208,6 @@ self::RELEASE_TYPE_DEMO,        ];
         if ($this->container['file'] === null) {
             $invalidProperties[] = "'file' can't be null";
         }
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($this->container['release_type']) && !in_array($this->container['release_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'release_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -325,7 +298,7 @@ self::RELEASE_TYPE_DEMO,        ];
     /**
      * Gets release_type
      *
-     * @return string
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType
      */
     public function getReleaseType()
     {
@@ -335,21 +308,12 @@ self::RELEASE_TYPE_DEMO,        ];
     /**
      * Sets release_type
      *
-     * @param string $release_type This can be a value of stable, beta, alpha, private or demo
+     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type release_type
      *
      * @return $this
      */
     public function setReleaseType($release_type)
     {
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($release_type) && !in_array($release_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'release_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['release_type'] = $release_type;
 
         return $this;

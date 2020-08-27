@@ -94,9 +94,9 @@ class AddonVersionsApi
      * @param  string $name name (required)
      * @param  string $changelog changelog (required)
      * @param  string $file file (required)
-     * @param  string $release_type release_type (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type release_type (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -116,9 +116,9 @@ class AddonVersionsApi
      * @param  string $name (required)
      * @param  string $changelog (required)
      * @param  string $file (required)
-     * @param  string $release_type (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -183,6 +183,14 @@ class AddonVersionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -204,9 +212,9 @@ class AddonVersionsApi
      * @param  string $name (required)
      * @param  string $changelog (required)
      * @param  string $file (required)
-     * @param  string $release_type (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -229,9 +237,9 @@ class AddonVersionsApi
      * @param  string $name (required)
      * @param  string $changelog (required)
      * @param  string $file (required)
-     * @param  string $release_type (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -284,9 +292,9 @@ class AddonVersionsApi
      * @param  string $name (required)
      * @param  string $changelog (required)
      * @param  string $file (required)
-     * @param  string $release_type (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -522,6 +530,14 @@ class AddonVersionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -733,7 +749,7 @@ class AddonVersionsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -752,7 +768,7 @@ class AddonVersionsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -817,6 +833,14 @@ class AddonVersionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -837,7 +861,7 @@ class AddonVersionsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -859,7 +883,7 @@ class AddonVersionsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -911,7 +935,7 @@ class AddonVersionsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1037,7 +1061,7 @@ class AddonVersionsApi
      * Fetch all the versions of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1055,7 +1079,7 @@ class AddonVersionsApi
      * Fetch all the versions of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1120,6 +1144,14 @@ class AddonVersionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1139,7 +1171,7 @@ class AddonVersionsApi
      * Fetch all the versions of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1160,7 +1192,7 @@ class AddonVersionsApi
      * Fetch all the versions of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1211,7 +1243,7 @@ class AddonVersionsApi
      * Create request for operation 'listAddonVersions'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1322,20 +1354,26 @@ class AddonVersionsApi
      *
      * Update a version of an addon
      *
+     * @param  int $id id (required)
      * @param  string $name name (required)
      * @param  string $changelog changelog (required)
-     * @param  string $release_type release_type (required)
+     * @param  string $file_hash file_hash (required)
+     * @param  int $file_size file_size (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type release_type (required)
+     * @param  \DateTime $created_at created_at (required)
+     * @param  \DateTime $updated_at updated_at (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\Addon $addon addon (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
      */
-    public function updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersion($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with = null)
     {
-        list($response) = $this->updateAddonVersionWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        list($response) = $this->updateAddonVersionWithHttpInfo($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with);
         return $response;
     }
 
@@ -1344,21 +1382,27 @@ class AddonVersionsApi
      *
      * Update a version of an addon
      *
+     * @param  int $id (required)
      * @param  string $name (required)
      * @param  string $changelog (required)
-     * @param  string $release_type (required)
+     * @param  string $file_hash (required)
+     * @param  int $file_size (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
+     * @param  \DateTime $created_at (required)
+     * @param  \DateTime $updated_at (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\Addon $addon (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAddonVersionWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionWithHttpInfo($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
-        $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        $request = $this->updateAddonVersionRequest($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1414,6 +1458,14 @@ class AddonVersionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1432,19 +1484,25 @@ class AddonVersionsApi
      *
      * Update a version of an addon
      *
+     * @param  int $id (required)
      * @param  string $name (required)
      * @param  string $changelog (required)
-     * @param  string $release_type (required)
+     * @param  string $file_hash (required)
+     * @param  int $file_size (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
+     * @param  \DateTime $created_at (required)
+     * @param  \DateTime $updated_at (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\Addon $addon (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAddonVersionAsync($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionAsync($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with = null)
     {
-        return $this->updateAddonVersionAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with)
+        return $this->updateAddonVersionAsyncWithHttpInfo($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1457,20 +1515,26 @@ class AddonVersionsApi
      *
      * Update a version of an addon
      *
+     * @param  int $id (required)
      * @param  string $name (required)
      * @param  string $changelog (required)
-     * @param  string $release_type (required)
+     * @param  string $file_hash (required)
+     * @param  int $file_size (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
+     * @param  \DateTime $created_at (required)
+     * @param  \DateTime $updated_at (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\Addon $addon (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAddonVersionAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionAsyncWithHttpInfo($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
-        $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        $request = $this->updateAddonVersionRequest($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1512,18 +1576,30 @@ class AddonVersionsApi
     /**
      * Create request for operation 'updateAddonVersion'
      *
+     * @param  int $id (required)
      * @param  string $name (required)
      * @param  string $changelog (required)
-     * @param  string $release_type (required)
+     * @param  string $file_hash (required)
+     * @param  int $file_size (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type (required)
+     * @param  \DateTime $created_at (required)
+     * @param  \DateTime $updated_at (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\Addon $addon (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonVersion&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    protected function updateAddonVersionRequest($id, $name, $changelog, $file_hash, $file_size, $release_type, $created_at, $updated_at, $addon, $addon_id, $version_id, $with = null)
     {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateAddonVersion'
+            );
+        }
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
@@ -1536,10 +1612,40 @@ class AddonVersionsApi
                 'Missing the required parameter $changelog when calling updateAddonVersion'
             );
         }
+        // verify the required parameter 'file_hash' is set
+        if ($file_hash === null || (is_array($file_hash) && count($file_hash) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file_hash when calling updateAddonVersion'
+            );
+        }
+        // verify the required parameter 'file_size' is set
+        if ($file_size === null || (is_array($file_size) && count($file_size) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file_size when calling updateAddonVersion'
+            );
+        }
         // verify the required parameter 'release_type' is set
         if ($release_type === null || (is_array($release_type) && count($release_type) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $release_type when calling updateAddonVersion'
+            );
+        }
+        // verify the required parameter 'created_at' is set
+        if ($created_at === null || (is_array($created_at) && count($created_at) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $created_at when calling updateAddonVersion'
+            );
+        }
+        // verify the required parameter 'updated_at' is set
+        if ($updated_at === null || (is_array($updated_at) && count($updated_at) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $updated_at when calling updateAddonVersion'
+            );
+        }
+        // verify the required parameter 'addon' is set
+        if ($addon === null || (is_array($addon) && count($addon) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $addon when calling updateAddonVersion'
             );
         }
         // verify the required parameter 'addon_id' is set
@@ -1588,6 +1694,10 @@ class AddonVersionsApi
         }
 
         // form params
+        if ($id !== null) {
+            $formParams['id'] = ObjectSerializer::toFormValue($id);
+        }
+        // form params
         if ($name !== null) {
             $formParams['name'] = ObjectSerializer::toFormValue($name);
         }
@@ -1596,8 +1706,28 @@ class AddonVersionsApi
             $formParams['changelog'] = ObjectSerializer::toFormValue($changelog);
         }
         // form params
+        if ($file_hash !== null) {
+            $formParams['file_hash'] = ObjectSerializer::toFormValue($file_hash);
+        }
+        // form params
+        if ($file_size !== null) {
+            $formParams['file_size'] = ObjectSerializer::toFormValue($file_size);
+        }
+        // form params
         if ($release_type !== null) {
             $formParams['release_type'] = ObjectSerializer::toFormValue($release_type);
+        }
+        // form params
+        if ($created_at !== null) {
+            $formParams['created_at'] = ObjectSerializer::toFormValue($created_at);
+        }
+        // form params
+        if ($updated_at !== null) {
+            $formParams['updated_at'] = ObjectSerializer::toFormValue($updated_at);
+        }
+        // form params
+        if ($addon !== null) {
+            $formParams['addon'] = ObjectSerializer::toFormValue($addon);
         }
         // body params
         $_tempBody = null;

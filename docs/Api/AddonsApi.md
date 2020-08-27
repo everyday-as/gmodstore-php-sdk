@@ -28,7 +28,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
     $config
 );
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the Addon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `Addon`
 
 try {
     $result = $apiInstance->getAddon($addon_id, $with);
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the Addon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional]
 
 ### Return type
 
@@ -81,7 +81,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$with = array("with_example"); // string[] | The relations you want to fetch with the Addon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `Addon`
 
 try {
     $result = $apiInstance->listSelfAddons($with);
@@ -96,7 +96,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the Addon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional]
 
 ### Return type
 

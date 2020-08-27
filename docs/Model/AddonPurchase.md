@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **revoked** | **bool** |  | 
-**created_at** | [**\DateTime**](\DateTime.md) |  | 
-**updated_at** | **int** |  | 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional] 
 **order_item** | [**\Everyday\GmodStore\Sdk\Model\OrderItem**](OrderItem.md) |  | [optional] 
 **user** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional] 

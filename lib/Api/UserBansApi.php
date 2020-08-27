@@ -91,11 +91,11 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\BanListResponse
+     * @return \Everyday\GmodStore\Sdk\Model\UserBanListResponse
      */
     public function listUserBans($user_id)
     {
@@ -108,15 +108,15 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\BanListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\UserBanListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserBansWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\BanListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\UserBanListResponse';
         $request = $this->listUserBansRequest($user_id);
 
         try {
@@ -168,7 +168,15 @@ class UserBansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\BanListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\UserBanListResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -191,7 +199,7 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -211,14 +219,14 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listUserBansAsyncWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\BanListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\UserBanListResponse';
         $request = $this->listUserBansRequest($user_id);
 
         return $this->client
@@ -261,7 +269,7 @@ class UserBansApi
     /**
      * Create request for operation 'listUserBans'
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

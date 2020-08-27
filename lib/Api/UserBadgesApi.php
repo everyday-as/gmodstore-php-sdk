@@ -91,8 +91,8 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewUserBadge $body body (required)
-     * @param  string $user_id Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $body body (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,8 +109,8 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewUserBadge $body (required)
-     * @param  string $user_id Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $body (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -175,6 +175,14 @@ class UserBadgesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -193,8 +201,8 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewUserBadge $body (required)
-     * @param  string $user_id Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $body (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -214,8 +222,8 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewUserBadge $body (required)
-     * @param  string $user_id Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $body (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -265,8 +273,8 @@ class UserBadgesApi
     /**
      * Create request for operation 'createUserBadge'
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewUserBadge $body (required)
-     * @param  string $user_id Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $body (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -379,7 +387,7 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
@@ -396,7 +404,7 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
@@ -458,7 +466,7 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
      * @throws \InvalidArgumentException
@@ -479,7 +487,7 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
      * @throws \InvalidArgumentException
@@ -516,7 +524,7 @@ class UserBadgesApi
     /**
      * Create request for operation 'deleteUserBadge'
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
      * @throws \InvalidArgumentException
@@ -635,7 +643,7 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -652,7 +660,7 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -717,6 +725,14 @@ class UserBadgesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -735,7 +751,7 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -755,7 +771,7 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -805,7 +821,7 @@ class UserBadgesApi
     /**
      * Create request for operation 'listUserBadges'
      *
-     * @param  string $user_id Id of the user (required)
+     * @param  int $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

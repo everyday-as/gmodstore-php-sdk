@@ -61,7 +61,7 @@ class AddonVersion implements ModelInterface, ArrayAccess
 'changelog' => 'string',
 'file_hash' => 'string',
 'file_size' => 'int',
-'release_type' => 'string',
+'release_type' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
 'addon' => '\Everyday\GmodStore\Sdk\Model\Addon'    ];
@@ -192,24 +192,7 @@ class AddonVersion implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const RELEASE_TYPE_STABLE = 'stable';
-const RELEASE_TYPE_BETA = 'beta';
-const RELEASE_TYPE_ALPHA = 'alpha';
-const RELEASE_TYPE__PRIVATE = 'private';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getReleaseTypeAllowableValues()
-    {
-        return [
-            self::RELEASE_TYPE_STABLE,
-self::RELEASE_TYPE_BETA,
-self::RELEASE_TYPE_ALPHA,
-self::RELEASE_TYPE__PRIVATE,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -246,34 +229,11 @@ self::RELEASE_TYPE__PRIVATE,        ];
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ($this->container['changelog'] === null) {
             $invalidProperties[] = "'changelog' can't be null";
-        }
-        if ($this->container['file_hash'] === null) {
-            $invalidProperties[] = "'file_hash' can't be null";
-        }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
-        }
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($this->container['release_type']) && !in_array($this->container['release_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'release_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
-        }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
         }
         return $invalidProperties;
     }
@@ -351,7 +311,7 @@ self::RELEASE_TYPE__PRIVATE,        ];
     /**
      * Sets changelog
      *
-     * @param string $changelog changelog
+     * @param string $changelog You can pass in markdown here
      *
      * @return $this
      */
@@ -413,7 +373,7 @@ self::RELEASE_TYPE__PRIVATE,        ];
     /**
      * Gets release_type
      *
-     * @return string
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType
      */
     public function getReleaseType()
     {
@@ -423,21 +383,12 @@ self::RELEASE_TYPE__PRIVATE,        ];
     /**
      * Sets release_type
      *
-     * @param string $release_type release_type
+     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType $release_type release_type
      *
      * @return $this
      */
     public function setReleaseType($release_type)
     {
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($release_type) && !in_array($release_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'release_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['release_type'] = $release_type;
 
         return $this;

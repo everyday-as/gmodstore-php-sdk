@@ -92,7 +92,7 @@ class AddonsApi
      * Fetch a single addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -110,7 +110,7 @@ class AddonsApi
      * Fetch a single addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -175,6 +175,14 @@ class AddonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -194,7 +202,7 @@ class AddonsApi
      * Fetch a single addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -215,7 +223,7 @@ class AddonsApi
      * Fetch a single addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -266,7 +274,7 @@ class AddonsApi
      * Create request for operation 'getAddon'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -377,7 +385,7 @@ class AddonsApi
      *
      * Fetch all the addons that you have access to
      *
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -394,7 +402,7 @@ class AddonsApi
      *
      * Fetch all the addons that you have access to
      *
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -459,6 +467,14 @@ class AddonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -477,7 +493,7 @@ class AddonsApi
      *
      * Fetch all the addons that you have access to
      *
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -497,7 +513,7 @@ class AddonsApi
      *
      * Fetch all the addons that you have access to
      *
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -547,7 +563,7 @@ class AddonsApi
     /**
      * Create request for operation 'listSelfAddons'
      *
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

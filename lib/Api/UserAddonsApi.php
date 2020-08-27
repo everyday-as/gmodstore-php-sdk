@@ -91,8 +91,8 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,8 +109,8 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -175,6 +175,14 @@ class UserAddonsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -193,8 +201,8 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -214,8 +222,8 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -265,8 +273,8 @@ class UserAddonsApi
     /**
      * Create request for operation 'listUserAddons'
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -91,9 +91,9 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -110,9 +110,9 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -177,6 +177,14 @@ class AddonCouponsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -195,9 +203,9 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -217,9 +225,9 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -269,9 +277,9 @@ class AddonCouponsApi
     /**
      * Create request for operation 'createAddonCoupon'
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -452,6 +460,14 @@ class AddonCouponsApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -649,7 +665,7 @@ class AddonCouponsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -668,7 +684,7 @@ class AddonCouponsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -733,6 +749,14 @@ class AddonCouponsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -753,7 +777,7 @@ class AddonCouponsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -775,7 +799,7 @@ class AddonCouponsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -827,7 +851,7 @@ class AddonCouponsApi
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -953,7 +977,7 @@ class AddonCouponsApi
      * Fetch all the coupons for an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -971,7 +995,7 @@ class AddonCouponsApi
      * Fetch all the coupons for an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1036,6 +1060,14 @@ class AddonCouponsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1055,7 +1087,7 @@ class AddonCouponsApi
      * Fetch all the coupons for an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1076,7 +1108,7 @@ class AddonCouponsApi
      * Fetch all the coupons for an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1127,7 +1159,7 @@ class AddonCouponsApi
      * Create request for operation 'listAddonCoupons'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1238,10 +1270,10 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1258,10 +1290,10 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1326,6 +1358,14 @@ class AddonCouponsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1344,10 +1384,10 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1367,10 +1407,10 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1420,10 +1460,10 @@ class AddonCouponsApi
     /**
      * Create request for operation 'updateAddonCoupon'
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

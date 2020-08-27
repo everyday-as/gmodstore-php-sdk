@@ -91,8 +91,8 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Team schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,8 +109,8 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Team schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -175,6 +175,14 @@ class UserTeamsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -193,8 +201,8 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Team schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -214,8 +222,8 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Team schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -265,8 +273,8 @@ class UserTeamsApi
     /**
      * Create request for operation 'listUserTeams'
      *
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the Team schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

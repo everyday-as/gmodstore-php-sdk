@@ -56,7 +56,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_id' => 'string'    ];
+        'user_id' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'user_id' => null    ];
+        'user_id' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -202,7 +202,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Gets user_id
      *
-     * @return string
+     * @return int
      */
     public function getUserId()
     {
@@ -212,7 +212,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Sets user_id
      *
-     * @param string $user_id user_id
+     * @param int $user_id user_id
      *
      * @return $this
      */

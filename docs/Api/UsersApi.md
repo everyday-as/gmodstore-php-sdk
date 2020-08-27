@@ -27,7 +27,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$with = array("with_example"); // string[] | The relations you want to fetch with the User schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `User`
 
 try {
     $result = $apiInstance->getSelfUser($with);
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the User schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional]
 
 ### Return type
 
@@ -79,8 +79,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the User schema
+$user_id = 789; // int | Id of the user
+$with = array("with_example"); // string[] | The relations you want to fetch with the `User`
 
 try {
     $result = $apiInstance->getUser($user_id, $with);
@@ -95,8 +95,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the User schema | [optional]
+ **user_id** | **int**| Id of the user |
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional]
 
 ### Return type
 

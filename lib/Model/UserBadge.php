@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateAddonPurchase
+ * UserBadge
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * UpdateAddonPurchase Class Doc Comment
+ * UserBadge Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UpdateAddonPurchase implements ModelInterface, ArrayAccess
+class UserBadge implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UpdateAddonPurchase';
+    protected static $swaggerModelName = 'UserBadge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'revoked' => 'bool'    ];
+        'badge' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'revoked' => null    ];
+        'badge' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +93,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'revoked' => 'revoked'    ];
+        'badge' => 'badge'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +101,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'revoked' => 'setRevoked'    ];
+        'badge' => 'setBadge'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +109,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'revoked' => 'getRevoked'    ];
+        'badge' => 'getBadge'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +169,7 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['revoked'] = isset($data['revoked']) ? $data['revoked'] : null;
+        $this->container['badge'] = isset($data['badge']) ? $data['badge'] : null;
     }
 
     /**
@@ -181,8 +181,8 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['revoked'] === null) {
-            $invalidProperties[] = "'revoked' can't be null";
+        if ($this->container['badge'] === null) {
+            $invalidProperties[] = "'badge' can't be null";
         }
         return $invalidProperties;
     }
@@ -200,25 +200,25 @@ class UpdateAddonPurchase implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets revoked
+     * Gets badge
      *
-     * @return bool
+     * @return string
      */
-    public function getRevoked()
+    public function getBadge()
     {
-        return $this->container['revoked'];
+        return $this->container['badge'];
     }
 
     /**
-     * Sets revoked
+     * Sets badge
      *
-     * @param bool $revoked revoked
+     * @param string $badge badge
      *
      * @return $this
      */
-    public function setRevoked($revoked)
+    public function setBadge($badge)
     {
-        $this->container['revoked'] = $revoked;
+        $this->container['badge'] = $badge;
 
         return $this;
     }

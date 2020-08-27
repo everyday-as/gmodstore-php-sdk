@@ -93,7 +93,7 @@ class AddonPurchasesApi
      *
      * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -112,7 +112,7 @@ class AddonPurchasesApi
      *
      * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -177,6 +177,14 @@ class AddonPurchasesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -197,7 +205,7 @@ class AddonPurchasesApi
      *
      * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -219,7 +227,7 @@ class AddonPurchasesApi
      *
      * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -271,7 +279,7 @@ class AddonPurchasesApi
      *
      * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -392,8 +400,8 @@ class AddonPurchasesApi
      * Get a purchase of an addon by user
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -411,8 +419,8 @@ class AddonPurchasesApi
      * Get a purchase of an addon by user
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -477,6 +485,14 @@ class AddonPurchasesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -496,8 +512,8 @@ class AddonPurchasesApi
      * Get a purchase of an addon by user
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -518,8 +534,8 @@ class AddonPurchasesApi
      * Get a purchase of an addon by user
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -570,8 +586,8 @@ class AddonPurchasesApi
      * Create request for operation 'getAddonPurchase'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -697,7 +713,7 @@ class AddonPurchasesApi
      * Fetch all purchases of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -715,7 +731,7 @@ class AddonPurchasesApi
      * Fetch all purchases of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -780,6 +796,14 @@ class AddonPurchasesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -799,7 +823,7 @@ class AddonPurchasesApi
      * Fetch all purchases of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -820,7 +844,7 @@ class AddonPurchasesApi
      * Fetch all purchases of an addon
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -871,7 +895,7 @@ class AddonPurchasesApi
      * Create request for operation 'listAddonPurchases'
      *
      * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -982,10 +1006,10 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonPurchase $body body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1002,10 +1026,10 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1070,6 +1094,14 @@ class AddonPurchasesApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1088,10 +1120,10 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1111,10 +1143,10 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1164,10 +1196,10 @@ class AddonPurchasesApi
     /**
      * Create request for operation 'updateAddonPurchase'
      *
-     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
-     * @param  string $user_id Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     * @param  int $user_id Id of the user (required)
+     * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

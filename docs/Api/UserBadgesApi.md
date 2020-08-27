@@ -28,8 +28,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\Sdk\Model\NewUserBadge(); // \Everyday\GmodStore\Sdk\Model\NewUserBadge | 
-$user_id = "user_id_example"; // string | Id of the user
+$body = new \Everyday\GmodStore\Sdk\Model\UserBadge(); // \Everyday\GmodStore\Sdk\Model\UserBadge | 
+$user_id = 789; // int | Id of the user
 
 try {
     $result = $apiInstance->createUserBadge($body, $user_id);
@@ -44,8 +44,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\Sdk\Model\NewUserBadge**](../Model/NewUserBadge.md)|  |
- **user_id** | **string**| Id of the user |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\UserBadge**](../Model/UserBadge.md)|  |
+ **user_id** | **int**| Id of the user |
 
 ### Return type
 
@@ -82,7 +82,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
+$user_id = 789; // int | Id of the user
 $badge_id = 789; // int | Id of the badge
 
 try {
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
+ **user_id** | **int**| Id of the user |
  **badge_id** | **int**| Id of the badge |
 
 ### Return type
@@ -135,7 +135,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = "user_id_example"; // string | Id of the user
+$user_id = 789; // int | Id of the user
 
 try {
     $result = $apiInstance->listUserBadges($user_id);
@@ -150,7 +150,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **string**| Id of the user |
+ **user_id** | **int**| Id of the user |
 
 ### Return type
 

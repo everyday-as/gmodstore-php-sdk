@@ -30,9 +30,9 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\Sdk\Model\NewAddonCoupon(); // \Everyday\GmodStore\Sdk\Model\NewAddonCoupon | 
+$body = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
     $result = $apiInstance->createAddonCoupon($body, $addon_id, $with);
@@ -47,9 +47,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\Sdk\Model\NewAddonCoupon**](../Model/NewAddonCoupon.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\AddonCoupon**](../Model/AddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional]
 
 ### Return type
 
@@ -141,7 +141,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
 );
 $addon_id = 789; // int | Id of the addon
 $coupon_id = 789; // int | Id of the coupon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
     $result = $apiInstance->getAddonCoupon($addon_id, $coupon_id, $with);
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
  **coupon_id** | **int**| Id of the coupon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional]
 
 ### Return type
 
@@ -196,7 +196,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     $config
 );
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
     $result = $apiInstance->listAddonCoupons($addon_id, $with);
@@ -212,7 +212,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional]
 
 ### Return type
 
@@ -249,10 +249,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon(); // \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon | 
+$body = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
 $addon_id = 789; // int | Id of the addon
 $coupon_id = 789; // int | Id of the coupon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
     $result = $apiInstance->updateAddonCoupon($body, $addon_id, $coupon_id, $with);
@@ -267,10 +267,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon**](../Model/UpdateAddonCoupon.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\AddonCoupon**](../Model/AddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
  **coupon_id** | **int**| Id of the coupon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonCoupon&#x60; | [optional]
 
 ### Return type
 

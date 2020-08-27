@@ -1,6 +1,6 @@
 <?php
 /**
- * UpdateAddonVersion
+ * UserBanListResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * UpdateAddonVersion Class Doc Comment
+ * UserBanListResponse Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UpdateAddonVersion implements ModelInterface, ArrayAccess
+class UserBanListResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UpdateAddonVersion';
+    protected static $swaggerModelName = 'UserBanListResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-'changelog' => 'string',
-'release_type' => 'string'    ];
+        'data' => '\Everyday\GmodStore\Sdk\Model\UserBan[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +64,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-'changelog' => null,
-'release_type' => null    ];
+        'data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +93,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-'changelog' => 'changelog',
-'release_type' => 'release_type'    ];
+        'data' => 'data'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +101,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-'changelog' => 'setChangelog',
-'release_type' => 'setReleaseType'    ];
+        'data' => 'setData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +109,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-'changelog' => 'getChangelog',
-'release_type' => 'getReleaseType'    ];
+        'data' => 'getData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -162,26 +152,7 @@ class UpdateAddonVersion implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const RELEASE_TYPE_STABLE = 'stable';
-const RELEASE_TYPE_BETA = 'beta';
-const RELEASE_TYPE_ALPHA = 'alpha';
-const RELEASE_TYPE__PRIVATE = 'private';
-const RELEASE_TYPE_DEMO = 'demo';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getReleaseTypeAllowableValues()
-    {
-        return [
-            self::RELEASE_TYPE_STABLE,
-self::RELEASE_TYPE_BETA,
-self::RELEASE_TYPE_ALPHA,
-self::RELEASE_TYPE__PRIVATE,
-self::RELEASE_TYPE_DEMO,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -198,9 +169,7 @@ self::RELEASE_TYPE_DEMO,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
-        $this->container['release_type'] = isset($data['release_type']) ? $data['release_type'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -211,14 +180,6 @@ self::RELEASE_TYPE_DEMO,        ];
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($this->container['release_type']) && !in_array($this->container['release_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'release_type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -236,82 +197,25 @@ self::RELEASE_TYPE_DEMO,        ];
 
 
     /**
-     * Gets name
+     * Gets data
      *
-     * @return string
+     * @return \Everyday\GmodStore\Sdk\Model\UserBan[]
      */
-    public function getName()
+    public function getData()
     {
-        return $this->container['name'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets name
+     * Sets data
      *
-     * @param string $name name
+     * @param \Everyday\GmodStore\Sdk\Model\UserBan[] $data data
      *
      * @return $this
      */
-    public function setName($name)
+    public function setData($data)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets changelog
-     *
-     * @return string
-     */
-    public function getChangelog()
-    {
-        return $this->container['changelog'];
-    }
-
-    /**
-     * Sets changelog
-     *
-     * @param string $changelog You can pass in markdown here
-     *
-     * @return $this
-     */
-    public function setChangelog($changelog)
-    {
-        $this->container['changelog'] = $changelog;
-
-        return $this;
-    }
-
-    /**
-     * Gets release_type
-     *
-     * @return string
-     */
-    public function getReleaseType()
-    {
-        return $this->container['release_type'];
-    }
-
-    /**
-     * Sets release_type
-     *
-     * @param string $release_type This can be a value of stable, beta, alpha, private or demo
-     *
-     * @return $this
-     */
-    public function setReleaseType($release_type)
-    {
-        $allowedValues = $this->getReleaseTypeAllowableValues();
-        if (!is_null($release_type) && !in_array($release_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'release_type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['release_type'] = $release_type;
+        $this->container['data'] = $data;
 
         return $this;
     }

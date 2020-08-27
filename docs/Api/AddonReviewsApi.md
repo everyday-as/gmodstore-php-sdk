@@ -29,7 +29,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
 );
 $addon_id = 789; // int | Id of the addon
 $review_id = 789; // int | Id of the review
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonReview schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonReview`
 
 try {
     $result = $apiInstance->getAddonReview($addon_id, $review_id, $with);
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
  **review_id** | **int**| Id of the review |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonReview schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional]
 
 ### Return type
 
@@ -84,7 +84,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
     $config
 );
 $addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the AddonReview schema
+$with = array("with_example"); // string[] | The relations you want to fetch with the `AddonReview`
 
 try {
     $result = $apiInstance->listAddonReviews($addon_id, $with);
@@ -100,7 +100,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addon_id** | **int**| Id of the addon |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonReview schema | [optional]
+ **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional]
 
 ### Return type
 
