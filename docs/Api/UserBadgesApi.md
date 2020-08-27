@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**listUserBadges**](UserBadgesApi.md#listuserbadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
 # **createUserBadge**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2013 createUserBadge($body, $user_id)
+> \Everyday\GmodStore\SDK\Model\BadgeResponse createUserBadge($body, $user_id)
 
 Give a user a badge
 
@@ -28,7 +28,7 @@ $apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\BadgeCreateBody(); // \Everyday\GmodStore\SDK\Model\BadgeCreateBody | 
+$body = new \Everyday\GmodStore\SDK\Model\NewUserBadge(); // \Everyday\GmodStore\SDK\Model\NewUserBadge | 
 $user_id = "user_id_example"; // string | Id of the user
 
 try {
@@ -44,12 +44,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\BadgeCreateBody**](../Model/BadgeCreateBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\NewUserBadge**](../Model/NewUserBadge.md)|  |
  **user_id** | **string**| Id of the user |
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\Everyday\GmodStore\SDK\Model\BadgeResponse**](../Model/BadgeResponse.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUserBadges**
-> \Everyday\GmodStore\SDK\Model\InlineResponse20014 listUserBadges($user_id)
+> \Everyday\GmodStore\SDK\Model\BadgeListResponse listUserBadges($user_id)
 
 Fetch all the badges a user has
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Everyday\GmodStore\SDK\Model\BadgeListResponse**](../Model/BadgeListResponse.md)
 
 ### Authorization
 

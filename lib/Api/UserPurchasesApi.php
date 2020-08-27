@@ -96,7 +96,7 @@ class UserPurchasesApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2004
+     * @return \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse
      */
     public function listUserPurchases($user_id, $with = null)
     {
@@ -114,11 +114,11 @@ class UserPurchasesApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserPurchasesWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse';
         $request = $this->listUserPurchasesRequest($user_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class UserPurchasesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse2004',
+                        '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class UserPurchasesApi
      */
     public function listUserPurchasesAsyncWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse';
         $request = $this->listUserPurchasesRequest($user_id, $with);
 
         return $this->client

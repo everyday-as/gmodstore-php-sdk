@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserAddons**](UserAddonsApi.md#listuseraddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
 
 # **listUserAddons**
-> \Everyday\GmodStore\SDK\Model\InlineResponse200 listUserAddons($user_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonListResponse listUserAddons($user_id, $with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Everyday\GmodStore\SDK\Model\AddonListResponse**](../Model/AddonListResponse.md)
 
 ### Authorization
 

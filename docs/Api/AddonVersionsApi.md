@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**updateAddonVersion**](AddonVersionsApi.md#updateaddonversion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 
 # **createAddonVersion**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2012 createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonVersionResponse createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with)
 
 Create a new version for an addon
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **downloadAddonVersion**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2008 downloadAddonVersion($addon_id, $version_id)
+> \Everyday\GmodStore\SDK\Model\AddonDownloadResponse downloadAddonVersion($addon_id, $version_id)
 
 Generate a download token for a specific version of an addon
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\Everyday\GmodStore\SDK\Model\AddonDownloadResponse**](../Model/AddonDownloadResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonVersion**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2012 getAddonVersion($addon_id, $version_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonVersionResponse getAddonVersion($addon_id, $version_id, $with)
 
 Fetch a specific version of an addon
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonVersions**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2007 listAddonVersions($addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonVersionListResponse listAddonVersions($addon_id, $with)
 
 Fetch all the versions of an addon
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Everyday\GmodStore\SDK\Model\AddonVersionListResponse**](../Model/AddonVersionListResponse.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonVersion**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2012 updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonVersionResponse updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with)
 
 Update a version of an addon
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 

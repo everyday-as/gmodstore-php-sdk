@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getTeam**](TeamsApi.md#getteam) | **GET** /teams/{team_id} | Fetch a single team
 
 # **getTeam**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2009 getTeam($team_id, $with)
+> \Everyday\GmodStore\SDK\Model\TeamResponse getTeam($team_id, $with)
 
 Fetch a single team
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\Everyday\GmodStore\SDK\Model\TeamResponse**](../Model/TeamResponse.md)
 
 ### Authorization
 

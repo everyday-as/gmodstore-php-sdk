@@ -96,7 +96,7 @@ class UserAddonsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse200
+     * @return \Everyday\GmodStore\SDK\Model\AddonListResponse
      */
     public function listUserAddons($user_id, $with = null)
     {
@@ -114,11 +114,11 @@ class UserAddonsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\AddonListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserAddonsWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse200';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonListResponse';
         $request = $this->listUserAddonsRequest($user_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class UserAddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse200',
+                        '\Everyday\GmodStore\SDK\Model\AddonListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class UserAddonsApi
      */
     public function listUserAddonsAsyncWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse200';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonListResponse';
         $request = $this->listUserAddonsRequest($user_id, $with);
 
         return $this->client

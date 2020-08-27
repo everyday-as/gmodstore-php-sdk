@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserBans**](UserBansApi.md#listuserbans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 # **listUserBans**
-> \Everyday\GmodStore\SDK\Model\InlineResponse20013 listUserBans($user_id)
+> \Everyday\GmodStore\SDK\Model\BanListResponse listUserBans($user_id)
 
 Fetch all active bans associated with this user
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Everyday\GmodStore\SDK\Model\BanListResponse**](../Model/BanListResponse.md)
 
 ### Authorization
 

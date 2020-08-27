@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserPurchases**](UserPurchasesApi.md#listuserpurchases) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
 
 # **listUserPurchases**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2004 listUserPurchases($user_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse listUserPurchases($user_id, $with)
 
 Fetch all purchases a user has made
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse**](../Model/AddonPurchaseListResponse.md)
 
 ### Authorization
 

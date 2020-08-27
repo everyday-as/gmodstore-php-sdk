@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**updateAddonPurchase**](AddonPurchasesApi.md#updateaddonpurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
 
 # **createAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2011 createAddonPurchase($body, $addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse createAddonPurchase($body, $addon_id, $with)
 
 Create a purchase for an addon
 
@@ -29,7 +29,7 @@ $apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\AddonPurchaseCreateBody(); // \Everyday\GmodStore\SDK\Model\AddonPurchaseCreateBody | 
+$body = new \Everyday\GmodStore\SDK\Model\NewAddonPurchase(); // \Everyday\GmodStore\SDK\Model\NewAddonPurchase | 
 $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
 
@@ -46,13 +46,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\AddonPurchaseCreateBody**](../Model/AddonPurchaseCreateBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2011 getAddonPurchase($addon_id, $user_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse getAddonPurchase($addon_id, $user_id, $with)
 
 Get a purchase of an addon by user
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonPurchases**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2004 listAddonPurchases($addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse listAddonPurchases($addon_id, $with)
 
 Fetch all purchases of an addon
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse**](../Model/AddonPurchaseListResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2011 updateAddonPurchase($body, $addon_id, $user_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse updateAddonPurchase($body, $addon_id, $user_id, $with)
 
 Update a purchase for an addon
 
@@ -195,7 +195,7 @@ $apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\AddonPurchaseUpdateBody(); // \Everyday\GmodStore\SDK\Model\AddonPurchaseUpdateBody | 
+$body = new \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase(); // \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase | 
 $addon_id = 789; // int | Id of the addon
 $user_id = "user_id_example"; // string | Id of the user
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
@@ -213,14 +213,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\AddonPurchaseUpdateBody**](../Model/AddonPurchaseUpdateBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\UpdateAddonPurchase**](../Model/UpdateAddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
  **user_id** | **string**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 

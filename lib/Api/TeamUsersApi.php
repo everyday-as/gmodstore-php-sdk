@@ -96,7 +96,7 @@ class TeamUsersApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse20010
+     * @return \Everyday\GmodStore\SDK\Model\TeamUserListResponse
      */
     public function listTeamUsers($team_id, $with = null)
     {
@@ -114,11 +114,11 @@ class TeamUsersApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\TeamUserListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTeamUsersWithHttpInfo($team_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStore\SDK\Model\TeamUserListResponse';
         $request = $this->listTeamUsersRequest($team_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class TeamUsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse20010',
+                        '\Everyday\GmodStore\SDK\Model\TeamUserListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class TeamUsersApi
      */
     public function listTeamUsersAsyncWithHttpInfo($team_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20010';
+        $returnType = '\Everyday\GmodStore\SDK\Model\TeamUserListResponse';
         $request = $this->listTeamUsersRequest($team_id, $with);
 
         return $this->client

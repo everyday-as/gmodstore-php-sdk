@@ -97,7 +97,7 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2006
+     * @return \Everyday\GmodStore\SDK\Model\AddonReviewResponse
      */
     public function getAddonReview($addon_id, $review_id, $with = null)
     {
@@ -116,11 +116,11 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\AddonReviewResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonReviewWithHttpInfo($addon_id, $review_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2006';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonReviewResponse';
         $request = $this->getAddonReviewRequest($addon_id, $review_id, $with);
 
         try {
@@ -172,7 +172,7 @@ class AddonReviewsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse2006',
+                        '\Everyday\GmodStore\SDK\Model\AddonReviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -226,7 +226,7 @@ class AddonReviewsApi
      */
     public function getAddonReviewAsyncWithHttpInfo($addon_id, $review_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2006';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonReviewResponse';
         $request = $this->getAddonReviewRequest($addon_id, $review_id, $with);
 
         return $this->client
@@ -401,7 +401,7 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2005
+     * @return \Everyday\GmodStore\SDK\Model\AddonReviewListResponse
      */
     public function listAddonReviews($addon_id, $with = null)
     {
@@ -419,11 +419,11 @@ class AddonReviewsApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\AddonReviewListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAddonReviewsWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2005';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonReviewListResponse';
         $request = $this->listAddonReviewsRequest($addon_id, $with);
 
         try {
@@ -475,7 +475,7 @@ class AddonReviewsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse2005',
+                        '\Everyday\GmodStore\SDK\Model\AddonReviewListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -527,7 +527,7 @@ class AddonReviewsApi
      */
     public function listAddonReviewsAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2005';
+        $returnType = '\Everyday\GmodStore\SDK\Model\AddonReviewListResponse';
         $request = $this->listAddonReviewsRequest($addon_id, $with);
 
         return $this->client

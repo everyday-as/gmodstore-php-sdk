@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**listAddonReviews**](AddonReviewsApi.md#listaddonreviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
 
 # **getAddonReview**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2006 getAddonReview($addon_id, $review_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonReviewResponse getAddonReview($addon_id, $review_id, $with)
 
 Fetch a review of an addon
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Everyday\GmodStore\SDK\Model\AddonReviewResponse**](../Model/AddonReviewResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonReviews**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2005 listAddonReviews($addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonReviewListResponse listAddonReviews($addon_id, $with)
 
 Fetch all the reviews of an addon
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Everyday\GmodStore\SDK\Model\AddonReviewListResponse**](../Model/AddonReviewListResponse.md)
 
 ### Authorization
 

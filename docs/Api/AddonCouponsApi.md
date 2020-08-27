@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**updateAddonCoupon**](AddonCouponsApi.md#updateaddoncoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#x27;s coupon
 
 # **createAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\InlineResponse201 createAddonCoupon($body, $addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonCouponResponse createAddonCoupon($body, $addon_id, $with)
 
 Create an addon coupon
 
@@ -30,7 +30,7 @@ $apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\AddonCouponBody(); // \Everyday\GmodStore\SDK\Model\AddonCouponBody | 
+$body = new \Everyday\GmodStore\SDK\Model\NewAddonCoupon(); // \Everyday\GmodStore\SDK\Model\NewAddonCoupon | 
 $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
 
@@ -47,13 +47,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\AddonCouponBody**](../Model/AddonCouponBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\NewAddonCoupon**](../Model/NewAddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\InlineResponse201 getAddonCoupon($addon_id, $coupon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonCouponResponse getAddonCoupon($addon_id, $coupon_id, $with)
 
 Fetch an addon's coupon
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonCoupons**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2003 listAddonCoupons($addon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonCouponListResponse listAddonCoupons($addon_id, $with)
 
 Fetch all the coupons for an addon
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Everyday\GmodStore\SDK\Model\AddonCouponListResponse**](../Model/AddonCouponListResponse.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\InlineResponse201 updateAddonCoupon($body, $addon_id, $coupon_id, $with)
+> \Everyday\GmodStore\SDK\Model\AddonCouponResponse updateAddonCoupon($body, $addon_id, $coupon_id, $with)
 
 Update an addon's coupon
 
@@ -249,7 +249,7 @@ $apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\AddonCouponBody(); // \Everyday\GmodStore\SDK\Model\AddonCouponBody | 
+$body = new \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon(); // \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon | 
 $addon_id = 789; // int | Id of the addon
 $coupon_id = 789; // int | Id of the coupon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
@@ -267,14 +267,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\AddonCouponBody**](../Model/AddonCouponBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\UpdateAddonCoupon**](../Model/UpdateAddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
  **coupon_id** | **int**| Id of the coupon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 

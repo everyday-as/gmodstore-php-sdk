@@ -95,7 +95,7 @@ class UserBansApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse20013
+     * @return \Everyday\GmodStore\SDK\Model\BanListResponse
      */
     public function listUserBans($user_id)
     {
@@ -112,11 +112,11 @@ class UserBansApi
      *
      * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\BanListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserBansWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20013';
+        $returnType = '\Everyday\GmodStore\SDK\Model\BanListResponse';
         $request = $this->listUserBansRequest($user_id);
 
         try {
@@ -168,7 +168,7 @@ class UserBansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse20013',
+                        '\Everyday\GmodStore\SDK\Model\BanListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class UserBansApi
      */
     public function listUserBansAsyncWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20013';
+        $returnType = '\Everyday\GmodStore\SDK\Model\BanListResponse';
         $request = $this->listUserBansRequest($user_id);
 
         return $this->client
