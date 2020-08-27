@@ -120,16 +120,16 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $user_badge user_badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $userBadge userBadge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\BadgeResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function createUserBadge($user_id, $user_badge)
+    public function createUserBadge($userId, $userBadge)
     {
-        list($response) = $this->createUserBadgeWithHttpInfo($user_id, $user_badge);
+        list($response) = $this->createUserBadgeWithHttpInfo($userId, $userBadge);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $user_badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $userBadge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\BadgeResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createUserBadgeWithHttpInfo($user_id, $user_badge)
+    public function createUserBadgeWithHttpInfo($userId, $userBadge)
     {
-        $request = $this->createUserBadgeRequest($user_id, $user_badge);
+        $request = $this->createUserBadgeRequest($userId, $userBadge);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $user_badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $userBadge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserBadgeAsync($user_id, $user_badge)
+    public function createUserBadgeAsync($userId, $userBadge)
     {
-        return $this->createUserBadgeAsyncWithHttpInfo($user_id, $user_badge)
+        return $this->createUserBadgeAsyncWithHttpInfo($userId, $userBadge)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $user_badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $userBadge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createUserBadgeAsyncWithHttpInfo($user_id, $user_badge)
+    public function createUserBadgeAsyncWithHttpInfo($userId, $userBadge)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\BadgeResponse';
-        $request = $this->createUserBadgeRequest($user_id, $user_badge);
+        $request = $this->createUserBadgeRequest($userId, $userBadge);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,24 +336,24 @@ class UserBadgesApi
     /**
      * Create request for operation 'createUserBadge'
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $user_badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserBadge $userBadge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createUserBadgeRequest($user_id, $user_badge)
+    protected function createUserBadgeRequest($userId, $userBadge)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling createUserBadge'
+                'Missing the required parameter $userId when calling createUserBadge'
             );
         }
-        // verify the required parameter 'user_badge' is set
-        if ($user_badge === null || (is_array($user_badge) && count($user_badge) === 0)) {
+        // verify the required parameter 'userBadge' is set
+        if ($userBadge === null || (is_array($userBadge) && count($userBadge) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_badge when calling createUserBadge'
+                'Missing the required parameter $userBadge when calling createUserBadge'
             );
         }
 
@@ -367,18 +367,18 @@ class UserBadgesApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
 
         // body params
         $_tempBody = null;
-        if (isset($user_badge)) {
-            $_tempBody = $user_badge;
+        if (isset($userBadge)) {
+            $_tempBody = $userBadge;
         }
 
         if ($multipart) {
@@ -451,16 +451,16 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  int $badge_id Id of the badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  int $badgeId Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteUserBadge($user_id, $badge_id)
+    public function deleteUserBadge($userId, $badgeId)
     {
-        $this->deleteUserBadgeWithHttpInfo($user_id, $badge_id);
+        $this->deleteUserBadgeWithHttpInfo($userId, $badgeId);
     }
 
     /**
@@ -468,16 +468,16 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  int $badge_id Id of the badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  int $badgeId Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserBadgeWithHttpInfo($user_id, $badge_id)
+    public function deleteUserBadgeWithHttpInfo($userId, $badgeId)
     {
-        $request = $this->deleteUserBadgeRequest($user_id, $badge_id);
+        $request = $this->deleteUserBadgeRequest($userId, $badgeId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -529,15 +529,15 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  int $badge_id Id of the badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  int $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserBadgeAsync($user_id, $badge_id)
+    public function deleteUserBadgeAsync($userId, $badgeId)
     {
-        return $this->deleteUserBadgeAsyncWithHttpInfo($user_id, $badge_id)
+        return $this->deleteUserBadgeAsyncWithHttpInfo($userId, $badgeId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -550,16 +550,16 @@ class UserBadgesApi
      *
      * Destroy a users's badge
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  int $badge_id Id of the badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  int $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserBadgeAsyncWithHttpInfo($user_id, $badge_id)
+    public function deleteUserBadgeAsyncWithHttpInfo($userId, $badgeId)
     {
         $returnType = '';
-        $request = $this->deleteUserBadgeRequest($user_id, $badge_id);
+        $request = $this->deleteUserBadgeRequest($userId, $badgeId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -587,24 +587,24 @@ class UserBadgesApi
     /**
      * Create request for operation 'deleteUserBadge'
      *
-     * @param  int $user_id Id of the user (required)
-     * @param  int $badge_id Id of the badge (required)
+     * @param  int $userId Id of the user (required)
+     * @param  int $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteUserBadgeRequest($user_id, $badge_id)
+    protected function deleteUserBadgeRequest($userId, $badgeId)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling deleteUserBadge'
+                'Missing the required parameter $userId when calling deleteUserBadge'
             );
         }
-        // verify the required parameter 'badge_id' is set
-        if ($badge_id === null || (is_array($badge_id) && count($badge_id) === 0)) {
+        // verify the required parameter 'badgeId' is set
+        if ($badgeId === null || (is_array($badgeId) && count($badgeId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $badge_id when calling deleteUserBadge'
+                'Missing the required parameter $badgeId when calling deleteUserBadge'
             );
         }
 
@@ -618,18 +618,18 @@ class UserBadgesApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }
         // path params
-        if ($badge_id !== null) {
+        if ($badgeId !== null) {
             $resourcePath = str_replace(
                 '{' . 'badge_id' . '}',
-                ObjectSerializer::toPathValue($badge_id),
+                ObjectSerializer::toPathValue($badgeId),
                 $resourcePath
             );
         }
@@ -707,15 +707,15 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\BadgeListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserBadges($user_id)
+    public function listUserBadges($userId)
     {
-        list($response) = $this->listUserBadgesWithHttpInfo($user_id);
+        list($response) = $this->listUserBadgesWithHttpInfo($userId);
         return $response;
     }
 
@@ -724,15 +724,15 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\BadgeListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserBadgesWithHttpInfo($user_id)
+    public function listUserBadgesWithHttpInfo($userId)
     {
-        $request = $this->listUserBadgesRequest($user_id);
+        $request = $this->listUserBadgesRequest($userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -852,14 +852,14 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserBadgesAsync($user_id)
+    public function listUserBadgesAsync($userId)
     {
-        return $this->listUserBadgesAsyncWithHttpInfo($user_id)
+        return $this->listUserBadgesAsyncWithHttpInfo($userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -872,15 +872,15 @@ class UserBadgesApi
      *
      * Fetch all the badges a user has
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserBadgesAsyncWithHttpInfo($user_id)
+    public function listUserBadgesAsyncWithHttpInfo($userId)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\BadgeListResponse';
-        $request = $this->listUserBadgesRequest($user_id);
+        $request = $this->listUserBadgesRequest($userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -919,17 +919,17 @@ class UserBadgesApi
     /**
      * Create request for operation 'listUserBadges'
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserBadgesRequest($user_id)
+    protected function listUserBadgesRequest($userId)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling listUserBadges'
+                'Missing the required parameter $userId when calling listUserBadges'
             );
         }
 
@@ -943,10 +943,10 @@ class UserBadgesApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }

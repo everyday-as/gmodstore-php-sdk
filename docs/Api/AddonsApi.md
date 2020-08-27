@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## getAddon
 
-> \Everyday\GmodStore\Sdk\Model\AddonResponse getAddon($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonResponse getAddon($addonId, $with)
 
 Fetch a single addon
 
@@ -32,11 +32,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
+$addonId = 56; // int | Id of the addon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `Addon`
 
 try {
-    $result = $apiInstance->getAddon($addon_id, $with);
+    $result = $apiInstance->getAddon($addonId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonsApi->getAddon: ', $e->getMessage(), PHP_EOL;
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
+ **addonId** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional]
 
 ### Return type

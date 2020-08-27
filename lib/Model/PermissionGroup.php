@@ -59,7 +59,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'int',
         'title' => 'string',
-        'display_order' => 'int'
+        'displayOrder' => 'int'
     ];
 
     /**
@@ -70,7 +70,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'title' => null,
-        'display_order' => null
+        'displayOrder' => null
     ];
 
     /**
@@ -102,7 +102,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'title' => 'title',
-        'display_order' => 'display_order'
+        'displayOrder' => 'display_order'
     ];
 
     /**
@@ -113,7 +113,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'title' => 'setTitle',
-        'display_order' => 'setDisplayOrder'
+        'displayOrder' => 'setDisplayOrder'
     ];
 
     /**
@@ -124,7 +124,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'title' => 'getTitle',
-        'display_order' => 'getDisplayOrder'
+        'displayOrder' => 'getDisplayOrder'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['display_order'] = isset($data['display_order']) ? $data['display_order'] : null;
+        $this->container['displayOrder'] = isset($data['displayOrder']) ? $data['displayOrder'] : null;
     }
 
     /**
@@ -265,25 +265,25 @@ class PermissionGroup implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets display_order
+     * Gets displayOrder
      *
      * @return int|null
      */
     public function getDisplayOrder()
     {
-        return $this->container['display_order'];
+        return $this->container['displayOrder'];
     }
 
     /**
-     * Sets display_order
+     * Sets displayOrder
      *
-     * @param int|null $display_order display_order
+     * @param int|null $displayOrder displayOrder
      *
      * @return $this
      */
-    public function setDisplayOrder($display_order)
+    public function setDisplayOrder($displayOrder)
     {
-        $this->container['display_order'] = $display_order;
+        $this->container['displayOrder'] = $displayOrder;
 
         return $this;
     }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## listUserBans
 
-> \Everyday\GmodStore\Sdk\Model\UserBanListResponse listUserBans($user_id)
+> \Everyday\GmodStore\Sdk\Model\UserBanListResponse listUserBans($userId)
 
 Fetch all active bans associated with this user
 
@@ -31,10 +31,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBansApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
+$userId = 56; // int | Id of the user
 
 try {
-    $result = $apiInstance->listUserBans($user_id);
+    $result = $apiInstance->listUserBans($userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBansApi->listUserBans: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
+ **userId** | **int**| Id of the user |
 
 ### Return type
 

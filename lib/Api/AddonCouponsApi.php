@@ -120,17 +120,17 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function createAddonCoupon($addon_id, $addon_coupon, $with = null)
+    public function createAddonCoupon($addonId, $addonCoupon, $with = null)
     {
-        list($response) = $this->createAddonCouponWithHttpInfo($addon_id, $addon_coupon, $with);
+        list($response) = $this->createAddonCouponWithHttpInfo($addonId, $addonCoupon, $with);
         return $response;
     }
 
@@ -139,17 +139,17 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAddonCouponWithHttpInfo($addon_id, $addon_coupon, $with = null)
+    public function createAddonCouponWithHttpInfo($addonId, $addonCoupon, $with = null)
     {
-        $request = $this->createAddonCouponRequest($addon_id, $addon_coupon, $with);
+        $request = $this->createAddonCouponRequest($addonId, $addonCoupon, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -269,16 +269,16 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAddonCouponAsync($addon_id, $addon_coupon, $with = null)
+    public function createAddonCouponAsync($addonId, $addonCoupon, $with = null)
     {
-        return $this->createAddonCouponAsyncWithHttpInfo($addon_id, $addon_coupon, $with)
+        return $this->createAddonCouponAsyncWithHttpInfo($addonId, $addonCoupon, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -291,17 +291,17 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAddonCouponAsyncWithHttpInfo($addon_id, $addon_coupon, $with = null)
+    public function createAddonCouponAsyncWithHttpInfo($addonId, $addonCoupon, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
-        $request = $this->createAddonCouponRequest($addon_id, $addon_coupon, $with);
+        $request = $this->createAddonCouponRequest($addonId, $addonCoupon, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -340,25 +340,25 @@ class AddonCouponsApi
     /**
      * Create request for operation 'createAddonCoupon'
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createAddonCouponRequest($addon_id, $addon_coupon, $with = null)
+    protected function createAddonCouponRequest($addonId, $addonCoupon, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling createAddonCoupon'
+                'Missing the required parameter $addonId when calling createAddonCoupon'
             );
         }
-        // verify the required parameter 'addon_coupon' is set
-        if ($addon_coupon === null || (is_array($addon_coupon) && count($addon_coupon) === 0)) {
+        // verify the required parameter 'addonCoupon' is set
+        if ($addonCoupon === null || (is_array($addonCoupon) && count($addonCoupon) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_coupon when calling createAddonCoupon'
+                'Missing the required parameter $addonCoupon when calling createAddonCoupon'
             );
         }
 
@@ -379,18 +379,18 @@ class AddonCouponsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
 
         // body params
         $_tempBody = null;
-        if (isset($addon_coupon)) {
-            $_tempBody = $addon_coupon;
+        if (isset($addonCoupon)) {
+            $_tempBody = $addonCoupon;
         }
 
         if ($multipart) {
@@ -463,16 +463,16 @@ class AddonCouponsApi
      *
      * Destroy an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteAddonCoupon($addon_id, $coupon_id)
+    public function deleteAddonCoupon($addonId, $couponId)
     {
-        $this->deleteAddonCouponWithHttpInfo($addon_id, $coupon_id);
+        $this->deleteAddonCouponWithHttpInfo($addonId, $couponId);
     }
 
     /**
@@ -480,16 +480,16 @@ class AddonCouponsApi
      *
      * Destroy an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteAddonCouponWithHttpInfo($addon_id, $coupon_id)
+    public function deleteAddonCouponWithHttpInfo($addonId, $couponId)
     {
-        $request = $this->deleteAddonCouponRequest($addon_id, $coupon_id);
+        $request = $this->deleteAddonCouponRequest($addonId, $couponId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -549,15 +549,15 @@ class AddonCouponsApi
      *
      * Destroy an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAddonCouponAsync($addon_id, $coupon_id)
+    public function deleteAddonCouponAsync($addonId, $couponId)
     {
-        return $this->deleteAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id)
+        return $this->deleteAddonCouponAsyncWithHttpInfo($addonId, $couponId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -570,16 +570,16 @@ class AddonCouponsApi
      *
      * Destroy an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id)
+    public function deleteAddonCouponAsyncWithHttpInfo($addonId, $couponId)
     {
         $returnType = '';
-        $request = $this->deleteAddonCouponRequest($addon_id, $coupon_id);
+        $request = $this->deleteAddonCouponRequest($addonId, $couponId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -607,24 +607,24 @@ class AddonCouponsApi
     /**
      * Create request for operation 'deleteAddonCoupon'
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteAddonCouponRequest($addon_id, $coupon_id)
+    protected function deleteAddonCouponRequest($addonId, $couponId)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling deleteAddonCoupon'
+                'Missing the required parameter $addonId when calling deleteAddonCoupon'
             );
         }
-        // verify the required parameter 'coupon_id' is set
-        if ($coupon_id === null || (is_array($coupon_id) && count($coupon_id) === 0)) {
+        // verify the required parameter 'couponId' is set
+        if ($couponId === null || (is_array($couponId) && count($couponId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_id when calling deleteAddonCoupon'
+                'Missing the required parameter $couponId when calling deleteAddonCoupon'
             );
         }
 
@@ -638,18 +638,18 @@ class AddonCouponsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_id !== null) {
+        if ($couponId !== null) {
             $resourcePath = str_replace(
                 '{' . 'coupon_id' . '}',
-                ObjectSerializer::toPathValue($coupon_id),
+                ObjectSerializer::toPathValue($couponId),
                 $resourcePath
             );
         }
@@ -727,17 +727,17 @@ class AddonCouponsApi
      *
      * Fetch an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getAddonCoupon($addon_id, $coupon_id, $with = null)
+    public function getAddonCoupon($addonId, $couponId, $with = null)
     {
-        list($response) = $this->getAddonCouponWithHttpInfo($addon_id, $coupon_id, $with);
+        list($response) = $this->getAddonCouponWithHttpInfo($addonId, $couponId, $with);
         return $response;
     }
 
@@ -746,17 +746,17 @@ class AddonCouponsApi
      *
      * Fetch an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddonCouponWithHttpInfo($addon_id, $coupon_id, $with = null)
+    public function getAddonCouponWithHttpInfo($addonId, $couponId, $with = null)
     {
-        $request = $this->getAddonCouponRequest($addon_id, $coupon_id, $with);
+        $request = $this->getAddonCouponRequest($addonId, $couponId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -876,16 +876,16 @@ class AddonCouponsApi
      *
      * Fetch an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonCouponAsync($addon_id, $coupon_id, $with = null)
+    public function getAddonCouponAsync($addonId, $couponId, $with = null)
     {
-        return $this->getAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id, $with)
+        return $this->getAddonCouponAsyncWithHttpInfo($addonId, $couponId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -898,17 +898,17 @@ class AddonCouponsApi
      *
      * Fetch an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id, $with = null)
+    public function getAddonCouponAsyncWithHttpInfo($addonId, $couponId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
-        $request = $this->getAddonCouponRequest($addon_id, $coupon_id, $with);
+        $request = $this->getAddonCouponRequest($addonId, $couponId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -947,25 +947,25 @@ class AddonCouponsApi
     /**
      * Create request for operation 'getAddonCoupon'
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAddonCouponRequest($addon_id, $coupon_id, $with = null)
+    protected function getAddonCouponRequest($addonId, $couponId, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling getAddonCoupon'
+                'Missing the required parameter $addonId when calling getAddonCoupon'
             );
         }
-        // verify the required parameter 'coupon_id' is set
-        if ($coupon_id === null || (is_array($coupon_id) && count($coupon_id) === 0)) {
+        // verify the required parameter 'couponId' is set
+        if ($couponId === null || (is_array($couponId) && count($couponId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_id when calling getAddonCoupon'
+                'Missing the required parameter $couponId when calling getAddonCoupon'
             );
         }
 
@@ -986,18 +986,18 @@ class AddonCouponsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_id !== null) {
+        if ($couponId !== null) {
             $resourcePath = str_replace(
                 '{' . 'coupon_id' . '}',
-                ObjectSerializer::toPathValue($coupon_id),
+                ObjectSerializer::toPathValue($couponId),
                 $resourcePath
             );
         }
@@ -1075,16 +1075,16 @@ class AddonCouponsApi
      *
      * Fetch all the coupons for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listAddonCoupons($addon_id, $with = null)
+    public function listAddonCoupons($addonId, $with = null)
     {
-        list($response) = $this->listAddonCouponsWithHttpInfo($addon_id, $with);
+        list($response) = $this->listAddonCouponsWithHttpInfo($addonId, $with);
         return $response;
     }
 
@@ -1093,16 +1093,16 @@ class AddonCouponsApi
      *
      * Fetch all the coupons for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAddonCouponsWithHttpInfo($addon_id, $with = null)
+    public function listAddonCouponsWithHttpInfo($addonId, $with = null)
     {
-        $request = $this->listAddonCouponsRequest($addon_id, $with);
+        $request = $this->listAddonCouponsRequest($addonId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1222,15 +1222,15 @@ class AddonCouponsApi
      *
      * Fetch all the coupons for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAddonCouponsAsync($addon_id, $with = null)
+    public function listAddonCouponsAsync($addonId, $with = null)
     {
-        return $this->listAddonCouponsAsyncWithHttpInfo($addon_id, $with)
+        return $this->listAddonCouponsAsyncWithHttpInfo($addonId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1243,16 +1243,16 @@ class AddonCouponsApi
      *
      * Fetch all the coupons for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAddonCouponsAsyncWithHttpInfo($addon_id, $with = null)
+    public function listAddonCouponsAsyncWithHttpInfo($addonId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponListResponse';
-        $request = $this->listAddonCouponsRequest($addon_id, $with);
+        $request = $this->listAddonCouponsRequest($addonId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1291,18 +1291,18 @@ class AddonCouponsApi
     /**
      * Create request for operation 'listAddonCoupons'
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAddonCouponsRequest($addon_id, $with = null)
+    protected function listAddonCouponsRequest($addonId, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling listAddonCoupons'
+                'Missing the required parameter $addonId when calling listAddonCoupons'
             );
         }
 
@@ -1323,10 +1323,10 @@ class AddonCouponsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
@@ -1404,18 +1404,18 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function updateAddonCoupon($addon_id, $coupon_id, $addon_coupon, $with = null)
+    public function updateAddonCoupon($addonId, $couponId, $addonCoupon, $with = null)
     {
-        list($response) = $this->updateAddonCouponWithHttpInfo($addon_id, $coupon_id, $addon_coupon, $with);
+        list($response) = $this->updateAddonCouponWithHttpInfo($addonId, $couponId, $addonCoupon, $with);
         return $response;
     }
 
@@ -1424,18 +1424,18 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAddonCouponWithHttpInfo($addon_id, $coupon_id, $addon_coupon, $with = null)
+    public function updateAddonCouponWithHttpInfo($addonId, $couponId, $addonCoupon, $with = null)
     {
-        $request = $this->updateAddonCouponRequest($addon_id, $coupon_id, $addon_coupon, $with);
+        $request = $this->updateAddonCouponRequest($addonId, $couponId, $addonCoupon, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1555,17 +1555,17 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAddonCouponAsync($addon_id, $coupon_id, $addon_coupon, $with = null)
+    public function updateAddonCouponAsync($addonId, $couponId, $addonCoupon, $with = null)
     {
-        return $this->updateAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id, $addon_coupon, $with)
+        return $this->updateAddonCouponAsyncWithHttpInfo($addonId, $couponId, $addonCoupon, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1578,18 +1578,18 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id, $addon_coupon, $with = null)
+    public function updateAddonCouponAsyncWithHttpInfo($addonId, $couponId, $addonCoupon, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
-        $request = $this->updateAddonCouponRequest($addon_id, $coupon_id, $addon_coupon, $with);
+        $request = $this->updateAddonCouponRequest($addonId, $couponId, $addonCoupon, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1628,32 +1628,32 @@ class AddonCouponsApi
     /**
      * Create request for operation 'updateAddonCoupon'
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $coupon_id Id of the coupon (required)
-     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addon_coupon (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $couponId Id of the coupon (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\AddonCoupon $addonCoupon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonCoupon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateAddonCouponRequest($addon_id, $coupon_id, $addon_coupon, $with = null)
+    protected function updateAddonCouponRequest($addonId, $couponId, $addonCoupon, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling updateAddonCoupon'
+                'Missing the required parameter $addonId when calling updateAddonCoupon'
             );
         }
-        // verify the required parameter 'coupon_id' is set
-        if ($coupon_id === null || (is_array($coupon_id) && count($coupon_id) === 0)) {
+        // verify the required parameter 'couponId' is set
+        if ($couponId === null || (is_array($couponId) && count($couponId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $coupon_id when calling updateAddonCoupon'
+                'Missing the required parameter $couponId when calling updateAddonCoupon'
             );
         }
-        // verify the required parameter 'addon_coupon' is set
-        if ($addon_coupon === null || (is_array($addon_coupon) && count($addon_coupon) === 0)) {
+        // verify the required parameter 'addonCoupon' is set
+        if ($addonCoupon === null || (is_array($addonCoupon) && count($addonCoupon) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_coupon when calling updateAddonCoupon'
+                'Missing the required parameter $addonCoupon when calling updateAddonCoupon'
             );
         }
 
@@ -1674,26 +1674,26 @@ class AddonCouponsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
         // path params
-        if ($coupon_id !== null) {
+        if ($couponId !== null) {
             $resourcePath = str_replace(
                 '{' . 'coupon_id' . '}',
-                ObjectSerializer::toPathValue($coupon_id),
+                ObjectSerializer::toPathValue($couponId),
                 $resourcePath
             );
         }
 
         // body params
         $_tempBody = null;
-        if (isset($addon_coupon)) {
-            $_tempBody = $addon_coupon;
+        if (isset($addonCoupon)) {
+            $_tempBody = $addonCoupon;
         }
 
         if ($multipart) {

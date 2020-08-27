@@ -120,16 +120,16 @@ class UserPurchasesApi
      *
      * Fetch all purchases a user has made
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserPurchases($user_id, $with = null)
+    public function listUserPurchases($userId, $with = null)
     {
-        list($response) = $this->listUserPurchasesWithHttpInfo($user_id, $with);
+        list($response) = $this->listUserPurchasesWithHttpInfo($userId, $with);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class UserPurchasesApi
      *
      * Fetch all purchases a user has made
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserPurchasesWithHttpInfo($user_id, $with = null)
+    public function listUserPurchasesWithHttpInfo($userId, $with = null)
     {
-        $request = $this->listUserPurchasesRequest($user_id, $with);
+        $request = $this->listUserPurchasesRequest($userId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class UserPurchasesApi
      *
      * Fetch all purchases a user has made
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserPurchasesAsync($user_id, $with = null)
+    public function listUserPurchasesAsync($userId, $with = null)
     {
-        return $this->listUserPurchasesAsyncWithHttpInfo($user_id, $with)
+        return $this->listUserPurchasesAsyncWithHttpInfo($userId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class UserPurchasesApi
      *
      * Fetch all purchases a user has made
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserPurchasesAsyncWithHttpInfo($user_id, $with = null)
+    public function listUserPurchasesAsyncWithHttpInfo($userId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse';
-        $request = $this->listUserPurchasesRequest($user_id, $with);
+        $request = $this->listUserPurchasesRequest($userId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,18 +336,18 @@ class UserPurchasesApi
     /**
      * Create request for operation 'listUserPurchases'
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonPurchase&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserPurchasesRequest($user_id, $with = null)
+    protected function listUserPurchasesRequest($userId, $with = null)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling listUserPurchases'
+                'Missing the required parameter $userId when calling listUserPurchases'
             );
         }
 
@@ -368,10 +368,10 @@ class UserPurchasesApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }

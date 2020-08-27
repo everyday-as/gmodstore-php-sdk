@@ -57,9 +57,9 @@ class UserBan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'user_id' => 'int',
+        'userId' => 'int',
         'reason' => 'string',
-        'unban_reason' => 'string',
+        'unbanReason' => 'string',
         'properties' => 'string[]',
         'start' => '\DateTime',
         'end' => '\DateTime'
@@ -71,9 +71,9 @@ class UserBan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'user_id' => 'int64',
+        'userId' => 'int64',
         'reason' => null,
-        'unban_reason' => null,
+        'unbanReason' => null,
         'properties' => null,
         'start' => 'date-time',
         'end' => 'date-time'
@@ -106,9 +106,9 @@ class UserBan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'user_id',
+        'userId' => 'user_id',
         'reason' => 'reason',
-        'unban_reason' => 'unban_reason',
+        'unbanReason' => 'unban_reason',
         'properties' => 'properties',
         'start' => 'start',
         'end' => 'end'
@@ -120,9 +120,9 @@ class UserBan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'userId' => 'setUserId',
         'reason' => 'setReason',
-        'unban_reason' => 'setUnbanReason',
+        'unbanReason' => 'setUnbanReason',
         'properties' => 'setProperties',
         'start' => 'setStart',
         'end' => 'setEnd'
@@ -134,9 +134,9 @@ class UserBan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'userId' => 'getUserId',
         'reason' => 'getReason',
-        'unban_reason' => 'getUnbanReason',
+        'unbanReason' => 'getUnbanReason',
         'properties' => 'getProperties',
         'start' => 'getStart',
         'end' => 'getEnd'
@@ -235,9 +235,9 @@ class UserBan implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userId'] = isset($data['userId']) ? $data['userId'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['unban_reason'] = isset($data['unban_reason']) ? $data['unban_reason'] : null;
+        $this->container['unbanReason'] = isset($data['unbanReason']) ? $data['unbanReason'] : null;
         $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
         $this->container['start'] = isset($data['start']) ? $data['start'] : null;
         $this->container['end'] = isset($data['end']) ? $data['end'] : null;
@@ -268,25 +268,25 @@ class UserBan implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userId
      *
      * @return int|null
      */
     public function getUserId()
     {
-        return $this->container['user_id'];
+        return $this->container['userId'];
     }
 
     /**
-     * Sets user_id
+     * Sets userId
      *
-     * @param int|null $user_id user_id
+     * @param int|null $userId userId
      *
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserId($userId)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userId'] = $userId;
 
         return $this;
     }
@@ -316,25 +316,25 @@ class UserBan implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets unban_reason
+     * Gets unbanReason
      *
      * @return string|null
      */
     public function getUnbanReason()
     {
-        return $this->container['unban_reason'];
+        return $this->container['unbanReason'];
     }
 
     /**
-     * Sets unban_reason
+     * Sets unbanReason
      *
-     * @param string|null $unban_reason unban_reason
+     * @param string|null $unbanReason unbanReason
      *
      * @return $this
      */
-    public function setUnbanReason($unban_reason)
+    public function setUnbanReason($unbanReason)
     {
-        $this->container['unban_reason'] = $unban_reason;
+        $this->container['unbanReason'] = $unbanReason;
 
         return $this;
     }

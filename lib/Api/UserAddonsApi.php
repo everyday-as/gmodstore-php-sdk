@@ -120,16 +120,16 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserAddons($user_id, $with = null)
+    public function listUserAddons($userId, $with = null)
     {
-        list($response) = $this->listUserAddonsWithHttpInfo($user_id, $with);
+        list($response) = $this->listUserAddonsWithHttpInfo($userId, $with);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserAddonsWithHttpInfo($user_id, $with = null)
+    public function listUserAddonsWithHttpInfo($userId, $with = null)
     {
-        $request = $this->listUserAddonsRequest($user_id, $with);
+        $request = $this->listUserAddonsRequest($userId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserAddonsAsync($user_id, $with = null)
+    public function listUserAddonsAsync($userId, $with = null)
     {
-        return $this->listUserAddonsAsyncWithHttpInfo($user_id, $with)
+        return $this->listUserAddonsAsyncWithHttpInfo($userId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class UserAddonsApi
      *
      * Fetch all the addons authored / co-authored by a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserAddonsAsyncWithHttpInfo($user_id, $with = null)
+    public function listUserAddonsAsyncWithHttpInfo($userId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
-        $request = $this->listUserAddonsRequest($user_id, $with);
+        $request = $this->listUserAddonsRequest($userId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,18 +336,18 @@ class UserAddonsApi
     /**
      * Create request for operation 'listUserAddons'
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserAddonsRequest($user_id, $with = null)
+    protected function listUserAddonsRequest($userId, $with = null)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling listUserAddons'
+                'Missing the required parameter $userId when calling listUserAddons'
             );
         }
 
@@ -368,10 +368,10 @@ class UserAddonsApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }

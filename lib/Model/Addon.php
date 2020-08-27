@@ -60,16 +60,16 @@ class Addon implements ModelInterface, ArrayAccess
         'id' => 'int',
         'active' => 'bool',
         'name' => 'string',
-        'short_description' => 'string',
+        'shortDescription' => 'string',
         'description' => 'string',
         'requirements' => 'string[]',
         'price' => '\Everyday\GmodStore\Sdk\Model\AddonPrice',
         'images' => '\Everyday\GmodStore\Sdk\Model\AddonImages',
         'slug' => 'string',
         'route' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'latest_version' => '\Everyday\GmodStore\Sdk\Model\AddonVersion',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'latestVersion' => '\Everyday\GmodStore\Sdk\Model\AddonVersion',
         'team' => '\Everyday\GmodStore\Sdk\Model\Team'
     ];
 
@@ -82,16 +82,16 @@ class Addon implements ModelInterface, ArrayAccess
         'id' => null,
         'active' => null,
         'name' => null,
-        'short_description' => null,
+        'shortDescription' => null,
         'description' => null,
         'requirements' => null,
         'price' => null,
         'images' => null,
         'slug' => null,
         'route' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'latest_version' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'latestVersion' => null,
         'team' => null
     ];
 
@@ -125,16 +125,16 @@ class Addon implements ModelInterface, ArrayAccess
         'id' => 'id',
         'active' => 'active',
         'name' => 'name',
-        'short_description' => 'short_description',
+        'shortDescription' => 'short_description',
         'description' => 'description',
         'requirements' => 'requirements',
         'price' => 'price',
         'images' => 'images',
         'slug' => 'slug',
         'route' => 'route',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
-        'latest_version' => 'latest_version',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'latestVersion' => 'latest_version',
         'team' => 'team'
     ];
 
@@ -147,16 +147,16 @@ class Addon implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'active' => 'setActive',
         'name' => 'setName',
-        'short_description' => 'setShortDescription',
+        'shortDescription' => 'setShortDescription',
         'description' => 'setDescription',
         'requirements' => 'setRequirements',
         'price' => 'setPrice',
         'images' => 'setImages',
         'slug' => 'setSlug',
         'route' => 'setRoute',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
-        'latest_version' => 'setLatestVersion',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'latestVersion' => 'setLatestVersion',
         'team' => 'setTeam'
     ];
 
@@ -169,16 +169,16 @@ class Addon implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'active' => 'getActive',
         'name' => 'getName',
-        'short_description' => 'getShortDescription',
+        'shortDescription' => 'getShortDescription',
         'description' => 'getDescription',
         'requirements' => 'getRequirements',
         'price' => 'getPrice',
         'images' => 'getImages',
         'slug' => 'getSlug',
         'route' => 'getRoute',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
-        'latest_version' => 'getLatestVersion',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'latestVersion' => 'getLatestVersion',
         'team' => 'getTeam'
     ];
 
@@ -245,16 +245,16 @@ class Addon implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['short_description'] = isset($data['short_description']) ? $data['short_description'] : null;
+        $this->container['shortDescription'] = isset($data['shortDescription']) ? $data['shortDescription'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['requirements'] = isset($data['requirements']) ? $data['requirements'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['images'] = isset($data['images']) ? $data['images'] : null;
         $this->container['slug'] = isset($data['slug']) ? $data['slug'] : null;
         $this->container['route'] = isset($data['route']) ? $data['route'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['latest_version'] = isset($data['latest_version']) ? $data['latest_version'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['latestVersion'] = isset($data['latestVersion']) ? $data['latestVersion'] : null;
         $this->container['team'] = isset($data['team']) ? $data['team'] : null;
     }
 
@@ -355,25 +355,25 @@ class Addon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets short_description
+     * Gets shortDescription
      *
      * @return string|null
      */
     public function getShortDescription()
     {
-        return $this->container['short_description'];
+        return $this->container['shortDescription'];
     }
 
     /**
-     * Sets short_description
+     * Sets shortDescription
      *
-     * @param string|null $short_description short_description
+     * @param string|null $shortDescription shortDescription
      *
      * @return $this
      */
-    public function setShortDescription($short_description)
+    public function setShortDescription($shortDescription)
     {
-        $this->container['short_description'] = $short_description;
+        $this->container['shortDescription'] = $shortDescription;
 
         return $this;
     }
@@ -523,73 +523,73 @@ class Addon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at created_at
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at updated_at
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets latest_version
+     * Gets latestVersion
      *
      * @return \Everyday\GmodStore\Sdk\Model\AddonVersion|null
      */
     public function getLatestVersion()
     {
-        return $this->container['latest_version'];
+        return $this->container['latestVersion'];
     }
 
     /**
-     * Sets latest_version
+     * Sets latestVersion
      *
-     * @param \Everyday\GmodStore\Sdk\Model\AddonVersion|null $latest_version latest_version
+     * @param \Everyday\GmodStore\Sdk\Model\AddonVersion|null $latestVersion latestVersion
      *
      * @return $this
      */
-    public function setLatestVersion($latest_version)
+    public function setLatestVersion($latestVersion)
     {
-        $this->container['latest_version'] = $latest_version;
+        $this->container['latestVersion'] = $latestVersion;
 
         return $this;
     }

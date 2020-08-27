@@ -58,10 +58,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'revoked' => 'bool',
-        'created_at' => '\DateTime',
-        'updated_at' => 'int',
+        'createdAt' => '\DateTime',
+        'updatedAt' => 'int',
         'addon' => '\Everyday\GmodStore\Sdk\Model\Addon',
-        'order_item' => '\Everyday\GmodStore\Sdk\Model\OrderItem',
+        'orderItem' => '\Everyday\GmodStore\Sdk\Model\OrderItem',
         'user' => '\Everyday\GmodStore\Sdk\Model\User'
     ];
 
@@ -72,10 +72,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'revoked' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'addon' => null,
-        'order_item' => null,
+        'orderItem' => null,
         'user' => null
     ];
 
@@ -107,10 +107,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'revoked' => 'revoked',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'addon' => 'addon',
-        'order_item' => 'order_item',
+        'orderItem' => 'order_item',
         'user' => 'user'
     ];
 
@@ -121,10 +121,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'revoked' => 'setRevoked',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'addon' => 'setAddon',
-        'order_item' => 'setOrderItem',
+        'orderItem' => 'setOrderItem',
         'user' => 'setUser'
     ];
 
@@ -135,10 +135,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'revoked' => 'getRevoked',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'addon' => 'getAddon',
-        'order_item' => 'getOrderItem',
+        'orderItem' => 'getOrderItem',
         'user' => 'getUser'
     ];
 
@@ -203,10 +203,10 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['revoked'] = isset($data['revoked']) ? $data['revoked'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
         $this->container['addon'] = isset($data['addon']) ? $data['addon'] : null;
-        $this->container['order_item'] = isset($data['order_item']) ? $data['order_item'] : null;
+        $this->container['orderItem'] = isset($data['orderItem']) ? $data['orderItem'] : null;
         $this->container['user'] = isset($data['user']) ? $data['user'] : null;
     }
 
@@ -262,49 +262,49 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at created_at
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return int|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param int|null $updated_at updated_at
+     * @param int|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -334,25 +334,25 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets order_item
+     * Gets orderItem
      *
      * @return \Everyday\GmodStore\Sdk\Model\OrderItem|null
      */
     public function getOrderItem()
     {
-        return $this->container['order_item'];
+        return $this->container['orderItem'];
     }
 
     /**
-     * Sets order_item
+     * Sets orderItem
      *
-     * @param \Everyday\GmodStore\Sdk\Model\OrderItem|null $order_item order_item
+     * @param \Everyday\GmodStore\Sdk\Model\OrderItem|null $orderItem orderItem
      *
      * @return $this
      */
-    public function setOrderItem($order_item)
+    public function setOrderItem($orderItem)
     {
-        $this->container['order_item'] = $order_item;
+        $this->container['orderItem'] = $orderItem;
 
         return $this;
     }

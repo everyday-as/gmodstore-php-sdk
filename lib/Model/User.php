@@ -60,11 +60,11 @@ class User implements ModelInterface, ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'avatar' => 'string',
-        'country_code' => 'string',
+        'countryCode' => 'string',
         'slug' => 'string',
         'reputation' => 'int',
-        'team_reputation' => 'int',
-        'ban_properties' => 'string[]',
+        'teamReputation' => 'int',
+        'banProperties' => 'string[]',
         'group' => '\Everyday\GmodStore\Sdk\Model\PermissionGroup'
     ];
 
@@ -77,11 +77,11 @@ class User implements ModelInterface, ArrayAccess
         'id' => 'int64',
         'name' => null,
         'avatar' => 'uri',
-        'country_code' => null,
+        'countryCode' => null,
         'slug' => null,
         'reputation' => 'int64',
-        'team_reputation' => 'int64',
-        'ban_properties' => null,
+        'teamReputation' => 'int64',
+        'banProperties' => null,
         'group' => null
     ];
 
@@ -115,11 +115,11 @@ class User implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'avatar' => 'avatar',
-        'country_code' => 'country_code',
+        'countryCode' => 'country_code',
         'slug' => 'slug',
         'reputation' => 'reputation',
-        'team_reputation' => 'team_reputation',
-        'ban_properties' => 'ban_properties',
+        'teamReputation' => 'team_reputation',
+        'banProperties' => 'ban_properties',
         'group' => 'group'
     ];
 
@@ -132,11 +132,11 @@ class User implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'avatar' => 'setAvatar',
-        'country_code' => 'setCountryCode',
+        'countryCode' => 'setCountryCode',
         'slug' => 'setSlug',
         'reputation' => 'setReputation',
-        'team_reputation' => 'setTeamReputation',
-        'ban_properties' => 'setBanProperties',
+        'teamReputation' => 'setTeamReputation',
+        'banProperties' => 'setBanProperties',
         'group' => 'setGroup'
     ];
 
@@ -149,11 +149,11 @@ class User implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'avatar' => 'getAvatar',
-        'country_code' => 'getCountryCode',
+        'countryCode' => 'getCountryCode',
         'slug' => 'getSlug',
         'reputation' => 'getReputation',
-        'team_reputation' => 'getTeamReputation',
-        'ban_properties' => 'getBanProperties',
+        'teamReputation' => 'getTeamReputation',
+        'banProperties' => 'getBanProperties',
         'group' => 'getGroup'
     ];
 
@@ -253,11 +253,11 @@ class User implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['avatar'] = isset($data['avatar']) ? $data['avatar'] : null;
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
         $this->container['slug'] = isset($data['slug']) ? $data['slug'] : null;
         $this->container['reputation'] = isset($data['reputation']) ? $data['reputation'] : null;
-        $this->container['team_reputation'] = isset($data['team_reputation']) ? $data['team_reputation'] : null;
-        $this->container['ban_properties'] = isset($data['ban_properties']) ? $data['ban_properties'] : null;
+        $this->container['teamReputation'] = isset($data['teamReputation']) ? $data['teamReputation'] : null;
+        $this->container['banProperties'] = isset($data['banProperties']) ? $data['banProperties'] : null;
         $this->container['group'] = isset($data['group']) ? $data['group'] : null;
     }
 
@@ -358,25 +358,25 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets country_code
+     * Gets countryCode
      *
      * @return string|null
      */
     public function getCountryCode()
     {
-        return $this->container['country_code'];
+        return $this->container['countryCode'];
     }
 
     /**
-     * Sets country_code
+     * Sets countryCode
      *
-     * @param string|null $country_code country_code
+     * @param string|null $countryCode countryCode
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
+    public function setCountryCode($countryCode)
     {
-        $this->container['country_code'] = $country_code;
+        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }
@@ -430,58 +430,58 @@ class User implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets team_reputation
+     * Gets teamReputation
      *
      * @return int|null
      */
     public function getTeamReputation()
     {
-        return $this->container['team_reputation'];
+        return $this->container['teamReputation'];
     }
 
     /**
-     * Sets team_reputation
+     * Sets teamReputation
      *
-     * @param int|null $team_reputation team_reputation
+     * @param int|null $teamReputation teamReputation
      *
      * @return $this
      */
-    public function setTeamReputation($team_reputation)
+    public function setTeamReputation($teamReputation)
     {
-        $this->container['team_reputation'] = $team_reputation;
+        $this->container['teamReputation'] = $teamReputation;
 
         return $this;
     }
 
     /**
-     * Gets ban_properties
+     * Gets banProperties
      *
      * @return string[]|null
      */
     public function getBanProperties()
     {
-        return $this->container['ban_properties'];
+        return $this->container['banProperties'];
     }
 
     /**
-     * Sets ban_properties
+     * Sets banProperties
      *
-     * @param string[]|null $ban_properties ban_properties
+     * @param string[]|null $banProperties banProperties
      *
      * @return $this
      */
-    public function setBanProperties($ban_properties)
+    public function setBanProperties($banProperties)
     {
         $allowedValues = $this->getBanPropertiesAllowableValues();
-        if (!is_null($ban_properties) && array_diff($ban_properties, $allowedValues)) {
+        if (!is_null($banProperties) && array_diff($banProperties, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'ban_properties', must be one of '%s'",
+                    "Invalid value for 'banProperties', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['ban_properties'] = $ban_properties;
+        $this->container['banProperties'] = $banProperties;
 
         return $this;
     }

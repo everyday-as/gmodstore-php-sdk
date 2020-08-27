@@ -57,7 +57,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'user_id' => 'int'
+        'userId' => 'int'
     ];
 
     /**
@@ -66,7 +66,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'user_id' => 'int64'
+        'userId' => 'int64'
     ];
 
     /**
@@ -96,7 +96,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'user_id'
+        'userId' => 'user_id'
     ];
 
     /**
@@ -105,7 +105,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId'
+        'userId' => 'setUserId'
     ];
 
     /**
@@ -114,7 +114,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId'
+        'userId' => 'getUserId'
     ];
 
     /**
@@ -177,7 +177,7 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['userId'] = isset($data['userId']) ? $data['userId'] : null;
     }
 
     /**
@@ -189,8 +189,8 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['user_id'] === null) {
-            $invalidProperties[] = "'user_id' can't be null";
+        if ($this->container['userId'] === null) {
+            $invalidProperties[] = "'userId' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +208,25 @@ class NewAddonPurchase implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets user_id
+     * Gets userId
      *
      * @return int
      */
     public function getUserId()
     {
-        return $this->container['user_id'];
+        return $this->container['userId'];
     }
 
     /**
-     * Sets user_id
+     * Sets userId
      *
-     * @param int $user_id user_id
+     * @param int $userId userId
      *
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setUserId($userId)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['userId'] = $userId;
 
         return $this;
     }

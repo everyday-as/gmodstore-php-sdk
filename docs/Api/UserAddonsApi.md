@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## listUserAddons
 
-> \Everyday\GmodStore\Sdk\Model\AddonListResponse listUserAddons($user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonListResponse listUserAddons($userId, $with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -31,11 +31,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserAddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
+$userId = 56; // int | Id of the user
 $with = array('with_example'); // string[] | The relations you want to fetch with the `Addon`
 
 try {
-    $result = $apiInstance->listUserAddons($user_id, $with);
+    $result = $apiInstance->listUserAddons($userId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserAddonsApi->listUserAddons: ', $e->getMessage(), PHP_EOL;
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
+ **userId** | **int**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;Addon&#x60; | [optional]
 
 ### Return type

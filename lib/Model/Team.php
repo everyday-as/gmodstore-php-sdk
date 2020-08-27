@@ -59,9 +59,9 @@ class Team implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'primary_author' => '\Everyday\GmodStore\Sdk\Model\TeamUser'
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'primaryAuthor' => '\Everyday\GmodStore\Sdk\Model\TeamUser'
     ];
 
     /**
@@ -72,9 +72,9 @@ class Team implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'primary_author' => null
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'primaryAuthor' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class Team implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
-        'primary_author' => 'primaryAuthor'
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'primaryAuthor' => 'primaryAuthor'
     ];
 
     /**
@@ -119,9 +119,9 @@ class Team implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
-        'primary_author' => 'setPrimaryAuthor'
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'primaryAuthor' => 'setPrimaryAuthor'
     ];
 
     /**
@@ -132,9 +132,9 @@ class Team implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
-        'primary_author' => 'getPrimaryAuthor'
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'primaryAuthor' => 'getPrimaryAuthor'
     ];
 
     /**
@@ -199,9 +199,9 @@ class Team implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['primary_author'] = isset($data['primary_author']) ? $data['primary_author'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['primaryAuthor'] = isset($data['primaryAuthor']) ? $data['primaryAuthor'] : null;
     }
 
     /**
@@ -277,73 +277,73 @@ class Team implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at created_at
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at updated_at
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets primary_author
+     * Gets primaryAuthor
      *
      * @return \Everyday\GmodStore\Sdk\Model\TeamUser|null
      */
     public function getPrimaryAuthor()
     {
-        return $this->container['primary_author'];
+        return $this->container['primaryAuthor'];
     }
 
     /**
-     * Sets primary_author
+     * Sets primaryAuthor
      *
-     * @param \Everyday\GmodStore\Sdk\Model\TeamUser|null $primary_author primary_author
+     * @param \Everyday\GmodStore\Sdk\Model\TeamUser|null $primaryAuthor primaryAuthor
      *
      * @return $this
      */
-    public function setPrimaryAuthor($primary_author)
+    public function setPrimaryAuthor($primaryAuthor)
     {
-        $this->container['primary_author'] = $primary_author;
+        $this->container['primaryAuthor'] = $primaryAuthor;
 
         return $this;
     }

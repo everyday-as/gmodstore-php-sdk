@@ -59,7 +59,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'bigspot' => 'string',
         'listing' => 'string',
-        'listing_small' => 'string'
+        'listingSmall' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'bigspot' => 'uri',
         'listing' => 'uri',
-        'listing_small' => 'uri'
+        'listingSmall' => 'uri'
     ];
 
     /**
@@ -102,7 +102,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'bigspot' => 'bigspot',
         'listing' => 'listing',
-        'listing_small' => 'listing_small'
+        'listingSmall' => 'listing_small'
     ];
 
     /**
@@ -113,7 +113,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     protected static $setters = [
         'bigspot' => 'setBigspot',
         'listing' => 'setListing',
-        'listing_small' => 'setListingSmall'
+        'listingSmall' => 'setListingSmall'
     ];
 
     /**
@@ -124,7 +124,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     protected static $getters = [
         'bigspot' => 'getBigspot',
         'listing' => 'getListing',
-        'listing_small' => 'getListingSmall'
+        'listingSmall' => 'getListingSmall'
     ];
 
     /**
@@ -189,7 +189,7 @@ class AddonImages implements ModelInterface, ArrayAccess
     {
         $this->container['bigspot'] = isset($data['bigspot']) ? $data['bigspot'] : null;
         $this->container['listing'] = isset($data['listing']) ? $data['listing'] : null;
-        $this->container['listing_small'] = isset($data['listing_small']) ? $data['listing_small'] : null;
+        $this->container['listingSmall'] = isset($data['listingSmall']) ? $data['listingSmall'] : null;
     }
 
     /**
@@ -265,25 +265,25 @@ class AddonImages implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets listing_small
+     * Gets listingSmall
      *
      * @return string|null
      */
     public function getListingSmall()
     {
-        return $this->container['listing_small'];
+        return $this->container['listingSmall'];
     }
 
     /**
-     * Sets listing_small
+     * Sets listingSmall
      *
-     * @param string|null $listing_small listing_small
+     * @param string|null $listingSmall listingSmall
      *
      * @return $this
      */
-    public function setListingSmall($listing_small)
+    public function setListingSmall($listingSmall)
     {
-        $this->container['listing_small'] = $listing_small;
+        $this->container['listingSmall'] = $listingSmall;
 
         return $this;
     }

@@ -120,16 +120,16 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\TeamListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserTeams($user_id, $with = null)
+    public function listUserTeams($userId, $with = null)
     {
-        list($response) = $this->listUserTeamsWithHttpInfo($user_id, $with);
+        list($response) = $this->listUserTeamsWithHttpInfo($userId, $with);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\TeamListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserTeamsWithHttpInfo($user_id, $with = null)
+    public function listUserTeamsWithHttpInfo($userId, $with = null)
     {
-        $request = $this->listUserTeamsRequest($user_id, $with);
+        $request = $this->listUserTeamsRequest($userId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserTeamsAsync($user_id, $with = null)
+    public function listUserTeamsAsync($userId, $with = null)
     {
-        return $this->listUserTeamsAsyncWithHttpInfo($user_id, $with)
+        return $this->listUserTeamsAsyncWithHttpInfo($userId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class UserTeamsApi
      *
      * Fetch all the teams of a user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserTeamsAsyncWithHttpInfo($user_id, $with = null)
+    public function listUserTeamsAsyncWithHttpInfo($userId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\TeamListResponse';
-        $request = $this->listUserTeamsRequest($user_id, $with);
+        $request = $this->listUserTeamsRequest($userId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,18 +336,18 @@ class UserTeamsApi
     /**
      * Create request for operation 'listUserTeams'
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserTeamsRequest($user_id, $with = null)
+    protected function listUserTeamsRequest($userId, $with = null)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling listUserTeams'
+                'Missing the required parameter $userId when calling listUserTeams'
             );
         }
 
@@ -368,10 +368,10 @@ class UserTeamsApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }

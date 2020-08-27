@@ -120,17 +120,17 @@ class AddonReviewsApi
      *
      * Fetch a review of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $review_id Id of the review (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $reviewId Id of the review (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonReviewResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getAddonReview($addon_id, $review_id, $with = null)
+    public function getAddonReview($addonId, $reviewId, $with = null)
     {
-        list($response) = $this->getAddonReviewWithHttpInfo($addon_id, $review_id, $with);
+        list($response) = $this->getAddonReviewWithHttpInfo($addonId, $reviewId, $with);
         return $response;
     }
 
@@ -139,17 +139,17 @@ class AddonReviewsApi
      *
      * Fetch a review of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $review_id Id of the review (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $reviewId Id of the review (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonReviewResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddonReviewWithHttpInfo($addon_id, $review_id, $with = null)
+    public function getAddonReviewWithHttpInfo($addonId, $reviewId, $with = null)
     {
-        $request = $this->getAddonReviewRequest($addon_id, $review_id, $with);
+        $request = $this->getAddonReviewRequest($addonId, $reviewId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -269,16 +269,16 @@ class AddonReviewsApi
      *
      * Fetch a review of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $review_id Id of the review (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $reviewId Id of the review (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonReviewAsync($addon_id, $review_id, $with = null)
+    public function getAddonReviewAsync($addonId, $reviewId, $with = null)
     {
-        return $this->getAddonReviewAsyncWithHttpInfo($addon_id, $review_id, $with)
+        return $this->getAddonReviewAsyncWithHttpInfo($addonId, $reviewId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -291,17 +291,17 @@ class AddonReviewsApi
      *
      * Fetch a review of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $review_id Id of the review (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $reviewId Id of the review (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonReviewAsyncWithHttpInfo($addon_id, $review_id, $with = null)
+    public function getAddonReviewAsyncWithHttpInfo($addonId, $reviewId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonReviewResponse';
-        $request = $this->getAddonReviewRequest($addon_id, $review_id, $with);
+        $request = $this->getAddonReviewRequest($addonId, $reviewId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -340,25 +340,25 @@ class AddonReviewsApi
     /**
      * Create request for operation 'getAddonReview'
      *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  int $review_id Id of the review (required)
+     * @param  int $addonId Id of the addon (required)
+     * @param  int $reviewId Id of the review (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAddonReviewRequest($addon_id, $review_id, $with = null)
+    protected function getAddonReviewRequest($addonId, $reviewId, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling getAddonReview'
+                'Missing the required parameter $addonId when calling getAddonReview'
             );
         }
-        // verify the required parameter 'review_id' is set
-        if ($review_id === null || (is_array($review_id) && count($review_id) === 0)) {
+        // verify the required parameter 'reviewId' is set
+        if ($reviewId === null || (is_array($reviewId) && count($reviewId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $review_id when calling getAddonReview'
+                'Missing the required parameter $reviewId when calling getAddonReview'
             );
         }
 
@@ -379,18 +379,18 @@ class AddonReviewsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }
         // path params
-        if ($review_id !== null) {
+        if ($reviewId !== null) {
             $resourcePath = str_replace(
                 '{' . 'review_id' . '}',
-                ObjectSerializer::toPathValue($review_id),
+                ObjectSerializer::toPathValue($reviewId),
                 $resourcePath
             );
         }
@@ -468,16 +468,16 @@ class AddonReviewsApi
      *
      * Fetch all the reviews of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listAddonReviews($addon_id, $with = null)
+    public function listAddonReviews($addonId, $with = null)
     {
-        list($response) = $this->listAddonReviewsWithHttpInfo($addon_id, $with);
+        list($response) = $this->listAddonReviewsWithHttpInfo($addonId, $with);
         return $response;
     }
 
@@ -486,16 +486,16 @@ class AddonReviewsApi
      *
      * Fetch all the reviews of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAddonReviewsWithHttpInfo($addon_id, $with = null)
+    public function listAddonReviewsWithHttpInfo($addonId, $with = null)
     {
-        $request = $this->listAddonReviewsRequest($addon_id, $with);
+        $request = $this->listAddonReviewsRequest($addonId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -615,15 +615,15 @@ class AddonReviewsApi
      *
      * Fetch all the reviews of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAddonReviewsAsync($addon_id, $with = null)
+    public function listAddonReviewsAsync($addonId, $with = null)
     {
-        return $this->listAddonReviewsAsyncWithHttpInfo($addon_id, $with)
+        return $this->listAddonReviewsAsyncWithHttpInfo($addonId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -636,16 +636,16 @@ class AddonReviewsApi
      *
      * Fetch all the reviews of an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAddonReviewsAsyncWithHttpInfo($addon_id, $with = null)
+    public function listAddonReviewsAsyncWithHttpInfo($addonId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonReviewListResponse';
-        $request = $this->listAddonReviewsRequest($addon_id, $with);
+        $request = $this->listAddonReviewsRequest($addonId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -684,18 +684,18 @@ class AddonReviewsApi
     /**
      * Create request for operation 'listAddonReviews'
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;AddonReview&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listAddonReviewsRequest($addon_id, $with = null)
+    protected function listAddonReviewsRequest($addonId, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling listAddonReviews'
+                'Missing the required parameter $addonId when calling listAddonReviews'
             );
         }
 
@@ -716,10 +716,10 @@ class AddonReviewsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }

@@ -60,10 +60,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'id' => 'int',
         'code' => 'string',
         'percent' => 'float',
-        'max_uses' => 'int',
-        'expires_at' => '\DateTime',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'maxUses' => 'int',
+        'expiresAt' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'addon' => '\Everyday\GmodStore\Sdk\Model\Addon'
     ];
 
@@ -76,10 +76,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'id' => null,
         'code' => null,
         'percent' => null,
-        'max_uses' => null,
-        'expires_at' => 'date-time',
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'maxUses' => null,
+        'expiresAt' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'addon' => null
     ];
 
@@ -113,10 +113,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'id' => 'id',
         'code' => 'code',
         'percent' => 'percent',
-        'max_uses' => 'max_uses',
-        'expires_at' => 'expires_at',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'maxUses' => 'max_uses',
+        'expiresAt' => 'expires_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'addon' => 'addon'
     ];
 
@@ -129,10 +129,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'code' => 'setCode',
         'percent' => 'setPercent',
-        'max_uses' => 'setMaxUses',
-        'expires_at' => 'setExpiresAt',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'maxUses' => 'setMaxUses',
+        'expiresAt' => 'setExpiresAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'addon' => 'setAddon'
     ];
 
@@ -145,10 +145,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'code' => 'getCode',
         'percent' => 'getPercent',
-        'max_uses' => 'getMaxUses',
-        'expires_at' => 'getExpiresAt',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'maxUses' => 'getMaxUses',
+        'expiresAt' => 'getExpiresAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'addon' => 'getAddon'
     ];
 
@@ -215,10 +215,10 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['percent'] = isset($data['percent']) ? $data['percent'] : null;
-        $this->container['max_uses'] = isset($data['max_uses']) ? $data['max_uses'] : null;
-        $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['maxUses'] = isset($data['maxUses']) ? $data['maxUses'] : null;
+        $this->container['expiresAt'] = isset($data['expiresAt']) ? $data['expiresAt'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
         $this->container['addon'] = isset($data['addon']) ? $data['addon'] : null;
     }
 
@@ -252,15 +252,15 @@ class AddonCoupon implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'percent', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['max_uses'] === null) {
-            $invalidProperties[] = "'max_uses' can't be null";
+        if ($this->container['maxUses'] === null) {
+            $invalidProperties[] = "'maxUses' can't be null";
         }
-        if (($this->container['max_uses'] < 1)) {
-            $invalidProperties[] = "invalid value for 'max_uses', must be bigger than or equal to 1.";
+        if (($this->container['maxUses'] < 1)) {
+            $invalidProperties[] = "invalid value for 'maxUses', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['expires_at'] === null) {
-            $invalidProperties[] = "'expires_at' can't be null";
+        if ($this->container['expiresAt'] === null) {
+            $invalidProperties[] = "'expiresAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -363,102 +363,102 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets max_uses
+     * Gets maxUses
      *
      * @return int
      */
     public function getMaxUses()
     {
-        return $this->container['max_uses'];
+        return $this->container['maxUses'];
     }
 
     /**
-     * Sets max_uses
+     * Sets maxUses
      *
-     * @param int $max_uses max_uses
+     * @param int $maxUses maxUses
      *
      * @return $this
      */
-    public function setMaxUses($max_uses)
+    public function setMaxUses($maxUses)
     {
 
-        if (($max_uses < 1)) {
-            throw new \InvalidArgumentException('invalid value for $max_uses when calling AddonCoupon., must be bigger than or equal to 1.');
+        if (($maxUses < 1)) {
+            throw new \InvalidArgumentException('invalid value for $maxUses when calling AddonCoupon., must be bigger than or equal to 1.');
         }
 
-        $this->container['max_uses'] = $max_uses;
+        $this->container['maxUses'] = $maxUses;
 
         return $this;
     }
 
     /**
-     * Gets expires_at
+     * Gets expiresAt
      *
      * @return \DateTime
      */
     public function getExpiresAt()
     {
-        return $this->container['expires_at'];
+        return $this->container['expiresAt'];
     }
 
     /**
-     * Sets expires_at
+     * Sets expiresAt
      *
-     * @param \DateTime $expires_at A future date less than 2 weeks from today
+     * @param \DateTime $expiresAt A future date less than 2 weeks from today
      *
      * @return $this
      */
-    public function setExpiresAt($expires_at)
+    public function setExpiresAt($expiresAt)
     {
-        $this->container['expires_at'] = $expires_at;
+        $this->container['expiresAt'] = $expiresAt;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at created_at
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at updated_at
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

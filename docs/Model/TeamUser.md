@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**team_id** | **int** |  | [optional] 
+**teamId** | **int** |  | [optional] 
 **primary** | **bool** |  | [optional] 
 **user** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional] 
 

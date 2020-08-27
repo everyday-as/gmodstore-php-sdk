@@ -120,16 +120,16 @@ class TeamsApi
      *
      * Fetch a single team
      *
-     * @param  int $team_id Id of the team (required)
+     * @param  int $teamId Id of the team (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\TeamResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getTeam($team_id, $with = null)
+    public function getTeam($teamId, $with = null)
     {
-        list($response) = $this->getTeamWithHttpInfo($team_id, $with);
+        list($response) = $this->getTeamWithHttpInfo($teamId, $with);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class TeamsApi
      *
      * Fetch a single team
      *
-     * @param  int $team_id Id of the team (required)
+     * @param  int $teamId Id of the team (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\TeamResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTeamWithHttpInfo($team_id, $with = null)
+    public function getTeamWithHttpInfo($teamId, $with = null)
     {
-        $request = $this->getTeamRequest($team_id, $with);
+        $request = $this->getTeamRequest($teamId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class TeamsApi
      *
      * Fetch a single team
      *
-     * @param  int $team_id Id of the team (required)
+     * @param  int $teamId Id of the team (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeamAsync($team_id, $with = null)
+    public function getTeamAsync($teamId, $with = null)
     {
-        return $this->getTeamAsyncWithHttpInfo($team_id, $with)
+        return $this->getTeamAsyncWithHttpInfo($teamId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class TeamsApi
      *
      * Fetch a single team
      *
-     * @param  int $team_id Id of the team (required)
+     * @param  int $teamId Id of the team (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTeamAsyncWithHttpInfo($team_id, $with = null)
+    public function getTeamAsyncWithHttpInfo($teamId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\TeamResponse';
-        $request = $this->getTeamRequest($team_id, $with);
+        $request = $this->getTeamRequest($teamId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,18 +336,18 @@ class TeamsApi
     /**
      * Create request for operation 'getTeam'
      *
-     * @param  int $team_id Id of the team (required)
+     * @param  int $teamId Id of the team (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Team&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTeamRequest($team_id, $with = null)
+    protected function getTeamRequest($teamId, $with = null)
     {
-        // verify the required parameter 'team_id' is set
-        if ($team_id === null || (is_array($team_id) && count($team_id) === 0)) {
+        // verify the required parameter 'teamId' is set
+        if ($teamId === null || (is_array($teamId) && count($teamId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $team_id when calling getTeam'
+                'Missing the required parameter $teamId when calling getTeam'
             );
         }
 
@@ -368,10 +368,10 @@ class TeamsApi
 
 
         // path params
-        if ($team_id !== null) {
+        if ($teamId !== null) {
             $resourcePath = str_replace(
                 '{' . 'team_id' . '}',
-                ObjectSerializer::toPathValue($team_id),
+                ObjectSerializer::toPathValue($teamId),
                 $resourcePath
             );
         }

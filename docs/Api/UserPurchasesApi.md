@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## listUserPurchases
 
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listUserPurchases($user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listUserPurchases($userId, $with)
 
 Fetch all purchases a user has made
 
@@ -31,11 +31,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
+$userId = 56; // int | Id of the user
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
-    $result = $apiInstance->listUserPurchases($user_id, $with);
+    $result = $apiInstance->listUserPurchases($userId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserPurchasesApi->listUserPurchases: ', $e->getMessage(), PHP_EOL;
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
+ **userId** | **int**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type

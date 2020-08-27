@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createAddonVersion
 
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse createAddonVersion($addon_id, $new_addon_version, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse createAddonVersion($addonId, $newAddonVersion, $with)
 
 Create a new version for an addon
 
@@ -35,12 +35,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$new_addon_version = new \Everyday\GmodStore\Sdk\Model\NewAddonVersion(); // \Everyday\GmodStore\Sdk\Model\NewAddonVersion | 
+$addonId = 56; // int | Id of the addon
+$newAddonVersion = new \Everyday\GmodStore\Sdk\Model\NewAddonVersion(); // \Everyday\GmodStore\Sdk\Model\NewAddonVersion | 
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
-    $result = $apiInstance->createAddonVersion($addon_id, $new_addon_version, $with);
+    $result = $apiInstance->createAddonVersion($addonId, $newAddonVersion, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->createAddonVersion: ', $e->getMessage(), PHP_EOL;
@@ -53,8 +53,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **new_addon_version** | [**\Everyday\GmodStore\Sdk\Model\NewAddonVersion**](../Model/NewAddonVersion.md)|  |
+ **addonId** | **int**| Id of the addon |
+ **newAddonVersion** | [**\Everyday\GmodStore\Sdk\Model\NewAddonVersion**](../Model/NewAddonVersion.md)|  |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional]
 
 ### Return type
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## downloadAddonVersion
 
-> \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse downloadAddonVersion($addon_id, $version_id)
+> \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse downloadAddonVersion($addonId, $versionId)
 
 Generate a download token for a specific version of an addon
 
@@ -98,11 +98,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$version_id = 56; // int | Id of the version
+$addonId = 56; // int | Id of the addon
+$versionId = 56; // int | Id of the version
 
 try {
-    $result = $apiInstance->downloadAddonVersion($addon_id, $version_id);
+    $result = $apiInstance->downloadAddonVersion($addonId, $versionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->downloadAddonVersion: ', $e->getMessage(), PHP_EOL;
@@ -115,8 +115,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **version_id** | **int**| Id of the version |
+ **addonId** | **int**| Id of the addon |
+ **versionId** | **int**| Id of the version |
 
 ### Return type
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## getAddonVersion
 
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse getAddonVersion($addon_id, $version_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse getAddonVersion($addonId, $versionId, $with)
 
 Fetch a specific version of an addon
 
@@ -159,12 +159,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$version_id = 56; // int | Id of the version
+$addonId = 56; // int | Id of the addon
+$versionId = 56; // int | Id of the version
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
-    $result = $apiInstance->getAddonVersion($addon_id, $version_id, $with);
+    $result = $apiInstance->getAddonVersion($addonId, $versionId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->getAddonVersion: ', $e->getMessage(), PHP_EOL;
@@ -177,8 +177,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **version_id** | **int**| Id of the version |
+ **addonId** | **int**| Id of the addon |
+ **versionId** | **int**| Id of the version |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional]
 
 ### Return type
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ## listAddonVersions
 
-> \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse listAddonVersions($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse listAddonVersions($addonId, $with)
 
 Fetch all the versions of an addon
 
@@ -222,11 +222,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
+$addonId = 56; // int | Id of the addon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
-    $result = $apiInstance->listAddonVersions($addon_id, $with);
+    $result = $apiInstance->listAddonVersions($addonId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->listAddonVersions: ', $e->getMessage(), PHP_EOL;
@@ -239,7 +239,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
+ **addonId** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional]
 
 ### Return type
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ## updateAddonVersion
 
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse updateAddonVersion($addon_id, $version_id, $addon_version, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse updateAddonVersion($addonId, $versionId, $addonVersion, $with)
 
 Update a version of an addon
 
@@ -283,13 +283,13 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$version_id = 56; // int | Id of the version
-$addon_version = new \Everyday\GmodStore\Sdk\Model\AddonVersion(); // \Everyday\GmodStore\Sdk\Model\AddonVersion | 
+$addonId = 56; // int | Id of the addon
+$versionId = 56; // int | Id of the version
+$addonVersion = new \Everyday\GmodStore\Sdk\Model\AddonVersion(); // \Everyday\GmodStore\Sdk\Model\AddonVersion | 
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
-    $result = $apiInstance->updateAddonVersion($addon_id, $version_id, $addon_version, $with);
+    $result = $apiInstance->updateAddonVersion($addonId, $versionId, $addonVersion, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->updateAddonVersion: ', $e->getMessage(), PHP_EOL;
@@ -302,9 +302,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **version_id** | **int**| Id of the version |
- **addon_version** | [**\Everyday\GmodStore\Sdk\Model\AddonVersion**](../Model/AddonVersion.md)|  |
+ **addonId** | **int**| Id of the addon |
+ **versionId** | **int**| Id of the version |
+ **addonVersion** | [**\Everyday\GmodStore\Sdk\Model\AddonVersion**](../Model/AddonVersion.md)|  |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonVersion&#x60; | [optional]
 
 ### Return type

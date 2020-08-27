@@ -120,15 +120,15 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\UserBanListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserBans($user_id)
+    public function listUserBans($userId)
     {
-        list($response) = $this->listUserBansWithHttpInfo($user_id);
+        list($response) = $this->listUserBansWithHttpInfo($userId);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\UserBanListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserBansWithHttpInfo($user_id)
+    public function listUserBansWithHttpInfo($userId)
     {
-        $request = $this->listUserBansRequest($user_id);
+        $request = $this->listUserBansRequest($userId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -265,14 +265,14 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserBansAsync($user_id)
+    public function listUserBansAsync($userId)
     {
-        return $this->listUserBansAsyncWithHttpInfo($user_id)
+        return $this->listUserBansAsyncWithHttpInfo($userId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -285,15 +285,15 @@ class UserBansApi
      *
      * Fetch all active bans associated with this user
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserBansAsyncWithHttpInfo($user_id)
+    public function listUserBansAsyncWithHttpInfo($userId)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\UserBanListResponse';
-        $request = $this->listUserBansRequest($user_id);
+        $request = $this->listUserBansRequest($userId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,17 +332,17 @@ class UserBansApi
     /**
      * Create request for operation 'listUserBans'
      *
-     * @param  int $user_id Id of the user (required)
+     * @param  int $userId Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserBansRequest($user_id)
+    protected function listUserBansRequest($userId)
     {
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+        // verify the required parameter 'userId' is set
+        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling listUserBans'
+                'Missing the required parameter $userId when calling listUserBans'
             );
         }
 
@@ -356,10 +356,10 @@ class UserBansApi
 
 
         // path params
-        if ($user_id !== null) {
+        if ($userId !== null) {
             $resourcePath = str_replace(
                 '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
+                ObjectSerializer::toPathValue($userId),
                 $resourcePath
             );
         }

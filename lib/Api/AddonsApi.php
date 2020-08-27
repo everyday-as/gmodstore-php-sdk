@@ -120,16 +120,16 @@ class AddonsApi
      *
      * Fetch a single addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getAddon($addon_id, $with = null)
+    public function getAddon($addonId, $with = null)
     {
-        list($response) = $this->getAddonWithHttpInfo($addon_id, $with);
+        list($response) = $this->getAddonWithHttpInfo($addonId, $with);
         return $response;
     }
 
@@ -138,16 +138,16 @@ class AddonsApi
      *
      * Fetch a single addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddonWithHttpInfo($addon_id, $with = null)
+    public function getAddonWithHttpInfo($addonId, $with = null)
     {
-        $request = $this->getAddonRequest($addon_id, $with);
+        $request = $this->getAddonRequest($addonId, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,15 +267,15 @@ class AddonsApi
      *
      * Fetch a single addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonAsync($addon_id, $with = null)
+    public function getAddonAsync($addonId, $with = null)
     {
-        return $this->getAddonAsyncWithHttpInfo($addon_id, $with)
+        return $this->getAddonAsyncWithHttpInfo($addonId, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,16 +288,16 @@ class AddonsApi
      *
      * Fetch a single addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonAsyncWithHttpInfo($addon_id, $with = null)
+    public function getAddonAsyncWithHttpInfo($addonId, $with = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonResponse';
-        $request = $this->getAddonRequest($addon_id, $with);
+        $request = $this->getAddonRequest($addonId, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,18 +336,18 @@ class AddonsApi
     /**
      * Create request for operation 'getAddon'
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAddonRequest($addon_id, $with = null)
+    protected function getAddonRequest($addonId, $with = null)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling getAddon'
+                'Missing the required parameter $addonId when calling getAddon'
             );
         }
 
@@ -368,10 +368,10 @@ class AddonsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }

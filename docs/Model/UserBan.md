@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **int** |  | [optional] 
+**userId** | **int** |  | [optional] 
 **reason** | **string** |  | [optional] 
-**unban_reason** | **string** |  | [optional] 
+**unbanReason** | **string** |  | [optional] 
 **properties** | **string[]** |  | [optional] 
 **start** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **end** | [**\DateTime**](\DateTime.md) |  | [optional] 

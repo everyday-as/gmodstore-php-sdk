@@ -60,7 +60,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => 'string',
         'changelog' => 'string',
         'file' => '\SplFileObject',
-        'release_type' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType'
+        'releaseType' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType'
     ];
 
     /**
@@ -72,7 +72,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => null,
         'changelog' => null,
         'file' => 'binary',
-        'release_type' => null
+        'releaseType' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => 'name',
         'changelog' => 'changelog',
         'file' => 'file',
-        'release_type' => 'release_type'
+        'releaseType' => 'release_type'
     ];
 
     /**
@@ -117,7 +117,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'changelog' => 'setChangelog',
         'file' => 'setFile',
-        'release_type' => 'setReleaseType'
+        'releaseType' => 'setReleaseType'
     ];
 
     /**
@@ -129,7 +129,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'changelog' => 'getChangelog',
         'file' => 'getFile',
-        'release_type' => 'getReleaseType'
+        'releaseType' => 'getReleaseType'
     ];
 
     /**
@@ -195,7 +195,7 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
         $this->container['file'] = isset($data['file']) ? $data['file'] : null;
-        $this->container['release_type'] = isset($data['release_type']) ? $data['release_type'] : null;
+        $this->container['releaseType'] = isset($data['releaseType']) ? $data['releaseType'] : null;
     }
 
     /**
@@ -334,25 +334,25 @@ class NewAddonVersion implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets release_type
+     * Gets releaseType
      *
      * @return \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null
      */
     public function getReleaseType()
     {
-        return $this->container['release_type'];
+        return $this->container['releaseType'];
     }
 
     /**
-     * Sets release_type
+     * Sets releaseType
      *
-     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null $release_type release_type
+     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null $releaseType releaseType
      *
      * @return $this
      */
-    public function setReleaseType($release_type)
+    public function setReleaseType($releaseType)
     {
-        $this->container['release_type'] = $release_type;
+        $this->container['releaseType'] = $releaseType;
 
         return $this;
     }

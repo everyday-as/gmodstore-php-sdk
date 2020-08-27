@@ -120,15 +120,15 @@ class AddonStatsApi
      *
      * Fetch all the stats for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getAddonStats($addon_id)
+    public function getAddonStats($addonId)
     {
-        list($response) = $this->getAddonStatsWithHttpInfo($addon_id);
+        list($response) = $this->getAddonStatsWithHttpInfo($addonId);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class AddonStatsApi
      *
      * Fetch all the stats for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAddonStatsWithHttpInfo($addon_id)
+    public function getAddonStatsWithHttpInfo($addonId)
     {
-        $request = $this->getAddonStatsRequest($addon_id);
+        $request = $this->getAddonStatsRequest($addonId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -265,14 +265,14 @@ class AddonStatsApi
      *
      * Fetch all the stats for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonStatsAsync($addon_id)
+    public function getAddonStatsAsync($addonId)
     {
-        return $this->getAddonStatsAsyncWithHttpInfo($addon_id)
+        return $this->getAddonStatsAsyncWithHttpInfo($addonId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -285,15 +285,15 @@ class AddonStatsApi
      *
      * Fetch all the stats for an addon
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAddonStatsAsyncWithHttpInfo($addon_id)
+    public function getAddonStatsAsyncWithHttpInfo($addonId)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse';
-        $request = $this->getAddonStatsRequest($addon_id);
+        $request = $this->getAddonStatsRequest($addonId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,17 +332,17 @@ class AddonStatsApi
     /**
      * Create request for operation 'getAddonStats'
      *
-     * @param  int $addon_id Id of the addon (required)
+     * @param  int $addonId Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAddonStatsRequest($addon_id)
+    protected function getAddonStatsRequest($addonId)
     {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+        // verify the required parameter 'addonId' is set
+        if ($addonId === null || (is_array($addonId) && count($addonId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling getAddonStats'
+                'Missing the required parameter $addonId when calling getAddonStats'
             );
         }
 
@@ -356,10 +356,10 @@ class AddonStatsApi
 
 
         // path params
-        if ($addon_id !== null) {
+        if ($addonId !== null) {
             $resourcePath = str_replace(
                 '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
+                ObjectSerializer::toPathValue($addonId),
                 $resourcePath
             );
         }

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## getAddonReview
 
-> \Everyday\GmodStore\Sdk\Model\AddonReviewResponse getAddonReview($addon_id, $review_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonReviewResponse getAddonReview($addonId, $reviewId, $with)
 
 Fetch a review of an addon
 
@@ -32,12 +32,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$review_id = 56; // int | Id of the review
+$addonId = 56; // int | Id of the addon
+$reviewId = 56; // int | Id of the review
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonReview`
 
 try {
-    $result = $apiInstance->getAddonReview($addon_id, $review_id, $with);
+    $result = $apiInstance->getAddonReview($addonId, $reviewId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonReviewsApi->getAddonReview: ', $e->getMessage(), PHP_EOL;
@@ -50,8 +50,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **review_id** | **int**| Id of the review |
+ **addonId** | **int**| Id of the addon |
+ **reviewId** | **int**| Id of the review |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional]
 
 ### Return type
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## listAddonReviews
 
-> \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse listAddonReviews($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse listAddonReviews($addonId, $with)
 
 Fetch all the reviews of an addon
 
@@ -95,11 +95,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
+$addonId = 56; // int | Id of the addon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonReview`
 
 try {
-    $result = $apiInstance->listAddonReviews($addon_id, $with);
+    $result = $apiInstance->listAddonReviews($addonId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonReviewsApi->listAddonReviews: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
+ **addonId** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonReview&#x60; | [optional]
 
 ### Return type

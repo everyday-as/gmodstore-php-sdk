@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## getAddonStats
 
-> \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse getAddonStats($addon_id)
+> \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse getAddonStats($addonId)
 
 Fetch all the stats for an addon
 
@@ -31,10 +31,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonStatsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
+$addonId = 56; // int | Id of the addon
 
 try {
-    $result = $apiInstance->getAddonStats($addon_id);
+    $result = $apiInstance->getAddonStats($addonId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonStatsApi->getAddonStats: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
+ **addonId** | **int**| Id of the addon |
 
 ### Return type
 

@@ -57,7 +57,7 @@ class TeamUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'team_id' => 'int',
+        'teamId' => 'int',
         'primary' => 'bool',
         'user' => '\Everyday\GmodStore\Sdk\Model\User'
     ];
@@ -68,7 +68,7 @@ class TeamUser implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'team_id' => null,
+        'teamId' => null,
         'primary' => null,
         'user' => null
     ];
@@ -100,7 +100,7 @@ class TeamUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'team_id' => 'team_id',
+        'teamId' => 'team_id',
         'primary' => 'primary',
         'user' => 'user'
     ];
@@ -111,7 +111,7 @@ class TeamUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'team_id' => 'setTeamId',
+        'teamId' => 'setTeamId',
         'primary' => 'setPrimary',
         'user' => 'setUser'
     ];
@@ -122,7 +122,7 @@ class TeamUser implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'team_id' => 'getTeamId',
+        'teamId' => 'getTeamId',
         'primary' => 'getPrimary',
         'user' => 'getUser'
     ];
@@ -187,7 +187,7 @@ class TeamUser implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['team_id'] = isset($data['team_id']) ? $data['team_id'] : null;
+        $this->container['teamId'] = isset($data['teamId']) ? $data['teamId'] : null;
         $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
         $this->container['user'] = isset($data['user']) ? $data['user'] : null;
     }
@@ -217,25 +217,25 @@ class TeamUser implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets team_id
+     * Gets teamId
      *
      * @return int|null
      */
     public function getTeamId()
     {
-        return $this->container['team_id'];
+        return $this->container['teamId'];
     }
 
     /**
-     * Sets team_id
+     * Sets teamId
      *
-     * @param int|null $team_id team_id
+     * @param int|null $teamId teamId
      *
      * @return $this
      */
-    public function setTeamId($team_id)
+    public function setTeamId($teamId)
     {
-        $this->container['team_id'] = $team_id;
+        $this->container['teamId'] = $teamId;
 
         return $this;
     }

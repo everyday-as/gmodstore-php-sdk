@@ -60,11 +60,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'changelog' => 'string',
-        'file_hash' => 'string',
-        'file_size' => 'int',
-        'release_type' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'fileHash' => 'string',
+        'fileSize' => 'int',
+        'releaseType' => '\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'addon' => '\Everyday\GmodStore\Sdk\Model\Addon'
     ];
 
@@ -77,11 +77,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'changelog' => null,
-        'file_hash' => null,
-        'file_size' => null,
-        'release_type' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'fileHash' => null,
+        'fileSize' => null,
+        'releaseType' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'addon' => null
     ];
 
@@ -115,11 +115,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'changelog' => 'changelog',
-        'file_hash' => 'file_hash',
-        'file_size' => 'file_size',
-        'release_type' => 'release_type',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'fileHash' => 'file_hash',
+        'fileSize' => 'file_size',
+        'releaseType' => 'release_type',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'addon' => 'addon'
     ];
 
@@ -132,11 +132,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'changelog' => 'setChangelog',
-        'file_hash' => 'setFileHash',
-        'file_size' => 'setFileSize',
-        'release_type' => 'setReleaseType',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'fileHash' => 'setFileHash',
+        'fileSize' => 'setFileSize',
+        'releaseType' => 'setReleaseType',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'addon' => 'setAddon'
     ];
 
@@ -149,11 +149,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'changelog' => 'getChangelog',
-        'file_hash' => 'getFileHash',
-        'file_size' => 'getFileSize',
-        'release_type' => 'getReleaseType',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'fileHash' => 'getFileHash',
+        'fileSize' => 'getFileSize',
+        'releaseType' => 'getReleaseType',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'addon' => 'getAddon'
     ];
 
@@ -220,11 +220,11 @@ class AddonVersion implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
-        $this->container['file_hash'] = isset($data['file_hash']) ? $data['file_hash'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['release_type'] = isset($data['release_type']) ? $data['release_type'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['fileHash'] = isset($data['fileHash']) ? $data['fileHash'] : null;
+        $this->container['fileSize'] = isset($data['fileSize']) ? $data['fileSize'] : null;
+        $this->container['releaseType'] = isset($data['releaseType']) ? $data['releaseType'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
         $this->container['addon'] = isset($data['addon']) ? $data['addon'] : null;
     }
 
@@ -361,121 +361,121 @@ class AddonVersion implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets file_hash
+     * Gets fileHash
      *
      * @return string|null
      */
     public function getFileHash()
     {
-        return $this->container['file_hash'];
+        return $this->container['fileHash'];
     }
 
     /**
-     * Sets file_hash
+     * Sets fileHash
      *
-     * @param string|null $file_hash file_hash
+     * @param string|null $fileHash fileHash
      *
      * @return $this
      */
-    public function setFileHash($file_hash)
+    public function setFileHash($fileHash)
     {
-        $this->container['file_hash'] = $file_hash;
+        $this->container['fileHash'] = $fileHash;
 
         return $this;
     }
 
     /**
-     * Gets file_size
+     * Gets fileSize
      *
      * @return int|null
      */
     public function getFileSize()
     {
-        return $this->container['file_size'];
+        return $this->container['fileSize'];
     }
 
     /**
-     * Sets file_size
+     * Sets fileSize
      *
-     * @param int|null $file_size file_size
+     * @param int|null $fileSize fileSize
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setFileSize($fileSize)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['fileSize'] = $fileSize;
 
         return $this;
     }
 
     /**
-     * Gets release_type
+     * Gets releaseType
      *
      * @return \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null
      */
     public function getReleaseType()
     {
-        return $this->container['release_type'];
+        return $this->container['releaseType'];
     }
 
     /**
-     * Sets release_type
+     * Sets releaseType
      *
-     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null $release_type release_type
+     * @param \Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType|null $releaseType releaseType
      *
      * @return $this
      */
-    public function setReleaseType($release_type)
+    public function setReleaseType($releaseType)
     {
-        $this->container['release_type'] = $release_type;
+        $this->container['releaseType'] = $releaseType;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at created_at
+     * @param \DateTime|null $createdAt createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at updated_at
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

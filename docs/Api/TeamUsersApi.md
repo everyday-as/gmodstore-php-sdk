@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## listTeamUsers
 
-> \Everyday\GmodStore\Sdk\Model\TeamUserListResponse listTeamUsers($team_id, $with)
+> \Everyday\GmodStore\Sdk\Model\TeamUserListResponse listTeamUsers($teamId, $with)
 
 Fetch all the users in the given team
 
@@ -31,11 +31,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\TeamUsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$team_id = 56; // int | Id of the team
+$teamId = 56; // int | Id of the team
 $with = array('with_example'); // string[] | The relations you want to fetch with the `TeamUser`
 
 try {
-    $result = $apiInstance->listTeamUsers($team_id, $with);
+    $result = $apiInstance->listTeamUsers($teamId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TeamUsersApi->listTeamUsers: ', $e->getMessage(), PHP_EOL;
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team_id** | **int**| Id of the team |
+ **teamId** | **int**| Id of the team |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;TeamUser&#x60; | [optional]
 
 ### Return type

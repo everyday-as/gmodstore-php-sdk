@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## createUserBadge
 
-> \Everyday\GmodStore\Sdk\Model\BadgeResponse createUserBadge($user_id, $user_badge)
+> \Everyday\GmodStore\Sdk\Model\BadgeResponse createUserBadge($userId, $userBadge)
 
 Give a user a badge
 
@@ -33,11 +33,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
-$user_badge = new \Everyday\GmodStore\Sdk\Model\UserBadge(); // \Everyday\GmodStore\Sdk\Model\UserBadge | 
+$userId = 56; // int | Id of the user
+$userBadge = new \Everyday\GmodStore\Sdk\Model\UserBadge(); // \Everyday\GmodStore\Sdk\Model\UserBadge | 
 
 try {
-    $result = $apiInstance->createUserBadge($user_id, $user_badge);
+    $result = $apiInstance->createUserBadge($userId, $userBadge);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->createUserBadge: ', $e->getMessage(), PHP_EOL;
@@ -50,8 +50,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
- **user_badge** | [**\Everyday\GmodStore\Sdk\Model\UserBadge**](../Model/UserBadge.md)|  |
+ **userId** | **int**| Id of the user |
+ **userBadge** | [**\Everyday\GmodStore\Sdk\Model\UserBadge**](../Model/UserBadge.md)|  |
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## deleteUserBadge
 
-> deleteUserBadge($user_id, $badge_id)
+> deleteUserBadge($userId, $badgeId)
 
 Destroy a users's badge
 
@@ -94,11 +94,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
-$badge_id = 56; // int | Id of the badge
+$userId = 56; // int | Id of the user
+$badgeId = 56; // int | Id of the badge
 
 try {
-    $apiInstance->deleteUserBadge($user_id, $badge_id);
+    $apiInstance->deleteUserBadge($userId, $badgeId);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->deleteUserBadge: ', $e->getMessage(), PHP_EOL;
 }
@@ -110,8 +110,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
- **badge_id** | **int**| Id of the badge |
+ **userId** | **int**| Id of the user |
+ **badgeId** | **int**| Id of the badge |
 
 ### Return type
 
@@ -133,7 +133,7 @@ void (empty response body)
 
 ## listUserBadges
 
-> \Everyday\GmodStore\Sdk\Model\BadgeListResponse listUserBadges($user_id)
+> \Everyday\GmodStore\Sdk\Model\BadgeListResponse listUserBadges($userId)
 
 Fetch all the badges a user has
 
@@ -154,10 +154,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
+$userId = 56; // int | Id of the user
 
 try {
-    $result = $apiInstance->listUserBadges($user_id);
+    $result = $apiInstance->listUserBadges($userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->listUserBadges: ', $e->getMessage(), PHP_EOL;
@@ -170,7 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
+ **userId** | **int**| Id of the user |
 
 ### Return type
 

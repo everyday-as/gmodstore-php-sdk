@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## getUser
 
-> \Everyday\GmodStore\Sdk\Model\UserResponse getUser($user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\UserResponse getUser($userId, $with)
 
 Fetch a single user
 
@@ -91,11 +91,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 56; // int | Id of the user
+$userId = 56; // int | Id of the user
 $with = array('with_example'); // string[] | The relations you want to fetch with the `User`
 
 try {
-    $result = $apiInstance->getUser($user_id, $with);
+    $result = $apiInstance->getUser($userId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUser: ', $e->getMessage(), PHP_EOL;
@@ -108,7 +108,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Id of the user |
+ **userId** | **int**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;User&#x60; | [optional]
 
 ### Return type

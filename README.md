@@ -57,12 +57,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$addon_coupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
+$addonId = 56; // int | Id of the addon
+$addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
-    $result = $apiInstance->createAddonCoupon($addon_id, $addon_coupon, $with);
+    $result = $apiInstance->createAddonCoupon($addonId, $addonCoupon, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->createAddonCoupon: ', $e->getMessage(), PHP_EOL;
@@ -169,8 +169,4 @@ Class | Method | HTTP request | Description
 
 
 - **Type**: Bearer authentication (API Key)
-
-
-## Author
-
 

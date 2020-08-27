@@ -59,7 +59,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'price' => '\Everyday\GmodStore\Sdk\Model\Money',
-        'reversed_at' => '\DateTime'
+        'reversedAt' => '\DateTime'
     ];
 
     /**
@@ -70,7 +70,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => 'uuid',
         'price' => null,
-        'reversed_at' => 'date-time'
+        'reversedAt' => 'date-time'
     ];
 
     /**
@@ -102,7 +102,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'price' => 'price',
-        'reversed_at' => 'reversed_at'
+        'reversedAt' => 'reversed_at'
     ];
 
     /**
@@ -113,7 +113,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'price' => 'setPrice',
-        'reversed_at' => 'setReversedAt'
+        'reversedAt' => 'setReversedAt'
     ];
 
     /**
@@ -124,7 +124,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'price' => 'getPrice',
-        'reversed_at' => 'getReversedAt'
+        'reversedAt' => 'getReversedAt'
     ];
 
     /**
@@ -189,7 +189,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['reversed_at'] = isset($data['reversed_at']) ? $data['reversed_at'] : null;
+        $this->container['reversedAt'] = isset($data['reversedAt']) ? $data['reversedAt'] : null;
     }
 
     /**
@@ -265,25 +265,25 @@ class OrderItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets reversed_at
+     * Gets reversedAt
      *
      * @return \DateTime|null
      */
     public function getReversedAt()
     {
-        return $this->container['reversed_at'];
+        return $this->container['reversedAt'];
     }
 
     /**
-     * Sets reversed_at
+     * Sets reversedAt
      *
-     * @param \DateTime|null $reversed_at reversed_at
+     * @param \DateTime|null $reversedAt reversedAt
      *
      * @return $this
      */
-    public function setReversedAt($reversed_at)
+    public function setReversedAt($reversedAt)
     {
-        $this->container['reversed_at'] = $reversed_at;
+        $this->container['reversedAt'] = $reversedAt;
 
         return $this;
     }

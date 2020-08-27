@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createAddonPurchase
 
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse createAddonPurchase($addon_id, $new_addon_purchase, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse createAddonPurchase($addonId, $newAddonPurchase, $with)
 
 Create a purchase for an addon
 
@@ -34,12 +34,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$new_addon_purchase = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase | 
+$addonId = 56; // int | Id of the addon
+$newAddonPurchase = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase | 
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
-    $result = $apiInstance->createAddonPurchase($addon_id, $new_addon_purchase, $with);
+    $result = $apiInstance->createAddonPurchase($addonId, $newAddonPurchase, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->createAddonPurchase: ', $e->getMessage(), PHP_EOL;
@@ -52,8 +52,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **new_addon_purchase** | [**\Everyday\GmodStore\Sdk\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
+ **addonId** | **int**| Id of the addon |
+ **newAddonPurchase** | [**\Everyday\GmodStore\Sdk\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## getAddonPurchase
 
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse getAddonPurchase($addon_id, $user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse getAddonPurchase($addonId, $userId, $with)
 
 Get a purchase of an addon by user
 
@@ -97,12 +97,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$user_id = 56; // int | Id of the user
+$addonId = 56; // int | Id of the addon
+$userId = 56; // int | Id of the user
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
-    $result = $apiInstance->getAddonPurchase($addon_id, $user_id, $with);
+    $result = $apiInstance->getAddonPurchase($addonId, $userId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->getAddonPurchase: ', $e->getMessage(), PHP_EOL;
@@ -115,8 +115,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **user_id** | **int**| Id of the user |
+ **addonId** | **int**| Id of the addon |
+ **userId** | **int**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ## listAddonPurchases
 
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listAddonPurchases($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listAddonPurchases($addonId, $with)
 
 Fetch all purchases of an addon
 
@@ -160,11 +160,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
+$addonId = 56; // int | Id of the addon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
-    $result = $apiInstance->listAddonPurchases($addon_id, $with);
+    $result = $apiInstance->listAddonPurchases($addonId, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->listAddonPurchases: ', $e->getMessage(), PHP_EOL;
@@ -177,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
+ **addonId** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## updateAddonPurchase
 
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse updateAddonPurchase($addon_id, $user_id, $addon_purchase, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse updateAddonPurchase($addonId, $userId, $addonPurchase, $with)
 
 Update a purchase for an addon
 
@@ -221,13 +221,13 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 56; // int | Id of the addon
-$user_id = 56; // int | Id of the user
-$addon_purchase = new \Everyday\GmodStore\Sdk\Model\AddonPurchase(); // \Everyday\GmodStore\Sdk\Model\AddonPurchase | 
+$addonId = 56; // int | Id of the addon
+$userId = 56; // int | Id of the user
+$addonPurchase = new \Everyday\GmodStore\Sdk\Model\AddonPurchase(); // \Everyday\GmodStore\Sdk\Model\AddonPurchase | 
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
-    $result = $apiInstance->updateAddonPurchase($addon_id, $user_id, $addon_purchase, $with);
+    $result = $apiInstance->updateAddonPurchase($addonId, $userId, $addonPurchase, $with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->updateAddonPurchase: ', $e->getMessage(), PHP_EOL;
@@ -240,9 +240,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addon_id** | **int**| Id of the addon |
- **user_id** | **int**| Id of the user |
- **addon_purchase** | [**\Everyday\GmodStore\Sdk\Model\AddonPurchase**](../Model/AddonPurchase.md)|  |
+ **addonId** | **int**| Id of the addon |
+ **userId** | **int**| Id of the user |
+ **addonPurchase** | [**\Everyday\GmodStore\Sdk\Model\AddonPurchase**](../Model/AddonPurchase.md)|  |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;AddonPurchase&#x60; | [optional]
 
 ### Return type
