@@ -61,6 +61,8 @@ class User implements ModelInterface, ArrayAccess
 'avatar' => 'string',
 'country_code' => 'string',
 'slug' => 'string',
+'reputation' => 'int',
+'team_reputation' => 'int',
 'ban_properties' => '\Everyday\GmodStore\Sdk\Model\UserBanProperties',
 'group' => '\Everyday\GmodStore\Sdk\Model\PermissionGroup'    ];
 
@@ -75,6 +77,8 @@ class User implements ModelInterface, ArrayAccess
 'avatar' => 'uri',
 'country_code' => null,
 'slug' => null,
+'reputation' => 'int64',
+'team_reputation' => 'int64',
 'ban_properties' => null,
 'group' => null    ];
 
@@ -110,6 +114,8 @@ class User implements ModelInterface, ArrayAccess
 'avatar' => 'avatar',
 'country_code' => 'country_code',
 'slug' => 'slug',
+'reputation' => 'reputation',
+'team_reputation' => 'team_reputation',
 'ban_properties' => 'ban_properties',
 'group' => 'group'    ];
 
@@ -124,6 +130,8 @@ class User implements ModelInterface, ArrayAccess
 'avatar' => 'setAvatar',
 'country_code' => 'setCountryCode',
 'slug' => 'setSlug',
+'reputation' => 'setReputation',
+'team_reputation' => 'setTeamReputation',
 'ban_properties' => 'setBanProperties',
 'group' => 'setGroup'    ];
 
@@ -138,6 +146,8 @@ class User implements ModelInterface, ArrayAccess
 'avatar' => 'getAvatar',
 'country_code' => 'getCountryCode',
 'slug' => 'getSlug',
+'reputation' => 'getReputation',
+'team_reputation' => 'getTeamReputation',
 'ban_properties' => 'getBanProperties',
 'group' => 'getGroup'    ];
 
@@ -204,6 +214,8 @@ class User implements ModelInterface, ArrayAccess
         $this->container['avatar'] = isset($data['avatar']) ? $data['avatar'] : null;
         $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
         $this->container['slug'] = isset($data['slug']) ? $data['slug'] : null;
+        $this->container['reputation'] = isset($data['reputation']) ? $data['reputation'] : null;
+        $this->container['team_reputation'] = isset($data['team_reputation']) ? $data['team_reputation'] : null;
         $this->container['ban_properties'] = isset($data['ban_properties']) ? $data['ban_properties'] : null;
         $this->container['group'] = isset($data['group']) ? $data['group'] : null;
     }
@@ -348,6 +360,54 @@ class User implements ModelInterface, ArrayAccess
     public function setSlug($slug)
     {
         $this->container['slug'] = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Gets reputation
+     *
+     * @return int
+     */
+    public function getReputation()
+    {
+        return $this->container['reputation'];
+    }
+
+    /**
+     * Sets reputation
+     *
+     * @param int $reputation reputation
+     *
+     * @return $this
+     */
+    public function setReputation($reputation)
+    {
+        $this->container['reputation'] = $reputation;
+
+        return $this;
+    }
+
+    /**
+     * Gets team_reputation
+     *
+     * @return int
+     */
+    public function getTeamReputation()
+    {
+        return $this->container['team_reputation'];
+    }
+
+    /**
+     * Sets team_reputation
+     *
+     * @param int $team_reputation team_reputation
+     *
+     * @return $this
+     */
+    public function setTeamReputation($team_reputation)
+    {
+        $this->container['team_reputation'] = $team_reputation;
 
         return $this;
     }
