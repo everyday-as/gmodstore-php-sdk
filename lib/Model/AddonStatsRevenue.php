@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * AddonStatsRevenue Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,9 +56,9 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'current' => '\Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent',
-'previous' => '\Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent',
-'total' => '\Everyday\GmodStoreSDK\Model\Money'    ];
+        'current' => '\Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent',
+'previous' => '\Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent',
+'total' => '\Everyday\GmodStore\SDK\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -211,7 +211,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Gets current
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent
+     * @return \Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent
      */
     public function getCurrent()
     {
@@ -221,7 +221,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Sets current
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent $current current
+     * @param \Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent $current current
      *
      * @return $this
      */
@@ -235,7 +235,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Gets previous
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent
+     * @return \Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent
      */
     public function getPrevious()
     {
@@ -245,7 +245,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Sets previous
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonStatsRevenueCurrent $previous previous
+     * @param \Everyday\GmodStore\SDK\Model\AddonStatsRevenueCurrent $previous previous
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Gets total
      *
-     * @return \Everyday\GmodStoreSDK\Model\Money
+     * @return \Everyday\GmodStore\SDK\Model\Money
      */
     public function getTotal()
     {
@@ -269,7 +269,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess
     /**
      * Sets total
      *
-     * @param \Everyday\GmodStoreSDK\Model\Money $total total
+     * @param \Everyday\GmodStore\SDK\Model\Money $total total
      *
      * @return $this
      */

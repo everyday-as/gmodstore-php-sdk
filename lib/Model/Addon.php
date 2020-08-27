@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * Addon Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,14 +62,14 @@ class Addon implements ModelInterface, ArrayAccess
 'short_description' => 'string',
 'description' => 'string',
 'requirements' => 'string[]',
-'price' => '\Everyday\GmodStoreSDK\Model\AddonPrice',
-'images' => '\Everyday\GmodStoreSDK\Model\AddonImages',
+'price' => '\Everyday\GmodStore\SDK\Model\AddonPrice',
+'images' => '\Everyday\GmodStore\SDK\Model\AddonImages',
 'slug' => 'string',
 'route' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
-'latest_version' => '\Everyday\GmodStoreSDK\Model\AddonVersion',
-'team' => '\Everyday\GmodStoreSDK\Model\Team'    ];
+'latest_version' => '\Everyday\GmodStore\SDK\Model\AddonVersion',
+'team' => '\Everyday\GmodStore\SDK\Model\Team'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -457,7 +457,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonPrice
+     * @return \Everyday\GmodStore\SDK\Model\AddonPrice
      */
     public function getPrice()
     {
@@ -467,7 +467,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonPrice $price price
+     * @param \Everyday\GmodStore\SDK\Model\AddonPrice $price price
      *
      * @return $this
      */
@@ -481,7 +481,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Gets images
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonImages
+     * @return \Everyday\GmodStore\SDK\Model\AddonImages
      */
     public function getImages()
     {
@@ -491,7 +491,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Sets images
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonImages $images images
+     * @param \Everyday\GmodStore\SDK\Model\AddonImages $images images
      *
      * @return $this
      */
@@ -601,7 +601,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Gets latest_version
      *
-     * @return \Everyday\GmodStoreSDK\Model\AddonVersion
+     * @return \Everyday\GmodStore\SDK\Model\AddonVersion
      */
     public function getLatestVersion()
     {
@@ -611,7 +611,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Sets latest_version
      *
-     * @param \Everyday\GmodStoreSDK\Model\AddonVersion $latest_version latest_version
+     * @param \Everyday\GmodStore\SDK\Model\AddonVersion $latest_version latest_version
      *
      * @return $this
      */
@@ -625,7 +625,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Gets team
      *
-     * @return \Everyday\GmodStoreSDK\Model\Team
+     * @return \Everyday\GmodStore\SDK\Model\Team
      */
     public function getTeam()
     {
@@ -635,7 +635,7 @@ class Addon implements ModelInterface, ArrayAccess
     /**
      * Sets team
      *
-     * @param \Everyday\GmodStoreSDK\Model\Team $team team
+     * @param \Everyday\GmodStore\SDK\Model\Team $team team
      *
      * @return $this
      */

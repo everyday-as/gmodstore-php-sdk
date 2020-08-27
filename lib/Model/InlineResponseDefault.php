@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * InlineResponseDefault Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class InlineResponseDefault implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStoreSDK\Model\Error'    ];
+        'data' => '\Everyday\GmodStore\SDK\Model\Error'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class InlineResponseDefault implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStoreSDK\Model\Error
+     * @return \Everyday\GmodStore\SDK\Model\Error
      */
     public function getData()
     {
@@ -209,7 +209,7 @@ class InlineResponseDefault implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStoreSDK\Model\Error $data data
+     * @param \Everyday\GmodStore\SDK\Model\Error $data data
      *
      * @return $this
      */

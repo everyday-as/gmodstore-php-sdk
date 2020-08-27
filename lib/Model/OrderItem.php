@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'price' => '\Everyday\GmodStoreSDK\Model\Money',
+'price' => '\Everyday\GmodStore\SDK\Model\Money',
 'reversed_at' => '\DateTime'    ];
 
     /**
@@ -241,7 +241,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return \Everyday\GmodStoreSDK\Model\Money
+     * @return \Everyday\GmodStore\SDK\Model\Money
      */
     public function getPrice()
     {
@@ -251,7 +251,7 @@ class OrderItem implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param \Everyday\GmodStoreSDK\Model\Money $price price
+     * @param \Everyday\GmodStore\SDK\Model\Money $price price
      *
      * @return $this
      */

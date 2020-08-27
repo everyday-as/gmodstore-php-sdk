@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK\Model
+ * @package  Everyday\GmodStore\SDK\Model
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,12 +26,12 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Everyday\GmodStoreSDK\Model
+ * @package Everyday\GmodStore\SDK\Model
  * @author  Swagger Codegen team
  */
 interface ModelInterface

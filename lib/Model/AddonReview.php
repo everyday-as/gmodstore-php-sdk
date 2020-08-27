@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * AddonReview Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,8 +61,8 @@ class AddonReview implements ModelInterface, ArrayAccess
 'version' => 'string',
 'body' => 'string',
 'rating' => 'float',
-'addon' => '\Everyday\GmodStoreSDK\Model\Addon',
-'author' => '\Everyday\GmodStoreSDK\Model\User'    ];
+'addon' => '\Everyday\GmodStore\SDK\Model\Addon',
+'author' => '\Everyday\GmodStore\SDK\Model\User'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -370,7 +370,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Gets addon
      *
-     * @return \Everyday\GmodStoreSDK\Model\Addon
+     * @return \Everyday\GmodStore\SDK\Model\Addon
      */
     public function getAddon()
     {
@@ -380,7 +380,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Sets addon
      *
-     * @param \Everyday\GmodStoreSDK\Model\Addon $addon addon
+     * @param \Everyday\GmodStore\SDK\Model\Addon $addon addon
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Gets author
      *
-     * @return \Everyday\GmodStoreSDK\Model\User
+     * @return \Everyday\GmodStore\SDK\Model\User
      */
     public function getAuthor()
     {
@@ -404,7 +404,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Sets author
      *
-     * @param \Everyday\GmodStoreSDK\Model\User $author author
+     * @param \Everyday\GmodStore\SDK\Model\User $author author
      *
      * @return $this
      */

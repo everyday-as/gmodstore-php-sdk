@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * TeamUser Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'team_id' => 'int',
 'primary' => 'bool',
-'user' => '\Everyday\GmodStoreSDK\Model\User'    ];
+'user' => '\Everyday\GmodStore\SDK\Model\User'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -265,7 +265,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Everyday\GmodStoreSDK\Model\User
+     * @return \Everyday\GmodStore\SDK\Model\User
      */
     public function getUser()
     {
@@ -275,7 +275,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Everyday\GmodStoreSDK\Model\User $user user
+     * @param \Everyday\GmodStore\SDK\Model\User $user user
      *
      * @return $this
      */

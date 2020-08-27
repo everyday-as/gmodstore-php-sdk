@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class User implements ModelInterface, ArrayAccess
 'country_code' => 'string',
 'slug' => 'string',
 'ban_properties' => 'string[]',
-'group' => '\Everyday\GmodStoreSDK\Model\PermissionGroup'    ];
+'group' => '\Everyday\GmodStore\SDK\Model\PermissionGroup'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -434,7 +434,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Gets group
      *
-     * @return \Everyday\GmodStoreSDK\Model\PermissionGroup
+     * @return \Everyday\GmodStore\SDK\Model\PermissionGroup
      */
     public function getGroup()
     {
@@ -444,7 +444,7 @@ self::BAN_PROPERTIES_BANAPPEAL,        ];
     /**
      * Sets group
      *
-     * @param \Everyday\GmodStoreSDK\Model\PermissionGroup $group group
+     * @param \Everyday\GmodStore\SDK\Model\PermissionGroup $group group
      *
      * @return $this
      */

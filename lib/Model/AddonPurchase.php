@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * AddonPurchase Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class AddonPurchase implements ModelInterface, ArrayAccess
         'revoked' => 'bool',
 'created_at' => '\DateTime',
 'updated_at' => 'int',
-'addon' => '\Everyday\GmodStoreSDK\Model\Addon',
-'order_item' => '\Everyday\GmodStoreSDK\Model\OrderItem',
-'user' => '\Everyday\GmodStoreSDK\Model\User'    ];
+'addon' => '\Everyday\GmodStore\SDK\Model\Addon',
+'order_item' => '\Everyday\GmodStore\SDK\Model\OrderItem',
+'user' => '\Everyday\GmodStore\SDK\Model\User'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -310,7 +310,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Gets addon
      *
-     * @return \Everyday\GmodStoreSDK\Model\Addon
+     * @return \Everyday\GmodStore\SDK\Model\Addon
      */
     public function getAddon()
     {
@@ -320,7 +320,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Sets addon
      *
-     * @param \Everyday\GmodStoreSDK\Model\Addon $addon addon
+     * @param \Everyday\GmodStore\SDK\Model\Addon $addon addon
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Gets order_item
      *
-     * @return \Everyday\GmodStoreSDK\Model\OrderItem
+     * @return \Everyday\GmodStore\SDK\Model\OrderItem
      */
     public function getOrderItem()
     {
@@ -344,7 +344,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Sets order_item
      *
-     * @param \Everyday\GmodStoreSDK\Model\OrderItem $order_item order_item
+     * @param \Everyday\GmodStore\SDK\Model\OrderItem $order_item order_item
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \Everyday\GmodStoreSDK\Model\User
+     * @return \Everyday\GmodStore\SDK\Model\User
      */
     public function getUser()
     {
@@ -368,7 +368,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \Everyday\GmodStoreSDK\Model\User $user user
+     * @param \Everyday\GmodStore\SDK\Model\User $user user
      *
      * @return $this
      */

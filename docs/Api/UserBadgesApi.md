@@ -1,4 +1,4 @@
-# Everyday\GmodStoreSDK\UserBadgesApi
+# Everyday\GmodStore\SDK\UserBadgesApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**listUserBadges**](UserBadgesApi.md#listuserbadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
 # **createUserBadge**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2013 createUserBadge($body, $user_id)
+> \Everyday\GmodStore\SDK\Model\InlineResponse2013 createUserBadge($body, $user_id)
 
 Give a user a badge
 
@@ -18,17 +18,17 @@ Give a user a badge
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStoreSDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStoreSDK\Model\BadgeCreateBody(); // \Everyday\GmodStoreSDK\Model\BadgeCreateBody | 
+$body = new \Everyday\GmodStore\SDK\Model\BadgeCreateBody(); // \Everyday\GmodStore\SDK\Model\BadgeCreateBody | 
 $user_id = "user_id_example"; // string | Id of the user
 
 try {
@@ -44,12 +44,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStoreSDK\Model\BadgeCreateBody**](../Model/BadgeCreateBody.md)|  |
+ **body** | [**\Everyday\GmodStore\SDK\Model\BadgeCreateBody**](../Model/BadgeCreateBody.md)|  |
  **user_id** | **string**| Id of the user |
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\Everyday\GmodStore\SDK\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
 
 ### Authorization
 
@@ -72,11 +72,11 @@ Destroy a users's badge
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStoreSDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -116,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUserBadges**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20014 listUserBadges($user_id)
+> \Everyday\GmodStore\SDK\Model\InlineResponse20014 listUserBadges($user_id)
 
 Fetch all the badges a user has
 
@@ -125,11 +125,11 @@ Fetch all the badges a user has
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStoreSDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStoreSDK\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Everyday\GmodStore\SDK\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 

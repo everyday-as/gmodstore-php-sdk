@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Api;
+namespace Everyday\GmodStore\SDK\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStoreSDK\ApiException;
-use Everyday\GmodStoreSDK\Configuration;
-use Everyday\GmodStoreSDK\HeaderSelector;
-use Everyday\GmodStoreSDK\ObjectSerializer;
+use Everyday\GmodStore\SDK\ApiException;
+use Everyday\GmodStore\SDK\Configuration;
+use Everyday\GmodStore\SDK\HeaderSelector;
+use Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * UserBadgesApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -91,12 +91,12 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body body (required)
+     * @param  \Everyday\GmodStore\SDK\Model\BadgeCreateBody $body body (required)
      * @param  string $user_id Id of the user (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2013
+     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2013
      */
     public function createUserBadge($body, $user_id)
     {
@@ -109,16 +109,16 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  \Everyday\GmodStore\SDK\Model\BadgeCreateBody $body (required)
      * @param  string $user_id Id of the user (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
     public function createUserBadgeWithHttpInfo($body, $user_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2013';
         $request = $this->createUserBadgeRequest($body, $user_id);
 
         try {
@@ -170,7 +170,7 @@ class UserBadgesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2013',
+                        '\Everyday\GmodStore\SDK\Model\InlineResponse2013',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,7 +178,7 @@ class UserBadgesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
+                        '\Everyday\GmodStore\SDK\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -193,7 +193,7 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  \Everyday\GmodStore\SDK\Model\BadgeCreateBody $body (required)
      * @param  string $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
@@ -214,7 +214,7 @@ class UserBadgesApi
      *
      * Give a user a badge
      *
-     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  \Everyday\GmodStore\SDK\Model\BadgeCreateBody $body (required)
      * @param  string $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
@@ -222,7 +222,7 @@ class UserBadgesApi
      */
     public function createUserBadgeAsyncWithHttpInfo($body, $user_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2013';
         $request = $this->createUserBadgeRequest($body, $user_id);
 
         return $this->client
@@ -265,7 +265,7 @@ class UserBadgesApi
     /**
      * Create request for operation 'createUserBadge'
      *
-     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  \Everyday\GmodStore\SDK\Model\BadgeCreateBody $body (required)
      * @param  string $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
@@ -382,7 +382,7 @@ class UserBadgesApi
      * @param  string $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -399,7 +399,7 @@ class UserBadgesApi
      * @param  string $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -443,7 +443,7 @@ class UserBadgesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponseDefault',
+                        '\Everyday\GmodStore\SDK\Model\InlineResponseDefault',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -637,9 +637,9 @@ class UserBadgesApi
      *
      * @param  string $user_id Id of the user (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse20014
+     * @return \Everyday\GmodStore\SDK\Model\InlineResponse20014
      */
     public function listUserBadges($user_id)
     {
@@ -654,13 +654,13 @@ class UserBadgesApi
      *
      * @param  string $user_id Id of the user (required)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserBadgesWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20014';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20014';
         $request = $this->listUserBadgesRequest($user_id);
 
         try {
@@ -712,7 +712,7 @@ class UserBadgesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse20014',
+                        '\Everyday\GmodStore\SDK\Model\InlineResponse20014',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class UserBadgesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
+                        '\Everyday\GmodStore\SDK\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -762,7 +762,7 @@ class UserBadgesApi
      */
     public function listUserBadgesAsyncWithHttpInfo($user_id)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20014';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse20014';
         $request = $this->listUserBadgesRequest($user_id);
 
         return $this->client

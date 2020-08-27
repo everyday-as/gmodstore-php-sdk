@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Model;
+namespace Everyday\GmodStore\SDK\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStoreSDK\ObjectSerializer;
+use \Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * AddonVersion Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -64,7 +64,7 @@ class AddonVersion implements ModelInterface, ArrayAccess
 'release_type' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
-'addon' => '\Everyday\GmodStoreSDK\Model\Addon'    ];
+'addon' => '\Everyday\GmodStore\SDK\Model\Addon'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -494,7 +494,7 @@ self::RELEASE_TYPE__PRIVATE,        ];
     /**
      * Gets addon
      *
-     * @return \Everyday\GmodStoreSDK\Model\Addon
+     * @return \Everyday\GmodStore\SDK\Model\Addon
      */
     public function getAddon()
     {
@@ -504,7 +504,7 @@ self::RELEASE_TYPE__PRIVATE,        ];
     /**
      * Sets addon
      *
-     * @param \Everyday\GmodStoreSDK\Model\Addon $addon addon
+     * @param \Everyday\GmodStore\SDK\Model\Addon $addon addon
      *
      * @return $this
      */

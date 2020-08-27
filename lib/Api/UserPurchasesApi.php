@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStoreSDK\Api;
+namespace Everyday\GmodStore\SDK\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStoreSDK\ApiException;
-use Everyday\GmodStoreSDK\Configuration;
-use Everyday\GmodStoreSDK\HeaderSelector;
-use Everyday\GmodStoreSDK\ObjectSerializer;
+use Everyday\GmodStore\SDK\ApiException;
+use Everyday\GmodStore\SDK\Configuration;
+use Everyday\GmodStore\SDK\HeaderSelector;
+use Everyday\GmodStore\SDK\ObjectSerializer;
 
 /**
  * UserPurchasesApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStoreSDK
+ * @package  Everyday\GmodStore\SDK
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class UserPurchasesApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2004
+     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2004
      */
     public function listUserPurchases($user_id, $with = null)
     {
@@ -112,13 +112,13 @@ class UserPurchasesApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserPurchasesWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2004';
         $request = $this->listUserPurchasesRequest($user_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class UserPurchasesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2004',
+                        '\Everyday\GmodStore\SDK\Model\InlineResponse2004',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,7 +178,7 @@ class UserPurchasesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
+                        '\Everyday\GmodStore\SDK\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class UserPurchasesApi
      */
     public function listUserPurchasesAsyncWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2004';
         $request = $this->listUserPurchasesRequest($user_id, $with);
 
         return $this->client

@@ -25,6 +25,6 @@
         "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
-        "psr-4": { "Everyday\\GmodStoreSDK\\" : "lib/" }
+        "psr-4": { "Everyday\\GmodStore\\SDK\\" : "lib/" }
     }
 }
