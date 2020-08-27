@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponseDefault
+ * ErrorResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * InlineResponseDefault Class Doc Comment
+ * ErrorResponse Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponseDefault implements ModelInterface, ArrayAccess
+class ErrorResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponseDefault implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_default';
+    protected static $swaggerModelName = 'ErrorResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

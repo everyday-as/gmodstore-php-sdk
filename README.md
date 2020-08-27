@@ -123,7 +123,7 @@ Class | Method | HTTP request | Description
  - [Ban](docs/Model/Ban.md)
  - [BanListResponse](docs/Model/BanListResponse.md)
  - [Error](docs/Model/Error.md)
- - [InlineResponseDefault](docs/Model/InlineResponseDefault.md)
+ - [ErrorResponse](docs/Model/ErrorResponse.md)
  - [Money](docs/Model/Money.md)
  - [NewAddonCoupon](docs/Model/NewAddonCoupon.md)
  - [NewAddonPurchase](docs/Model/NewAddonPurchase.md)
