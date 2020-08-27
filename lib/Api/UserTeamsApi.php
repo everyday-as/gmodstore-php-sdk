@@ -87,7 +87,7 @@ class UserTeamsApi
     }
 
     /**
-     * Operation usersUserIdTeamsGet
+     * Operation listUserTeams
      *
      * Fetch all the teams of a user
      *
@@ -98,14 +98,14 @@ class UserTeamsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse20012
      */
-    public function usersUserIdTeamsGet($user_id, $with = null)
+    public function listUserTeams($user_id, $with = null)
     {
-        list($response) = $this->usersUserIdTeamsGetWithHttpInfo($user_id, $with);
+        list($response) = $this->listUserTeamsWithHttpInfo($user_id, $with);
         return $response;
     }
 
     /**
-     * Operation usersUserIdTeamsGetWithHttpInfo
+     * Operation listUserTeamsWithHttpInfo
      *
      * Fetch all the teams of a user
      *
@@ -116,10 +116,10 @@ class UserTeamsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdTeamsGetWithHttpInfo($user_id, $with = null)
+    public function listUserTeamsWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20012';
-        $request = $this->usersUserIdTeamsGetRequest($user_id, $with);
+        $request = $this->listUserTeamsRequest($user_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,7 +189,7 @@ class UserTeamsApi
     }
 
     /**
-     * Operation usersUserIdTeamsGetAsync
+     * Operation listUserTeamsAsync
      *
      * Fetch all the teams of a user
      *
@@ -199,9 +199,9 @@ class UserTeamsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdTeamsGetAsync($user_id, $with = null)
+    public function listUserTeamsAsync($user_id, $with = null)
     {
-        return $this->usersUserIdTeamsGetAsyncWithHttpInfo($user_id, $with)
+        return $this->listUserTeamsAsyncWithHttpInfo($user_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,7 +210,7 @@ class UserTeamsApi
     }
 
     /**
-     * Operation usersUserIdTeamsGetAsyncWithHttpInfo
+     * Operation listUserTeamsAsyncWithHttpInfo
      *
      * Fetch all the teams of a user
      *
@@ -220,10 +220,10 @@ class UserTeamsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdTeamsGetAsyncWithHttpInfo($user_id, $with = null)
+    public function listUserTeamsAsyncWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20012';
-        $request = $this->usersUserIdTeamsGetRequest($user_id, $with);
+        $request = $this->listUserTeamsRequest($user_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,7 +263,7 @@ class UserTeamsApi
     }
 
     /**
-     * Create request for operation 'usersUserIdTeamsGet'
+     * Create request for operation 'listUserTeams'
      *
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the Team schema (optional)
@@ -271,12 +271,12 @@ class UserTeamsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdTeamsGetRequest($user_id, $with = null)
+    protected function listUserTeamsRequest($user_id, $with = null)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdTeamsGet'
+                'Missing the required parameter $user_id when calling listUserTeams'
             );
         }
 
@@ -347,11 +347,10 @@ class UserTeamsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

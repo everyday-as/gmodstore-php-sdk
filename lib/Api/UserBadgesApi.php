@@ -87,7 +87,295 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesBadgeIdDelete
+     * Operation createUserBadge
+     *
+     * Give a user a badge
+     *
+     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body body (required)
+     * @param  string $user_id Id of the user (required)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2013
+     */
+    public function createUserBadge($body, $user_id)
+    {
+        list($response) = $this->createUserBadgeWithHttpInfo($body, $user_id);
+        return $response;
+    }
+
+    /**
+     * Operation createUserBadgeWithHttpInfo
+     *
+     * Give a user a badge
+     *
+     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  string $user_id Id of the user (required)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createUserBadgeWithHttpInfo($body, $user_id)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
+        $request = $this->createUserBadgeRequest($body, $user_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2013',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createUserBadgeAsync
+     *
+     * Give a user a badge
+     *
+     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  string $user_id Id of the user (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserBadgeAsync($body, $user_id)
+    {
+        return $this->createUserBadgeAsyncWithHttpInfo($body, $user_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createUserBadgeAsyncWithHttpInfo
+     *
+     * Give a user a badge
+     *
+     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  string $user_id Id of the user (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUserBadgeAsyncWithHttpInfo($body, $user_id)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
+        $request = $this->createUserBadgeRequest($body, $user_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createUserBadge'
+     *
+     * @param  \Everyday\GmodStoreSDK\Model\BadgeCreateBody $body (required)
+     * @param  string $user_id Id of the user (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createUserBadgeRequest($body, $user_id)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createUserBadge'
+            );
+        }
+        // verify the required parameter 'user_id' is set
+        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_id when calling createUserBadge'
+            );
+        }
+
+        $resourcePath = '/users/{user_id}/badges';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($user_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'user_id' . '}',
+                ObjectSerializer::toPathValue($user_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteUserBadge
      *
      * Destroy a users's badge
      *
@@ -98,13 +386,13 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function usersUserIdBadgesBadgeIdDelete($user_id, $badge_id)
+    public function deleteUserBadge($user_id, $badge_id)
     {
-        $this->usersUserIdBadgesBadgeIdDeleteWithHttpInfo($user_id, $badge_id);
+        $this->deleteUserBadgeWithHttpInfo($user_id, $badge_id);
     }
 
     /**
-     * Operation usersUserIdBadgesBadgeIdDeleteWithHttpInfo
+     * Operation deleteUserBadgeWithHttpInfo
      *
      * Destroy a users's badge
      *
@@ -115,10 +403,10 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdBadgesBadgeIdDeleteWithHttpInfo($user_id, $badge_id)
+    public function deleteUserBadgeWithHttpInfo($user_id, $badge_id)
     {
         $returnType = '';
-        $request = $this->usersUserIdBadgesBadgeIdDeleteRequest($user_id, $badge_id);
+        $request = $this->deleteUserBadgeRequest($user_id, $badge_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,7 +454,7 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesBadgeIdDeleteAsync
+     * Operation deleteUserBadgeAsync
      *
      * Destroy a users's badge
      *
@@ -176,9 +464,9 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBadgesBadgeIdDeleteAsync($user_id, $badge_id)
+    public function deleteUserBadgeAsync($user_id, $badge_id)
     {
-        return $this->usersUserIdBadgesBadgeIdDeleteAsyncWithHttpInfo($user_id, $badge_id)
+        return $this->deleteUserBadgeAsyncWithHttpInfo($user_id, $badge_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -187,7 +475,7 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesBadgeIdDeleteAsyncWithHttpInfo
+     * Operation deleteUserBadgeAsyncWithHttpInfo
      *
      * Destroy a users's badge
      *
@@ -197,10 +485,10 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBadgesBadgeIdDeleteAsyncWithHttpInfo($user_id, $badge_id)
+    public function deleteUserBadgeAsyncWithHttpInfo($user_id, $badge_id)
     {
         $returnType = '';
-        $request = $this->usersUserIdBadgesBadgeIdDeleteRequest($user_id, $badge_id);
+        $request = $this->deleteUserBadgeRequest($user_id, $badge_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -226,7 +514,7 @@ class UserBadgesApi
     }
 
     /**
-     * Create request for operation 'usersUserIdBadgesBadgeIdDelete'
+     * Create request for operation 'deleteUserBadge'
      *
      * @param  string $user_id Id of the user (required)
      * @param  int $badge_id Id of the badge (required)
@@ -234,18 +522,18 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdBadgesBadgeIdDeleteRequest($user_id, $badge_id)
+    protected function deleteUserBadgeRequest($user_id, $badge_id)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdBadgesBadgeIdDelete'
+                'Missing the required parameter $user_id when calling deleteUserBadge'
             );
         }
         // verify the required parameter 'badge_id' is set
         if ($badge_id === null || (is_array($badge_id) && count($badge_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $badge_id when calling usersUserIdBadgesBadgeIdDelete'
+                'Missing the required parameter $badge_id when calling deleteUserBadge'
             );
         }
 
@@ -317,11 +605,10 @@ class UserBadgesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -344,7 +631,7 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesGet
+     * Operation listUserBadges
      *
      * Fetch all the badges a user has
      *
@@ -354,14 +641,14 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse20014
      */
-    public function usersUserIdBadgesGet($user_id)
+    public function listUserBadges($user_id)
     {
-        list($response) = $this->usersUserIdBadgesGetWithHttpInfo($user_id);
+        list($response) = $this->listUserBadgesWithHttpInfo($user_id);
         return $response;
     }
 
     /**
-     * Operation usersUserIdBadgesGetWithHttpInfo
+     * Operation listUserBadgesWithHttpInfo
      *
      * Fetch all the badges a user has
      *
@@ -371,10 +658,10 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdBadgesGetWithHttpInfo($user_id)
+    public function listUserBadgesWithHttpInfo($user_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20014';
-        $request = $this->usersUserIdBadgesGetRequest($user_id);
+        $request = $this->listUserBadgesRequest($user_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -444,7 +731,7 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesGetAsync
+     * Operation listUserBadgesAsync
      *
      * Fetch all the badges a user has
      *
@@ -453,9 +740,9 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBadgesGetAsync($user_id)
+    public function listUserBadgesAsync($user_id)
     {
-        return $this->usersUserIdBadgesGetAsyncWithHttpInfo($user_id)
+        return $this->listUserBadgesAsyncWithHttpInfo($user_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -464,7 +751,7 @@ class UserBadgesApi
     }
 
     /**
-     * Operation usersUserIdBadgesGetAsyncWithHttpInfo
+     * Operation listUserBadgesAsyncWithHttpInfo
      *
      * Fetch all the badges a user has
      *
@@ -473,10 +760,10 @@ class UserBadgesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBadgesGetAsyncWithHttpInfo($user_id)
+    public function listUserBadgesAsyncWithHttpInfo($user_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20014';
-        $request = $this->usersUserIdBadgesGetRequest($user_id);
+        $request = $this->listUserBadgesRequest($user_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -516,19 +803,19 @@ class UserBadgesApi
     }
 
     /**
-     * Create request for operation 'usersUserIdBadgesGet'
+     * Create request for operation 'listUserBadges'
      *
      * @param  string $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdBadgesGetRequest($user_id)
+    protected function listUserBadgesRequest($user_id)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdBadgesGet'
+                'Missing the required parameter $user_id when calling listUserBadges'
             );
         }
 
@@ -592,11 +879,10 @@ class UserBadgesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -612,295 +898,6 @@ class UserBadgesApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation usersUserIdBadgesPost
-     *
-     * Give a user a badge
-     *
-     * @param  object $body body (required)
-     * @param  string $user_id Id of the user (required)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2013
-     */
-    public function usersUserIdBadgesPost($body, $user_id)
-    {
-        list($response) = $this->usersUserIdBadgesPostWithHttpInfo($body, $user_id);
-        return $response;
-    }
-
-    /**
-     * Operation usersUserIdBadgesPostWithHttpInfo
-     *
-     * Give a user a badge
-     *
-     * @param  object $body (required)
-     * @param  string $user_id Id of the user (required)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function usersUserIdBadgesPostWithHttpInfo($body, $user_id)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
-        $request = $this->usersUserIdBadgesPostRequest($body, $user_id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2013',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation usersUserIdBadgesPostAsync
-     *
-     * Give a user a badge
-     *
-     * @param  object $body (required)
-     * @param  string $user_id Id of the user (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function usersUserIdBadgesPostAsync($body, $user_id)
-    {
-        return $this->usersUserIdBadgesPostAsyncWithHttpInfo($body, $user_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation usersUserIdBadgesPostAsyncWithHttpInfo
-     *
-     * Give a user a badge
-     *
-     * @param  object $body (required)
-     * @param  string $user_id Id of the user (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function usersUserIdBadgesPostAsyncWithHttpInfo($body, $user_id)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2013';
-        $request = $this->usersUserIdBadgesPostRequest($body, $user_id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'usersUserIdBadgesPost'
-     *
-     * @param  object $body (required)
-     * @param  string $user_id Id of the user (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function usersUserIdBadgesPostRequest($body, $user_id)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling usersUserIdBadgesPost'
-            );
-        }
-        // verify the required parameter 'user_id' is set
-        if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdBadgesPost'
-            );
-        }
-
-        $resourcePath = '/users/{user_id}/badges';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($user_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($user_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

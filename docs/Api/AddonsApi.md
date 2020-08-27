@@ -4,11 +4,11 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addonsAddonIdGet**](AddonsApi.md#addonsaddonidget) | **GET** /addons/{addon_id} | Fetch a single addon
-[**addonsGet**](AddonsApi.md#addonsget) | **GET** /addons | Fetch all the addons that you have access to
+[**getAddon**](AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
+[**listSelfAddons**](AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
 
-# **addonsAddonIdGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2001 addonsAddonIdGet($addon_id, $with)
+# **getAddon**
+> \Everyday\GmodStoreSDK\Model\InlineResponse2001 getAddon($addon_id, $with)
 
 Fetch a single addon
 
@@ -16,10 +16,10 @@ Fetch a single addon
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\AddonsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -31,10 +31,10 @@ $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the Addon schema
 
 try {
-    $result = $apiInstance->addonsAddonIdGet($addon_id, $with);
+    $result = $apiInstance->getAddon($addon_id, $with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AddonsApi->addonsAddonIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddonsApi->getAddon: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **addonsGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse200 addonsGet($with)
+# **listSelfAddons**
+> \Everyday\GmodStoreSDK\Model\InlineResponse200 listSelfAddons($with)
 
 Fetch all the addons that you have access to
 
@@ -70,10 +70,10 @@ Fetch all the addons that you have access to
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\AddonsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -84,10 +84,10 @@ $apiInstance = new Everyday\GmodStoreSDK\Api\AddonsApi(
 $with = array("with_example"); // string[] | The relations you want to fetch with the Addon schema
 
 try {
-    $result = $apiInstance->addonsGet($with);
+    $result = $apiInstance->listSelfAddons($with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AddonsApi->addonsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddonsApi->listSelfAddons: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

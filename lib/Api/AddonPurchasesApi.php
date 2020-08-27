@@ -87,298 +87,11 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesGet
-     *
-     * Fetch all purchases of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2004
-     */
-    public function addonsAddonIdPurchasesGet($addon_id, $with = null)
-    {
-        list($response) = $this->addonsAddonIdPurchasesGetWithHttpInfo($addon_id, $with);
-        return $response;
-    }
-
-    /**
-     * Operation addonsAddonIdPurchasesGetWithHttpInfo
-     *
-     * Fetch all purchases of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addonsAddonIdPurchasesGetWithHttpInfo($addon_id, $with = null)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
-        $request = $this->addonsAddonIdPurchasesGetRequest($addon_id, $with);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2004',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation addonsAddonIdPurchasesGetAsync
-     *
-     * Fetch all purchases of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function addonsAddonIdPurchasesGetAsync($addon_id, $with = null)
-    {
-        return $this->addonsAddonIdPurchasesGetAsyncWithHttpInfo($addon_id, $with)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation addonsAddonIdPurchasesGetAsyncWithHttpInfo
-     *
-     * Fetch all purchases of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function addonsAddonIdPurchasesGetAsyncWithHttpInfo($addon_id, $with = null)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
-        $request = $this->addonsAddonIdPurchasesGetRequest($addon_id, $with);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'addonsAddonIdPurchasesGet'
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function addonsAddonIdPurchasesGetRequest($addon_id, $with = null)
-    {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdPurchasesGet'
-            );
-        }
-
-        $resourcePath = '/addons/{addon_id}/purchases';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($with)) {
-            $with = ObjectSerializer::serializeCollection($with, 'csv', true);
-        }
-        if ($with !== null) {
-            $queryParams['with'] = ObjectSerializer::toQueryValue($with);
-        }
-
-        // path params
-        if ($addon_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation addonsAddonIdPurchasesPost
+     * Operation createAddonPurchase
      *
      * Create a purchase for an addon
      *
-     * @param  object $body body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseCreateBody $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
@@ -386,18 +99,18 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2011
      */
-    public function addonsAddonIdPurchasesPost($body, $addon_id, $with = null)
+    public function createAddonPurchase($body, $addon_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdPurchasesPostWithHttpInfo($body, $addon_id, $with);
+        list($response) = $this->createAddonPurchaseWithHttpInfo($body, $addon_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdPurchasesPostWithHttpInfo
+     * Operation createAddonPurchaseWithHttpInfo
      *
      * Create a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseCreateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
@@ -405,10 +118,10 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdPurchasesPostWithHttpInfo($body, $addon_id, $with = null)
+    public function createAddonPurchaseWithHttpInfo($body, $addon_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesPostRequest($body, $addon_id, $with);
+        $request = $this->createAddonPurchaseRequest($body, $addon_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -478,20 +191,20 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesPostAsync
+     * Operation createAddonPurchaseAsync
      *
      * Create a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseCreateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesPostAsync($body, $addon_id, $with = null)
+    public function createAddonPurchaseAsync($body, $addon_id, $with = null)
     {
-        return $this->addonsAddonIdPurchasesPostAsyncWithHttpInfo($body, $addon_id, $with)
+        return $this->createAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -500,21 +213,21 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesPostAsyncWithHttpInfo
+     * Operation createAddonPurchaseAsyncWithHttpInfo
      *
      * Create a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseCreateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesPostAsyncWithHttpInfo($body, $addon_id, $with = null)
+    public function createAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesPostRequest($body, $addon_id, $with);
+        $request = $this->createAddonPurchaseRequest($body, $addon_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -554,27 +267,27 @@ class AddonPurchasesApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdPurchasesPost'
+     * Create request for operation 'createAddonPurchase'
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseCreateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdPurchasesPostRequest($body, $addon_id, $with = null)
+    protected function createAddonPurchaseRequest($body, $addon_id, $with = null)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling addonsAddonIdPurchasesPost'
+                'Missing the required parameter $body when calling createAddonPurchase'
             );
         }
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdPurchasesPost'
+                'Missing the required parameter $addon_id when calling createAddonPurchase'
             );
         }
 
@@ -648,11 +361,10 @@ class AddonPurchasesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -675,7 +387,7 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdGet
+     * Operation getAddonPurchase
      *
      * Get a purchase of an addon by user
      *
@@ -687,14 +399,14 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2011
      */
-    public function addonsAddonIdPurchasesUserIdGet($addon_id, $user_id, $with = null)
+    public function getAddonPurchase($addon_id, $user_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdPurchasesUserIdGetWithHttpInfo($addon_id, $user_id, $with);
+        list($response) = $this->getAddonPurchaseWithHttpInfo($addon_id, $user_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdGetWithHttpInfo
+     * Operation getAddonPurchaseWithHttpInfo
      *
      * Get a purchase of an addon by user
      *
@@ -706,10 +418,10 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdPurchasesUserIdGetWithHttpInfo($addon_id, $user_id, $with = null)
+    public function getAddonPurchaseWithHttpInfo($addon_id, $user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesUserIdGetRequest($addon_id, $user_id, $with);
+        $request = $this->getAddonPurchaseRequest($addon_id, $user_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -779,7 +491,7 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdGetAsync
+     * Operation getAddonPurchaseAsync
      *
      * Get a purchase of an addon by user
      *
@@ -790,9 +502,9 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesUserIdGetAsync($addon_id, $user_id, $with = null)
+    public function getAddonPurchaseAsync($addon_id, $user_id, $with = null)
     {
-        return $this->addonsAddonIdPurchasesUserIdGetAsyncWithHttpInfo($addon_id, $user_id, $with)
+        return $this->getAddonPurchaseAsyncWithHttpInfo($addon_id, $user_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -801,7 +513,7 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdGetAsyncWithHttpInfo
+     * Operation getAddonPurchaseAsyncWithHttpInfo
      *
      * Get a purchase of an addon by user
      *
@@ -812,10 +524,10 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesUserIdGetAsyncWithHttpInfo($addon_id, $user_id, $with = null)
+    public function getAddonPurchaseAsyncWithHttpInfo($addon_id, $user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesUserIdGetRequest($addon_id, $user_id, $with);
+        $request = $this->getAddonPurchaseRequest($addon_id, $user_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -855,7 +567,7 @@ class AddonPurchasesApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdPurchasesUserIdGet'
+     * Create request for operation 'getAddonPurchase'
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
@@ -864,18 +576,18 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdPurchasesUserIdGetRequest($addon_id, $user_id, $with = null)
+    protected function getAddonPurchaseRequest($addon_id, $user_id, $with = null)
     {
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdPurchasesUserIdGet'
+                'Missing the required parameter $addon_id when calling getAddonPurchase'
             );
         }
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling addonsAddonIdPurchasesUserIdGet'
+                'Missing the required parameter $user_id when calling getAddonPurchase'
             );
         }
 
@@ -954,11 +666,10 @@ class AddonPurchasesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -981,11 +692,297 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdPut
+     * Operation listAddonPurchases
+     *
+     * Fetch all purchases of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2004
+     */
+    public function listAddonPurchases($addon_id, $with = null)
+    {
+        list($response) = $this->listAddonPurchasesWithHttpInfo($addon_id, $with);
+        return $response;
+    }
+
+    /**
+     * Operation listAddonPurchasesWithHttpInfo
+     *
+     * Fetch all purchases of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listAddonPurchasesWithHttpInfo($addon_id, $with = null)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $request = $this->listAddonPurchasesRequest($addon_id, $with);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2004',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listAddonPurchasesAsync
+     *
+     * Fetch all purchases of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listAddonPurchasesAsync($addon_id, $with = null)
+    {
+        return $this->listAddonPurchasesAsyncWithHttpInfo($addon_id, $with)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listAddonPurchasesAsyncWithHttpInfo
+     *
+     * Fetch all purchases of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listAddonPurchasesAsyncWithHttpInfo($addon_id, $with = null)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
+        $request = $this->listAddonPurchasesRequest($addon_id, $with);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listAddonPurchases'
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listAddonPurchasesRequest($addon_id, $with = null)
+    {
+        // verify the required parameter 'addon_id' is set
+        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $addon_id when calling listAddonPurchases'
+            );
+        }
+
+        $resourcePath = '/addons/{addon_id}/purchases';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($with)) {
+            $with = ObjectSerializer::serializeCollection($with, 'csv', true);
+        }
+        if ($with !== null) {
+            $queryParams['with'] = ObjectSerializer::toQueryValue($with);
+        }
+
+        // path params
+        if ($addon_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'addon_id' . '}',
+                ObjectSerializer::toPathValue($addon_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAddonPurchase
      *
      * Update a purchase for an addon
      *
-     * @param  object $body body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseUpdateBody $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -994,18 +991,18 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2011
      */
-    public function addonsAddonIdPurchasesUserIdPut($body, $addon_id, $user_id, $with = null)
+    public function updateAddonPurchase($body, $addon_id, $user_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdPurchasesUserIdPutWithHttpInfo($body, $addon_id, $user_id, $with);
+        list($response) = $this->updateAddonPurchaseWithHttpInfo($body, $addon_id, $user_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdPutWithHttpInfo
+     * Operation updateAddonPurchaseWithHttpInfo
      *
      * Update a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseUpdateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1014,10 +1011,10 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdPurchasesUserIdPutWithHttpInfo($body, $addon_id, $user_id, $with = null)
+    public function updateAddonPurchaseWithHttpInfo($body, $addon_id, $user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesUserIdPutRequest($body, $addon_id, $user_id, $with);
+        $request = $this->updateAddonPurchaseRequest($body, $addon_id, $user_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1087,11 +1084,11 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdPutAsync
+     * Operation updateAddonPurchaseAsync
      *
      * Update a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseUpdateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1099,9 +1096,9 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesUserIdPutAsync($body, $addon_id, $user_id, $with = null)
+    public function updateAddonPurchaseAsync($body, $addon_id, $user_id, $with = null)
     {
-        return $this->addonsAddonIdPurchasesUserIdPutAsyncWithHttpInfo($body, $addon_id, $user_id, $with)
+        return $this->updateAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $user_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1110,11 +1107,11 @@ class AddonPurchasesApi
     }
 
     /**
-     * Operation addonsAddonIdPurchasesUserIdPutAsyncWithHttpInfo
+     * Operation updateAddonPurchaseAsyncWithHttpInfo
      *
      * Update a purchase for an addon
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseUpdateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1122,10 +1119,10 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdPurchasesUserIdPutAsyncWithHttpInfo($body, $addon_id, $user_id, $with = null)
+    public function updateAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2011';
-        $request = $this->addonsAddonIdPurchasesUserIdPutRequest($body, $addon_id, $user_id, $with);
+        $request = $this->updateAddonPurchaseRequest($body, $addon_id, $user_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1165,9 +1162,9 @@ class AddonPurchasesApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdPurchasesUserIdPut'
+     * Create request for operation 'updateAddonPurchase'
      *
-     * @param  object $body (required)
+     * @param  \Everyday\GmodStoreSDK\Model\AddonPurchaseUpdateBody $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1175,24 +1172,24 @@ class AddonPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdPurchasesUserIdPutRequest($body, $addon_id, $user_id, $with = null)
+    protected function updateAddonPurchaseRequest($body, $addon_id, $user_id, $with = null)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling addonsAddonIdPurchasesUserIdPut'
+                'Missing the required parameter $body when calling updateAddonPurchase'
             );
         }
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdPurchasesUserIdPut'
+                'Missing the required parameter $addon_id when calling updateAddonPurchase'
             );
         }
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling addonsAddonIdPurchasesUserIdPut'
+                'Missing the required parameter $user_id when calling updateAddonPurchase'
             );
         }
 
@@ -1274,11 +1271,10 @@ class AddonPurchasesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

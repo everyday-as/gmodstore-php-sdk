@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**teamsTeamIdGet**](TeamsApi.md#teamsteamidget) | **GET** /teams/{team_id} | Fetch a single team
+[**getTeam**](TeamsApi.md#getteam) | **GET** /teams/{team_id} | Fetch a single team
 
-# **teamsTeamIdGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2009 teamsTeamIdGet($team_id, $with)
+# **getTeam**
+> \Everyday\GmodStoreSDK\Model\InlineResponse2009 getTeam($team_id, $with)
 
 Fetch a single team
 
@@ -15,10 +15,10 @@ Fetch a single team
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\TeamsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -30,10 +30,10 @@ $team_id = 789; // int | Id of the team
 $with = array("with_example"); // string[] | The relations you want to fetch with the Team schema
 
 try {
-    $result = $apiInstance->teamsTeamIdGet($team_id, $with);
+    $result = $apiInstance->getTeam($team_id, $with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TeamsApi->teamsTeamIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TeamsApi->getTeam: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

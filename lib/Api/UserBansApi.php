@@ -87,7 +87,7 @@ class UserBansApi
     }
 
     /**
-     * Operation usersUserIdBansGet
+     * Operation listUserBans
      *
      * Fetch all active bans associated with this user
      *
@@ -97,14 +97,14 @@ class UserBansApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse20013
      */
-    public function usersUserIdBansGet($user_id)
+    public function listUserBans($user_id)
     {
-        list($response) = $this->usersUserIdBansGetWithHttpInfo($user_id);
+        list($response) = $this->listUserBansWithHttpInfo($user_id);
         return $response;
     }
 
     /**
-     * Operation usersUserIdBansGetWithHttpInfo
+     * Operation listUserBansWithHttpInfo
      *
      * Fetch all active bans associated with this user
      *
@@ -114,10 +114,10 @@ class UserBansApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdBansGetWithHttpInfo($user_id)
+    public function listUserBansWithHttpInfo($user_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20013';
-        $request = $this->usersUserIdBansGetRequest($user_id);
+        $request = $this->listUserBansRequest($user_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,7 +187,7 @@ class UserBansApi
     }
 
     /**
-     * Operation usersUserIdBansGetAsync
+     * Operation listUserBansAsync
      *
      * Fetch all active bans associated with this user
      *
@@ -196,9 +196,9 @@ class UserBansApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBansGetAsync($user_id)
+    public function listUserBansAsync($user_id)
     {
-        return $this->usersUserIdBansGetAsyncWithHttpInfo($user_id)
+        return $this->listUserBansAsyncWithHttpInfo($user_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -207,7 +207,7 @@ class UserBansApi
     }
 
     /**
-     * Operation usersUserIdBansGetAsyncWithHttpInfo
+     * Operation listUserBansAsyncWithHttpInfo
      *
      * Fetch all active bans associated with this user
      *
@@ -216,10 +216,10 @@ class UserBansApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdBansGetAsyncWithHttpInfo($user_id)
+    public function listUserBansAsyncWithHttpInfo($user_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20013';
-        $request = $this->usersUserIdBansGetRequest($user_id);
+        $request = $this->listUserBansRequest($user_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,19 +259,19 @@ class UserBansApi
     }
 
     /**
-     * Create request for operation 'usersUserIdBansGet'
+     * Create request for operation 'listUserBans'
      *
      * @param  string $user_id Id of the user (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdBansGetRequest($user_id)
+    protected function listUserBansRequest($user_id)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdBansGet'
+                'Missing the required parameter $user_id when calling listUserBans'
             );
         }
 
@@ -335,11 +335,10 @@ class UserBansApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

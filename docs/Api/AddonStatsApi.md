@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addonsAddonIdStatsGet**](AddonStatsApi.md#addonsaddonidstatsget) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
+[**getAddonStats**](AddonStatsApi.md#getaddonstats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
-# **addonsAddonIdStatsGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2002 addonsAddonIdStatsGet($addon_id)
+# **getAddonStats**
+> \Everyday\GmodStoreSDK\Model\InlineResponse2002 getAddonStats($addon_id)
 
 Fetch all the stats for an addon
 
@@ -15,10 +15,10 @@ Fetch all the stats for an addon
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\AddonStatsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -29,10 +29,10 @@ $apiInstance = new Everyday\GmodStoreSDK\Api\AddonStatsApi(
 $addon_id = 789; // int | Id of the addon
 
 try {
-    $result = $apiInstance->addonsAddonIdStatsGet($addon_id);
+    $result = $apiInstance->getAddonStats($addon_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AddonStatsApi->addonsAddonIdStatsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddonStatsApi->getAddonStats: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

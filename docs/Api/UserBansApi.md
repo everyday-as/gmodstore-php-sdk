@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdBansGet**](UserBansApi.md#usersuseridbansget) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+[**listUserBans**](UserBansApi.md#listuserbans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
-# **usersUserIdBansGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20013 usersUserIdBansGet($user_id)
+# **listUserBans**
+> \Everyday\GmodStoreSDK\Model\InlineResponse20013 listUserBans($user_id)
 
 Fetch all active bans associated with this user
 
@@ -15,10 +15,10 @@ Fetch all active bans associated with this user
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\UserBansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -29,10 +29,10 @@ $apiInstance = new Everyday\GmodStoreSDK\Api\UserBansApi(
 $user_id = "user_id_example"; // string | Id of the user
 
 try {
-    $result = $apiInstance->usersUserIdBansGet($user_id);
+    $result = $apiInstance->listUserBans($user_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserBansApi->usersUserIdBansGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserBansApi->listUserBans: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

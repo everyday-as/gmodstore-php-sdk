@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**teamsTeamIdUsersGet**](TeamUsersApi.md#teamsteamidusersget) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
+[**listTeamUsers**](TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
 
-# **teamsTeamIdUsersGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse20010 teamsTeamIdUsersGet($team_id, $with)
+# **listTeamUsers**
+> \Everyday\GmodStoreSDK\Model\InlineResponse20010 listTeamUsers($team_id, $with)
 
 Fetch all the users in the given team
 
@@ -15,10 +15,10 @@ Fetch all the users in the given team
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\TeamUsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -30,10 +30,10 @@ $team_id = 789; // int | Id of the team
 $with = array("with_example"); // string[] | The relations you want to fetch with the TeamUser schema
 
 try {
-    $result = $apiInstance->teamsTeamIdUsersGet($team_id, $with);
+    $result = $apiInstance->listTeamUsers($team_id, $with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TeamUsersApi->teamsTeamIdUsersGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TeamUsersApi->listTeamUsers: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

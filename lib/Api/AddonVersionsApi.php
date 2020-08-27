@@ -87,294 +87,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsGet
-     *
-     * Fetch all the versions of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2007
-     */
-    public function addonsAddonIdVersionsGet($addon_id, $with = null)
-    {
-        list($response) = $this->addonsAddonIdVersionsGetWithHttpInfo($addon_id, $with);
-        return $response;
-    }
-
-    /**
-     * Operation addonsAddonIdVersionsGetWithHttpInfo
-     *
-     * Fetch all the versions of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
-     *
-     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function addonsAddonIdVersionsGetWithHttpInfo($addon_id, $with = null)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
-        $request = $this->addonsAddonIdVersionsGetRequest($addon_id, $with);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\InlineResponse2007',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Everyday\GmodStoreSDK\Model\Error',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation addonsAddonIdVersionsGetAsync
-     *
-     * Fetch all the versions of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function addonsAddonIdVersionsGetAsync($addon_id, $with = null)
-    {
-        return $this->addonsAddonIdVersionsGetAsyncWithHttpInfo($addon_id, $with)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation addonsAddonIdVersionsGetAsyncWithHttpInfo
-     *
-     * Fetch all the versions of an addon
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function addonsAddonIdVersionsGetAsyncWithHttpInfo($addon_id, $with = null)
-    {
-        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
-        $request = $this->addonsAddonIdVersionsGetRequest($addon_id, $with);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'addonsAddonIdVersionsGet'
-     *
-     * @param  int $addon_id Id of the addon (required)
-     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function addonsAddonIdVersionsGetRequest($addon_id, $with = null)
-    {
-        // verify the required parameter 'addon_id' is set
-        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdVersionsGet'
-            );
-        }
-
-        $resourcePath = '/addons/{addon_id}/versions';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($with)) {
-            $with = ObjectSerializer::serializeCollection($with, 'csv', true);
-        }
-        if ($with !== null) {
-            $queryParams['with'] = ObjectSerializer::toQueryValue($with);
-        }
-
-        // path params
-        if ($addon_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'addon_id' . '}',
-                ObjectSerializer::toPathValue($addon_id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation addonsAddonIdVersionsPost
+     * Operation createAddonVersion
      *
      * Create a new version for an addon
      *
@@ -389,14 +102,14 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2012
      */
-    public function addonsAddonIdVersionsPost($name, $changelog, $file, $release_type, $addon_id, $with = null)
+    public function createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdVersionsPostWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with);
+        list($response) = $this->createAddonVersionWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdVersionsPostWithHttpInfo
+     * Operation createAddonVersionWithHttpInfo
      *
      * Create a new version for an addon
      *
@@ -411,10 +124,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdVersionsPostWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
+    public function createAddonVersionWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsPostRequest($name, $changelog, $file, $release_type, $addon_id, $with);
+        $request = $this->createAddonVersionRequest($name, $changelog, $file, $release_type, $addon_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -484,7 +197,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsPostAsync
+     * Operation createAddonVersionAsync
      *
      * Create a new version for an addon
      *
@@ -498,9 +211,9 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsPostAsync($name, $changelog, $file, $release_type, $addon_id, $with = null)
+    public function createAddonVersionAsync($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
-        return $this->addonsAddonIdVersionsPostAsyncWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with)
+        return $this->createAddonVersionAsyncWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -509,7 +222,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsPostAsyncWithHttpInfo
+     * Operation createAddonVersionAsyncWithHttpInfo
      *
      * Create a new version for an addon
      *
@@ -523,10 +236,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsPostAsyncWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
+    public function createAddonVersionAsyncWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsPostRequest($name, $changelog, $file, $release_type, $addon_id, $with);
+        $request = $this->createAddonVersionRequest($name, $changelog, $file, $release_type, $addon_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -566,7 +279,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdVersionsPost'
+     * Create request for operation 'createAddonVersion'
      *
      * @param  string $name (required)
      * @param  string $changelog (required)
@@ -578,36 +291,36 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdVersionsPostRequest($name, $changelog, $file, $release_type, $addon_id, $with = null)
+    protected function createAddonVersionRequest($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling addonsAddonIdVersionsPost'
+                'Missing the required parameter $name when calling createAddonVersion'
             );
         }
         // verify the required parameter 'changelog' is set
         if ($changelog === null || (is_array($changelog) && count($changelog) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $changelog when calling addonsAddonIdVersionsPost'
+                'Missing the required parameter $changelog when calling createAddonVersion'
             );
         }
         // verify the required parameter 'file' is set
         if ($file === null || (is_array($file) && count($file) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file when calling addonsAddonIdVersionsPost'
+                'Missing the required parameter $file when calling createAddonVersion'
             );
         }
         // verify the required parameter 'release_type' is set
         if ($release_type === null || (is_array($release_type) && count($release_type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $release_type when calling addonsAddonIdVersionsPost'
+                'Missing the required parameter $release_type when calling createAddonVersion'
             );
         }
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdVersionsPost'
+                'Missing the required parameter $addon_id when calling createAddonVersion'
             );
         }
 
@@ -695,11 +408,10 @@ class AddonVersionsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -722,7 +434,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdDownloadGet
+     * Operation downloadAddonVersion
      *
      * Generate a download token for a specific version of an addon
      *
@@ -733,14 +445,14 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2008
      */
-    public function addonsAddonIdVersionsVersionIdDownloadGet($addon_id, $version_id)
+    public function downloadAddonVersion($addon_id, $version_id)
     {
-        list($response) = $this->addonsAddonIdVersionsVersionIdDownloadGetWithHttpInfo($addon_id, $version_id);
+        list($response) = $this->downloadAddonVersionWithHttpInfo($addon_id, $version_id);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdDownloadGetWithHttpInfo
+     * Operation downloadAddonVersionWithHttpInfo
      *
      * Generate a download token for a specific version of an addon
      *
@@ -751,10 +463,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdVersionsVersionIdDownloadGetWithHttpInfo($addon_id, $version_id)
+    public function downloadAddonVersionWithHttpInfo($addon_id, $version_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
-        $request = $this->addonsAddonIdVersionsVersionIdDownloadGetRequest($addon_id, $version_id);
+        $request = $this->downloadAddonVersionRequest($addon_id, $version_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -824,7 +536,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdDownloadGetAsync
+     * Operation downloadAddonVersionAsync
      *
      * Generate a download token for a specific version of an addon
      *
@@ -834,9 +546,9 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdDownloadGetAsync($addon_id, $version_id)
+    public function downloadAddonVersionAsync($addon_id, $version_id)
     {
-        return $this->addonsAddonIdVersionsVersionIdDownloadGetAsyncWithHttpInfo($addon_id, $version_id)
+        return $this->downloadAddonVersionAsyncWithHttpInfo($addon_id, $version_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -845,7 +557,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdDownloadGetAsyncWithHttpInfo
+     * Operation downloadAddonVersionAsyncWithHttpInfo
      *
      * Generate a download token for a specific version of an addon
      *
@@ -855,10 +567,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdDownloadGetAsyncWithHttpInfo($addon_id, $version_id)
+    public function downloadAddonVersionAsyncWithHttpInfo($addon_id, $version_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2008';
-        $request = $this->addonsAddonIdVersionsVersionIdDownloadGetRequest($addon_id, $version_id);
+        $request = $this->downloadAddonVersionRequest($addon_id, $version_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -898,7 +610,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdVersionsVersionIdDownloadGet'
+     * Create request for operation 'downloadAddonVersion'
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
@@ -906,18 +618,18 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdVersionsVersionIdDownloadGetRequest($addon_id, $version_id)
+    protected function downloadAddonVersionRequest($addon_id, $version_id)
     {
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdVersionsVersionIdDownloadGet'
+                'Missing the required parameter $addon_id when calling downloadAddonVersion'
             );
         }
         // verify the required parameter 'version_id' is set
         if ($version_id === null || (is_array($version_id) && count($version_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $version_id when calling addonsAddonIdVersionsVersionIdDownloadGet'
+                'Missing the required parameter $version_id when calling downloadAddonVersion'
             );
         }
 
@@ -989,11 +701,10 @@ class AddonVersionsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1016,7 +727,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdGet
+     * Operation getAddonVersion
      *
      * Fetch a specific version of an addon
      *
@@ -1028,14 +739,14 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2012
      */
-    public function addonsAddonIdVersionsVersionIdGet($addon_id, $version_id, $with = null)
+    public function getAddonVersion($addon_id, $version_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdVersionsVersionIdGetWithHttpInfo($addon_id, $version_id, $with);
+        list($response) = $this->getAddonVersionWithHttpInfo($addon_id, $version_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdGetWithHttpInfo
+     * Operation getAddonVersionWithHttpInfo
      *
      * Fetch a specific version of an addon
      *
@@ -1047,10 +758,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdVersionsVersionIdGetWithHttpInfo($addon_id, $version_id, $with = null)
+    public function getAddonVersionWithHttpInfo($addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsVersionIdGetRequest($addon_id, $version_id, $with);
+        $request = $this->getAddonVersionRequest($addon_id, $version_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1120,7 +831,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdGetAsync
+     * Operation getAddonVersionAsync
      *
      * Fetch a specific version of an addon
      *
@@ -1131,9 +842,9 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdGetAsync($addon_id, $version_id, $with = null)
+    public function getAddonVersionAsync($addon_id, $version_id, $with = null)
     {
-        return $this->addonsAddonIdVersionsVersionIdGetAsyncWithHttpInfo($addon_id, $version_id, $with)
+        return $this->getAddonVersionAsyncWithHttpInfo($addon_id, $version_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1142,7 +853,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdGetAsyncWithHttpInfo
+     * Operation getAddonVersionAsyncWithHttpInfo
      *
      * Fetch a specific version of an addon
      *
@@ -1153,10 +864,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdGetAsyncWithHttpInfo($addon_id, $version_id, $with = null)
+    public function getAddonVersionAsyncWithHttpInfo($addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsVersionIdGetRequest($addon_id, $version_id, $with);
+        $request = $this->getAddonVersionRequest($addon_id, $version_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1196,7 +907,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdVersionsVersionIdGet'
+     * Create request for operation 'getAddonVersion'
      *
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
@@ -1205,18 +916,18 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdVersionsVersionIdGetRequest($addon_id, $version_id, $with = null)
+    protected function getAddonVersionRequest($addon_id, $version_id, $with = null)
     {
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdVersionsVersionIdGet'
+                'Missing the required parameter $addon_id when calling getAddonVersion'
             );
         }
         // verify the required parameter 'version_id' is set
         if ($version_id === null || (is_array($version_id) && count($version_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $version_id when calling addonsAddonIdVersionsVersionIdGet'
+                'Missing the required parameter $version_id when calling getAddonVersion'
             );
         }
 
@@ -1295,11 +1006,10 @@ class AddonVersionsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1322,7 +1032,293 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdPut
+     * Operation listAddonVersions
+     *
+     * Fetch all the versions of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Everyday\GmodStoreSDK\Model\InlineResponse2007
+     */
+    public function listAddonVersions($addon_id, $with = null)
+    {
+        list($response) = $this->listAddonVersionsWithHttpInfo($addon_id, $with);
+        return $response;
+    }
+
+    /**
+     * Operation listAddonVersionsWithHttpInfo
+     *
+     * Fetch all the versions of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     *
+     * @throws \Everyday\GmodStoreSDK\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listAddonVersionsWithHttpInfo($addon_id, $with = null)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
+        $request = $this->listAddonVersionsRequest($addon_id, $with);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\InlineResponse2007',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStoreSDK\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listAddonVersionsAsync
+     *
+     * Fetch all the versions of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listAddonVersionsAsync($addon_id, $with = null)
+    {
+        return $this->listAddonVersionsAsyncWithHttpInfo($addon_id, $with)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listAddonVersionsAsyncWithHttpInfo
+     *
+     * Fetch all the versions of an addon
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listAddonVersionsAsyncWithHttpInfo($addon_id, $with = null)
+    {
+        $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2007';
+        $request = $this->listAddonVersionsRequest($addon_id, $with);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listAddonVersions'
+     *
+     * @param  int $addon_id Id of the addon (required)
+     * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listAddonVersionsRequest($addon_id, $with = null)
+    {
+        // verify the required parameter 'addon_id' is set
+        if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $addon_id when calling listAddonVersions'
+            );
+        }
+
+        $resourcePath = '/addons/{addon_id}/versions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($with)) {
+            $with = ObjectSerializer::serializeCollection($with, 'csv', true);
+        }
+        if ($with !== null) {
+            $queryParams['with'] = ObjectSerializer::toQueryValue($with);
+        }
+
+        // path params
+        if ($addon_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'addon_id' . '}',
+                ObjectSerializer::toPathValue($addon_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateAddonVersion
      *
      * Update a version of an addon
      *
@@ -1337,14 +1333,14 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2012
      */
-    public function addonsAddonIdVersionsVersionIdPut($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
-        list($response) = $this->addonsAddonIdVersionsVersionIdPutWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        list($response) = $this->updateAddonVersionWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdPutWithHttpInfo
+     * Operation updateAddonVersionWithHttpInfo
      *
      * Update a version of an addon
      *
@@ -1359,10 +1355,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdVersionsVersionIdPutWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsVersionIdPutRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1432,7 +1428,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdPutAsync
+     * Operation updateAddonVersionAsync
      *
      * Update a version of an addon
      *
@@ -1446,9 +1442,9 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdPutAsync($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionAsync($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
-        return $this->addonsAddonIdVersionsVersionIdPutAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with)
+        return $this->updateAddonVersionAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1457,7 +1453,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Operation addonsAddonIdVersionsVersionIdPutAsyncWithHttpInfo
+     * Operation updateAddonVersionAsyncWithHttpInfo
      *
      * Update a version of an addon
      *
@@ -1471,10 +1467,10 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdVersionsVersionIdPutAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    public function updateAddonVersionAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2012';
-        $request = $this->addonsAddonIdVersionsVersionIdPutRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
+        $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1514,7 +1510,7 @@ class AddonVersionsApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdVersionsVersionIdPut'
+     * Create request for operation 'updateAddonVersion'
      *
      * @param  string $name (required)
      * @param  string $changelog (required)
@@ -1526,36 +1522,36 @@ class AddonVersionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdVersionsVersionIdPutRequest($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
+    protected function updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling addonsAddonIdVersionsVersionIdPut'
+                'Missing the required parameter $name when calling updateAddonVersion'
             );
         }
         // verify the required parameter 'changelog' is set
         if ($changelog === null || (is_array($changelog) && count($changelog) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $changelog when calling addonsAddonIdVersionsVersionIdPut'
+                'Missing the required parameter $changelog when calling updateAddonVersion'
             );
         }
         // verify the required parameter 'release_type' is set
         if ($release_type === null || (is_array($release_type) && count($release_type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $release_type when calling addonsAddonIdVersionsVersionIdPut'
+                'Missing the required parameter $release_type when calling updateAddonVersion'
             );
         }
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdVersionsVersionIdPut'
+                'Missing the required parameter $addon_id when calling updateAddonVersion'
             );
         }
         // verify the required parameter 'version_id' is set
         if ($version_id === null || (is_array($version_id) && count($version_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $version_id when calling addonsAddonIdVersionsVersionIdPut'
+                'Missing the required parameter $version_id when calling updateAddonVersion'
             );
         }
 
@@ -1646,11 +1642,10 @@ class AddonVersionsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

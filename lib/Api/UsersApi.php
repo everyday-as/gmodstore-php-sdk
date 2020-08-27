@@ -87,7 +87,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersMeGet
+     * Operation getSelfUser
      *
      * Fetches the current user (API Key Owner)
      *
@@ -97,14 +97,14 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse20011
      */
-    public function usersMeGet($with = null)
+    public function getSelfUser($with = null)
     {
-        list($response) = $this->usersMeGetWithHttpInfo($with);
+        list($response) = $this->getSelfUserWithHttpInfo($with);
         return $response;
     }
 
     /**
-     * Operation usersMeGetWithHttpInfo
+     * Operation getSelfUserWithHttpInfo
      *
      * Fetches the current user (API Key Owner)
      *
@@ -114,10 +114,10 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersMeGetWithHttpInfo($with = null)
+    public function getSelfUserWithHttpInfo($with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
-        $request = $this->usersMeGetRequest($with);
+        $request = $this->getSelfUserRequest($with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,7 +187,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersMeGetAsync
+     * Operation getSelfUserAsync
      *
      * Fetches the current user (API Key Owner)
      *
@@ -196,9 +196,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersMeGetAsync($with = null)
+    public function getSelfUserAsync($with = null)
     {
-        return $this->usersMeGetAsyncWithHttpInfo($with)
+        return $this->getSelfUserAsyncWithHttpInfo($with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -207,7 +207,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersMeGetAsyncWithHttpInfo
+     * Operation getSelfUserAsyncWithHttpInfo
      *
      * Fetches the current user (API Key Owner)
      *
@@ -216,10 +216,10 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersMeGetAsyncWithHttpInfo($with = null)
+    public function getSelfUserAsyncWithHttpInfo($with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
-        $request = $this->usersMeGetRequest($with);
+        $request = $this->getSelfUserRequest($with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,14 +259,14 @@ class UsersApi
     }
 
     /**
-     * Create request for operation 'usersMeGet'
+     * Create request for operation 'getSelfUser'
      *
      * @param  string[] $with The relations you want to fetch with the User schema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersMeGetRequest($with = null)
+    protected function getSelfUserRequest($with = null)
     {
 
         $resourcePath = '/users/me';
@@ -328,11 +328,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -355,7 +354,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUserIdGet
+     * Operation getUser
      *
      * Fetch a single user
      *
@@ -366,14 +365,14 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse20011
      */
-    public function usersUserIdGet($user_id, $with = null)
+    public function getUser($user_id, $with = null)
     {
-        list($response) = $this->usersUserIdGetWithHttpInfo($user_id, $with);
+        list($response) = $this->getUserWithHttpInfo($user_id, $with);
         return $response;
     }
 
     /**
-     * Operation usersUserIdGetWithHttpInfo
+     * Operation getUserWithHttpInfo
      *
      * Fetch a single user
      *
@@ -384,10 +383,10 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdGetWithHttpInfo($user_id, $with = null)
+    public function getUserWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
-        $request = $this->usersUserIdGetRequest($user_id, $with);
+        $request = $this->getUserRequest($user_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -457,7 +456,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUserIdGetAsync
+     * Operation getUserAsync
      *
      * Fetch a single user
      *
@@ -467,9 +466,9 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdGetAsync($user_id, $with = null)
+    public function getUserAsync($user_id, $with = null)
     {
-        return $this->usersUserIdGetAsyncWithHttpInfo($user_id, $with)
+        return $this->getUserAsyncWithHttpInfo($user_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -478,7 +477,7 @@ class UsersApi
     }
 
     /**
-     * Operation usersUserIdGetAsyncWithHttpInfo
+     * Operation getUserAsyncWithHttpInfo
      *
      * Fetch a single user
      *
@@ -488,10 +487,10 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdGetAsyncWithHttpInfo($user_id, $with = null)
+    public function getUserAsyncWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse20011';
-        $request = $this->usersUserIdGetRequest($user_id, $with);
+        $request = $this->getUserRequest($user_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -531,7 +530,7 @@ class UsersApi
     }
 
     /**
-     * Create request for operation 'usersUserIdGet'
+     * Create request for operation 'getUser'
      *
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the User schema (optional)
@@ -539,12 +538,12 @@ class UsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdGetRequest($user_id, $with = null)
+    protected function getUserRequest($user_id, $with = null)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdGet'
+                'Missing the required parameter $user_id when calling getUser'
             );
         }
 
@@ -615,11 +614,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

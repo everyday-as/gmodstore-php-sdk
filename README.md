@@ -58,45 +58,48 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddonCouponsApi* | [**addonsAddonIdCouponsCouponIdDelete**](docs/Api/AddonCouponsApi.md#addonsaddonidcouponscouponiddelete) | **DELETE** /addons/{addon_id}/coupons/{coupon_id} | Destroy an addon&#x27;s coupon
-*AddonCouponsApi* | [**addonsAddonIdCouponsCouponIdGet**](docs/Api/AddonCouponsApi.md#addonsaddonidcouponscouponidget) | **GET** /addons/{addon_id}/coupons/{coupon_id} | Fetch an addon&#x27;s coupon
-*AddonCouponsApi* | [**addonsAddonIdCouponsCouponIdPut**](docs/Api/AddonCouponsApi.md#addonsaddonidcouponscouponidput) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#x27;s coupon
-*AddonCouponsApi* | [**addonsAddonIdCouponsGet**](docs/Api/AddonCouponsApi.md#addonsaddonidcouponsget) | **GET** /addons/{addon_id}/coupons | Fetch all the coupons for an addon
-*AddonCouponsApi* | [**addonsAddonIdCouponsPost**](docs/Api/AddonCouponsApi.md#addonsaddonidcouponspost) | **POST** /addons/{addon_id}/coupons | Create an addon coupon
-*AddonPurchasesApi* | [**addonsAddonIdPurchasesGet**](docs/Api/AddonPurchasesApi.md#addonsaddonidpurchasesget) | **GET** /addons/{addon_id}/purchases | Fetch all purchases of an addon
-*AddonPurchasesApi* | [**addonsAddonIdPurchasesPost**](docs/Api/AddonPurchasesApi.md#addonsaddonidpurchasespost) | **POST** /addons/{addon_id}/purchases | Create a purchase for an addon
-*AddonPurchasesApi* | [**addonsAddonIdPurchasesUserIdGet**](docs/Api/AddonPurchasesApi.md#addonsaddonidpurchasesuseridget) | **GET** /addons/{addon_id}/purchases/{user_id} | Get a purchase of an addon by user
-*AddonPurchasesApi* | [**addonsAddonIdPurchasesUserIdPut**](docs/Api/AddonPurchasesApi.md#addonsaddonidpurchasesuseridput) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
-*AddonReviewsApi* | [**addonsAddonIdReviewsGet**](docs/Api/AddonReviewsApi.md#addonsaddonidreviewsget) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
-*AddonReviewsApi* | [**addonsAddonIdReviewsReviewIdGet**](docs/Api/AddonReviewsApi.md#addonsaddonidreviewsreviewidget) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
-*AddonStatsApi* | [**addonsAddonIdStatsGet**](docs/Api/AddonStatsApi.md#addonsaddonidstatsget) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
-*AddonVersionsApi* | [**addonsAddonIdVersionsGet**](docs/Api/AddonVersionsApi.md#addonsaddonidversionsget) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
-*AddonVersionsApi* | [**addonsAddonIdVersionsPost**](docs/Api/AddonVersionsApi.md#addonsaddonidversionspost) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
-*AddonVersionsApi* | [**addonsAddonIdVersionsVersionIdDownloadGet**](docs/Api/AddonVersionsApi.md#addonsaddonidversionsversioniddownloadget) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
-*AddonVersionsApi* | [**addonsAddonIdVersionsVersionIdGet**](docs/Api/AddonVersionsApi.md#addonsaddonidversionsversionidget) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
-*AddonVersionsApi* | [**addonsAddonIdVersionsVersionIdPut**](docs/Api/AddonVersionsApi.md#addonsaddonidversionsversionidput) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
-*AddonsApi* | [**addonsAddonIdGet**](docs/Api/AddonsApi.md#addonsaddonidget) | **GET** /addons/{addon_id} | Fetch a single addon
-*AddonsApi* | [**addonsGet**](docs/Api/AddonsApi.md#addonsget) | **GET** /addons | Fetch all the addons that you have access to
-*TeamUsersApi* | [**teamsTeamIdUsersGet**](docs/Api/TeamUsersApi.md#teamsteamidusersget) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
-*TeamsApi* | [**teamsTeamIdGet**](docs/Api/TeamsApi.md#teamsteamidget) | **GET** /teams/{team_id} | Fetch a single team
-*UserAddonsApi* | [**usersUserIdAddonsGet**](docs/Api/UserAddonsApi.md#usersuseridaddonsget) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
-*UserBadgesApi* | [**usersUserIdBadgesBadgeIdDelete**](docs/Api/UserBadgesApi.md#usersuseridbadgesbadgeiddelete) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#x27;s badge
-*UserBadgesApi* | [**usersUserIdBadgesGet**](docs/Api/UserBadgesApi.md#usersuseridbadgesget) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
-*UserBadgesApi* | [**usersUserIdBadgesPost**](docs/Api/UserBadgesApi.md#usersuseridbadgespost) | **POST** /users/{user_id}/badges | Give a user a badge
-*UserBansApi* | [**usersUserIdBansGet**](docs/Api/UserBansApi.md#usersuseridbansget) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
-*UserPurchasesApi* | [**usersUserIdPurchasesGet**](docs/Api/UserPurchasesApi.md#usersuseridpurchasesget) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
-*UserTeamsApi* | [**usersUserIdTeamsGet**](docs/Api/UserTeamsApi.md#usersuseridteamsget) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
-*UsersApi* | [**usersMeGet**](docs/Api/UsersApi.md#usersmeget) | **GET** /users/me | Fetches the current user (API Key Owner)
-*UsersApi* | [**usersUserIdGet**](docs/Api/UsersApi.md#usersuseridget) | **GET** /users/{user_id} | Fetch a single user
+*AddonCouponsApi* | [**createAddonCoupon**](docs/Api/AddonCouponsApi.md#createaddoncoupon) | **POST** /addons/{addon_id}/coupons | Create an addon coupon
+*AddonCouponsApi* | [**deleteAddonCoupon**](docs/Api/AddonCouponsApi.md#deleteaddoncoupon) | **DELETE** /addons/{addon_id}/coupons/{coupon_id} | Destroy an addon&#x27;s coupon
+*AddonCouponsApi* | [**getAddonCoupon**](docs/Api/AddonCouponsApi.md#getaddoncoupon) | **GET** /addons/{addon_id}/coupons/{coupon_id} | Fetch an addon&#x27;s coupon
+*AddonCouponsApi* | [**listAddonCoupons**](docs/Api/AddonCouponsApi.md#listaddoncoupons) | **GET** /addons/{addon_id}/coupons | Fetch all the coupons for an addon
+*AddonCouponsApi* | [**updateAddonCoupon**](docs/Api/AddonCouponsApi.md#updateaddoncoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#x27;s coupon
+*AddonPurchasesApi* | [**createAddonPurchase**](docs/Api/AddonPurchasesApi.md#createaddonpurchase) | **POST** /addons/{addon_id}/purchases | Create a purchase for an addon
+*AddonPurchasesApi* | [**getAddonPurchase**](docs/Api/AddonPurchasesApi.md#getaddonpurchase) | **GET** /addons/{addon_id}/purchases/{user_id} | Get a purchase of an addon by user
+*AddonPurchasesApi* | [**listAddonPurchases**](docs/Api/AddonPurchasesApi.md#listaddonpurchases) | **GET** /addons/{addon_id}/purchases | Fetch all purchases of an addon
+*AddonPurchasesApi* | [**updateAddonPurchase**](docs/Api/AddonPurchasesApi.md#updateaddonpurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
+*AddonReviewsApi* | [**getAddonReview**](docs/Api/AddonReviewsApi.md#getaddonreview) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
+*AddonReviewsApi* | [**listAddonReviews**](docs/Api/AddonReviewsApi.md#listaddonreviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
+*AddonStatsApi* | [**getAddonStats**](docs/Api/AddonStatsApi.md#getaddonstats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
+*AddonVersionsApi* | [**createAddonVersion**](docs/Api/AddonVersionsApi.md#createaddonversion) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
+*AddonVersionsApi* | [**downloadAddonVersion**](docs/Api/AddonVersionsApi.md#downloadaddonversion) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
+*AddonVersionsApi* | [**getAddonVersion**](docs/Api/AddonVersionsApi.md#getaddonversion) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
+*AddonVersionsApi* | [**listAddonVersions**](docs/Api/AddonVersionsApi.md#listaddonversions) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
+*AddonVersionsApi* | [**updateAddonVersion**](docs/Api/AddonVersionsApi.md#updateaddonversion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
+*AddonsApi* | [**getAddon**](docs/Api/AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
+*AddonsApi* | [**listSelfAddons**](docs/Api/AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
+*TeamUsersApi* | [**listTeamUsers**](docs/Api/TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
+*TeamsApi* | [**getTeam**](docs/Api/TeamsApi.md#getteam) | **GET** /teams/{team_id} | Fetch a single team
+*UserAddonsApi* | [**listUserAddons**](docs/Api/UserAddonsApi.md#listuseraddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
+*UserBadgesApi* | [**createUserBadge**](docs/Api/UserBadgesApi.md#createuserbadge) | **POST** /users/{user_id}/badges | Give a user a badge
+*UserBadgesApi* | [**deleteUserBadge**](docs/Api/UserBadgesApi.md#deleteuserbadge) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#x27;s badge
+*UserBadgesApi* | [**listUserBadges**](docs/Api/UserBadgesApi.md#listuserbadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
+*UserBansApi* | [**listUserBans**](docs/Api/UserBansApi.md#listuserbans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+*UserPurchasesApi* | [**listUserPurchases**](docs/Api/UserPurchasesApi.md#listuserpurchases) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
+*UserTeamsApi* | [**listUserTeams**](docs/Api/UserTeamsApi.md#listuserteams) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
+*UsersApi* | [**getSelfUser**](docs/Api/UsersApi.md#getselfuser) | **GET** /users/me | Fetches the current user (API Key Owner)
+*UsersApi* | [**getUser**](docs/Api/UsersApi.md#getuser) | **GET** /users/{user_id} | Fetch a single user
 
 ## Documentation For Models
 
  - [Addon](docs/Model/Addon.md)
  - [AddonCoupon](docs/Model/AddonCoupon.md)
+ - [AddonCouponBody](docs/Model/AddonCouponBody.md)
  - [AddonDownload](docs/Model/AddonDownload.md)
  - [AddonImages](docs/Model/AddonImages.md)
  - [AddonPrice](docs/Model/AddonPrice.md)
  - [AddonPurchase](docs/Model/AddonPurchase.md)
+ - [AddonPurchaseCreateBody](docs/Model/AddonPurchaseCreateBody.md)
+ - [AddonPurchaseUpdateBody](docs/Model/AddonPurchaseUpdateBody.md)
  - [AddonReview](docs/Model/AddonReview.md)
  - [AddonStats](docs/Model/AddonStats.md)
  - [AddonStatsRevenue](docs/Model/AddonStatsRevenue.md)
@@ -106,6 +109,9 @@ Class | Method | HTTP request | Description
  - [AddonStatsViews](docs/Model/AddonStatsViews.md)
  - [AddonStatsViewsCurrent](docs/Model/AddonStatsViewsCurrent.md)
  - [AddonVersion](docs/Model/AddonVersion.md)
+ - [AddonVersionCreateBody](docs/Model/AddonVersionCreateBody.md)
+ - [AddonVersionUpdateBody](docs/Model/AddonVersionUpdateBody.md)
+ - [BadgeCreateBody](docs/Model/BadgeCreateBody.md)
  - [Ban](docs/Model/Ban.md)
  - [Error](docs/Model/Error.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
@@ -144,5 +150,8 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+## bearerAuth
+
 
 

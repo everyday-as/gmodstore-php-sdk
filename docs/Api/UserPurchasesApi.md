@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersUserIdPurchasesGet**](UserPurchasesApi.md#usersuseridpurchasesget) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
+[**listUserPurchases**](UserPurchasesApi.md#listuserpurchases) | **GET** /users/{user_id}/purchases | Fetch all purchases a user has made
 
-# **usersUserIdPurchasesGet**
-> \Everyday\GmodStoreSDK\Model\InlineResponse2004 usersUserIdPurchasesGet($user_id, $with)
+# **listUserPurchases**
+> \Everyday\GmodStoreSDK\Model\InlineResponse2004 listUserPurchases($user_id, $with)
 
 Fetch all purchases a user has made
 
@@ -15,10 +15,10 @@ Fetch all purchases a user has made
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = Everyday\GmodStoreSDK\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStoreSDK\Api\UserPurchasesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -30,10 +30,10 @@ $user_id = "user_id_example"; // string | Id of the user
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
 
 try {
-    $result = $apiInstance->usersUserIdPurchasesGet($user_id, $with);
+    $result = $apiInstance->listUserPurchases($user_id, $with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserPurchasesApi->usersUserIdPurchasesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserPurchasesApi->listUserPurchases: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

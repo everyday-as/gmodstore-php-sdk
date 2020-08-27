@@ -87,7 +87,7 @@ class UserPurchasesApi
     }
 
     /**
-     * Operation usersUserIdPurchasesGet
+     * Operation listUserPurchases
      *
      * Fetch all purchases a user has made
      *
@@ -98,14 +98,14 @@ class UserPurchasesApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2004
      */
-    public function usersUserIdPurchasesGet($user_id, $with = null)
+    public function listUserPurchases($user_id, $with = null)
     {
-        list($response) = $this->usersUserIdPurchasesGetWithHttpInfo($user_id, $with);
+        list($response) = $this->listUserPurchasesWithHttpInfo($user_id, $with);
         return $response;
     }
 
     /**
-     * Operation usersUserIdPurchasesGetWithHttpInfo
+     * Operation listUserPurchasesWithHttpInfo
      *
      * Fetch all purchases a user has made
      *
@@ -116,10 +116,10 @@ class UserPurchasesApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersUserIdPurchasesGetWithHttpInfo($user_id, $with = null)
+    public function listUserPurchasesWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
-        $request = $this->usersUserIdPurchasesGetRequest($user_id, $with);
+        $request = $this->listUserPurchasesRequest($user_id, $with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,7 +189,7 @@ class UserPurchasesApi
     }
 
     /**
-     * Operation usersUserIdPurchasesGetAsync
+     * Operation listUserPurchasesAsync
      *
      * Fetch all purchases a user has made
      *
@@ -199,9 +199,9 @@ class UserPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdPurchasesGetAsync($user_id, $with = null)
+    public function listUserPurchasesAsync($user_id, $with = null)
     {
-        return $this->usersUserIdPurchasesGetAsyncWithHttpInfo($user_id, $with)
+        return $this->listUserPurchasesAsyncWithHttpInfo($user_id, $with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,7 +210,7 @@ class UserPurchasesApi
     }
 
     /**
-     * Operation usersUserIdPurchasesGetAsyncWithHttpInfo
+     * Operation listUserPurchasesAsyncWithHttpInfo
      *
      * Fetch all purchases a user has made
      *
@@ -220,10 +220,10 @@ class UserPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersUserIdPurchasesGetAsyncWithHttpInfo($user_id, $with = null)
+    public function listUserPurchasesAsyncWithHttpInfo($user_id, $with = null)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2004';
-        $request = $this->usersUserIdPurchasesGetRequest($user_id, $with);
+        $request = $this->listUserPurchasesRequest($user_id, $with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,7 +263,7 @@ class UserPurchasesApi
     }
 
     /**
-     * Create request for operation 'usersUserIdPurchasesGet'
+     * Create request for operation 'listUserPurchases'
      *
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -271,12 +271,12 @@ class UserPurchasesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersUserIdPurchasesGetRequest($user_id, $with = null)
+    protected function listUserPurchasesRequest($user_id, $with = null)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null || (is_array($user_id) && count($user_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $user_id when calling usersUserIdPurchasesGet'
+                'Missing the required parameter $user_id when calling listUserPurchases'
             );
         }
 
@@ -347,11 +347,10 @@ class UserPurchasesApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -87,7 +87,7 @@ class AddonStatsApi
     }
 
     /**
-     * Operation addonsAddonIdStatsGet
+     * Operation getAddonStats
      *
      * Fetch all the stats for an addon
      *
@@ -97,14 +97,14 @@ class AddonStatsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStoreSDK\Model\InlineResponse2002
      */
-    public function addonsAddonIdStatsGet($addon_id)
+    public function getAddonStats($addon_id)
     {
-        list($response) = $this->addonsAddonIdStatsGetWithHttpInfo($addon_id);
+        list($response) = $this->getAddonStatsWithHttpInfo($addon_id);
         return $response;
     }
 
     /**
-     * Operation addonsAddonIdStatsGetWithHttpInfo
+     * Operation getAddonStatsWithHttpInfo
      *
      * Fetch all the stats for an addon
      *
@@ -114,10 +114,10 @@ class AddonStatsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStoreSDK\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addonsAddonIdStatsGetWithHttpInfo($addon_id)
+    public function getAddonStatsWithHttpInfo($addon_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
-        $request = $this->addonsAddonIdStatsGetRequest($addon_id);
+        $request = $this->getAddonStatsRequest($addon_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,7 +187,7 @@ class AddonStatsApi
     }
 
     /**
-     * Operation addonsAddonIdStatsGetAsync
+     * Operation getAddonStatsAsync
      *
      * Fetch all the stats for an addon
      *
@@ -196,9 +196,9 @@ class AddonStatsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdStatsGetAsync($addon_id)
+    public function getAddonStatsAsync($addon_id)
     {
-        return $this->addonsAddonIdStatsGetAsyncWithHttpInfo($addon_id)
+        return $this->getAddonStatsAsyncWithHttpInfo($addon_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -207,7 +207,7 @@ class AddonStatsApi
     }
 
     /**
-     * Operation addonsAddonIdStatsGetAsyncWithHttpInfo
+     * Operation getAddonStatsAsyncWithHttpInfo
      *
      * Fetch all the stats for an addon
      *
@@ -216,10 +216,10 @@ class AddonStatsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addonsAddonIdStatsGetAsyncWithHttpInfo($addon_id)
+    public function getAddonStatsAsyncWithHttpInfo($addon_id)
     {
         $returnType = '\Everyday\GmodStoreSDK\Model\InlineResponse2002';
-        $request = $this->addonsAddonIdStatsGetRequest($addon_id);
+        $request = $this->getAddonStatsRequest($addon_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,19 +259,19 @@ class AddonStatsApi
     }
 
     /**
-     * Create request for operation 'addonsAddonIdStatsGet'
+     * Create request for operation 'getAddonStats'
      *
      * @param  int $addon_id Id of the addon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addonsAddonIdStatsGetRequest($addon_id)
+    protected function getAddonStatsRequest($addon_id)
     {
         // verify the required parameter 'addon_id' is set
         if ($addon_id === null || (is_array($addon_id) && count($addon_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $addon_id when calling addonsAddonIdStatsGet'
+                'Missing the required parameter $addon_id when calling getAddonStats'
             );
         }
 
@@ -335,11 +335,10 @@ class AddonStatsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
