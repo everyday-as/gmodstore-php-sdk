@@ -1,21 +1,20 @@
 {
     "name": "everyday/gmodstore-sdk",
+    "type": "library",
     "description": "Welcome to the GmodStore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
+        "gmodstore",
         "php",
         "sdk",
-        "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://github.com/everyday-as/gmodstore-php-sdk",
+    "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Everyday AS and contributors",
+            "email": "system@everyday.no",
+            "homepage": "https://everyday.no"
         }
     ],
     "require": {
