@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**listSelfAddons**](AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
 
 # **getAddon**
-> \Everyday\GmodStore\Sdk\Model\InlineResponse2001 getAddon($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonResponse getAddon($addon_id, $with)
 
 Fetch a single addon
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonResponse**](../Model/AddonResponse.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSelfAddons**
-> \Everyday\GmodStore\Sdk\Model\InlineResponse200 listSelfAddons($with)
+> \Everyday\GmodStore\Sdk\Model\AddonListResponse listSelfAddons($with)
 
 Fetch all the addons that you have access to
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonListResponse**](../Model/AddonListResponse.md)
 
 ### Authorization
 

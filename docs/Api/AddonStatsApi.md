@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getAddonStats**](AddonStatsApi.md#getaddonstats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
 # **getAddonStats**
-> \Everyday\GmodStore\Sdk\Model\InlineResponse2002 getAddonStats($addon_id)
+> \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse getAddonStats($addon_id)
 
 Fetch all the stats for an addon
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse**](../Model/AddonStatsListResponse.md)
 
 ### Authorization
 

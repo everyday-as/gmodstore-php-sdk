@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * AddonStatsListResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * AddonStatsListResponse Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess
+class AddonStatsListResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_1';
+    protected static $swaggerModelName = 'AddonStatsListResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\Addon'    ];
+        'data' => '\Everyday\GmodStore\Sdk\Model\AddonStats[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStore\Sdk\Model\Addon
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStats[]
      */
     public function getData()
     {
@@ -209,7 +209,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStore\Sdk\Model\Addon $data data
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStats[] $data data
      *
      * @return $this
      */

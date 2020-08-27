@@ -95,7 +95,7 @@ class AddonStatsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\InlineResponse2002
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse
      */
     public function getAddonStats($addon_id)
     {
@@ -112,11 +112,11 @@ class AddonStatsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonStatsWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse';
         $request = $this->getAddonStatsRequest($addon_id);
 
         try {
@@ -168,7 +168,7 @@ class AddonStatsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\InlineResponse2002',
+                        '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class AddonStatsApi
      */
     public function getAddonStatsAsyncWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse';
         $request = $this->getAddonStatsRequest($addon_id);
 
         return $this->client
