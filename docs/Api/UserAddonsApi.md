@@ -4,20 +4,25 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserAddons**](UserAddonsApi.md#listuseraddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
+[**listUserAddons**](UserAddonsApi.md#listUserAddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
 
-# **listUserAddons**
+
+
+## listUserAddons
+
 > \Everyday\GmodStore\Sdk\Model\AddonListResponse listUserAddons($user_id, $with)
 
 Fetch all the addons authored / co-authored by a user
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+// Configure Bearer (API Key) authorization: bearerAuth
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\UserAddonsApi(
@@ -26,8 +31,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserAddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 789; // int | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the `Addon`
+$user_id = 56; // int | Id of the user
+$with = array('with_example'); // string[] | The relations you want to fetch with the `Addon`
 
 try {
     $result = $apiInstance->listUserAddons($user_id, $with);
@@ -39,6 +44,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,8 +61,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

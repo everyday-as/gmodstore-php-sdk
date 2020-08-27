@@ -4,21 +4,26 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddon**](AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
-[**listSelfAddons**](AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
+[**getAddon**](AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
+[**listSelfAddons**](AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
 
-# **getAddon**
+
+
+## getAddon
+
 > \Everyday\GmodStore\Sdk\Model\AddonResponse getAddon($addon_id, $with)
 
 Fetch a single addon
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+// Configure Bearer (API Key) authorization: bearerAuth
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
@@ -27,8 +32,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addon_id = 789; // int | Id of the addon
-$with = array("with_example"); // string[] | The relations you want to fetch with the `Addon`
+$addon_id = 56; // int | Id of the addon
+$with = array('with_example'); // string[] | The relations you want to fetch with the `Addon`
 
 try {
     $result = $apiInstance->getAddon($addon_id, $with);
@@ -40,6 +45,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -56,23 +62,29 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **listSelfAddons**
+
+## listSelfAddons
+
 > \Everyday\GmodStore\Sdk\Model\AddonListResponse listSelfAddons($with)
 
 Fetch all the addons that you have access to
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+// Configure Bearer (API Key) authorization: bearerAuth
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
@@ -81,7 +93,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$with = array("with_example"); // string[] | The relations you want to fetch with the `Addon`
+$with = array('with_example'); // string[] | The relations you want to fetch with the `Addon`
 
 try {
     $result = $apiInstance->listSelfAddons($with);
@@ -93,6 +105,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,8 +121,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

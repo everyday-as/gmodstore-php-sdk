@@ -4,20 +4,25 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserTeams**](UserTeamsApi.md#listuserteams) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
+[**listUserTeams**](UserTeamsApi.md#listUserTeams) | **GET** /users/{user_id}/teams | Fetch all the teams of a user
 
-# **listUserTeams**
+
+
+## listUserTeams
+
 > \Everyday\GmodStore\Sdk\Model\TeamListResponse listUserTeams($user_id, $with)
 
 Fetch all the teams of a user
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+// Configure Bearer (API Key) authorization: bearerAuth
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\UserTeamsApi(
@@ -26,8 +31,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserTeamsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_id = 789; // int | Id of the user
-$with = array("with_example"); // string[] | The relations you want to fetch with the `Team`
+$user_id = 56; // int | Id of the user
+$with = array('with_example'); // string[] | The relations you want to fetch with the `Team`
 
 try {
     $result = $apiInstance->listUserTeams($user_id, $with);
@@ -39,6 +44,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,8 +61,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

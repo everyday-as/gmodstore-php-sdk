@@ -1,30 +1,38 @@
 {
     "name": "everyday-as/gmodstore-sdk",
-    "type": "library",
-    "license": "MIT",
-    "description": "The GmodStore PHP SDK for communication with the GmodStore API through PHP",
+    "description": "Welcome to the Gmodstore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.",
     "keywords": [
-        "gmodstore",
+        "openapitools",
+        "openapi-generator",
+        "openapi",
         "php",
         "sdk",
+        "rest",
         "api"
     ],
-    "homepage": "https://github.com/Everyday-AS/gmodstore-php-sdk",
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
     "authors": [
         {
-            "name": "Everyday AS and contributors",
-            "email": "system@everyday.no",
-            "homepage": "https://everyday.no"
+            "name": "OpenAPI-Generator contributors",
+            "homepage": "https://openapi-generator.tech"
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=7.2",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
     "autoload": {
         "psr-4": { "Everyday\\GmodStore\\Sdk\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Everyday\\GmodStore\\Sdk\\" : "test/" }
     }
 }

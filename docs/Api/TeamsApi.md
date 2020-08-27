@@ -4,20 +4,25 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTeam**](TeamsApi.md#getteam) | **GET** /teams/{team_id} | Fetch a single team
+[**getTeam**](TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
 
-# **getTeam**
+
+
+## getTeam
+
 > \Everyday\GmodStore\Sdk\Model\TeamResponse getTeam($team_id, $with)
 
 Fetch a single team
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+// Configure Bearer (API Key) authorization: bearerAuth
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\TeamsApi(
@@ -26,8 +31,8 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\TeamsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$team_id = 789; // int | Id of the team
-$with = array("with_example"); // string[] | The relations you want to fetch with the `Team`
+$team_id = 56; // int | Id of the team
+$with = array('with_example'); // string[] | The relations you want to fetch with the `Team`
 
 try {
     $result = $apiInstance->getTeam($team_id, $with);
@@ -39,6 +44,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,8 +61,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
