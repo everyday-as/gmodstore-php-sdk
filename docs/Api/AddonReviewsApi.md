@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\AddonReviewsApi
+# Everyday\GmodStore\Sdk\AddonReviewsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**listAddonReviews**](AddonReviewsApi.md#listaddonreviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
 
 # **getAddonReview**
-> \Everyday\GmodStore\SDK\Model\AddonReviewResponse getAddonReview($addon_id, $review_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonReviewResponse getAddonReview($addon_id, $review_id, $with)
 
 Fetch a review of an addon
 
@@ -17,11 +17,11 @@ Fetch a review of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonReviewsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonReviewResponse**](../Model/AddonReviewResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonReviewResponse**](../Model/AddonReviewResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonReviews**
-> \Everyday\GmodStore\SDK\Model\AddonReviewListResponse listAddonReviews($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse listAddonReviews($addon_id, $with)
 
 Fetch all the reviews of an addon
 
@@ -73,11 +73,11 @@ Fetch all the reviews of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonReviewsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonReviewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonReviewListResponse**](../Model/AddonReviewListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonReviewListResponse**](../Model/AddonReviewListResponse.md)
 
 ### Authorization
 

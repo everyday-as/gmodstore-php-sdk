@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonStatsRevenueCurrent Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,8 +56,8 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'day' => '\Everyday\GmodStore\SDK\Model\Money',
-'month' => '\Everyday\GmodStore\SDK\Model\Money'    ];
+        'day' => '\Everyday\GmodStore\Sdk\Model\Money',
+'month' => '\Everyday\GmodStore\Sdk\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -205,7 +205,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
     /**
      * Gets day
      *
-     * @return \Everyday\GmodStore\SDK\Model\Money
+     * @return \Everyday\GmodStore\Sdk\Model\Money
      */
     public function getDay()
     {
@@ -215,7 +215,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
     /**
      * Sets day
      *
-     * @param \Everyday\GmodStore\SDK\Model\Money $day day
+     * @param \Everyday\GmodStore\Sdk\Model\Money $day day
      *
      * @return $this
      */
@@ -229,7 +229,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
     /**
      * Gets month
      *
-     * @return \Everyday\GmodStore\SDK\Model\Money
+     * @return \Everyday\GmodStore\Sdk\Model\Money
      */
     public function getMonth()
     {
@@ -239,7 +239,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess
     /**
      * Sets month
      *
-     * @param \Everyday\GmodStore\SDK\Model\Money $month month
+     * @param \Everyday\GmodStore\Sdk\Model\Money $month month
      *
      * @return $this
      */

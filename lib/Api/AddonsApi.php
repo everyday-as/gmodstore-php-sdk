@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonsApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class AddonsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2001
+     * @return \Everyday\GmodStore\Sdk\Model\InlineResponse2001
      */
     public function getAddon($addon_id, $with = null)
     {
@@ -112,13 +112,13 @@ class AddonsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2001';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2001';
         $request = $this->getAddonRequest($addon_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class AddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse2001',
+                        '\Everyday\GmodStore\Sdk\Model\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,7 +178,7 @@ class AddonsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class AddonsApi
      */
     public function getAddonAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2001';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2001';
         $request = $this->getAddonRequest($addon_id, $with);
 
         return $this->client
@@ -379,9 +379,9 @@ class AddonsApi
      *
      * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse200
+     * @return \Everyday\GmodStore\Sdk\Model\InlineResponse200
      */
     public function listSelfAddons($with = null)
     {
@@ -396,13 +396,13 @@ class AddonsApi
      *
      * @param  string[] $with The relations you want to fetch with the Addon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSelfAddonsWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse200';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse200';
         $request = $this->listSelfAddonsRequest($with);
 
         try {
@@ -454,7 +454,7 @@ class AddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse200',
+                        '\Everyday\GmodStore\Sdk\Model\InlineResponse200',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -462,7 +462,7 @@ class AddonsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,7 +504,7 @@ class AddonsApi
      */
     public function listSelfAddonsAsyncWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse200';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse200';
         $request = $this->listSelfAddonsRequest($with);
 
         return $this->client

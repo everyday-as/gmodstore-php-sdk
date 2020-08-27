@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\TeamUsersApi
+# Everyday\GmodStore\Sdk\TeamUsersApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listTeamUsers**](TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
 
 # **listTeamUsers**
-> \Everyday\GmodStore\SDK\Model\TeamUserListResponse listTeamUsers($team_id, $with)
+> \Everyday\GmodStore\Sdk\Model\TeamUserListResponse listTeamUsers($team_id, $with)
 
 Fetch all the users in the given team
 
@@ -16,11 +16,11 @@ Fetch all the users in the given team
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\TeamUsersApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\TeamUsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\TeamUserListResponse**](../Model/TeamUserListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\TeamUserListResponse**](../Model/TeamUserListResponse.md)
 
 ### Authorization
 

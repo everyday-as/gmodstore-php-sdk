@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonVersionsApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -98,9 +98,9 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonVersionResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
      */
     public function createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
@@ -120,13 +120,13 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAddonVersionWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->createAddonVersionRequest($name, $changelog, $file, $release_type, $addon_id, $with);
 
         try {
@@ -178,7 +178,7 @@ class AddonVersionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonVersionResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -186,7 +186,7 @@ class AddonVersionsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -238,7 +238,7 @@ class AddonVersionsApi
      */
     public function createAddonVersionAsyncWithHttpInfo($name, $changelog, $file, $release_type, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->createAddonVersionRequest($name, $changelog, $file, $release_type, $addon_id, $with);
 
         return $this->client
@@ -441,9 +441,9 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonDownloadResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse
      */
     public function downloadAddonVersion($addon_id, $version_id)
     {
@@ -459,13 +459,13 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  int $version_id Id of the version (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonDownloadResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadAddonVersionWithHttpInfo($addon_id, $version_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonDownloadResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonDownloadResponse';
         $request = $this->downloadAddonVersionRequest($addon_id, $version_id);
 
         try {
@@ -517,7 +517,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonDownloadResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonDownloadResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -525,7 +525,7 @@ class AddonVersionsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -569,7 +569,7 @@ class AddonVersionsApi
      */
     public function downloadAddonVersionAsyncWithHttpInfo($addon_id, $version_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonDownloadResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonDownloadResponse';
         $request = $this->downloadAddonVersionRequest($addon_id, $version_id);
 
         return $this->client
@@ -735,9 +735,9 @@ class AddonVersionsApi
      * @param  int $version_id Id of the version (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonVersionResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
      */
     public function getAddonVersion($addon_id, $version_id, $with = null)
     {
@@ -754,13 +754,13 @@ class AddonVersionsApi
      * @param  int $version_id Id of the version (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonVersionWithHttpInfo($addon_id, $version_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->getAddonVersionRequest($addon_id, $version_id, $with);
 
         try {
@@ -812,7 +812,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonVersionResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -820,7 +820,7 @@ class AddonVersionsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -866,7 +866,7 @@ class AddonVersionsApi
      */
     public function getAddonVersionAsyncWithHttpInfo($addon_id, $version_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->getAddonVersionRequest($addon_id, $version_id, $with);
 
         return $this->client
@@ -1039,9 +1039,9 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonVersionListResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse
      */
     public function listAddonVersions($addon_id, $with = null)
     {
@@ -1057,13 +1057,13 @@ class AddonVersionsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonVersionListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAddonVersionsWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionListResponse';
         $request = $this->listAddonVersionsRequest($addon_id, $with);
 
         try {
@@ -1115,7 +1115,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonVersionListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonVersionListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1123,7 +1123,7 @@ class AddonVersionsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1167,7 +1167,7 @@ class AddonVersionsApi
      */
     public function listAddonVersionsAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionListResponse';
         $request = $this->listAddonVersionsRequest($addon_id, $with);
 
         return $this->client
@@ -1329,9 +1329,9 @@ class AddonVersionsApi
      * @param  int $version_id Id of the version (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonVersionResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
      */
     public function updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
@@ -1351,13 +1351,13 @@ class AddonVersionsApi
      * @param  int $version_id Id of the version (required)
      * @param  string[] $with The relations you want to fetch with the AddonVersion schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonVersionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAddonVersionWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
 
         try {
@@ -1409,7 +1409,7 @@ class AddonVersionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonVersionResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1417,7 +1417,7 @@ class AddonVersionsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1469,7 +1469,7 @@ class AddonVersionsApi
      */
     public function updateAddonVersionAsyncWithHttpInfo($name, $changelog, $release_type, $addon_id, $version_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonVersionResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonVersionResponse';
         $request = $this->updateAddonVersionRequest($name, $changelog, $release_type, $addon_id, $version_id, $with);
 
         return $this->client

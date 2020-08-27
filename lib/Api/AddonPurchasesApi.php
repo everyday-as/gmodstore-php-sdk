@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonPurchasesApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -91,13 +91,13 @@ class AddonPurchasesApi
      *
      * Create a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonPurchase $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
      */
     public function createAddonPurchase($body, $addon_id, $with = null)
     {
@@ -110,17 +110,17 @@ class AddonPurchasesApi
      *
      * Create a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAddonPurchaseWithHttpInfo($body, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->createAddonPurchaseRequest($body, $addon_id, $with);
 
         try {
@@ -172,7 +172,7 @@ class AddonPurchasesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -180,7 +180,7 @@ class AddonPurchasesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -195,7 +195,7 @@ class AddonPurchasesApi
      *
      * Create a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
@@ -217,7 +217,7 @@ class AddonPurchasesApi
      *
      * Create a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
@@ -226,7 +226,7 @@ class AddonPurchasesApi
      */
     public function createAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->createAddonPurchaseRequest($body, $addon_id, $with);
 
         return $this->client
@@ -269,7 +269,7 @@ class AddonPurchasesApi
     /**
      * Create request for operation 'createAddonPurchase'
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
@@ -395,9 +395,9 @@ class AddonPurchasesApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
      */
     public function getAddonPurchase($addon_id, $user_id, $with = null)
     {
@@ -414,13 +414,13 @@ class AddonPurchasesApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonPurchaseWithHttpInfo($addon_id, $user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->getAddonPurchaseRequest($addon_id, $user_id, $with);
 
         try {
@@ -472,7 +472,7 @@ class AddonPurchasesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -480,7 +480,7 @@ class AddonPurchasesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -526,7 +526,7 @@ class AddonPurchasesApi
      */
     public function getAddonPurchaseAsyncWithHttpInfo($addon_id, $user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->getAddonPurchaseRequest($addon_id, $user_id, $with);
 
         return $this->client
@@ -699,9 +699,9 @@ class AddonPurchasesApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse
      */
     public function listAddonPurchases($addon_id, $with = null)
     {
@@ -717,13 +717,13 @@ class AddonPurchasesApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAddonPurchasesWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse';
         $request = $this->listAddonPurchasesRequest($addon_id, $with);
 
         try {
@@ -775,7 +775,7 @@ class AddonPurchasesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -783,7 +783,7 @@ class AddonPurchasesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -827,7 +827,7 @@ class AddonPurchasesApi
      */
     public function listAddonPurchasesAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse';
         $request = $this->listAddonPurchasesRequest($addon_id, $with);
 
         return $this->client
@@ -982,14 +982,14 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
      */
     public function updateAddonPurchase($body, $addon_id, $user_id, $with = null)
     {
@@ -1002,18 +1002,18 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAddonPurchaseWithHttpInfo($body, $addon_id, $user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->updateAddonPurchaseRequest($body, $addon_id, $user_id, $with);
 
         try {
@@ -1065,7 +1065,7 @@ class AddonPurchasesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1073,7 +1073,7 @@ class AddonPurchasesApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1088,7 +1088,7 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1111,7 +1111,7 @@ class AddonPurchasesApi
      *
      * Update a purchase for an addon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)
@@ -1121,7 +1121,7 @@ class AddonPurchasesApi
      */
     public function updateAddonPurchaseAsyncWithHttpInfo($body, $addon_id, $user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse';
         $request = $this->updateAddonPurchaseRequest($body, $addon_id, $user_id, $with);
 
         return $this->client
@@ -1164,7 +1164,7 @@ class AddonPurchasesApi
     /**
      * Create request for operation 'updateAddonPurchase'
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the AddonPurchase schema (optional)

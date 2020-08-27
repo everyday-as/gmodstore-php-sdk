@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\UsersApi
+# Everyday\GmodStore\Sdk\UsersApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getUser**](UsersApi.md#getuser) | **GET** /users/{user_id} | Fetch a single user
 
 # **getSelfUser**
-> \Everyday\GmodStore\SDK\Model\UserResponse getSelfUser($with)
+> \Everyday\GmodStore\Sdk\Model\UserResponse getSelfUser($with)
 
 Fetches the current user (API Key Owner)
 
@@ -17,11 +17,11 @@ Fetches the current user (API Key Owner)
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UsersApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\UserResponse**](../Model/UserResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\UserResponse**](../Model/UserResponse.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUser**
-> \Everyday\GmodStore\SDK\Model\UserResponse getUser($user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\UserResponse getUser($user_id, $with)
 
 Fetch a single user
 
@@ -69,11 +69,11 @@ Fetch a single user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UsersApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\UserResponse**](../Model/UserResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\UserResponse**](../Model/UserResponse.md)
 
 ### Authorization
 

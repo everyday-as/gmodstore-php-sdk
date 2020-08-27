@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\AddonVersionsApi
+# Everyday\GmodStore\Sdk\AddonVersionsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**updateAddonVersion**](AddonVersionsApi.md#updateaddonversion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 
 # **createAddonVersion**
-> \Everyday\GmodStore\SDK\Model\AddonVersionResponse createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse createAddonVersion($name, $changelog, $file, $release_type, $addon_id, $with)
 
 Create a new version for an addon
 
@@ -20,11 +20,11 @@ Create a new version for an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonVersionsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **downloadAddonVersion**
-> \Everyday\GmodStore\SDK\Model\AddonDownloadResponse downloadAddonVersion($addon_id, $version_id)
+> \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse downloadAddonVersion($addon_id, $version_id)
 
 Generate a download token for a specific version of an addon
 
@@ -82,11 +82,11 @@ Generate a download token for a specific version of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonVersionsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonDownloadResponse**](../Model/AddonDownloadResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonDownloadResponse**](../Model/AddonDownloadResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonVersion**
-> \Everyday\GmodStore\SDK\Model\AddonVersionResponse getAddonVersion($addon_id, $version_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse getAddonVersion($addon_id, $version_id, $with)
 
 Fetch a specific version of an addon
 
@@ -136,11 +136,11 @@ Fetch a specific version of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonVersionsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonVersions**
-> \Everyday\GmodStore\SDK\Model\AddonVersionListResponse listAddonVersions($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse listAddonVersions($addon_id, $with)
 
 Fetch all the versions of an addon
 
@@ -192,11 +192,11 @@ Fetch all the versions of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonVersionsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonVersionListResponse**](../Model/AddonVersionListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonVersionListResponse**](../Model/AddonVersionListResponse.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonVersion**
-> \Everyday\GmodStore\SDK\Model\AddonVersionResponse updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse updateAddonVersion($name, $changelog, $release_type, $addon_id, $version_id, $with)
 
 Update a version of an addon
 
@@ -246,11 +246,11 @@ Update a version of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonVersionsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonVersionResponse**](../Model/AddonVersionResponse.md)
 
 ### Authorization
 

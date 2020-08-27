@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonStatsViews Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,8 +56,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'current' => '\Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent',
-'previous' => '\Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent'    ];
+        'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent',
+'previous' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -205,7 +205,7 @@ class AddonStatsViews implements ModelInterface, ArrayAccess
     /**
      * Gets current
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent
      */
     public function getCurrent()
     {
@@ -215,7 +215,7 @@ class AddonStatsViews implements ModelInterface, ArrayAccess
     /**
      * Sets current
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent $current current
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent $current current
      *
      * @return $this
      */
@@ -229,7 +229,7 @@ class AddonStatsViews implements ModelInterface, ArrayAccess
     /**
      * Gets previous
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent
      */
     public function getPrevious()
     {
@@ -239,7 +239,7 @@ class AddonStatsViews implements ModelInterface, ArrayAccess
     /**
      * Sets previous
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsViewsCurrent $previous previous
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent $previous previous
      *
      * @return $this
      */

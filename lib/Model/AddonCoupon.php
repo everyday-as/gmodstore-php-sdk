@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonCoupon Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
 'expires_at' => '\DateTime',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
-'addon' => '\Everyday\GmodStore\SDK\Model\Addon'    ];
+'addon' => '\Everyday\GmodStore\Sdk\Model\Addon'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -430,7 +430,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     /**
      * Gets addon
      *
-     * @return \Everyday\GmodStore\SDK\Model\Addon
+     * @return \Everyday\GmodStore\Sdk\Model\Addon
      */
     public function getAddon()
     {
@@ -440,7 +440,7 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     /**
      * Sets addon
      *
-     * @param \Everyday\GmodStore\SDK\Model\Addon $addon addon
+     * @param \Everyday\GmodStore\Sdk\Model\Addon $addon addon
      *
      * @return $this
      */

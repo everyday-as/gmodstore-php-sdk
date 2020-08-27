@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **country_code** | **string** |  | [optional] 
 **slug** | **string** |  | 
 **ban_properties** | **string[]** |  | 
-**group** | [**\Everyday\GmodStore\SDK\Model\PermissionGroup**](PermissionGroup.md) |  | [optional] 
+**group** | [**\Everyday\GmodStore\Sdk\Model\PermissionGroup**](PermissionGroup.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

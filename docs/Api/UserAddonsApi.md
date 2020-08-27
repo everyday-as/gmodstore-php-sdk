@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\UserAddonsApi
+# Everyday\GmodStore\Sdk\UserAddonsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserAddons**](UserAddonsApi.md#listuseraddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
 
 # **listUserAddons**
-> \Everyday\GmodStore\SDK\Model\AddonListResponse listUserAddons($user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonListResponse listUserAddons($user_id, $with)
 
 Fetch all the addons authored / co-authored by a user
 
@@ -16,11 +16,11 @@ Fetch all the addons authored / co-authored by a user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UserAddonsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UserAddonsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonListResponse**](../Model/AddonListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonListResponse**](../Model/AddonListResponse.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonStatsApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class AddonStatsApi
      *
      * @param  int $addon_id Id of the addon (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\InlineResponse2002
+     * @return \Everyday\GmodStore\Sdk\Model\InlineResponse2002
      */
     public function getAddonStats($addon_id)
     {
@@ -110,13 +110,13 @@ class AddonStatsApi
      *
      * @param  int $addon_id Id of the addon (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonStatsWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2002';
         $request = $this->getAddonStatsRequest($addon_id);
 
         try {
@@ -168,7 +168,7 @@ class AddonStatsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\InlineResponse2002',
+                        '\Everyday\GmodStore\Sdk\Model\InlineResponse2002',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -176,7 +176,7 @@ class AddonStatsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class AddonStatsApi
      */
     public function getAddonStatsAsyncWithHttpInfo($addon_id)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\InlineResponse2002';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\InlineResponse2002';
         $request = $this->getAddonStatsRequest($addon_id);
 
         return $this->client

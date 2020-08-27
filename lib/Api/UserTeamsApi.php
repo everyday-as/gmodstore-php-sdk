@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * UserTeamsApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -94,9 +94,9 @@ class UserTeamsApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the Team schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\TeamListResponse
+     * @return \Everyday\GmodStore\Sdk\Model\TeamListResponse
      */
     public function listUserTeams($user_id, $with = null)
     {
@@ -112,13 +112,13 @@ class UserTeamsApi
      * @param  string $user_id Id of the user (required)
      * @param  string[] $with The relations you want to fetch with the Team schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\TeamListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\TeamListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserTeamsWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\TeamListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\TeamListResponse';
         $request = $this->listUserTeamsRequest($user_id, $with);
 
         try {
@@ -170,7 +170,7 @@ class UserTeamsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\TeamListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\TeamListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,7 +178,7 @@ class UserTeamsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class UserTeamsApi
      */
     public function listUserTeamsAsyncWithHttpInfo($user_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\TeamListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\TeamListResponse';
         $request = $this->listUserTeamsRequest($user_id, $with);
 
         return $this->client

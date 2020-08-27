@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\AddonCouponsApi
+# Everyday\GmodStore\Sdk\AddonCouponsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**updateAddonCoupon**](AddonCouponsApi.md#updateaddoncoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#x27;s coupon
 
 # **createAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\AddonCouponResponse createAddonCoupon($body, $addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse createAddonCoupon($body, $addon_id, $with)
 
 Create an addon coupon
 
@@ -20,17 +20,17 @@ Create an addon coupon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\NewAddonCoupon(); // \Everyday\GmodStore\SDK\Model\NewAddonCoupon | 
+$body = new \Everyday\GmodStore\Sdk\Model\NewAddonCoupon(); // \Everyday\GmodStore\Sdk\Model\NewAddonCoupon | 
 $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
 
@@ -47,13 +47,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\NewAddonCoupon**](../Model/NewAddonCoupon.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\NewAddonCoupon**](../Model/NewAddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 
@@ -76,11 +76,11 @@ Destroy an addon's coupon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -120,7 +120,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\AddonCouponResponse getAddonCoupon($addon_id, $coupon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse getAddonCoupon($addon_id, $coupon_id, $with)
 
 Fetch an addon's coupon
 
@@ -129,11 +129,11 @@ Fetch an addon's coupon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonCoupons**
-> \Everyday\GmodStore\SDK\Model\AddonCouponListResponse listAddonCoupons($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse listAddonCoupons($addon_id, $with)
 
 Fetch all the coupons for an addon
 
@@ -185,11 +185,11 @@ Fetch all the coupons for an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonCouponListResponse**](../Model/AddonCouponListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonCouponListResponse**](../Model/AddonCouponListResponse.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonCoupon**
-> \Everyday\GmodStore\SDK\Model\AddonCouponResponse updateAddonCoupon($body, $addon_id, $coupon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse updateAddonCoupon($body, $addon_id, $coupon_id, $with)
 
 Update an addon's coupon
 
@@ -239,17 +239,17 @@ Update an addon's coupon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonCouponsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon(); // \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon | 
+$body = new \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon(); // \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon | 
 $addon_id = 789; // int | Id of the addon
 $coupon_id = 789; // int | Id of the coupon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonCoupon schema
@@ -267,14 +267,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\UpdateAddonCoupon**](../Model/UpdateAddonCoupon.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon**](../Model/UpdateAddonCoupon.md)|  |
  **addon_id** | **int**| Id of the addon |
  **coupon_id** | **int**| Id of the coupon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonCoupon schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonCouponResponse**](../Model/AddonCouponResponse.md)
 
 ### Authorization
 

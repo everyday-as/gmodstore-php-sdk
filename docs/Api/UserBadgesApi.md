@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\UserBadgesApi
+# Everyday\GmodStore\Sdk\UserBadgesApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**listUserBadges**](UserBadgesApi.md#listuserbadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
 # **createUserBadge**
-> \Everyday\GmodStore\SDK\Model\BadgeResponse createUserBadge($body, $user_id)
+> \Everyday\GmodStore\Sdk\Model\BadgeResponse createUserBadge($body, $user_id)
 
 Give a user a badge
 
@@ -18,17 +18,17 @@ Give a user a badge
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\NewUserBadge(); // \Everyday\GmodStore\SDK\Model\NewUserBadge | 
+$body = new \Everyday\GmodStore\Sdk\Model\NewUserBadge(); // \Everyday\GmodStore\Sdk\Model\NewUserBadge | 
 $user_id = "user_id_example"; // string | Id of the user
 
 try {
@@ -44,12 +44,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\NewUserBadge**](../Model/NewUserBadge.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\NewUserBadge**](../Model/NewUserBadge.md)|  |
  **user_id** | **string**| Id of the user |
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\BadgeResponse**](../Model/BadgeResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\BadgeResponse**](../Model/BadgeResponse.md)
 
 ### Authorization
 
@@ -72,11 +72,11 @@ Destroy a users's badge
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -116,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUserBadges**
-> \Everyday\GmodStore\SDK\Model\BadgeListResponse listUserBadges($user_id)
+> \Everyday\GmodStore\Sdk\Model\BadgeListResponse listUserBadges($user_id)
 
 Fetch all the badges a user has
 
@@ -125,11 +125,11 @@ Fetch all the badges a user has
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UserBadgesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\BadgeListResponse**](../Model/BadgeListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\BadgeListResponse**](../Model/BadgeListResponse.md)
 
 ### Authorization
 

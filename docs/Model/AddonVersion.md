@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **release_type** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | 
-**addon** | [**\Everyday\GmodStore\SDK\Model\Addon**](Addon.md) |  | [optional] 
+**addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

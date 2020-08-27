@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonStats Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,9 +56,9 @@ class AddonStats implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'revenue' => '\Everyday\GmodStore\SDK\Model\AddonStatsRevenue',
-'views' => '\Everyday\GmodStore\SDK\Model\AddonStatsViews',
-'sales' => '\Everyday\GmodStore\SDK\Model\AddonStatsSales'    ];
+        'revenue' => '\Everyday\GmodStore\Sdk\Model\AddonStatsRevenue',
+'views' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViews',
+'sales' => '\Everyday\GmodStore\Sdk\Model\AddonStatsSales'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -211,7 +211,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Gets revenue
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsRevenue
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsRevenue
      */
     public function getRevenue()
     {
@@ -221,7 +221,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Sets revenue
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsRevenue $revenue revenue
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsRevenue $revenue revenue
      *
      * @return $this
      */
@@ -235,7 +235,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Gets views
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsViews
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsViews
      */
     public function getViews()
     {
@@ -245,7 +245,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Sets views
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsViews $views views
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsViews $views views
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Gets sales
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsSales
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsSales
      */
     public function getSales()
     {
@@ -269,7 +269,7 @@ class AddonStats implements ModelInterface, ArrayAccess
     /**
      * Sets sales
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsSales $sales sales
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsSales $sales sales
      *
      * @return $this
      */

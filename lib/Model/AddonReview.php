@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonReview Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,8 +61,8 @@ class AddonReview implements ModelInterface, ArrayAccess
 'version' => 'string',
 'body' => 'string',
 'rating' => 'float',
-'addon' => '\Everyday\GmodStore\SDK\Model\Addon',
-'author' => '\Everyday\GmodStore\SDK\Model\User'    ];
+'addon' => '\Everyday\GmodStore\Sdk\Model\Addon',
+'author' => '\Everyday\GmodStore\Sdk\Model\User'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -370,7 +370,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Gets addon
      *
-     * @return \Everyday\GmodStore\SDK\Model\Addon
+     * @return \Everyday\GmodStore\Sdk\Model\Addon
      */
     public function getAddon()
     {
@@ -380,7 +380,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Sets addon
      *
-     * @param \Everyday\GmodStore\SDK\Model\Addon $addon addon
+     * @param \Everyday\GmodStore\Sdk\Model\Addon $addon addon
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Gets author
      *
-     * @return \Everyday\GmodStore\SDK\Model\User
+     * @return \Everyday\GmodStore\Sdk\Model\User
      */
     public function getAuthor()
     {
@@ -404,7 +404,7 @@ class AddonReview implements ModelInterface, ArrayAccess
     /**
      * Sets author
      *
-     * @param \Everyday\GmodStore\SDK\Model\User $author author
+     * @param \Everyday\GmodStore\Sdk\Model\User $author author
      *
      * @return $this
      */

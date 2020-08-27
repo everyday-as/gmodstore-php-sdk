@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\AddonPurchasesApi
+# Everyday\GmodStore\Sdk\AddonPurchasesApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**updateAddonPurchase**](AddonPurchasesApi.md#updateaddonpurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
 
 # **createAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse createAddonPurchase($body, $addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse createAddonPurchase($body, $addon_id, $with)
 
 Create a purchase for an addon
 
@@ -19,17 +19,17 @@ Create a purchase for an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\NewAddonPurchase(); // \Everyday\GmodStore\SDK\Model\NewAddonPurchase | 
+$body = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase | 
 $addon_id = 789; // int | Id of the addon
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
 
@@ -46,13 +46,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\NewAddonPurchase**](../Model/NewAddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse getAddonPurchase($addon_id, $user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse getAddonPurchase($addon_id, $user_id, $with)
 
 Get a purchase of an addon by user
 
@@ -75,11 +75,11 @@ Get a purchase of an addon by user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAddonPurchases**
-> \Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse listAddonPurchases($addon_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listAddonPurchases($addon_id, $with)
 
 Fetch all purchases of an addon
 
@@ -131,11 +131,11 @@ Fetch all purchases of an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonPurchaseListResponse**](../Model/AddonPurchaseListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse**](../Model/AddonPurchaseListResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddonPurchase**
-> \Everyday\GmodStore\SDK\Model\AddonPurchaseResponse updateAddonPurchase($body, $addon_id, $user_id, $with)
+> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse updateAddonPurchase($body, $addon_id, $user_id, $with)
 
 Update a purchase for an addon
 
@@ -185,17 +185,17 @@ Update a purchase for an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonPurchasesApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase(); // \Everyday\GmodStore\SDK\Model\UpdateAddonPurchase | 
+$body = new \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase | 
 $addon_id = 789; // int | Id of the addon
 $user_id = "user_id_example"; // string | Id of the user
 $with = array("with_example"); // string[] | The relations you want to fetch with the AddonPurchase schema
@@ -213,14 +213,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Everyday\GmodStore\SDK\Model\UpdateAddonPurchase**](../Model/UpdateAddonPurchase.md)|  |
+ **body** | [**\Everyday\GmodStore\Sdk\Model\UpdateAddonPurchase**](../Model/UpdateAddonPurchase.md)|  |
  **addon_id** | **int**| Id of the addon |
  **user_id** | **string**| Id of the user |
  **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the AddonPurchase schema | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse**](../Model/AddonPurchaseResponse.md)
 
 ### Authorization
 

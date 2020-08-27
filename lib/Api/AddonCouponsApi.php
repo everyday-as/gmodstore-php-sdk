@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Api;
+namespace Everyday\GmodStore\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Everyday\GmodStore\SDK\ApiException;
-use Everyday\GmodStore\SDK\Configuration;
-use Everyday\GmodStore\SDK\HeaderSelector;
-use Everyday\GmodStore\SDK\ObjectSerializer;
+use Everyday\GmodStore\Sdk\ApiException;
+use Everyday\GmodStore\Sdk\Configuration;
+use Everyday\GmodStore\Sdk\HeaderSelector;
+use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonCouponsApi Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -91,13 +91,13 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonCoupon $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonCouponResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
      */
     public function createAddonCoupon($body, $addon_id, $with = null)
     {
@@ -110,17 +110,17 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAddonCouponWithHttpInfo($body, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->createAddonCouponRequest($body, $addon_id, $with);
 
         try {
@@ -172,7 +172,7 @@ class AddonCouponsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonCouponResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -180,7 +180,7 @@ class AddonCouponsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -195,7 +195,7 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
@@ -217,7 +217,7 @@ class AddonCouponsApi
      *
      * Create an addon coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
@@ -226,7 +226,7 @@ class AddonCouponsApi
      */
     public function createAddonCouponAsyncWithHttpInfo($body, $addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->createAddonCouponRequest($body, $addon_id, $with);
 
         return $this->client
@@ -269,7 +269,7 @@ class AddonCouponsApi
     /**
      * Create request for operation 'createAddonCoupon'
      *
-     * @param  \Everyday\GmodStore\SDK\Model\NewAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\NewAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
@@ -394,7 +394,7 @@ class AddonCouponsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -411,7 +411,7 @@ class AddonCouponsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -455,7 +455,7 @@ class AddonCouponsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -651,9 +651,9 @@ class AddonCouponsApi
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonCouponResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
      */
     public function getAddonCoupon($addon_id, $coupon_id, $with = null)
     {
@@ -670,13 +670,13 @@ class AddonCouponsApi
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonCouponWithHttpInfo($addon_id, $coupon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->getAddonCouponRequest($addon_id, $coupon_id, $with);
 
         try {
@@ -728,7 +728,7 @@ class AddonCouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonCouponResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -736,7 +736,7 @@ class AddonCouponsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -782,7 +782,7 @@ class AddonCouponsApi
      */
     public function getAddonCouponAsyncWithHttpInfo($addon_id, $coupon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->getAddonCouponRequest($addon_id, $coupon_id, $with);
 
         return $this->client
@@ -955,9 +955,9 @@ class AddonCouponsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonCouponListResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse
      */
     public function listAddonCoupons($addon_id, $with = null)
     {
@@ -973,13 +973,13 @@ class AddonCouponsApi
      * @param  int $addon_id Id of the addon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonCouponListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAddonCouponsWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponListResponse';
         $request = $this->listAddonCouponsRequest($addon_id, $with);
 
         try {
@@ -1031,7 +1031,7 @@ class AddonCouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonCouponListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonCouponListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1039,7 +1039,7 @@ class AddonCouponsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1083,7 +1083,7 @@ class AddonCouponsApi
      */
     public function listAddonCouponsAsyncWithHttpInfo($addon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponListResponse';
         $request = $this->listAddonCouponsRequest($addon_id, $with);
 
         return $this->client
@@ -1238,14 +1238,14 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon $body body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\SDK\Model\AddonCouponResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
      */
     public function updateAddonCoupon($body, $addon_id, $coupon_id, $with = null)
     {
@@ -1258,18 +1258,18 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
      *
-     * @throws \Everyday\GmodStore\SDK\ApiException on non-2xx response
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\SDK\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonCouponResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAddonCouponWithHttpInfo($body, $addon_id, $coupon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->updateAddonCouponRequest($body, $addon_id, $coupon_id, $with);
 
         try {
@@ -1321,7 +1321,7 @@ class AddonCouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\AddonCouponResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1329,7 +1329,7 @@ class AddonCouponsApi
                 case 0:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\SDK\Model\Error',
+                        '\Everyday\GmodStore\Sdk\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1344,7 +1344,7 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
@@ -1367,7 +1367,7 @@ class AddonCouponsApi
      *
      * Update an addon's coupon
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)
@@ -1377,7 +1377,7 @@ class AddonCouponsApi
      */
     public function updateAddonCouponAsyncWithHttpInfo($body, $addon_id, $coupon_id, $with = null)
     {
-        $returnType = '\Everyday\GmodStore\SDK\Model\AddonCouponResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonCouponResponse';
         $request = $this->updateAddonCouponRequest($body, $addon_id, $coupon_id, $with);
 
         return $this->client
@@ -1420,7 +1420,7 @@ class AddonCouponsApi
     /**
      * Create request for operation 'updateAddonCoupon'
      *
-     * @param  \Everyday\GmodStore\SDK\Model\UpdateAddonCoupon $body (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UpdateAddonCoupon $body (required)
      * @param  int $addon_id Id of the addon (required)
      * @param  int $coupon_id Id of the coupon (required)
      * @param  string[] $with The relations you want to fetch with the AddonCoupon schema (optional)

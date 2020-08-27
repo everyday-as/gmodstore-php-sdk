@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\UserBansApi
+# Everyday\GmodStore\Sdk\UserBansApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listUserBans**](UserBansApi.md#listuserbans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 # **listUserBans**
-> \Everyday\GmodStore\SDK\Model\BanListResponse listUserBans($user_id)
+> \Everyday\GmodStore\Sdk\Model\BanListResponse listUserBans($user_id)
 
 Fetch all active bans associated with this user
 
@@ -16,11 +16,11 @@ Fetch all active bans associated with this user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\UserBansApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UserBansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\BanListResponse**](../Model/BanListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\BanListResponse**](../Model/BanListResponse.md)
 
 ### Authorization
 

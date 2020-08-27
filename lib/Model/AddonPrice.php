@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonPrice Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,8 +56,8 @@ class AddonPrice implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'original' => '\Everyday\GmodStore\SDK\Model\Money',
-'purchase' => '\Everyday\GmodStore\SDK\Model\Money'    ];
+        'original' => '\Everyday\GmodStore\Sdk\Model\Money',
+'purchase' => '\Everyday\GmodStore\Sdk\Model\Money'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -205,7 +205,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Gets original
      *
-     * @return \Everyday\GmodStore\SDK\Model\Money
+     * @return \Everyday\GmodStore\Sdk\Model\Money
      */
     public function getOriginal()
     {
@@ -215,7 +215,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Sets original
      *
-     * @param \Everyday\GmodStore\SDK\Model\Money $original original
+     * @param \Everyday\GmodStore\Sdk\Model\Money $original original
      *
      * @return $this
      */
@@ -229,7 +229,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Gets purchase
      *
-     * @return \Everyday\GmodStore\SDK\Model\Money
+     * @return \Everyday\GmodStore\Sdk\Model\Money
      */
     public function getPurchase()
     {
@@ -239,7 +239,7 @@ class AddonPrice implements ModelInterface, ArrayAccess
     /**
      * Sets purchase
      *
-     * @param \Everyday\GmodStore\SDK\Model\Money $purchase purchase
+     * @param \Everyday\GmodStore\Sdk\Model\Money $purchase purchase
      *
      * @return $this
      */

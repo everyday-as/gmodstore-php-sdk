@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Everyday\GmodStore\SDK\Model;
+namespace Everyday\GmodStore\Sdk\Model;
 
 use \ArrayAccess;
-use \Everyday\GmodStore\SDK\ObjectSerializer;
+use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
  * AddonStatsSales Class Doc Comment
  *
  * @category Class
- * @package  Everyday\GmodStore\SDK
+ * @package  Everyday\GmodStore\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class AddonStatsSales implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'current' => '\Everyday\GmodStore\SDK\Model\AddonStatsSalesCurrent'    ];
+        'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsSalesCurrent'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -199,7 +199,7 @@ class AddonStatsSales implements ModelInterface, ArrayAccess
     /**
      * Gets current
      *
-     * @return \Everyday\GmodStore\SDK\Model\AddonStatsSalesCurrent
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsSalesCurrent
      */
     public function getCurrent()
     {
@@ -209,7 +209,7 @@ class AddonStatsSales implements ModelInterface, ArrayAccess
     /**
      * Sets current
      *
-     * @param \Everyday\GmodStore\SDK\Model\AddonStatsSalesCurrent $current current
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStatsSalesCurrent $current current
      *
      * @return $this
      */

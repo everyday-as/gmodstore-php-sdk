@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **version** | **string** |  | 
 **body** | **string** |  | 
 **rating** | **float** |  | 
-**addon** | [**\Everyday\GmodStore\SDK\Model\Addon**](Addon.md) |  | [optional] 
-**author** | [**\Everyday\GmodStore\SDK\Model\User**](User.md) |  | [optional] 
+**addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional] 
+**author** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

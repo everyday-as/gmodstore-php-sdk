@@ -1,4 +1,4 @@
-# Everyday\GmodStore\SDK\AddonStatsApi
+# Everyday\GmodStore\Sdk\AddonStatsApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getAddonStats**](AddonStatsApi.md#getaddonstats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
 # **getAddonStats**
-> \Everyday\GmodStore\SDK\Model\InlineResponse2002 getAddonStats($addon_id)
+> \Everyday\GmodStore\Sdk\Model\InlineResponse2002 getAddonStats($addon_id)
 
 Fetch all the stats for an addon
 
@@ -16,11 +16,11 @@ Fetch all the stats for an addon
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
     // Configure HTTP bearer authorization: bearerAuth
-    $config = Everyday\GmodStore\SDK\Configuration::getDefaultConfiguration()
+    $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\SDK\Api\AddonStatsApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\AddonStatsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\SDK\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Everyday\GmodStore\Sdk\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
