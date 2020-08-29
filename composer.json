@@ -1,7 +1,7 @@
 {
     "name": "everyday/gmodstore-sdk",
     "type": "library",
-    "description": "Welcome to the GmodStore API! You can use our API to access Gmodstore API endpoints, which can be used interact with Gmodstore programmatically.",
+    "description": "Welcome to the GmodStore API! You can use our API to access GmodStore API endpoints, which can be used interact with GmodStore programmatically.",
     "keywords": [
         "gmodstore",
         "php",
