@@ -9,6 +9,7 @@ docs/Api/AddonReviewsApi.md
 docs/Api/AddonStatsApi.md
 docs/Api/AddonVersionsApi.md
 docs/Api/AddonsApi.md
+docs/Api/PermissionGroupsApi.md
 docs/Api/TeamUsersApi.md
 docs/Api/TeamsApi.md
 docs/Api/UserAddonsApi.md
@@ -54,6 +55,7 @@ docs/Model/NewAddonPurchase.md
 docs/Model/NewAddonVersion.md
 docs/Model/OrderItem.md
 docs/Model/PermissionGroup.md
+docs/Model/PermissionGroupListResponse.md
 docs/Model/Team.md
 docs/Model/TeamListResponse.md
 docs/Model/TeamResponse.md
@@ -72,6 +74,7 @@ lib/Api/AddonReviewsApi.php
 lib/Api/AddonStatsApi.php
 lib/Api/AddonVersionsApi.php
 lib/Api/AddonsApi.php
+lib/Api/PermissionGroupsApi.php
 lib/Api/TeamUsersApi.php
 lib/Api/TeamsApi.php
 lib/Api/UserAddonsApi.php
@@ -121,6 +124,7 @@ lib/Model/NewAddonPurchase.php
 lib/Model/NewAddonVersion.php
 lib/Model/OrderItem.php
 lib/Model/PermissionGroup.php
+lib/Model/PermissionGroupListResponse.php
 lib/Model/Team.php
 lib/Model/TeamListResponse.php
 lib/Model/TeamResponse.php
@@ -134,3 +138,5 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/PermissionGroupsApiTest.php
+test/Model/PermissionGroupListResponseTest.php
