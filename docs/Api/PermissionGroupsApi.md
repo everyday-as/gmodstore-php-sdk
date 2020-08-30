@@ -4,13 +4,13 @@ All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPermissionGroups**](PermissionGroupsApi.md#getPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
+[**listPermissionGroups**](PermissionGroupsApi.md#listPermissionGroups) | **GET** /permission-groups | Fetches all available permission groups
 
 
 
-## getPermissionGroups
+## listPermissionGroups
 
-> \Everyday\GmodStore\Sdk\Model\PermissionGroupListResponse getPermissionGroups()
+> \Everyday\GmodStore\Sdk\Model\PermissionGroupListResponse listPermissionGroups()
 
 Fetches all available permission groups
 
@@ -33,10 +33,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\PermissionGroupsApi(
 );
 
 try {
-    $result = $apiInstance->getPermissionGroups();
+    $result = $apiInstance->listPermissionGroups();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PermissionGroupsApi->getPermissionGroups: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PermissionGroupsApi->listPermissionGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

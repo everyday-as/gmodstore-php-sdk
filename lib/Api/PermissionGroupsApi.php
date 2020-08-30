@@ -116,7 +116,7 @@ class PermissionGroupsApi
     }
 
     /**
-     * Operation getPermissionGroups
+     * Operation listPermissionGroups
      *
      * Fetches all available permission groups
      *
@@ -125,14 +125,14 @@ class PermissionGroupsApi
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\PermissionGroupListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function getPermissionGroups()
+    public function listPermissionGroups()
     {
-        list($response) = $this->getPermissionGroupsWithHttpInfo();
+        list($response) = $this->listPermissionGroupsWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation getPermissionGroupsWithHttpInfo
+     * Operation listPermissionGroupsWithHttpInfo
      *
      * Fetches all available permission groups
      *
@@ -141,9 +141,9 @@ class PermissionGroupsApi
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\PermissionGroupListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPermissionGroupsWithHttpInfo()
+    public function listPermissionGroupsWithHttpInfo()
     {
-        $request = $this->getPermissionGroupsRequest();
+        $request = $this->listPermissionGroupsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -259,7 +259,7 @@ class PermissionGroupsApi
     }
 
     /**
-     * Operation getPermissionGroupsAsync
+     * Operation listPermissionGroupsAsync
      *
      * Fetches all available permission groups
      *
@@ -267,9 +267,9 @@ class PermissionGroupsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPermissionGroupsAsync()
+    public function listPermissionGroupsAsync()
     {
-        return $this->getPermissionGroupsAsyncWithHttpInfo()
+        return $this->listPermissionGroupsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,7 +278,7 @@ class PermissionGroupsApi
     }
 
     /**
-     * Operation getPermissionGroupsAsyncWithHttpInfo
+     * Operation listPermissionGroupsAsyncWithHttpInfo
      *
      * Fetches all available permission groups
      *
@@ -286,10 +286,10 @@ class PermissionGroupsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPermissionGroupsAsyncWithHttpInfo()
+    public function listPermissionGroupsAsyncWithHttpInfo()
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\PermissionGroupListResponse';
-        $request = $this->getPermissionGroupsRequest();
+        $request = $this->listPermissionGroupsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -326,13 +326,13 @@ class PermissionGroupsApi
     }
 
     /**
-     * Create request for operation 'getPermissionGroups'
+     * Create request for operation 'listPermissionGroups'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPermissionGroupsRequest()
+    protected function listPermissionGroupsRequest()
     {
 
         $resourcePath = '/permission-groups';

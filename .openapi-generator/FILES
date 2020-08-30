@@ -138,5 +138,3 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/PermissionGroupsApiTest.php
-test/Model/PermissionGroupListResponseTest.php

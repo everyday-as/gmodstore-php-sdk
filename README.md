@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 *AddonVersionsApi* | [**updateAddonVersion**](docs/Api/AddonVersionsApi.md#updateaddonversion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 *AddonsApi* | [**getAddon**](docs/Api/AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/Api/AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
-*PermissionGroupsApi* | [**getPermissionGroups**](docs/Api/PermissionGroupsApi.md#getpermissiongroups) | **GET** /permission-groups | Fetches all available permission groups
+*PermissionGroupsApi* | [**listPermissionGroups**](docs/Api/PermissionGroupsApi.md#listpermissiongroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamUsersApi* | [**listTeamUsers**](docs/Api/TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
 *TeamsApi* | [**getTeam**](docs/Api/TeamsApi.md#getteam) | **GET** /teams/{team_id} | Fetch a single team
 *UserAddonsApi* | [**listUserAddons**](docs/Api/UserAddonsApi.md#listuseraddons) | **GET** /users/{user_id}/addons | Fetch all the addons authored / co-authored by a user
