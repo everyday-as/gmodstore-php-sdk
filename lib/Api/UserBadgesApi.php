@@ -452,7 +452,7 @@ class UserBadgesApi
      * Destroy a users's badge
      *
      * @param  int $userId Id of the user (required)
-     * @param  int $badgeId Id of the badge (required)
+     * @param  string $badgeId Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -469,7 +469,7 @@ class UserBadgesApi
      * Destroy a users's badge
      *
      * @param  int $userId Id of the user (required)
-     * @param  int $badgeId Id of the badge (required)
+     * @param  string $badgeId Id of the badge (required)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -530,7 +530,7 @@ class UserBadgesApi
      * Destroy a users's badge
      *
      * @param  int $userId Id of the user (required)
-     * @param  int $badgeId Id of the badge (required)
+     * @param  string $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -551,7 +551,7 @@ class UserBadgesApi
      * Destroy a users's badge
      *
      * @param  int $userId Id of the user (required)
-     * @param  int $badgeId Id of the badge (required)
+     * @param  string $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -588,7 +588,7 @@ class UserBadgesApi
      * Create request for operation 'deleteUserBadge'
      *
      * @param  int $userId Id of the user (required)
-     * @param  int $badgeId Id of the badge (required)
+     * @param  string $badgeId Id of the badge (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

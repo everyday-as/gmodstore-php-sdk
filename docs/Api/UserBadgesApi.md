@@ -95,7 +95,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     $config
 );
 $userId = 56; // int | Id of the user
-$badgeId = 56; // int | Id of the badge
+$badgeId = 'badgeId_example'; // string | Id of the badge
 
 try {
     $apiInstance->deleteUserBadge($userId, $badgeId);
@@ -111,7 +111,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| Id of the user |
- **badgeId** | **int**| Id of the badge |
+ **badgeId** | **string**| Id of the badge |
 
 ### Return type
 
