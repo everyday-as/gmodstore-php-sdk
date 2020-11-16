@@ -59,7 +59,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'revoked' => 'bool',
         'createdAt' => '\DateTime',
-        'updatedAt' => 'int',
+        'updatedAt' => '\DateTime',
         'addon' => '\Everyday\GmodStore\Sdk\Model\Addon',
         'orderItem' => '\Everyday\GmodStore\Sdk\Model\OrderItem',
         'user' => '\Everyday\GmodStore\Sdk\Model\User'
@@ -288,7 +288,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Gets updatedAt
      *
-     * @return int|null
+     * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
@@ -298,7 +298,7 @@ class AddonPurchase implements ModelInterface, ArrayAccess
     /**
      * Sets updatedAt
      *
-     * @param int|null $updatedAt updatedAt
+     * @param \DateTime|null $updatedAt updatedAt
      *
      * @return $this
      */
