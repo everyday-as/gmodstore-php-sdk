@@ -9,6 +9,7 @@ docs/Api/AddonReviewsApi.md
 docs/Api/AddonStatsApi.md
 docs/Api/AddonVersionsApi.md
 docs/Api/AddonsApi.md
+docs/Api/AdventCalendarApi.md
 docs/Api/PermissionGroupsApi.md
 docs/Api/TeamAddonsApi.md
 docs/Api/TeamUsersApi.md
@@ -47,6 +48,8 @@ docs/Model/AddonVersion.md
 docs/Model/AddonVersionListResponse.md
 docs/Model/AddonVersionReleaseType.md
 docs/Model/AddonVersionResponse.md
+docs/Model/AdventCalendarStats.md
+docs/Model/AdventCalendarStatsResponse.md
 docs/Model/BadgeListResponse.md
 docs/Model/BadgeResponse.md
 docs/Model/Error.md
@@ -75,6 +78,7 @@ lib/Api/AddonReviewsApi.php
 lib/Api/AddonStatsApi.php
 lib/Api/AddonVersionsApi.php
 lib/Api/AddonsApi.php
+lib/Api/AdventCalendarApi.php
 lib/Api/PermissionGroupsApi.php
 lib/Api/TeamAddonsApi.php
 lib/Api/TeamUsersApi.php
@@ -116,6 +120,8 @@ lib/Model/AddonVersion.php
 lib/Model/AddonVersionListResponse.php
 lib/Model/AddonVersionReleaseType.php
 lib/Model/AddonVersionResponse.php
+lib/Model/AdventCalendarStats.php
+lib/Model/AdventCalendarStatsResponse.php
 lib/Model/BadgeListResponse.php
 lib/Model/BadgeResponse.php
 lib/Model/Error.php
@@ -140,4 +146,6 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/TeamAddonsApiTest.php
+test/Api/AdventCalendarApiTest.php
+test/Model/AdventCalendarStatsResponseTest.php
+test/Model/AdventCalendarStatsTest.php

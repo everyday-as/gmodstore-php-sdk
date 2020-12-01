@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *AddonVersionsApi* | [**updateAddonVersion**](docs/Api/AddonVersionsApi.md#updateaddonversion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 *AddonsApi* | [**getAddon**](docs/Api/AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/Api/AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
+*AdventCalendarApi* | [**getAdventCalendarStats**](docs/Api/AdventCalendarApi.md#getadventcalendarstats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
 *PermissionGroupsApi* | [**listPermissionGroups**](docs/Api/PermissionGroupsApi.md#listpermissiongroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamAddonsApi* | [**listTeamAddons**](docs/Api/TeamAddonsApi.md#listteamaddons) | **GET** /teams/{team_id}/addons | Fetch all the addons in the given team
 *TeamUsersApi* | [**listTeamUsers**](docs/Api/TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
@@ -141,6 +142,8 @@ Class | Method | HTTP request | Description
  - [AddonVersionListResponse](docs/Model/AddonVersionListResponse.md)
  - [AddonVersionReleaseType](docs/Model/AddonVersionReleaseType.md)
  - [AddonVersionResponse](docs/Model/AddonVersionResponse.md)
+ - [AdventCalendarStats](docs/Model/AdventCalendarStats.md)
+ - [AdventCalendarStatsResponse](docs/Model/AdventCalendarStatsResponse.md)
  - [BadgeListResponse](docs/Model/BadgeListResponse.md)
  - [BadgeResponse](docs/Model/BadgeResponse.md)
  - [Error](docs/Model/Error.md)
