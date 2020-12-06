@@ -62,9 +62,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'percent' => 'float',
         'maxUses' => 'int',
         'expiresAt' => '\DateTime',
+        'boundUserId' => 'int',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
-        'addon' => '\Everyday\GmodStore\Sdk\Model\Addon'
+        'addon' => '\Everyday\GmodStore\Sdk\Model\Addon',
+        'boundUser' => '\Everyday\GmodStore\Sdk\Model\User'
     ];
 
     /**
@@ -78,9 +80,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'percent' => null,
         'maxUses' => null,
         'expiresAt' => 'date-time',
+        'boundUserId' => 'int64',
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
-        'addon' => null
+        'addon' => null,
+        'boundUser' => null
     ];
 
     /**
@@ -115,9 +119,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'percent' => 'percent',
         'maxUses' => 'max_uses',
         'expiresAt' => 'expires_at',
+        'boundUserId' => 'bound_user_id',
         'createdAt' => 'created_at',
         'updatedAt' => 'updated_at',
-        'addon' => 'addon'
+        'addon' => 'addon',
+        'boundUser' => 'bound_user'
     ];
 
     /**
@@ -131,9 +137,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'percent' => 'setPercent',
         'maxUses' => 'setMaxUses',
         'expiresAt' => 'setExpiresAt',
+        'boundUserId' => 'setBoundUserId',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
-        'addon' => 'setAddon'
+        'addon' => 'setAddon',
+        'boundUser' => 'setBoundUser'
     ];
 
     /**
@@ -147,9 +155,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         'percent' => 'getPercent',
         'maxUses' => 'getMaxUses',
         'expiresAt' => 'getExpiresAt',
+        'boundUserId' => 'getBoundUserId',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
-        'addon' => 'getAddon'
+        'addon' => 'getAddon',
+        'boundUser' => 'getBoundUser'
     ];
 
     /**
@@ -217,9 +227,11 @@ class AddonCoupon implements ModelInterface, ArrayAccess
         $this->container['percent'] = isset($data['percent']) ? $data['percent'] : null;
         $this->container['maxUses'] = isset($data['maxUses']) ? $data['maxUses'] : null;
         $this->container['expiresAt'] = isset($data['expiresAt']) ? $data['expiresAt'] : null;
+        $this->container['boundUserId'] = isset($data['boundUserId']) ? $data['boundUserId'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
         $this->container['addon'] = isset($data['addon']) ? $data['addon'] : null;
+        $this->container['boundUser'] = isset($data['boundUser']) ? $data['boundUser'] : null;
     }
 
     /**
@@ -416,6 +428,30 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets boundUserId
+     *
+     * @return int|null
+     */
+    public function getBoundUserId()
+    {
+        return $this->container['boundUserId'];
+    }
+
+    /**
+     * Sets boundUserId
+     *
+     * @param int|null $boundUserId boundUserId
+     *
+     * @return $this
+     */
+    public function setBoundUserId($boundUserId)
+    {
+        $this->container['boundUserId'] = $boundUserId;
+
+        return $this;
+    }
+
+    /**
      * Gets createdAt
      *
      * @return \DateTime|null
@@ -483,6 +519,30 @@ class AddonCoupon implements ModelInterface, ArrayAccess
     public function setAddon($addon)
     {
         $this->container['addon'] = $addon;
+
+        return $this;
+    }
+
+    /**
+     * Gets boundUser
+     *
+     * @return \Everyday\GmodStore\Sdk\Model\User|null
+     */
+    public function getBoundUser()
+    {
+        return $this->container['boundUser'];
+    }
+
+    /**
+     * Sets boundUser
+     *
+     * @param \Everyday\GmodStore\Sdk\Model\User|null $boundUser boundUser
+     *
+     * @return $this
+     */
+    public function setBoundUser($boundUser)
+    {
+        $this->container['boundUser'] = $boundUser;
 
         return $this;
     }
