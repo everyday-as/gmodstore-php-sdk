@@ -59,6 +59,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'teamId' => 'int',
         'primary' => 'bool',
+        'percentage' => 'int',
         'user' => '\Everyday\GmodStore\Sdk\Model\User'
     ];
 
@@ -70,6 +71,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'teamId' => null,
         'primary' => null,
+        'percentage' => null,
         'user' => null
     ];
 
@@ -102,6 +104,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'teamId' => 'team_id',
         'primary' => 'primary',
+        'percentage' => 'percentage',
         'user' => 'user'
     ];
 
@@ -113,6 +116,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $setters = [
         'teamId' => 'setTeamId',
         'primary' => 'setPrimary',
+        'percentage' => 'setPercentage',
         'user' => 'setUser'
     ];
 
@@ -124,6 +128,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     protected static $getters = [
         'teamId' => 'getTeamId',
         'primary' => 'getPrimary',
+        'percentage' => 'getPercentage',
         'user' => 'getUser'
     ];
 
@@ -189,6 +194,7 @@ class TeamUser implements ModelInterface, ArrayAccess
     {
         $this->container['teamId'] = isset($data['teamId']) ? $data['teamId'] : null;
         $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
+        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
         $this->container['user'] = isset($data['user']) ? $data['user'] : null;
     }
 
@@ -260,6 +266,30 @@ class TeamUser implements ModelInterface, ArrayAccess
     public function setPrimary($primary)
     {
         $this->container['primary'] = $primary;
+
+        return $this;
+    }
+
+    /**
+     * Gets percentage
+     *
+     * @return int|null
+     */
+    public function getPercentage()
+    {
+        return $this->container['percentage'];
+    }
+
+    /**
+     * Sets percentage
+     *
+     * @param int|null $percentage percentage
+     *
+     * @return $this
+     */
+    public function setPercentage($percentage)
+    {
+        $this->container['percentage'] = $percentage;
 
         return $this;
     }
