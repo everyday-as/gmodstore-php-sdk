@@ -1,10 +1,10 @@
-# Everyday\GmodStore\Sdk\ApiKeyApi
+# Everyday\GmodStore\Sdk\CurrentAPIKeyApi
 
 All URIs are relative to *https://api.gmodstore.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrentApiKey**](ApiKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
+[**getCurrentApiKey**](CurrentAPIKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
 
 
 
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\Sdk\Api\ApiKeyApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\CurrentAPIKeyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -37,7 +37,7 @@ try {
     $result = $apiInstance->getCurrentApiKey($with);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiKeyApi->getCurrentApiKey: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CurrentAPIKeyApi->getCurrentApiKey: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiKeyApi
+ * CurrentAPIKeyApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use Everyday\GmodStore\Sdk\HeaderSelector;
 use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * ApiKeyApi Class Doc Comment
+ * CurrentAPIKeyApi Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ApiKeyApi
+class CurrentAPIKeyApi
 {
     /**
      * @var ClientInterface
