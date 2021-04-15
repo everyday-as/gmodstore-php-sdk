@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *AddonsApi* | [**getAddon**](docs/Api/AddonsApi.md#getaddon) | **GET** /addons/{addon_id} | Fetch a single addon
 *AddonsApi* | [**listSelfAddons**](docs/Api/AddonsApi.md#listselfaddons) | **GET** /addons | Fetch all the addons that you have access to
 *AdventCalendarApi* | [**getAdventCalendarStats**](docs/Api/AdventCalendarApi.md#getadventcalendarstats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
+*ApiKeyApi* | [**getCurrentApiKey**](docs/Api/ApiKeyApi.md#getcurrentapikey) | **GET** /me | Get meta information about the current API key
 *PermissionGroupsApi* | [**listPermissionGroups**](docs/Api/PermissionGroupsApi.md#listpermissiongroups) | **GET** /permission-groups | Fetches all available permission groups
 *TeamAddonsApi* | [**listTeamAddons**](docs/Api/TeamAddonsApi.md#listteamaddons) | **GET** /teams/{team_id}/addons | Fetch all the addons in the given team
 *TeamUsersApi* | [**listTeamUsers**](docs/Api/TeamUsersApi.md#listteamusers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
@@ -122,6 +123,7 @@ Class | Method | HTTP request | Description
  - [AddonDownloadResponse](docs/Model/AddonDownloadResponse.md)
  - [AddonImages](docs/Model/AddonImages.md)
  - [AddonListResponse](docs/Model/AddonListResponse.md)
+ - [AddonListResponse1](docs/Model/AddonListResponse1.md)
  - [AddonPrice](docs/Model/AddonPrice.md)
  - [AddonPurchase](docs/Model/AddonPurchase.md)
  - [AddonPurchaseListResponse](docs/Model/AddonPurchaseListResponse.md)
@@ -144,6 +146,7 @@ Class | Method | HTTP request | Description
  - [AddonVersionResponse](docs/Model/AddonVersionResponse.md)
  - [AdventCalendarStats](docs/Model/AdventCalendarStats.md)
  - [AdventCalendarStatsResponse](docs/Model/AdventCalendarStatsResponse.md)
+ - [ApiKey](docs/Model/ApiKey.md)
  - [BadgeListResponse](docs/Model/BadgeListResponse.md)
  - [BadgeResponse](docs/Model/BadgeResponse.md)
  - [Error](docs/Model/Error.md)

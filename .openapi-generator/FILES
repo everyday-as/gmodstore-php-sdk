@@ -10,6 +10,7 @@ docs/Api/AddonStatsApi.md
 docs/Api/AddonVersionsApi.md
 docs/Api/AddonsApi.md
 docs/Api/AdventCalendarApi.md
+docs/Api/ApiKeyApi.md
 docs/Api/PermissionGroupsApi.md
 docs/Api/TeamAddonsApi.md
 docs/Api/TeamUsersApi.md
@@ -28,6 +29,7 @@ docs/Model/AddonDownload.md
 docs/Model/AddonDownloadResponse.md
 docs/Model/AddonImages.md
 docs/Model/AddonListResponse.md
+docs/Model/AddonListResponse1.md
 docs/Model/AddonPrice.md
 docs/Model/AddonPurchase.md
 docs/Model/AddonPurchaseListResponse.md
@@ -50,6 +52,7 @@ docs/Model/AddonVersionReleaseType.md
 docs/Model/AddonVersionResponse.md
 docs/Model/AdventCalendarStats.md
 docs/Model/AdventCalendarStatsResponse.md
+docs/Model/ApiKey.md
 docs/Model/BadgeListResponse.md
 docs/Model/BadgeResponse.md
 docs/Model/Error.md
@@ -79,6 +82,7 @@ lib/Api/AddonStatsApi.php
 lib/Api/AddonVersionsApi.php
 lib/Api/AddonsApi.php
 lib/Api/AdventCalendarApi.php
+lib/Api/ApiKeyApi.php
 lib/Api/PermissionGroupsApi.php
 lib/Api/TeamAddonsApi.php
 lib/Api/TeamUsersApi.php
@@ -100,6 +104,7 @@ lib/Model/AddonDownload.php
 lib/Model/AddonDownloadResponse.php
 lib/Model/AddonImages.php
 lib/Model/AddonListResponse.php
+lib/Model/AddonListResponse1.php
 lib/Model/AddonPrice.php
 lib/Model/AddonPurchase.php
 lib/Model/AddonPurchaseListResponse.php
@@ -122,6 +127,7 @@ lib/Model/AddonVersionReleaseType.php
 lib/Model/AddonVersionResponse.php
 lib/Model/AdventCalendarStats.php
 lib/Model/AdventCalendarStatsResponse.php
+lib/Model/ApiKey.php
 lib/Model/BadgeListResponse.php
 lib/Model/BadgeResponse.php
 lib/Model/Error.php
@@ -146,3 +152,6 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/ApiKeyApiTest.php
+test/Model/AddonListResponse1Test.php
+test/Model/ApiKeyTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * UserAddonsApi
+ * ApiKeyApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use Everyday\GmodStore\Sdk\HeaderSelector;
 use Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * UserAddonsApi Class Doc Comment
+ * ApiKeyApi Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class UserAddonsApi
+class ApiKeyApi
 {
     /**
      * @var ClientInterface
@@ -116,38 +116,36 @@ class UserAddonsApi
     }
 
     /**
-     * Operation listUserAddons
+     * Operation getCurrentApiKey
      *
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      *
-     * @param  int $userId Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse1|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
-    public function listUserAddons($userId, $with = null)
+    public function getCurrentApiKey($with = null)
     {
-        list($response) = $this->listUserAddonsWithHttpInfo($userId, $with);
+        list($response) = $this->getCurrentApiKeyWithHttpInfo($with);
         return $response;
     }
 
     /**
-     * Operation listUserAddonsWithHttpInfo
+     * Operation getCurrentApiKeyWithHttpInfo
      *
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      *
-     * @param  int $userId Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse1|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listUserAddonsWithHttpInfo($userId, $with = null)
+    public function getCurrentApiKeyWithHttpInfo($with = null)
     {
-        $request = $this->listUserAddonsRequest($userId, $with);
+        $request = $this->getCurrentApiKeyRequest($with);
 
         try {
             $options = $this->createHttpClientOption();
@@ -180,14 +178,14 @@ class UserAddonsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Everyday\GmodStore\Sdk\Model\AddonListResponse1' === '\SplFileObject') {
+                    if ('\Everyday\GmodStore\Sdk\Model\AddonListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonListResponse1', []),
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonListResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -217,7 +215,7 @@ class UserAddonsApi
                     ];
             }
 
-            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse1';
+            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -236,7 +234,7 @@ class UserAddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\AddonListResponse1',
+                        '\Everyday\GmodStore\Sdk\Model\AddonListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,19 +261,18 @@ class UserAddonsApi
     }
 
     /**
-     * Operation listUserAddonsAsync
+     * Operation getCurrentApiKeyAsync
      *
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      *
-     * @param  int $userId Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserAddonsAsync($userId, $with = null)
+    public function getCurrentApiKeyAsync($with = null)
     {
-        return $this->listUserAddonsAsyncWithHttpInfo($userId, $with)
+        return $this->getCurrentApiKeyAsyncWithHttpInfo($with)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -284,20 +281,19 @@ class UserAddonsApi
     }
 
     /**
-     * Operation listUserAddonsAsyncWithHttpInfo
+     * Operation getCurrentApiKeyAsyncWithHttpInfo
      *
-     * Fetch all the addons authored / co-authored by a user
+     * Get meta information about the current API key
      *
-     * @param  int $userId Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listUserAddonsAsyncWithHttpInfo($userId, $with = null)
+    public function getCurrentApiKeyAsyncWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse1';
-        $request = $this->listUserAddonsRequest($userId, $with);
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
+        $request = $this->getCurrentApiKeyRequest($with);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -334,24 +330,17 @@ class UserAddonsApi
     }
 
     /**
-     * Create request for operation 'listUserAddons'
+     * Create request for operation 'getCurrentApiKey'
      *
-     * @param  int $userId Id of the user (required)
-     * @param  string[] $with The relations you want to fetch with the &#x60;Addon&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listUserAddonsRequest($userId, $with = null)
+    protected function getCurrentApiKeyRequest($with = null)
     {
-        // verify the required parameter 'userId' is set
-        if ($userId === null || (is_array($userId) && count($userId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userId when calling listUserAddons'
-            );
-        }
 
-        $resourcePath = '/users/{user_id}/addons';
+        $resourcePath = '/me';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -367,14 +356,6 @@ class UserAddonsApi
         }
 
 
-        // path params
-        if ($userId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
-                ObjectSerializer::toPathValue($userId),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;

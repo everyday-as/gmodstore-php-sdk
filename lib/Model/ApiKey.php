@@ -1,6 +1,6 @@
 <?php
 /**
- * AddonListResponse
+ * ApiKey
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * AddonListResponse Class Doc Comment
+ * ApiKey Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class AddonListResponse implements ModelInterface, ArrayAccess
+class ApiKey implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AddonListResponse';
+    protected static $openAPIModelName = 'ApiKey';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\ApiKey'
+        'permissions' => 'string[]',
+        'user' => '\Everyday\GmodStore\Sdk\Model\User'
     ];
 
     /**
@@ -66,7 +67,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'permissions' => null,
+        'user' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'permissions' => 'permissions',
+        'user' => 'user'
     ];
 
     /**
@@ -105,7 +108,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'permissions' => 'setPermissions',
+        'user' => 'setUser'
     ];
 
     /**
@@ -114,7 +118,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'permissions' => 'getPermissions',
+        'user' => 'getUser'
     ];
 
     /**
@@ -158,8 +163,43 @@ class AddonListResponse implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const PERMISSIONS_ADDONS_READ = 'addons.read';
+    const PERMISSIONS_ADDONS_COUPONS_READ = 'addons.coupons.read';
+    const PERMISSIONS_ADDONS_COUPONS_WRITE = 'addons.coupons.write';
+    const PERMISSIONS_ADDONS_PURCHASES_READ = 'addons.purchases.read';
+    const PERMISSIONS_ADDONS_PURCHASES_WRITE = 'addons.purchases.write';
+    const PERMISSIONS_ADDONS_REVIEWS_READ = 'addons.reviews.read';
+    const PERMISSIONS_TEAMS_READ = 'teams.read';
+    const PERMISSIONS_USERS_READ = 'users.read';
+    const PERMISSIONS_USERS_WRITE = 'users.write';
+    const PERMISSIONS_ADDONS_VERSIONS_READ = 'addons.versions.read';
+    const PERMISSIONS_ADDONS_VERSIONS_WRITE = 'addons.versions.write';
+    const PERMISSIONS_ADDONS_VERSIONS_DOWNLOAD = 'addons.versions.download';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPermissionsAllowableValues()
+    {
+        return [
+            self::PERMISSIONS_ADDONS_READ,
+            self::PERMISSIONS_ADDONS_COUPONS_READ,
+            self::PERMISSIONS_ADDONS_COUPONS_WRITE,
+            self::PERMISSIONS_ADDONS_PURCHASES_READ,
+            self::PERMISSIONS_ADDONS_PURCHASES_WRITE,
+            self::PERMISSIONS_ADDONS_REVIEWS_READ,
+            self::PERMISSIONS_TEAMS_READ,
+            self::PERMISSIONS_USERS_READ,
+            self::PERMISSIONS_USERS_WRITE,
+            self::PERMISSIONS_ADDONS_VERSIONS_READ,
+            self::PERMISSIONS_ADDONS_VERSIONS_WRITE,
+            self::PERMISSIONS_ADDONS_VERSIONS_DOWNLOAD,
+        ];
+    }
     
 
     /**
@@ -177,7 +217,8 @@ class AddonListResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
     }
 
     /**
@@ -205,25 +246,58 @@ class AddonListResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets permissions
      *
-     * @return \Everyday\GmodStore\Sdk\Model\ApiKey|null
+     * @return string[]|null
      */
-    public function getData()
+    public function getPermissions()
     {
-        return $this->container['data'];
+        return $this->container['permissions'];
     }
 
     /**
-     * Sets data
+     * Sets permissions
      *
-     * @param \Everyday\GmodStore\Sdk\Model\ApiKey|null $data data
+     * @param string[]|null $permissions permissions
      *
      * @return $this
      */
-    public function setData($data)
+    public function setPermissions($permissions)
     {
-        $this->container['data'] = $data;
+        $allowedValues = $this->getPermissionsAllowableValues();
+        if (!is_null($permissions) && array_diff($permissions, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'permissions', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets user
+     *
+     * @return \Everyday\GmodStore\Sdk\Model\User|null
+     */
+    public function getUser()
+    {
+        return $this->container['user'];
+    }
+
+    /**
+     * Sets user
+     *
+     * @param \Everyday\GmodStore\Sdk\Model\User|null $user user
+     *
+     * @return $this
+     */
+    public function setUser($user)
+    {
+        $this->container['user'] = $user;
 
         return $this;
     }

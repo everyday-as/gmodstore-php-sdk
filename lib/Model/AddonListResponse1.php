@@ -1,6 +1,6 @@
 <?php
 /**
- * AddonListResponse
+ * AddonListResponse1
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * AddonListResponse Class Doc Comment
+ * AddonListResponse1 Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class AddonListResponse implements ModelInterface, ArrayAccess
+class AddonListResponse1 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AddonListResponse';
+    protected static $openAPIModelName = 'AddonListResponse_1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\ApiKey'
+        'data' => '\Everyday\GmodStore\Sdk\Model\Addon[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStore\Sdk\Model\ApiKey|null
+     * @return \Everyday\GmodStore\Sdk\Model\Addon[]|null
      */
     public function getData()
     {
@@ -217,7 +217,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStore\Sdk\Model\ApiKey|null $data data
+     * @param \Everyday\GmodStore\Sdk\Model\Addon[]|null $data data
      *
      * @return $this
      */
