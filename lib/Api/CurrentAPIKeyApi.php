@@ -120,7 +120,7 @@ class CurrentAPIKeyApi
      *
      * Get meta information about the current API key
      *
-     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -137,7 +137,7 @@ class CurrentAPIKeyApi
      *
      * Get meta information about the current API key
      *
-     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -265,7 +265,7 @@ class CurrentAPIKeyApi
      *
      * Get meta information about the current API key
      *
-     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -285,7 +285,7 @@ class CurrentAPIKeyApi
      *
      * Get meta information about the current API key
      *
-     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -332,7 +332,7 @@ class CurrentAPIKeyApi
     /**
      * Create request for operation 'getCurrentApiKey'
      *
-     * @param  string[] $with The relations you want to fetch with the &#x60;User&#x60; (optional)
+     * @param  string[] $with The relations you want to fetch with the &#x60;ApiKey&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
