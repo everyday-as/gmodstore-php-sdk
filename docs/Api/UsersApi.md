@@ -1,17 +1,18 @@
 # Everyday\GmodStore\Sdk\UsersApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSelfUser**](UsersApi.md#getSelfUser) | **GET** /users/me | Fetches the current user (API Key Owner)
-[**getUser**](UsersApi.md#getUser) | **GET** /users/{user_id} | Fetch a single user
+[**getSelfUser()**](UsersApi.md#getSelfUser) | **GET** /users/me | Fetches the current user (API Key Owner)
+[**getUser()**](UsersApi.md#getUser) | **GET** /users/{user_id} | Fetch a single user
 
 
+## `getSelfUser()`
 
-## getSelfUser
-
-> \Everyday\GmodStore\Sdk\Model\UserResponse getSelfUser($with)
+```php
+getSelfUser($with): \Everyday\GmodStore\Sdk\Model\UserResponse
+```
 
 Fetches the current user (API Key Owner)
 
@@ -40,11 +41,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getSelfUser: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -61,16 +60,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getUser()`
 
-## getUser
-
-> \Everyday\GmodStore\Sdk\Model\UserResponse getUser($userId, $with)
+```php
+getUser($userId, $with): \Everyday\GmodStore\Sdk\Model\UserResponse
+```
 
 Fetch a single user
 
@@ -100,11 +100,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUser: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -122,9 +120,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,16 +1,17 @@
 # Everyday\GmodStore\Sdk\AdventCalendarApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAdventCalendarStats**](AdventCalendarApi.md#getAdventCalendarStats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
+[**getAdventCalendarStats()**](AdventCalendarApi.md#getAdventCalendarStats) | **GET** /events/advent-calendar/stats | Fetch statistics relating to the advent calendar event
 
 
+## `getAdventCalendarStats()`
 
-## getAdventCalendarStats
-
-> \Everyday\GmodStore\Sdk\Model\AdventCalendarStatsResponse getAdventCalendarStats()
+```php
+getAdventCalendarStats(): \Everyday\GmodStore\Sdk\Model\AdventCalendarStatsResponse
+```
 
 Fetch statistics relating to the advent calendar event
 
@@ -38,7 +39,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AdventCalendarApi->getAdventCalendarStats: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -56,9 +56,8 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

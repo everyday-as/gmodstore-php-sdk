@@ -1,20 +1,21 @@
 # Everyday\GmodStore\Sdk\AddonVersionsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddonVersion**](AddonVersionsApi.md#createAddonVersion) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
-[**downloadAddonVersion**](AddonVersionsApi.md#downloadAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
-[**getAddonVersion**](AddonVersionsApi.md#getAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
-[**listAddonVersions**](AddonVersionsApi.md#listAddonVersions) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
-[**updateAddonVersion**](AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
+[**createAddonVersion()**](AddonVersionsApi.md#createAddonVersion) | **POST** /addons/{addon_id}/versions | Create a new version for an addon
+[**downloadAddonVersion()**](AddonVersionsApi.md#downloadAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id}/download | Generate a download token for a specific version of an addon
+[**getAddonVersion()**](AddonVersionsApi.md#getAddonVersion) | **GET** /addons/{addon_id}/versions/{version_id} | Fetch a specific version of an addon
+[**listAddonVersions()**](AddonVersionsApi.md#listAddonVersions) | **GET** /addons/{addon_id}/versions | Fetch all the versions of an addon
+[**updateAddonVersion()**](AddonVersionsApi.md#updateAddonVersion) | **PUT** /addons/{addon_id}/versions/{version_id} | Update a version of an addon
 
 
+## `createAddonVersion()`
 
-## createAddonVersion
-
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse createAddonVersion($addonId, $newAddonVersion, $with)
+```php
+createAddonVersion($addonId, $newAddonVersion, $with): \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
+```
 
 Create a new version for an addon
 
@@ -36,7 +37,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
     $config
 );
 $addonId = 56; // int | Id of the addon
-$newAddonVersion = new \Everyday\GmodStore\Sdk\Model\NewAddonVersion(); // \Everyday\GmodStore\Sdk\Model\NewAddonVersion | 
+$newAddonVersion = new \Everyday\GmodStore\Sdk\Model\NewAddonVersion(); // \Everyday\GmodStore\Sdk\Model\NewAddonVersion
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->createAddonVersion: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -67,17 +66,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+- **Content-Type**: `multipart/form-data`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `downloadAddonVersion()`
 
-## downloadAddonVersion
-
-> \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse downloadAddonVersion($addonId, $versionId)
+```php
+downloadAddonVersion($addonId, $versionId): \Everyday\GmodStore\Sdk\Model\AddonDownloadResponse
+```
 
 Generate a download token for a specific version of an addon
 
@@ -107,11 +107,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->downloadAddonVersion: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,16 +127,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddonVersion()`
 
-## getAddonVersion
-
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse getAddonVersion($addonId, $versionId, $with)
+```php
+getAddonVersion($addonId, $versionId, $with): \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
+```
 
 Fetch a specific version of an addon
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->getAddonVersion: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,16 +189,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listAddonVersions()`
 
-## listAddonVersions
-
-> \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse listAddonVersions($addonId, $with)
+```php
+listAddonVersions($addonId, $with): \Everyday\GmodStore\Sdk\Model\AddonVersionListResponse
+```
 
 Fetch all the versions of an addon
 
@@ -231,11 +229,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->listAddonVersions: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -253,16 +249,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateAddonVersion()`
 
-## updateAddonVersion
-
-> \Everyday\GmodStore\Sdk\Model\AddonVersionResponse updateAddonVersion($addonId, $versionId, $addonVersion, $with)
+```php
+updateAddonVersion($addonId, $versionId, $addonVersion, $with): \Everyday\GmodStore\Sdk\Model\AddonVersionResponse
+```
 
 Update a version of an addon
 
@@ -285,7 +282,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonVersionsApi(
 );
 $addonId = 56; // int | Id of the addon
 $versionId = 56; // int | Id of the version
-$addonVersion = new \Everyday\GmodStore\Sdk\Model\AddonVersion(); // \Everyday\GmodStore\Sdk\Model\AddonVersion | 
+$addonVersion = new \Everyday\GmodStore\Sdk\Model\AddonVersion(); // \Everyday\GmodStore\Sdk\Model\AddonVersion
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonVersion`
 
 try {
@@ -294,11 +291,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonVersionsApi->updateAddonVersion: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -317,10 +312,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+- **Content-Type**: `multipart/form-data`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

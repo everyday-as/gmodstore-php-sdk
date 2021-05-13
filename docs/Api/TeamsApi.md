@@ -1,16 +1,17 @@
 # Everyday\GmodStore\Sdk\TeamsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTeam**](TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
+[**getTeam()**](TeamsApi.md#getTeam) | **GET** /teams/{team_id} | Fetch a single team
 
 
+## `getTeam()`
 
-## getTeam
-
-> \Everyday\GmodStore\Sdk\Model\TeamResponse getTeam($teamId, $with)
+```php
+getTeam($teamId, $with): \Everyday\GmodStore\Sdk\Model\TeamResponse
+```
 
 Fetch a single team
 
@@ -40,11 +41,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TeamsApi->getTeam: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,9 +61,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

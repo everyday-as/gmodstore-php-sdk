@@ -62,7 +62,7 @@ $addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\Gmo
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
-    $result = $apiInstance->createAddonCoupon($addonId, $addonCoupon, $with);
+    $result = $apiInstance->createAddonCoupon($addonId$addonCoupon$with);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->createAddonCoupon: ', $e->getMessage(), PHP_EOL;
@@ -153,7 +153,6 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](docs/Model/ErrorResponse.md)
  - [Money](docs/Model/Money.md)
  - [NewAddonPurchase](docs/Model/NewAddonPurchase.md)
- - [NewAddonVersion](docs/Model/NewAddonVersion.md)
  - [OrderItem](docs/Model/OrderItem.md)
  - [PermissionGroup](docs/Model/PermissionGroup.md)
  - [PermissionGroupListResponse](docs/Model/PermissionGroupListResponse.md)

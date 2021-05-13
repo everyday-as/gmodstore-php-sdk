@@ -1,16 +1,17 @@
 # Everyday\GmodStore\Sdk\AddonStatsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddonStats**](AddonStatsApi.md#getAddonStats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
+[**getAddonStats()**](AddonStatsApi.md#getAddonStats) | **GET** /addons/{addon_id}/stats | Fetch all the stats for an addon
 
 
+## `getAddonStats()`
 
-## getAddonStats
-
-> \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse getAddonStats($addonId)
+```php
+getAddonStats($addonId): \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse
+```
 
 Fetch all the stats for an addon
 
@@ -39,11 +40,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonStatsApi->getAddonStats: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,9 +59,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

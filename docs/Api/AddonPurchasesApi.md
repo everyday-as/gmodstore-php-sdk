@@ -1,19 +1,20 @@
 # Everyday\GmodStore\Sdk\AddonPurchasesApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddonPurchase**](AddonPurchasesApi.md#createAddonPurchase) | **POST** /addons/{addon_id}/purchases | Create a purchase for an addon
-[**getAddonPurchase**](AddonPurchasesApi.md#getAddonPurchase) | **GET** /addons/{addon_id}/purchases/{user_id} | Get a purchase of an addon by user
-[**listAddonPurchases**](AddonPurchasesApi.md#listAddonPurchases) | **GET** /addons/{addon_id}/purchases | Fetch all purchases of an addon
-[**updateAddonPurchase**](AddonPurchasesApi.md#updateAddonPurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
+[**createAddonPurchase()**](AddonPurchasesApi.md#createAddonPurchase) | **POST** /addons/{addon_id}/purchases | Create a purchase for an addon
+[**getAddonPurchase()**](AddonPurchasesApi.md#getAddonPurchase) | **GET** /addons/{addon_id}/purchases/{user_id} | Get a purchase of an addon by user
+[**listAddonPurchases()**](AddonPurchasesApi.md#listAddonPurchases) | **GET** /addons/{addon_id}/purchases | Fetch all purchases of an addon
+[**updateAddonPurchase()**](AddonPurchasesApi.md#updateAddonPurchase) | **PUT** /addons/{addon_id}/purchases/{user_id} | Update a purchase for an addon
 
 
+## `createAddonPurchase()`
 
-## createAddonPurchase
-
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse createAddonPurchase($addonId, $newAddonPurchase, $with)
+```php
+createAddonPurchase($addonId, $newAddonPurchase, $with): \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
+```
 
 Create a purchase for an addon
 
@@ -35,7 +36,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
     $config
 );
 $addonId = 56; // int | Id of the addon
-$newAddonPurchase = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase | 
+$newAddonPurchase = new \Everyday\GmodStore\Sdk\Model\NewAddonPurchase(); // \Everyday\GmodStore\Sdk\Model\NewAddonPurchase
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->createAddonPurchase: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,17 +65,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddonPurchase()`
 
-## getAddonPurchase
-
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse getAddonPurchase($addonId, $userId, $with)
+```php
+getAddonPurchase($addonId, $userId, $with): \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
+```
 
 Get a purchase of an addon by user
 
@@ -107,11 +107,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->getAddonPurchase: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listAddonPurchases()`
 
-## listAddonPurchases
-
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse listAddonPurchases($addonId, $with)
+```php
+listAddonPurchases($addonId, $with): \Everyday\GmodStore\Sdk\Model\AddonPurchaseListResponse
+```
 
 Fetch all purchases of an addon
 
@@ -169,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->listAddonPurchases: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateAddonPurchase()`
 
-## updateAddonPurchase
-
-> \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse updateAddonPurchase($addonId, $userId, $addonPurchase, $with)
+```php
+updateAddonPurchase($addonId, $userId, $addonPurchase, $with): \Everyday\GmodStore\Sdk\Model\AddonPurchaseResponse
+```
 
 Update a purchase for an addon
 
@@ -223,7 +221,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonPurchasesApi(
 );
 $addonId = 56; // int | Id of the addon
 $userId = 56; // int | Id of the user
-$addonPurchase = new \Everyday\GmodStore\Sdk\Model\AddonPurchase(); // \Everyday\GmodStore\Sdk\Model\AddonPurchase | 
+$addonPurchase = new \Everyday\GmodStore\Sdk\Model\AddonPurchase(); // \Everyday\GmodStore\Sdk\Model\AddonPurchase
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonPurchase`
 
 try {
@@ -232,11 +230,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonPurchasesApi->updateAddonPurchase: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -255,10 +251,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

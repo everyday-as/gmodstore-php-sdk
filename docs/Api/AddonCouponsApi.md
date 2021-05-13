@@ -1,20 +1,21 @@
 # Everyday\GmodStore\Sdk\AddonCouponsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddonCoupon**](AddonCouponsApi.md#createAddonCoupon) | **POST** /addons/{addon_id}/coupons | Create an addon coupon
-[**deleteAddonCoupon**](AddonCouponsApi.md#deleteAddonCoupon) | **DELETE** /addons/{addon_id}/coupons/{coupon_id} | Destroy an addon&#39;s coupon
-[**getAddonCoupon**](AddonCouponsApi.md#getAddonCoupon) | **GET** /addons/{addon_id}/coupons/{coupon_id} | Fetch an addon&#39;s coupon
-[**listAddonCoupons**](AddonCouponsApi.md#listAddonCoupons) | **GET** /addons/{addon_id}/coupons | Fetch all the coupons for an addon
-[**updateAddonCoupon**](AddonCouponsApi.md#updateAddonCoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#39;s coupon
+[**createAddonCoupon()**](AddonCouponsApi.md#createAddonCoupon) | **POST** /addons/{addon_id}/coupons | Create an addon coupon
+[**deleteAddonCoupon()**](AddonCouponsApi.md#deleteAddonCoupon) | **DELETE** /addons/{addon_id}/coupons/{coupon_id} | Destroy an addon&#39;s coupon
+[**getAddonCoupon()**](AddonCouponsApi.md#getAddonCoupon) | **GET** /addons/{addon_id}/coupons/{coupon_id} | Fetch an addon&#39;s coupon
+[**listAddonCoupons()**](AddonCouponsApi.md#listAddonCoupons) | **GET** /addons/{addon_id}/coupons | Fetch all the coupons for an addon
+[**updateAddonCoupon()**](AddonCouponsApi.md#updateAddonCoupon) | **PUT** /addons/{addon_id}/coupons/{coupon_id} | Update an addon&#39;s coupon
 
 
+## `createAddonCoupon()`
 
-## createAddonCoupon
-
-> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse createAddonCoupon($addonId, $addonCoupon, $with)
+```php
+createAddonCoupon($addonId, $addonCoupon, $with): \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
+```
 
 Create an addon coupon
 
@@ -36,7 +37,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
     $config
 );
 $addonId = 56; // int | Id of the addon
-$addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
+$addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
@@ -45,11 +46,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->createAddonCoupon: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -67,17 +66,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteAddonCoupon()`
 
-## deleteAddonCoupon
-
-> deleteAddonCoupon($addonId, $couponId)
+```php
+deleteAddonCoupon($addonId, $couponId)
+```
 
 Destroy an addon's coupon
 
@@ -106,11 +106,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->deleteAddonCoupon: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,16 +126,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getAddonCoupon()`
 
-## getAddonCoupon
-
-> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse getAddonCoupon($addonId, $couponId, $with)
+```php
+getAddonCoupon($addonId, $couponId, $with): \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
+```
 
 Fetch an addon's coupon
 
@@ -168,11 +167,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->getAddonCoupon: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,16 +188,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listAddonCoupons()`
 
-## listAddonCoupons
-
-> \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse listAddonCoupons($addonId, $with)
+```php
+listAddonCoupons($addonId, $with): \Everyday\GmodStore\Sdk\Model\AddonCouponListResponse
+```
 
 Fetch all the coupons for an addon
 
@@ -230,11 +228,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->listAddonCoupons: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -252,16 +248,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateAddonCoupon()`
 
-## updateAddonCoupon
-
-> \Everyday\GmodStore\Sdk\Model\AddonCouponResponse updateAddonCoupon($addonId, $couponId, $addonCoupon, $with)
+```php
+updateAddonCoupon($addonId, $couponId, $addonCoupon, $with): \Everyday\GmodStore\Sdk\Model\AddonCouponResponse
+```
 
 Update an addon's coupon
 
@@ -284,7 +281,7 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\AddonCouponsApi(
 );
 $addonId = 56; // int | Id of the addon
 $couponId = 56; // int | Id of the coupon
-$addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon | 
+$addonCoupon = new \Everyday\GmodStore\Sdk\Model\AddonCoupon(); // \Everyday\GmodStore\Sdk\Model\AddonCoupon
 $with = array('with_example'); // string[] | The relations you want to fetch with the `AddonCoupon`
 
 try {
@@ -293,11 +290,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonCouponsApi->updateAddonCoupon: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -316,10 +311,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

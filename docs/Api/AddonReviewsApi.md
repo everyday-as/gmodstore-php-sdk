@@ -1,17 +1,18 @@
 # Everyday\GmodStore\Sdk\AddonReviewsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddonReview**](AddonReviewsApi.md#getAddonReview) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
-[**listAddonReviews**](AddonReviewsApi.md#listAddonReviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
+[**getAddonReview()**](AddonReviewsApi.md#getAddonReview) | **GET** /addons/{addon_id}/reviews/{review_id} | Fetch a review of an addon
+[**listAddonReviews()**](AddonReviewsApi.md#listAddonReviews) | **GET** /addons/{addon_id}/reviews | Fetch all the reviews of an addon
 
 
+## `getAddonReview()`
 
-## getAddonReview
-
-> \Everyday\GmodStore\Sdk\Model\AddonReviewResponse getAddonReview($addonId, $reviewId, $with)
+```php
+getAddonReview($addonId, $reviewId, $with): \Everyday\GmodStore\Sdk\Model\AddonReviewResponse
+```
 
 Fetch a review of an addon
 
@@ -42,11 +43,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonReviewsApi->getAddonReview: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,16 +64,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listAddonReviews()`
 
-## listAddonReviews
-
-> \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse listAddonReviews($addonId, $with)
+```php
+listAddonReviews($addonId, $with): \Everyday\GmodStore\Sdk\Model\AddonReviewListResponse
+```
 
 Fetch all the reviews of an addon
 
@@ -104,11 +104,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonReviewsApi->listAddonReviews: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,9 +124,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -1,16 +1,17 @@
 # Everyday\GmodStore\Sdk\CurrentAPIKeyApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrentApiKey**](CurrentAPIKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
+[**getCurrentApiKey()**](CurrentAPIKeyApi.md#getCurrentApiKey) | **GET** /me | Get meta information about the current API key
 
 
+## `getCurrentApiKey()`
 
-## getCurrentApiKey
-
-> \Everyday\GmodStore\Sdk\Model\AddonListResponse getCurrentApiKey($with)
+```php
+getCurrentApiKey($with): \Everyday\GmodStore\Sdk\Model\AddonListResponse
+```
 
 Get meta information about the current API key
 
@@ -39,11 +40,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling CurrentAPIKeyApi->getCurrentApiKey: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,9 +59,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

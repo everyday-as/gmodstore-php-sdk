@@ -1,17 +1,18 @@
 # Everyday\GmodStore\Sdk\AddonsApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddon**](AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
-[**listSelfAddons**](AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
+[**getAddon()**](AddonsApi.md#getAddon) | **GET** /addons/{addon_id} | Fetch a single addon
+[**listSelfAddons()**](AddonsApi.md#listSelfAddons) | **GET** /addons | Fetch all the addons that you have access to
 
 
+## `getAddon()`
 
-## getAddon
-
-> \Everyday\GmodStore\Sdk\Model\AddonResponse getAddon($addonId, $with)
+```php
+getAddon($addonId, $with): \Everyday\GmodStore\Sdk\Model\AddonResponse
+```
 
 Fetch a single addon
 
@@ -41,11 +42,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonsApi->getAddon: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,16 +62,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listSelfAddons()`
 
-## listSelfAddons
-
-> \Everyday\GmodStore\Sdk\Model\AddonListResponse1 listSelfAddons($with)
+```php
+listSelfAddons($with): \Everyday\GmodStore\Sdk\Model\AddonListResponse1
+```
 
 Fetch all the addons that you have access to
 
@@ -101,11 +101,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AddonsApi->listSelfAddons: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -122,9 +120,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

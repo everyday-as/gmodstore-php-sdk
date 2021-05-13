@@ -1,16 +1,17 @@
 # Everyday\GmodStore\Sdk\UserBansApi
 
-All URIs are relative to *https://api.gmodstore.com/v2*
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserBans**](UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
+[**listUserBans()**](UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 
+## `listUserBans()`
 
-## listUserBans
-
-> \Everyday\GmodStore\Sdk\Model\UserBanListResponse listUserBans($userId)
+```php
+listUserBans($userId): \Everyday\GmodStore\Sdk\Model\UserBanListResponse
+```
 
 Fetch all active bans associated with this user
 
@@ -39,11 +40,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UserBansApi->listUserBans: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,9 +59,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
