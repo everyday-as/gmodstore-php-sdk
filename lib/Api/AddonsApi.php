@@ -444,7 +444,7 @@ class AddonsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse1|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
     public function listSelfAddons($with = null)
     {
@@ -461,7 +461,7 @@ class AddonsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse1|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSelfAddonsWithHttpInfo($with = null)
     {
@@ -497,14 +497,14 @@ class AddonsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Everyday\GmodStore\Sdk\Model\AddonListResponse1' === '\SplFileObject') {
+                    if ('\Everyday\GmodStore\Sdk\Model\AddonListResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonListResponse1', []),
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonListResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -534,7 +534,7 @@ class AddonsApi
                     ];
             }
 
-            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse1';
+            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -552,7 +552,7 @@ class AddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\AddonListResponse1',
+                        '\Everyday\GmodStore\Sdk\Model\AddonListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -610,7 +610,7 @@ class AddonsApi
      */
     public function listSelfAddonsAsyncWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse1';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
         $request = $this->listSelfAddonsRequest($with);
 
         return $this->client

@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 ## `listSelfAddons()`
 
 ```php
-listSelfAddons($with): \Everyday\GmodStore\Sdk\Model\AddonListResponse1
+listSelfAddons($with): \Everyday\GmodStore\Sdk\Model\AddonListResponse
 ```
 
 Fetch all the addons that you have access to
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\AddonListResponse1**](../Model/AddonListResponse1.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonListResponse**](../Model/AddonListResponse.md)
 
 ### Authorization
 

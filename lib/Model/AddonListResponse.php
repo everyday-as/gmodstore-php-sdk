@@ -59,7 +59,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\ApiKey'
+        'data' => '\Everyday\GmodStore\Sdk\Model\Addon[]'
     ];
 
     /**
@@ -208,7 +208,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStore\Sdk\Model\ApiKey|null
+     * @return \Everyday\GmodStore\Sdk\Model\Addon[]|null
      */
     public function getData()
     {
@@ -218,7 +218,7 @@ class AddonListResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStore\Sdk\Model\ApiKey|null $data data
+     * @param \Everyday\GmodStore\Sdk\Model\Addon[]|null $data data
      *
      * @return self
      */

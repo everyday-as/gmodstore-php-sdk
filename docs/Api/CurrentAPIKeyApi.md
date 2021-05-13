@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getCurrentApiKey()`
 
 ```php
-getCurrentApiKey($with): \Everyday\GmodStore\Sdk\Model\AddonListResponse
+getCurrentApiKey($with): \Everyday\GmodStore\Sdk\Model\ApiKeyResponse
 ```
 
 Get meta information about the current API key
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\AddonListResponse**](../Model/AddonListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\ApiKeyResponse**](../Model/ApiKeyResponse.md)
 
 ### Authorization
 

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Everyday\GmodStore\Sdk\Model\ApiKey**](ApiKey.md) |  | [optional]
+**data** | [**\Everyday\GmodStore\Sdk\Model\Addon[]**](Addon.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

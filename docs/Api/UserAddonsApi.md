@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `listUserAddons()`
 
 ```php
-listUserAddons($userId, $with): \Everyday\GmodStore\Sdk\Model\AddonListResponse1
+listUserAddons($userId, $with): \Everyday\GmodStore\Sdk\Model\AddonListResponse
 ```
 
 Fetch all the addons authored / co-authored by a user
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\AddonListResponse1**](../Model/AddonListResponse1.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonListResponse**](../Model/AddonListResponse.md)
 
 ### Authorization
 

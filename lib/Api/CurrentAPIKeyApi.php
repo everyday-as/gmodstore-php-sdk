@@ -123,7 +123,7 @@ class CurrentAPIKeyApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
+     * @return \Everyday\GmodStore\Sdk\Model\ApiKeyResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
     public function getCurrentApiKey($with = null)
     {
@@ -140,7 +140,7 @@ class CurrentAPIKeyApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\AddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\ApiKeyResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCurrentApiKeyWithHttpInfo($with = null)
     {
@@ -176,14 +176,14 @@ class CurrentAPIKeyApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Everyday\GmodStore\Sdk\Model\AddonListResponse' === '\SplFileObject') {
+                    if ('\Everyday\GmodStore\Sdk\Model\ApiKeyResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonListResponse', []),
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\ApiKeyResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -213,7 +213,7 @@ class CurrentAPIKeyApi
                     ];
             }
 
-            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
+            $returnType = '\Everyday\GmodStore\Sdk\Model\ApiKeyResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -231,7 +231,7 @@ class CurrentAPIKeyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\AddonListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\ApiKeyResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -289,7 +289,7 @@ class CurrentAPIKeyApi
      */
     public function getCurrentApiKeyAsyncWithHttpInfo($with = null)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\ApiKeyResponse';
         $request = $this->getCurrentApiKeyRequest($with);
 
         return $this->client

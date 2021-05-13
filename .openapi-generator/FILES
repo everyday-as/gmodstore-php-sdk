@@ -29,7 +29,6 @@ docs/Model/AddonDownload.md
 docs/Model/AddonDownloadResponse.md
 docs/Model/AddonImages.md
 docs/Model/AddonListResponse.md
-docs/Model/AddonListResponse1.md
 docs/Model/AddonPrice.md
 docs/Model/AddonPurchase.md
 docs/Model/AddonPurchaseListResponse.md
@@ -53,6 +52,7 @@ docs/Model/AddonVersionResponse.md
 docs/Model/AdventCalendarStats.md
 docs/Model/AdventCalendarStatsResponse.md
 docs/Model/ApiKey.md
+docs/Model/ApiKeyResponse.md
 docs/Model/BadgeListResponse.md
 docs/Model/BadgeResponse.md
 docs/Model/Error.md
@@ -103,7 +103,6 @@ lib/Model/AddonDownload.php
 lib/Model/AddonDownloadResponse.php
 lib/Model/AddonImages.php
 lib/Model/AddonListResponse.php
-lib/Model/AddonListResponse1.php
 lib/Model/AddonPrice.php
 lib/Model/AddonPurchase.php
 lib/Model/AddonPurchaseListResponse.php
@@ -127,6 +126,7 @@ lib/Model/AddonVersionResponse.php
 lib/Model/AdventCalendarStats.php
 lib/Model/AdventCalendarStatsResponse.php
 lib/Model/ApiKey.php
+lib/Model/ApiKeyResponse.php
 lib/Model/BadgeListResponse.php
 lib/Model/BadgeResponse.php
 lib/Model/Error.php
@@ -150,3 +150,4 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/ApiKeyResponseTest.php
