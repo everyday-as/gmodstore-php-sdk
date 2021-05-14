@@ -67,12 +67,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'requirements' => 'string[]',
         'price' => '\Everyday\GmodStore\Sdk\Model\AddonPrice',
         'images' => '\Everyday\GmodStore\Sdk\Model\AddonImages',
+        'views' => 'int',
+        'ratingAvg' => 'string',
+        'ratingCount' => 'int',
+        'purchasesCount' => 'int',
+        'dependentAddon' => 'int',
+        'hasDrm' => 'bool',
+        'requiresChromium' => 'bool',
         'slug' => 'string',
         'route' => 'string',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
         'latestVersion' => '\Everyday\GmodStore\Sdk\Model\AddonVersion',
-        'team' => '\Everyday\GmodStore\Sdk\Model\Team'
+        'team' => '\Everyday\GmodStore\Sdk\Model\Team',
+        'stats' => '\Everyday\GmodStore\Sdk\Model\AddonStats'
     ];
 
     /**
@@ -91,12 +99,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'requirements' => null,
         'price' => null,
         'images' => null,
+        'views' => null,
+        'ratingAvg' => null,
+        'ratingCount' => null,
+        'purchasesCount' => null,
+        'dependentAddon' => null,
+        'hasDrm' => null,
+        'requiresChromium' => null,
         'slug' => null,
         'route' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
         'latestVersion' => null,
-        'team' => null
+        'team' => null,
+        'stats' => null
     ];
 
     /**
@@ -134,12 +150,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'requirements' => 'requirements',
         'price' => 'price',
         'images' => 'images',
+        'views' => 'views',
+        'ratingAvg' => 'rating_avg',
+        'ratingCount' => 'rating_count',
+        'purchasesCount' => 'purchases_count',
+        'dependentAddon' => 'dependent_addon',
+        'hasDrm' => 'has_drm',
+        'requiresChromium' => 'requires_chromium',
         'slug' => 'slug',
         'route' => 'route',
         'createdAt' => 'created_at',
         'updatedAt' => 'updated_at',
         'latestVersion' => 'latest_version',
-        'team' => 'team'
+        'team' => 'team',
+        'stats' => 'stats'
     ];
 
     /**
@@ -156,12 +180,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'requirements' => 'setRequirements',
         'price' => 'setPrice',
         'images' => 'setImages',
+        'views' => 'setViews',
+        'ratingAvg' => 'setRatingAvg',
+        'ratingCount' => 'setRatingCount',
+        'purchasesCount' => 'setPurchasesCount',
+        'dependentAddon' => 'setDependentAddon',
+        'hasDrm' => 'setHasDrm',
+        'requiresChromium' => 'setRequiresChromium',
         'slug' => 'setSlug',
         'route' => 'setRoute',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
         'latestVersion' => 'setLatestVersion',
-        'team' => 'setTeam'
+        'team' => 'setTeam',
+        'stats' => 'setStats'
     ];
 
     /**
@@ -178,12 +210,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'requirements' => 'getRequirements',
         'price' => 'getPrice',
         'images' => 'getImages',
+        'views' => 'getViews',
+        'ratingAvg' => 'getRatingAvg',
+        'ratingCount' => 'getRatingCount',
+        'purchasesCount' => 'getPurchasesCount',
+        'dependentAddon' => 'getDependentAddon',
+        'hasDrm' => 'getHasDrm',
+        'requiresChromium' => 'getRequiresChromium',
         'slug' => 'getSlug',
         'route' => 'getRoute',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
         'latestVersion' => 'getLatestVersion',
-        'team' => 'getTeam'
+        'team' => 'getTeam',
+        'stats' => 'getStats'
     ];
 
     /**
@@ -251,12 +291,20 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['requirements'] = $data['requirements'] ?? null;
         $this->container['price'] = $data['price'] ?? null;
         $this->container['images'] = $data['images'] ?? null;
+        $this->container['views'] = $data['views'] ?? null;
+        $this->container['ratingAvg'] = $data['ratingAvg'] ?? null;
+        $this->container['ratingCount'] = $data['ratingCount'] ?? null;
+        $this->container['purchasesCount'] = $data['purchasesCount'] ?? null;
+        $this->container['dependentAddon'] = $data['dependentAddon'] ?? null;
+        $this->container['hasDrm'] = $data['hasDrm'] ?? null;
+        $this->container['requiresChromium'] = $data['requiresChromium'] ?? null;
         $this->container['slug'] = $data['slug'] ?? null;
         $this->container['route'] = $data['route'] ?? null;
         $this->container['createdAt'] = $data['createdAt'] ?? null;
         $this->container['updatedAt'] = $data['updatedAt'] ?? null;
         $this->container['latestVersion'] = $data['latestVersion'] ?? null;
         $this->container['team'] = $data['team'] ?? null;
+        $this->container['stats'] = $data['stats'] ?? null;
     }
 
     /**
@@ -476,6 +524,174 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets views
+     *
+     * @return int|null
+     */
+    public function getViews()
+    {
+        return $this->container['views'];
+    }
+
+    /**
+     * Sets views
+     *
+     * @param int|null $views views
+     *
+     * @return self
+     */
+    public function setViews($views)
+    {
+        $this->container['views'] = $views;
+
+        return $this;
+    }
+
+    /**
+     * Gets ratingAvg
+     *
+     * @return string|null
+     */
+    public function getRatingAvg()
+    {
+        return $this->container['ratingAvg'];
+    }
+
+    /**
+     * Sets ratingAvg
+     *
+     * @param string|null $ratingAvg ratingAvg
+     *
+     * @return self
+     */
+    public function setRatingAvg($ratingAvg)
+    {
+        $this->container['ratingAvg'] = $ratingAvg;
+
+        return $this;
+    }
+
+    /**
+     * Gets ratingCount
+     *
+     * @return int|null
+     */
+    public function getRatingCount()
+    {
+        return $this->container['ratingCount'];
+    }
+
+    /**
+     * Sets ratingCount
+     *
+     * @param int|null $ratingCount ratingCount
+     *
+     * @return self
+     */
+    public function setRatingCount($ratingCount)
+    {
+        $this->container['ratingCount'] = $ratingCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchasesCount
+     *
+     * @return int|null
+     */
+    public function getPurchasesCount()
+    {
+        return $this->container['purchasesCount'];
+    }
+
+    /**
+     * Sets purchasesCount
+     *
+     * @param int|null $purchasesCount purchasesCount
+     *
+     * @return self
+     */
+    public function setPurchasesCount($purchasesCount)
+    {
+        $this->container['purchasesCount'] = $purchasesCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets dependentAddon
+     *
+     * @return int|null
+     */
+    public function getDependentAddon()
+    {
+        return $this->container['dependentAddon'];
+    }
+
+    /**
+     * Sets dependentAddon
+     *
+     * @param int|null $dependentAddon dependentAddon
+     *
+     * @return self
+     */
+    public function setDependentAddon($dependentAddon)
+    {
+        $this->container['dependentAddon'] = $dependentAddon;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasDrm
+     *
+     * @return bool|null
+     */
+    public function getHasDrm()
+    {
+        return $this->container['hasDrm'];
+    }
+
+    /**
+     * Sets hasDrm
+     *
+     * @param bool|null $hasDrm hasDrm
+     *
+     * @return self
+     */
+    public function setHasDrm($hasDrm)
+    {
+        $this->container['hasDrm'] = $hasDrm;
+
+        return $this;
+    }
+
+    /**
+     * Gets requiresChromium
+     *
+     * @return bool|null
+     */
+    public function getRequiresChromium()
+    {
+        return $this->container['requiresChromium'];
+    }
+
+    /**
+     * Sets requiresChromium
+     *
+     * @param bool|null $requiresChromium requiresChromium
+     *
+     * @return self
+     */
+    public function setRequiresChromium($requiresChromium)
+    {
+        $this->container['requiresChromium'] = $requiresChromium;
+
+        return $this;
+    }
+
+    /**
      * Gets slug
      *
      * @return string|null
@@ -615,6 +831,30 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTeam($team)
     {
         $this->container['team'] = $team;
+
+        return $this;
+    }
+
+    /**
+     * Gets stats
+     *
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStats|null
+     */
+    public function getStats()
+    {
+        return $this->container['stats'];
+    }
+
+    /**
+     * Sets stats
+     *
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStats|null $stats stats
+     *
+     * @return self
+     */
+    public function setStats($stats)
+    {
+        $this->container['stats'] = $stats;
 
         return $this;
     }
