@@ -78,7 +78,7 @@ class AddonVersion implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'changelog' => null,
         'fileHash' => null,

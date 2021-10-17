@@ -91,7 +91,7 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'active' => null,
         'name' => null,
         'shortDescription' => null,
@@ -103,7 +103,7 @@ class Addon implements ModelInterface, ArrayAccess, \JsonSerializable
         'ratingAvg' => null,
         'ratingCount' => null,
         'purchasesCount' => null,
-        'dependentAddon' => null,
+        'dependentAddon' => 'int64',
         'hasDrm' => null,
         'requiresChromium' => null,
         'slug' => null,

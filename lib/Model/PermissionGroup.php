@@ -72,7 +72,7 @@ class PermissionGroup implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'title' => null,
         'displayOrder' => null
     ];

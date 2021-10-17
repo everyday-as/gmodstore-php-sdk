@@ -74,7 +74,7 @@ class Team implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
+        'id' => 'int64',
         'name' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
