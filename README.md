@@ -157,6 +157,8 @@ Class | Method | HTTP request | Description
  - [PermissionGroup](docs/Model/PermissionGroup.md)
  - [PermissionGroupListResponse](docs/Model/PermissionGroupListResponse.md)
  - [Team](docs/Model/Team.md)
+ - [TeamAddon](docs/Model/TeamAddon.md)
+ - [TeamAddonListResponse](docs/Model/TeamAddonListResponse.md)
  - [TeamListResponse](docs/Model/TeamListResponse.md)
  - [TeamResponse](docs/Model/TeamResponse.md)
  - [TeamUser](docs/Model/TeamUser.md)

@@ -123,7 +123,7 @@ class TeamAddonsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\TeamUserListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
+     * @return \Everyday\GmodStore\Sdk\Model\TeamAddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
     public function listTeamAddons($teamId)
     {
@@ -140,7 +140,7 @@ class TeamAddonsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\TeamUserListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\TeamAddonListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTeamAddonsWithHttpInfo($teamId)
     {
@@ -176,14 +176,14 @@ class TeamAddonsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Everyday\GmodStore\Sdk\Model\TeamUserListResponse' === '\SplFileObject') {
+                    if ('\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\TeamUserListResponse', []),
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -213,7 +213,7 @@ class TeamAddonsApi
                     ];
             }
 
-            $returnType = '\Everyday\GmodStore\Sdk\Model\TeamUserListResponse';
+            $returnType = '\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -231,7 +231,7 @@ class TeamAddonsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\TeamUserListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -289,7 +289,7 @@ class TeamAddonsApi
      */
     public function listTeamAddonsAsyncWithHttpInfo($teamId)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\TeamUserListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse';
         $request = $this->listTeamAddonsRequest($teamId);
 
         return $this->client

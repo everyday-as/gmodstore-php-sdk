@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `listTeamAddons()`
 
 ```php
-listTeamAddons($teamId): \Everyday\GmodStore\Sdk\Model\TeamUserListResponse
+listTeamAddons($teamId): \Everyday\GmodStore\Sdk\Model\TeamAddonListResponse
 ```
 
 Fetch all the addons in the given team
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\TeamUserListResponse**](../Model/TeamUserListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\TeamAddonListResponse**](../Model/TeamAddonListResponse.md)
 
 ### Authorization
 
