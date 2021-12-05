@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **revoked** | **bool** |  |
-**createdAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
-**updatedAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
+**createdAt** | **\DateTime** |  | [optional] [readonly]
+**updatedAt** | **\DateTime** |  | [optional] [readonly]
 **addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional]
 **orderItem** | [**\Everyday\GmodStore\Sdk\Model\OrderItem**](OrderItem.md) |  | [optional]
 **user** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional]

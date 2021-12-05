@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **code** | **string** |  |
 **percent** | **float** |  |
 **maxUses** | **int** |  |
-**expiresAt** | [**\DateTime**](\DateTime.md) | A future date less than 2 weeks from today |
+**expiresAt** | **\DateTime** | A future date less than 2 weeks from today |
 **boundUserId** | **int** |  | [optional]
-**createdAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
-**updatedAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
+**createdAt** | **\DateTime** |  | [optional] [readonly]
+**updatedAt** | **\DateTime** |  | [optional] [readonly]
 **addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional]
 **boundUser** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional]
 

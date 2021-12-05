@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **reason** | **string** |  | [optional]
 **unbanReason** | **string** |  | [optional]
 **properties** | **string[]** |  | [optional]
-**start** | [**\DateTime**](\DateTime.md) |  | [optional]
-**end** | [**\DateTime**](\DateTime.md) |  | [optional]
+**start** | **\DateTime** |  | [optional]
+**end** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

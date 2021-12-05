@@ -44,11 +44,15 @@ class AddonVersionReleaseType
      * Possible values of this enum
      */
     const STABLE = 'stable';
+
     const BETA = 'beta';
+
     const ALPHA = 'alpha';
+
     const _PRIVATE = 'private';
+
     const DEMO = 'demo';
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -60,7 +64,7 @@ class AddonVersionReleaseType
             self::BETA,
             self::ALPHA,
             self::_PRIVATE,
-            self::DEMO,
+            self::DEMO
         ];
     }
 }

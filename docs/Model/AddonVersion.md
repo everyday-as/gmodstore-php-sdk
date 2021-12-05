@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **fileHash** | **string** |  | [optional] [readonly]
 **fileSize** | **int** |  | [optional] [readonly]
 **releaseType** | [**\Everyday\GmodStore\Sdk\Model\AddonVersionReleaseType**](AddonVersionReleaseType.md) |  | [optional]
-**createdAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
-**updatedAt** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly]
+**createdAt** | **\DateTime** |  | [optional] [readonly]
+**updatedAt** | **\DateTime** |  | [optional] [readonly]
 **addon** | [**\Everyday\GmodStore\Sdk\Model\Addon**](Addon.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
