@@ -38,7 +38,7 @@ docs/Model/AddonReview.md
 docs/Model/AddonReviewListResponse.md
 docs/Model/AddonReviewResponse.md
 docs/Model/AddonStats.md
-docs/Model/AddonStatsListResponse.md
+docs/Model/AddonStatsResponse.md
 docs/Model/AddonStatsRevenue.md
 docs/Model/AddonStatsRevenueCurrent.md
 docs/Model/AddonStatsSales.md
@@ -114,7 +114,7 @@ lib/Model/AddonReview.php
 lib/Model/AddonReviewListResponse.php
 lib/Model/AddonReviewResponse.php
 lib/Model/AddonStats.php
-lib/Model/AddonStatsListResponse.php
+lib/Model/AddonStatsResponse.php
 lib/Model/AddonStatsRevenue.php
 lib/Model/AddonStatsRevenueCurrent.php
 lib/Model/AddonStatsSales.php
@@ -154,3 +154,4 @@ lib/Model/UserBanListResponse.php
 lib/Model/UserResponse.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/AddonStatsResponseTest.php

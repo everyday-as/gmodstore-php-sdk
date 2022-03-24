@@ -132,7 +132,7 @@ Class | Method | HTTP request | Description
  - [AddonReviewListResponse](docs/Model/AddonReviewListResponse.md)
  - [AddonReviewResponse](docs/Model/AddonReviewResponse.md)
  - [AddonStats](docs/Model/AddonStats.md)
- - [AddonStatsListResponse](docs/Model/AddonStatsListResponse.md)
+ - [AddonStatsResponse](docs/Model/AddonStatsResponse.md)
  - [AddonStatsRevenue](docs/Model/AddonStatsRevenue.md)
  - [AddonStatsRevenueCurrent](docs/Model/AddonStatsRevenueCurrent.md)
  - [AddonStatsSales](docs/Model/AddonStatsSales.md)

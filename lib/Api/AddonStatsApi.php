@@ -124,7 +124,7 @@ class AddonStatsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStatsResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse
      */
     public function getAddonStats($addonId)
     {
@@ -141,7 +141,7 @@ class AddonStatsApi
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Everyday\GmodStore\Sdk\Model\AddonStatsResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse|\Everyday\GmodStore\Sdk\Model\ErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddonStatsWithHttpInfo($addonId)
     {
@@ -184,14 +184,14 @@ class AddonStatsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse' === '\SplFileObject') {
+                    if ('\Everyday\GmodStore\Sdk\Model\AddonStatsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse', []),
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\AddonStatsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -221,7 +221,7 @@ class AddonStatsApi
                     ];
             }
 
-            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse';
+            $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -239,7 +239,7 @@ class AddonStatsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse',
+                        '\Everyday\GmodStore\Sdk\Model\AddonStatsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -297,7 +297,7 @@ class AddonStatsApi
      */
     public function getAddonStatsAsyncWithHttpInfo($addonId)
     {
-        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse';
+        $returnType = '\Everyday\GmodStore\Sdk\Model\AddonStatsResponse';
         $request = $this->getAddonStatsRequest($addonId);
 
         return $this->client

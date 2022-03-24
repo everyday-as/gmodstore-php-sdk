@@ -1,6 +1,6 @@
 <?php
 /**
- * AddonStatsListResponse
+ * AddonStatsResponse
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * AddonStatsListResponse Class Doc Comment
+ * AddonStatsResponse Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
@@ -42,7 +42,7 @@ use \Everyday\GmodStore\Sdk\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AddonStatsListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class AddonStatsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AddonStatsListResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AddonStatsListResponse';
+    protected static $openAPIModelName = 'AddonStatsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class AddonStatsListResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\AddonStats[]'
+        'data' => '\Everyday\GmodStore\Sdk\Model\AddonStats'
     ];
 
     /**
@@ -208,7 +208,7 @@ class AddonStatsListResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets data
      *
-     * @return \Everyday\GmodStore\Sdk\Model\AddonStats[]|null
+     * @return \Everyday\GmodStore\Sdk\Model\AddonStats|null
      */
     public function getData()
     {
@@ -218,7 +218,7 @@ class AddonStatsListResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets data
      *
-     * @param \Everyday\GmodStore\Sdk\Model\AddonStats[]|null $data data
+     * @param \Everyday\GmodStore\Sdk\Model\AddonStats|null $data data
      *
      * @return self
      */

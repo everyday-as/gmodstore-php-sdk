@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAddonStats()`
 
 ```php
-getAddonStats($addonId): \Everyday\GmodStore\Sdk\Model\AddonStatsListResponse
+getAddonStats($addonId): \Everyday\GmodStore\Sdk\Model\AddonStatsResponse
 ```
 
 Fetch all the stats for an addon
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\AddonStatsListResponse**](../Model/AddonStatsListResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\AddonStatsResponse**](../Model/AddonStatsResponse.md)
 
 ### Authorization
 
