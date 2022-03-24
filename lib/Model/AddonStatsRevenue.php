@@ -61,7 +61,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsRevenueCurrent',
         'previous' => '\Everyday\GmodStore\Sdk\Model\AddonStatsRevenueCurrent',
-        'total' => '\Everyday\GmodStore\Sdk\Model\Money'
+        'total' => 'string'
     ];
 
     /**
@@ -268,7 +268,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets total
      *
-     * @return \Everyday\GmodStore\Sdk\Model\Money|null
+     * @return string|null
      */
     public function getTotal()
     {
@@ -278,7 +278,7 @@ class AddonStatsRevenue implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets total
      *
-     * @param \Everyday\GmodStore\Sdk\Model\Money|null $total total
+     * @param string|null $total total
      *
      * @return self
      */

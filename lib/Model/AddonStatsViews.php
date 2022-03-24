@@ -60,7 +60,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent',
-        'previous' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent'
+        'previous' => '\Everyday\GmodStore\Sdk\Model\AddonStatsViewsCurrent',
+        'total' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'current' => null,
-        'previous' => null
+        'previous' => null,
+        'total' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'current' => 'current',
-        'previous' => 'previous'
+        'previous' => 'previous',
+        'total' => 'total'
     ];
 
     /**
@@ -113,7 +116,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'current' => 'setCurrent',
-        'previous' => 'setPrevious'
+        'previous' => 'setPrevious',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -123,7 +127,8 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'current' => 'getCurrent',
-        'previous' => 'getPrevious'
+        'previous' => 'getPrevious',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -185,6 +190,7 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['current'] = $data['current'] ?? null;
         $this->container['previous'] = $data['previous'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -255,6 +261,30 @@ class AddonStatsViews implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPrevious($previous)
     {
         $this->container['previous'] = $previous;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return string|null
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param string|null $total total
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

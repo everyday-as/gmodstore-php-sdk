@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**day** | [**\Everyday\GmodStore\Sdk\Model\Money**](Money.md) |  | [optional]
-**month** | [**\Everyday\GmodStore\Sdk\Model\Money**](Money.md) |  | [optional]
+**day** | **string** |  | [optional] [readonly]
+**month** | **string** |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

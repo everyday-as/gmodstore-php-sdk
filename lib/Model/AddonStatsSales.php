@@ -59,7 +59,8 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsSalesCurrent'
+        'current' => '\Everyday\GmodStore\Sdk\Model\AddonStatsSalesCurrent',
+        'total' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current' => null
+        'current' => null,
+        'total' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'current' => 'current'
+        'current' => 'current',
+        'total' => 'total'
     ];
 
     /**
@@ -109,7 +112,8 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'current' => 'setCurrent'
+        'current' => 'setCurrent',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -118,7 +122,8 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'current' => 'getCurrent'
+        'current' => 'getCurrent',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -179,6 +184,7 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['current'] = $data['current'] ?? null;
+        $this->container['total'] = $data['total'] ?? null;
     }
 
     /**
@@ -225,6 +231,30 @@ class AddonStatsSales implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCurrent($current)
     {
         $this->container['current'] = $current;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return string|null
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param string|null $total total
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
 
         return $this;
     }

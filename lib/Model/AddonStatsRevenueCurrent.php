@@ -59,8 +59,8 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'day' => '\Everyday\GmodStore\Sdk\Model\Money',
-        'month' => '\Everyday\GmodStore\Sdk\Model\Money'
+        'day' => 'string',
+        'month' => 'string'
     ];
 
     /**
@@ -214,7 +214,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets day
      *
-     * @return \Everyday\GmodStore\Sdk\Model\Money|null
+     * @return string|null
      */
     public function getDay()
     {
@@ -224,7 +224,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets day
      *
-     * @param \Everyday\GmodStore\Sdk\Model\Money|null $day day
+     * @param string|null $day day
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets month
      *
-     * @return \Everyday\GmodStore\Sdk\Model\Money|null
+     * @return string|null
      */
     public function getMonth()
     {
@@ -248,7 +248,7 @@ class AddonStatsRevenueCurrent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets month
      *
-     * @param \Everyday\GmodStore\Sdk\Model\Money|null $month month
+     * @param string|null $month month
      *
      * @return self
      */

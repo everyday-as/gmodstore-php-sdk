@@ -59,8 +59,8 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'day' => 'int',
-        'month' => 'int'
+        'day' => 'string',
+        'month' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'day' => 'integer',
-        'month' => 'integer'
+        'day' => null,
+        'month' => null
     ];
 
     /**
@@ -214,7 +214,7 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets day
      *
-     * @return int|null
+     * @return string|null
      */
     public function getDay()
     {
@@ -224,7 +224,7 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets day
      *
-     * @param int|null $day day
+     * @param string|null $day day
      *
      * @return self
      */
@@ -238,7 +238,7 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets month
      *
-     * @return int|null
+     * @return string|null
      */
     public function getMonth()
     {
@@ -248,7 +248,7 @@ class AddonStatsViewsCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets month
      *
-     * @param int|null $month month
+     * @param string|null $month month
      *
      * @return self
      */

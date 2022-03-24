@@ -59,9 +59,9 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'day' => 'int',
-        'week' => 'int',
-        'month' => 'int'
+        'day' => 'string',
+        'week' => 'string',
+        'month' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'day' => 'integer',
-        'week' => 'integer',
-        'month' => 'integer'
+        'day' => null,
+        'week' => null,
+        'month' => null
     ];
 
     /**
@@ -220,7 +220,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets day
      *
-     * @return int|null
+     * @return string|null
      */
     public function getDay()
     {
@@ -230,7 +230,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets day
      *
-     * @param int|null $day day
+     * @param string|null $day day
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets week
      *
-     * @return int|null
+     * @return string|null
      */
     public function getWeek()
     {
@@ -254,7 +254,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets week
      *
-     * @param int|null $week week
+     * @param string|null $week week
      *
      * @return self
      */
@@ -268,7 +268,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets month
      *
-     * @return int|null
+     * @return string|null
      */
     public function getMonth()
     {
@@ -278,7 +278,7 @@ class AddonStatsSalesCurrent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets month
      *
-     * @param int|null $month month
+     * @param string|null $month month
      *
      * @return self
      */
