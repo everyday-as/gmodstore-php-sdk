@@ -1,19 +1,19 @@
 # Everyday\GmodStore\Sdk\TeamUsersApi
 
-All URIs are relative to https://api.gmodstore.com/v2.
+All URIs are relative to https://www.gmodstore.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listTeamUsers()**](TeamUsersApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all the users in the given team
+[**listTeamUsers()**](TeamUsersApi.md#listTeamUsers) | **GET** /api/v3/teams/{team}/users | List all users in a team
 
 
 ## `listTeamUsers()`
 
 ```php
-listTeamUsers($teamId, $with): \Everyday\GmodStore\Sdk\Model\TeamUserListResponse
+listTeamUsers($team, $perPage, $cursor): object
 ```
 
-Fetch all the users in the given team
+List all users in a team
 
 ### Example
 
@@ -22,7 +22,7 @@ Fetch all the users in the given team
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (API Key) authorization: bearerAuth
+// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -32,11 +32,12 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\TeamUsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$teamId = 56; // int | Id of the team
-$with = array('with_example'); // string[] | The relations you want to fetch with the `TeamUser`
+$team = 'team_example'; // string
+$perPage = 24; // int
+$cursor = 'cursor_example'; // string | The cursor from which to return paginated results starting after
 
 try {
-    $result = $apiInstance->listTeamUsers($teamId, $with);
+    $result = $apiInstance->listTeamUsers($team, $perPage, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TeamUsersApi->listTeamUsers: ', $e->getMessage(), PHP_EOL;
@@ -47,16 +48,17 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **teamId** | **int**| Id of the team |
- **with** | [**string[]**](../Model/string.md)| The relations you want to fetch with the &#x60;TeamUser&#x60; | [optional]
+ **team** | **string**|  |
+ **perPage** | **int**|  | [optional] [default to 24]
+ **cursor** | **string**| The cursor from which to return paginated results starting after | [optional]
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\TeamUserListResponse**](../Model/TeamUserListResponse.md)
+**object**
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[PersonalAccessToken](../../README.md#PersonalAccessToken)
 
 ### HTTP request headers
 
