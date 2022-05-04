@@ -59,7 +59,9 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'revoked' => 'bool'
+        'revoked' => 'bool',
+        'userId' => 'string',
+        'productId' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'revoked' => null
+        'revoked' => null,
+        'userId' => 'uuid',
+        'productId' => 'uuid'
     ];
 
     /**
@@ -100,7 +104,9 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'revoked' => 'revoked'
+        'revoked' => 'revoked',
+        'userId' => 'userId',
+        'productId' => 'productId'
     ];
 
     /**
@@ -109,7 +115,9 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'revoked' => 'setRevoked'
+        'revoked' => 'setRevoked',
+        'userId' => 'setUserId',
+        'productId' => 'setProductId'
     ];
 
     /**
@@ -118,7 +126,9 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'revoked' => 'getRevoked'
+        'revoked' => 'getRevoked',
+        'userId' => 'getUserId',
+        'productId' => 'getProductId'
     ];
 
     /**
@@ -179,6 +189,8 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['revoked'] = $data['revoked'] ?? null;
+        $this->container['userId'] = $data['userId'] ?? null;
+        $this->container['productId'] = $data['productId'] ?? null;
     }
 
     /**
@@ -225,6 +237,54 @@ class ProductPurchaseFilter implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRevoked($revoked)
     {
         $this->container['revoked'] = $revoked;
+
+        return $this;
+    }
+
+    /**
+     * Gets userId
+     *
+     * @return string|null
+     */
+    public function getUserId()
+    {
+        return $this->container['userId'];
+    }
+
+    /**
+     * Sets userId
+     *
+     * @param string|null $userId userId
+     *
+     * @return self
+     */
+    public function setUserId($userId)
+    {
+        $this->container['userId'] = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Gets productId
+     *
+     * @return string|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param string|null $productId productId
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        $this->container['productId'] = $productId;
 
         return $this;
     }

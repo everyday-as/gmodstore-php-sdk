@@ -55,7 +55,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getMe**](docs/Api/UsersApi.md#getme) | **GET** /api/v3/me | Fetch the current authenticated user and their access token
 *UsersApi* | [**getUser**](docs/Api/UsersApi.md#getuser) | **GET** /api/v3/users/{user} | Fetch the specified user
 *UsersApi* | [**getUsers**](docs/Api/UsersApi.md#getusers) | **GET** /api/v3/users/batch | Fetch a batch of users by id
+*UsersApi* | [**listUsers**](docs/Api/UsersApi.md#listusers) | **GET** /api/v3/users | List all users
 
 
 ## Documentation For Models
@@ -194,6 +195,7 @@ Class | Method | HTTP request | Description
  - [ProductVersionFilter](docs/Model/ProductVersionFilter.md)
  - [Team](docs/Model/Team.md)
  - [TeamUser](docs/Model/TeamUser.md)
+ - [TwoFactorNonce](docs/Model/TwoFactorNonce.md)
  - [UpdatePermissionGroupPayload](docs/Model/UpdatePermissionGroupPayload.md)
  - [UpdatePermissionGroupResponse](docs/Model/UpdatePermissionGroupResponse.md)
  - [UpdatePersonalAccessTokenResponse](docs/Model/UpdatePersonalAccessTokenResponse.md)
@@ -209,6 +211,7 @@ Class | Method | HTTP request | Description
  - [UserBadge](docs/Model/UserBadge.md)
  - [UserBan](docs/Model/UserBan.md)
  - [UserBanFilter](docs/Model/UserBanFilter.md)
+ - [UserFilter](docs/Model/UserFilter.md)
  - [ValidationErrors](docs/Model/ValidationErrors.md)
 
 
@@ -219,5 +222,5 @@ Class | Method | HTTP request | Description
 ## PersonalAccessToken
 
 
-- **Type**: Bearer authentication (Personal Access Token)
+- **Type**: Bearer authentication
 

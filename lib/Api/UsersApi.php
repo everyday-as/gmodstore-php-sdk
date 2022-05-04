@@ -426,6 +426,10 @@ class UsersApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -453,14 +457,15 @@ class UsersApi
      * Fetch the specified user
      *
      * @param  string $user user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\GetUserResponse|\Everyday\GmodStore\Sdk\Model\Error|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error
      */
-    public function getUser($user)
+    public function getUser($user, $filter = null)
     {
-        list($response) = $this->getUserWithHttpInfo($user);
+        list($response) = $this->getUserWithHttpInfo($user, $filter);
         return $response;
     }
 
@@ -470,14 +475,15 @@ class UsersApi
      * Fetch the specified user
      *
      * @param  string $user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\GetUserResponse|\Everyday\GmodStore\Sdk\Model\Error|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserWithHttpInfo($user)
+    public function getUserWithHttpInfo($user, $filter = null)
     {
-        $request = $this->getUserRequest($user);
+        $request = $this->getUserRequest($user, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -643,13 +649,14 @@ class UsersApi
      * Fetch the specified user
      *
      * @param  string $user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserAsync($user)
+    public function getUserAsync($user, $filter = null)
     {
-        return $this->getUserAsyncWithHttpInfo($user)
+        return $this->getUserAsyncWithHttpInfo($user, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -663,14 +670,15 @@ class UsersApi
      * Fetch the specified user
      *
      * @param  string $user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserAsyncWithHttpInfo($user)
+    public function getUserAsyncWithHttpInfo($user, $filter = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\GetUserResponse';
-        $request = $this->getUserRequest($user);
+        $request = $this->getUserRequest($user, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -709,11 +717,12 @@ class UsersApi
      * Create request for operation 'getUser'
      *
      * @param  string $user (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserRequest($user)
+    public function getUserRequest($user, $filter = null)
     {
         // verify the required parameter 'user' is set
         if ($user === null || (is_array($user) && count($user) === 0)) {
@@ -729,6 +738,17 @@ class UsersApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            if('form' === 'form' && is_array($filter)) {
+                foreach($filter as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['filter'] = $filter;
+            }
+        }
 
 
         // path params
@@ -777,7 +797,7 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
@@ -808,14 +828,15 @@ class UsersApi
      * Fetch a batch of users by id
      *
      * @param  string[] $ids ids (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Everyday\GmodStore\Sdk\Model\GetUsersResponse|\Everyday\GmodStore\Sdk\Model\Error|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error
      */
-    public function getUsers($ids)
+    public function getUsers($ids, $filter = null)
     {
-        list($response) = $this->getUsersWithHttpInfo($ids);
+        list($response) = $this->getUsersWithHttpInfo($ids, $filter);
         return $response;
     }
 
@@ -825,14 +846,15 @@ class UsersApi
      * Fetch a batch of users by id
      *
      * @param  string[] $ids (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Everyday\GmodStore\Sdk\Model\GetUsersResponse|\Everyday\GmodStore\Sdk\Model\Error|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersWithHttpInfo($ids)
+    public function getUsersWithHttpInfo($ids, $filter = null)
     {
-        $request = $this->getUsersRequest($ids);
+        $request = $this->getUsersRequest($ids, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -998,13 +1020,14 @@ class UsersApi
      * Fetch a batch of users by id
      *
      * @param  string[] $ids (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersAsync($ids)
+    public function getUsersAsync($ids, $filter = null)
     {
-        return $this->getUsersAsyncWithHttpInfo($ids)
+        return $this->getUsersAsyncWithHttpInfo($ids, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1018,14 +1041,15 @@ class UsersApi
      * Fetch a batch of users by id
      *
      * @param  string[] $ids (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUsersAsyncWithHttpInfo($ids)
+    public function getUsersAsyncWithHttpInfo($ids, $filter = null)
     {
         $returnType = '\Everyday\GmodStore\Sdk\Model\GetUsersResponse';
-        $request = $this->getUsersRequest($ids);
+        $request = $this->getUsersRequest($ids, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1064,11 +1088,12 @@ class UsersApi
      * Create request for operation 'getUsers'
      *
      * @param  string[] $ids (required)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUsersRequest($ids)
+    public function getUsersRequest($ids, $filter = null)
     {
         // verify the required parameter 'ids' is set
         if ($ids === null || (is_array($ids) && count($ids) === 0)) {
@@ -1097,6 +1122,17 @@ class UsersApi
             }
             else {
                 $queryParams['ids[]'] = $ids;
+            }
+        }
+        // query params
+        if ($filter !== null) {
+            if('form' === 'form' && is_array($filter)) {
+                foreach($filter as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['filter'] = $filter;
             }
         }
 
@@ -1139,7 +1175,398 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listUsers
+     *
+     * List all users
+     *
+     * @param  int $perPage perPage (optional, default to 24)
+     * @param  string $cursor The cursor from which to return paginated results starting after (optional)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
+     *
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error
+     */
+    public function listUsers($perPage = 24, $cursor = null, $filter = null)
+    {
+        list($response) = $this->listUsersWithHttpInfo($perPage, $cursor, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation listUsersWithHttpInfo
+     *
+     * List all users
+     *
+     * @param  int $perPage (optional, default to 24)
+     * @param  string $cursor The cursor from which to return paginated results starting after (optional)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
+     *
+     * @throws \Everyday\GmodStore\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object|Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error|\Everyday\GmodStore\Sdk\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listUsersWithHttpInfo($perPage = 24, $cursor = null, $filter = null)
+    {
+        $request = $this->listUsersRequest($perPage, $cursor, $filter);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('object' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'object', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Everyday\GmodStore\Sdk\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Everyday\GmodStore\Sdk\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Everyday\GmodStore\Sdk\Model\Error' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Everyday\GmodStore\Sdk\Model\Error', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'object';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Everyday\GmodStore\Sdk\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listUsersAsync
+     *
+     * List all users
+     *
+     * @param  int $perPage (optional, default to 24)
+     * @param  string $cursor The cursor from which to return paginated results starting after (optional)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listUsersAsync($perPage = 24, $cursor = null, $filter = null)
+    {
+        return $this->listUsersAsyncWithHttpInfo($perPage, $cursor, $filter)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listUsersAsyncWithHttpInfo
+     *
+     * List all users
+     *
+     * @param  int $perPage (optional, default to 24)
+     * @param  string $cursor The cursor from which to return paginated results starting after (optional)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listUsersAsyncWithHttpInfo($perPage = 24, $cursor = null, $filter = null)
+    {
+        $returnType = 'object';
+        $request = $this->listUsersRequest($perPage, $cursor, $filter);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listUsers'
+     *
+     * @param  int $perPage (optional, default to 24)
+     * @param  string $cursor The cursor from which to return paginated results starting after (optional)
+     * @param  \Everyday\GmodStore\Sdk\Model\UserFilter $filter Filter the results (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listUsersRequest($perPage = 24, $cursor = null, $filter = null)
+    {
+        if ($perPage !== null && $perPage > 100) {
+            throw new \InvalidArgumentException('invalid value for "$perPage" when calling UsersApi.listUsers, must be smaller than or equal to 100.');
+        }
+        if ($perPage !== null && $perPage < 1) {
+            throw new \InvalidArgumentException('invalid value for "$perPage" when calling UsersApi.listUsers, must be bigger than or equal to 1.');
+        }
+
+
+        $resourcePath = '/api/v3/users';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($perPage !== null) {
+            if('form' === 'form' && is_array($perPage)) {
+                foreach($perPage as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['perPage'] = $perPage;
+            }
+        }
+        // query params
+        if ($cursor !== null) {
+            if('form' === 'form' && is_array($cursor)) {
+                foreach($cursor as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['cursor'] = $cursor;
+            }
+        }
+        // query params
+        if ($filter !== null) {
+            if('form' === 'form' && is_array($filter)) {
+                foreach($filter as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['filter'] = $filter;
+            }
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }

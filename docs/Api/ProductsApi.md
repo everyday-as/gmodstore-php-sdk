@@ -25,7 +25,7 @@ Get the specified product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -85,7 +85,7 @@ Get a batch of products by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -145,7 +145,7 @@ List all products for a team
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -209,7 +209,7 @@ Update the specified product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 

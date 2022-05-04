@@ -26,7 +26,7 @@ Create a permission group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -84,7 +84,7 @@ Delete the specified permission group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -142,7 +142,7 @@ Show the specified permission group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -200,7 +200,7 @@ List all permission groups
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -260,7 +260,7 @@ Update the specified permission group
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 

@@ -22,7 +22,7 @@ List all the specified user's products
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 

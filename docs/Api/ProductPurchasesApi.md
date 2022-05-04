@@ -25,7 +25,7 @@ Create a purchase for a product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -85,7 +85,7 @@ Show the specified purchase for a product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -147,7 +147,7 @@ List all purchases for a product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -211,7 +211,7 @@ Update the specified purchase for a product
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 

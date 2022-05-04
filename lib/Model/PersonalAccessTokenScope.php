@@ -46,6 +46,10 @@ class PersonalAccessTokenScope
 
     const PERMISSION_GROUPSWRITE = 'permission-groups:write';
 
+    const PERSONAL_ACCESS_TOKENSREAD = 'personal-access-tokens:read';
+
+    const PERSONAL_ACCESS_TOKENSWRITE = 'personal-access-tokens:write';
+
     const TEAMSREAD = 'teams:read';
 
     const TEAMSWRITE = 'teams:write';
@@ -99,6 +103,8 @@ class PersonalAccessTokenScope
         return [
             self::PERMISSION_GROUPSREAD,
             self::PERMISSION_GROUPSWRITE,
+            self::PERSONAL_ACCESS_TOKENSREAD,
+            self::PERSONAL_ACCESS_TOKENSWRITE,
             self::TEAMSREAD,
             self::TEAMSWRITE,
             self::TEAM_USERSREAD,

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetMeResponse
+ * UserFilter
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Everyday\GmodStore\Sdk\ObjectSerializer;
 
 /**
- * GetMeResponse Class Doc Comment
+ * UserFilter Class Doc Comment
  *
  * @category Class
  * @package  Everyday\GmodStore\Sdk
@@ -42,7 +42,7 @@ use \Everyday\GmodStore\Sdk\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class UserFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetMeResponse';
+    protected static $openAPIModelName = 'UserFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Everyday\GmodStore\Sdk\Model\Me'
+        'steamId' => 'int'
     ];
 
     /**
@@ -70,7 +70,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'steamId' => 'int64'
     ];
 
     /**
@@ -100,7 +100,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'steamId' => 'steamId'
     ];
 
     /**
@@ -109,7 +109,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'steamId' => 'setSteamId'
     ];
 
     /**
@@ -118,7 +118,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'steamId' => 'getSteamId'
     ];
 
     /**
@@ -178,7 +178,7 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container['steamId'] = $data['steamId'] ?? null;
     }
 
     /**
@@ -190,9 +190,6 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,25 +206,25 @@ class GetMeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets data
+     * Gets steamId
      *
-     * @return \Everyday\GmodStore\Sdk\Model\Me
+     * @return int|null
      */
-    public function getData()
+    public function getSteamId()
     {
-        return $this->container['data'];
+        return $this->container['steamId'];
     }
 
     /**
-     * Sets data
+     * Sets steamId
      *
-     * @param \Everyday\GmodStore\Sdk\Model\Me $data data
+     * @param int|null $steamId steamId
      *
      * @return self
      */
-    public function setData($data)
+    public function setSteamId($steamId)
     {
-        $this->container['data'] = $data;
+        $this->container['steamId'] = $steamId;
 
         return $this;
     }

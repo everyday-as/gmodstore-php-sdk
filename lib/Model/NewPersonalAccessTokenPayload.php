@@ -174,6 +174,8 @@ class NewPersonalAccessTokenPayload implements ModelInterface, ArrayAccess, \Jso
 
     const ABILITIES_PERMISSION_GROUPSREAD = 'permission-groups:read';
     const ABILITIES_PERMISSION_GROUPSWRITE = 'permission-groups:write';
+    const ABILITIES_PERSONAL_ACCESS_TOKENSREAD = 'personal-access-tokens:read';
+    const ABILITIES_PERSONAL_ACCESS_TOKENSWRITE = 'personal-access-tokens:write';
     const ABILITIES_TEAMSREAD = 'teams:read';
     const ABILITIES_TEAMSWRITE = 'teams:write';
     const ABILITIES_TEAM_USERSREAD = 'team-users:read';
@@ -207,6 +209,8 @@ class NewPersonalAccessTokenPayload implements ModelInterface, ArrayAccess, \Jso
         return [
             self::ABILITIES_PERMISSION_GROUPSREAD,
             self::ABILITIES_PERMISSION_GROUPSWRITE,
+            self::ABILITIES_PERSONAL_ACCESS_TOKENSREAD,
+            self::ABILITIES_PERSONAL_ACCESS_TOKENSWRITE,
             self::ABILITIES_TEAMSREAD,
             self::ABILITIES_TEAMSWRITE,
             self::ABILITIES_TEAM_USERSREAD,

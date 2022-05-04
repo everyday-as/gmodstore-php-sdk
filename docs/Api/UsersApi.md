@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getMe()**](UsersApi.md#getMe) | **GET** /api/v3/me | Fetch the current authenticated user and their access token
 [**getUser()**](UsersApi.md#getUser) | **GET** /api/v3/users/{user} | Fetch the specified user
 [**getUsers()**](UsersApi.md#getUsers) | **GET** /api/v3/users/batch | Fetch a batch of users by id
+[**listUsers()**](UsersApi.md#listUsers) | **GET** /api/v3/users | List all users
 
 
 ## `getMe()`
@@ -24,11 +25,15 @@ Fetch the current authenticated user and their access token
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: PersonalAccessToken
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -49,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[PersonalAccessToken](../../README.md#PersonalAccessToken)
 
 ### HTTP request headers
 
@@ -63,7 +68,7 @@ No authorization required
 ## `getUser()`
 
 ```php
-getUser($user): \Everyday\GmodStore\Sdk\Model\GetUserResponse
+getUser($user, $filter): \Everyday\GmodStore\Sdk\Model\GetUserResponse
 ```
 
 Fetch the specified user
@@ -75,7 +80,7 @@ Fetch the specified user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -86,9 +91,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     $config
 );
 $user = 'user_example'; // string
+$filter = new \Everyday\GmodStore\Sdk\Model\\Everyday\GmodStore\Sdk\Model\UserFilter(); // \Everyday\GmodStore\Sdk\Model\UserFilter | Filter the results
 
 try {
-    $result = $apiInstance->getUser($user);
+    $result = $apiInstance->getUser($user, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUser: ', $e->getMessage(), PHP_EOL;
@@ -100,6 +106,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user** | **string**|  |
+ **filter** | [**\Everyday\GmodStore\Sdk\Model\UserFilter**](../Model/.md)| Filter the results | [optional]
 
 ### Return type
 
@@ -121,7 +128,7 @@ Name | Type | Description  | Notes
 ## `getUsers()`
 
 ```php
-getUsers($ids): \Everyday\GmodStore\Sdk\Model\GetUsersResponse
+getUsers($ids, $filter): \Everyday\GmodStore\Sdk\Model\GetUsersResponse
 ```
 
 Fetch a batch of users by id
@@ -133,7 +140,7 @@ Fetch a batch of users by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Personal Access Token) authorization: PersonalAccessToken
+// Configure Bearer authorization: PersonalAccessToken
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -144,9 +151,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
     $config
 );
 $ids = array('ids_example'); // string[]
+$filter = new \Everyday\GmodStore\Sdk\Model\\Everyday\GmodStore\Sdk\Model\UserFilter(); // \Everyday\GmodStore\Sdk\Model\UserFilter | Filter the results
 
 try {
-    $result = $apiInstance->getUsers($ids);
+    $result = $apiInstance->getUsers($ids, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUsers: ', $e->getMessage(), PHP_EOL;
@@ -158,10 +166,73 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | [**string[]**](../Model/string.md)|  |
+ **filter** | [**\Everyday\GmodStore\Sdk\Model\UserFilter**](../Model/.md)| Filter the results | [optional]
 
 ### Return type
 
 [**\Everyday\GmodStore\Sdk\Model\GetUsersResponse**](../Model/GetUsersResponse.md)
+
+### Authorization
+
+[PersonalAccessToken](../../README.md#PersonalAccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listUsers()`
+
+```php
+listUsers($perPage, $cursor, $filter): object
+```
+
+List all users
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: PersonalAccessToken
+$config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Everyday\GmodStore\Sdk\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$perPage = 24; // int
+$cursor = 'cursor_example'; // string | The cursor from which to return paginated results starting after
+$filter = new \Everyday\GmodStore\Sdk\Model\\Everyday\GmodStore\Sdk\Model\UserFilter(); // \Everyday\GmodStore\Sdk\Model\UserFilter | Filter the results
+
+try {
+    $result = $apiInstance->listUsers($perPage, $cursor, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->listUsers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **perPage** | **int**|  | [optional] [default to 24]
+ **cursor** | **string**| The cursor from which to return paginated results starting after | [optional]
+ **filter** | [**\Everyday\GmodStore\Sdk\Model\UserFilter**](../Model/.md)| Filter the results | [optional]
+
+### Return type
+
+**object**
 
 ### Authorization
 

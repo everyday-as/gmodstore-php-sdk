@@ -77,6 +77,7 @@ docs/Model/ProductVersion.md
 docs/Model/ProductVersionFilter.md
 docs/Model/Team.md
 docs/Model/TeamUser.md
+docs/Model/TwoFactorNonce.md
 docs/Model/UpdatePermissionGroupPayload.md
 docs/Model/UpdatePermissionGroupResponse.md
 docs/Model/UpdatePersonalAccessTokenResponse.md
@@ -92,6 +93,7 @@ docs/Model/User.md
 docs/Model/UserBadge.md
 docs/Model/UserBan.md
 docs/Model/UserBanFilter.md
+docs/Model/UserFilter.md
 docs/Model/ValidationErrors.md
 git_push.sh
 lib/Api/DefaultApi.php
@@ -172,6 +174,7 @@ lib/Model/ProductVersion.php
 lib/Model/ProductVersionFilter.php
 lib/Model/Team.php
 lib/Model/TeamUser.php
+lib/Model/TwoFactorNonce.php
 lib/Model/UpdatePermissionGroupPayload.php
 lib/Model/UpdatePermissionGroupResponse.php
 lib/Model/UpdatePersonalAccessTokenResponse.php
@@ -187,6 +190,9 @@ lib/Model/User.php
 lib/Model/UserBadge.php
 lib/Model/UserBan.php
 lib/Model/UserBanFilter.php
+lib/Model/UserFilter.php
 lib/Model/ValidationErrors.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/TwoFactorNonceTest.php
+test/Model/UserFilterTest.php

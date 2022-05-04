@@ -417,7 +417,7 @@ class PermissionGroupsApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
@@ -772,7 +772,7 @@ class PermissionGroupsApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
@@ -1127,7 +1127,7 @@ class PermissionGroupsApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
@@ -1482,7 +1482,7 @@ class PermissionGroupsApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
@@ -1848,7 +1848,7 @@ class PermissionGroupsApi
             }
         }
 
-        // this endpoint requires Bearer (Personal Access Token) authentication (access token)
+        // this endpoint requires Bearer authentication (access token)
         if ($this->config->getAccessToken() !== null) {
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
