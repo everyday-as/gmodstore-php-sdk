@@ -194,5 +194,3 @@ lib/Model/UserFilter.php
 lib/Model/ValidationErrors.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/TwoFactorNonceTest.php
-test/Model/UserFilterTest.php
