@@ -59,20 +59,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Everyday\GmodStore\Sdk\Api\DefaultApi(
+$apiInstance = new Everyday\GmodStore\Sdk\Api\PermissionGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$product = 'product_example'; // string | 
-$version = 'version_example'; // string | 
+$newPermissionGroupPayload = new \Everyday\GmodStore\Sdk\Model\NewPermissionGroupPayload(); // \Everyday\GmodStore\Sdk\Model\NewPermissionGroupPayload | 
 
 try {
-    $result = $apiInstance->deleteProductVersion($product$version);
+    $result = $apiInstance->createPermissionGroup($newPermissionGroupPayload);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->deleteProductVersion: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PermissionGroupsApi->createPermissionGroup: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -84,7 +83,6 @@ All URIs are relative to *https://www.gmodstore.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**deleteProductVersion**](docs/Api/DefaultApi.md#deleteproductversion) | **DELETE** /api/v3/products/{product}/versions/{version} | Delete the specified version for a product
 *PermissionGroupsApi* | [**createPermissionGroup**](docs/Api/PermissionGroupsApi.md#createpermissiongroup) | **POST** /api/v3/permission-groups | Create a permission group
 *PermissionGroupsApi* | [**deletePermissionGroup**](docs/Api/PermissionGroupsApi.md#deletepermissiongroup) | **DELETE** /api/v3/permission-groups/{permission_group} | Delete the specified permission group
 *PermissionGroupsApi* | [**getPermissionGroup**](docs/Api/PermissionGroupsApi.md#getpermissiongroup) | **GET** /api/v3/permission-groups/{permission_group} | Show the specified permission group
@@ -107,6 +105,7 @@ Class | Method | HTTP request | Description
 *ProductReviewsApi* | [**getProductReview**](docs/Api/ProductReviewsApi.md#getproductreview) | **GET** /api/v3/products/{product}/reviews/{review} | Show the specified review for a product
 *ProductReviewsApi* | [**listProductReviews**](docs/Api/ProductReviewsApi.md#listproductreviews) | **GET** /api/v3/products/{product}/reviews | List all reviews for a product
 *ProductVersionsApi* | [**createProductVersion**](docs/Api/ProductVersionsApi.md#createproductversion) | **POST** /api/v3/products/{product}/versions | Create a version for a product
+*ProductVersionsApi* | [**deleteProductVersion**](docs/Api/ProductVersionsApi.md#deleteproductversion) | **DELETE** /api/v3/products/{product}/versions/{version} | Delete the specified version for a product
 *ProductVersionsApi* | [**getProductDownloadToken**](docs/Api/ProductVersionsApi.md#getproductdownloadtoken) | **POST** /api/v3/products/{product}/versions/{version}/download | Get a one time use url for downloading a product
 *ProductVersionsApi* | [**getProductVersion**](docs/Api/ProductVersionsApi.md#getproductversion) | **GET** /api/v3/products/{product}/versions/{version} | Show the specified version for a product
 *ProductVersionsApi* | [**listProductVersions**](docs/Api/ProductVersionsApi.md#listproductversions) | **GET** /api/v3/products/{product}/versions | List all versions for a product

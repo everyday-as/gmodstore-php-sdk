@@ -3,7 +3,6 @@
 .travis.yml
 README.md
 composer.json
-docs/Api/DefaultApi.md
 docs/Api/PermissionGroupsApi.md
 docs/Api/PersonalAccessTokensApi.md
 docs/Api/ProductCouponsApi.md
@@ -96,7 +95,6 @@ docs/Model/UserBanFilter.md
 docs/Model/UserFilter.md
 docs/Model/ValidationErrors.md
 git_push.sh
-lib/Api/DefaultApi.php
 lib/Api/PermissionGroupsApi.php
 lib/Api/PersonalAccessTokensApi.php
 lib/Api/ProductCouponsApi.php
