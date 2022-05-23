@@ -4,14 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  |
-**userId** | **string** |  |
+**userId** | **int** |  | [optional]
 **reason** | **string** |  | [optional]
-**bannerId** | **string** |  | [optional]
-**unbanId** | **string** |  | [optional]
 **unbanReason** | **string** |  | [optional]
-**properties** | **string[]** |  |
-**start** | **\DateTime** |  |
-**end** | **\DateTime** |  |
+**properties** | **string[]** |  | [optional]
+**start** | **\DateTime** |  | [optional]
+**end** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

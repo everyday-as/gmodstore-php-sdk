@@ -1,19 +1,19 @@
 # Everyday\GmodStore\Sdk\UserBansApi
 
-All URIs are relative to https://www.gmodstore.com.
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listUserBans()**](UserBansApi.md#listUserBans) | **GET** /api/v3/users/{user}/bans | List all the specified user&#39;s bans
+[**listUserBans()**](UserBansApi.md#listUserBans) | **GET** /users/{user_id}/bans | Fetch all active bans associated with this user
 
 
 ## `listUserBans()`
 
 ```php
-listUserBans($user, $perPage, $cursor, $filter): object
+listUserBans($userId): \Everyday\GmodStore\Sdk\Model\UserBanListResponse
 ```
 
-List all the specified user's bans
+Fetch all active bans associated with this user
 
 ### Example
 
@@ -22,7 +22,7 @@ List all the specified user's bans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: PersonalAccessToken
+// Configure Bearer (API Key) authorization: bearerAuth
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -32,13 +32,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBansApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user = 'user_example'; // string
-$perPage = 24; // int
-$cursor = 'cursor_example'; // string | The cursor from which to return paginated results starting after
-$filter = new \Everyday\GmodStore\Sdk\Model\\Everyday\GmodStore\Sdk\Model\UserBanFilter(); // \Everyday\GmodStore\Sdk\Model\UserBanFilter | Filter the results
+$userId = 56; // int | Id of the user
 
 try {
-    $result = $apiInstance->listUserBans($user, $perPage, $cursor, $filter);
+    $result = $apiInstance->listUserBans($userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBansApi->listUserBans: ', $e->getMessage(), PHP_EOL;
@@ -49,18 +46,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **string**|  |
- **perPage** | **int**|  | [optional] [default to 24]
- **cursor** | **string**| The cursor from which to return paginated results starting after | [optional]
- **filter** | [**\Everyday\GmodStore\Sdk\Model\UserBanFilter**](../Model/.md)| Filter the results | [optional]
+ **userId** | **int**| Id of the user |
 
 ### Return type
 
-**object**
+[**\Everyday\GmodStore\Sdk\Model\UserBanListResponse**](../Model/UserBanListResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../../README.md#PersonalAccessToken)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

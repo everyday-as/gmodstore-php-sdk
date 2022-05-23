@@ -4,10 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**teamId** | **string** |  |
-**userId** | **string** |  |
-**primary** | **bool** |  |
+**teamId** | **int** |  | [optional]
+**primary** | **bool** |  | [optional]
 **percentage** | **int** |  | [optional]
-**access** | **string** |  | [optional]
+**user** | [**\Everyday\GmodStore\Sdk\Model\User**](User.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

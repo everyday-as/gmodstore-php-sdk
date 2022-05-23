@@ -1,21 +1,21 @@
 # Everyday\GmodStore\Sdk\UserBadgesApi
 
-All URIs are relative to https://www.gmodstore.com.
+All URIs are relative to https://api.gmodstore.com/v2.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createUserBadge()**](UserBadgesApi.md#createUserBadge) | **POST** /api/v3/users/{user}/badges | Attach a badge to a user
-[**deleteUserBadge()**](UserBadgesApi.md#deleteUserBadge) | **DELETE** /api/v3/users/{user}/badges/{badge} | Detach a badge from a user
-[**listUserBadges()**](UserBadgesApi.md#listUserBadges) | **GET** /api/v3/users/{user}/badges | List all the specified user&#39;s badges
+[**createUserBadge()**](UserBadgesApi.md#createUserBadge) | **POST** /users/{user_id}/badges | Give a user a badge
+[**deleteUserBadge()**](UserBadgesApi.md#deleteUserBadge) | **DELETE** /users/{user_id}/badges/{badge_id} | Destroy a users&#39;s badge
+[**listUserBadges()**](UserBadgesApi.md#listUserBadges) | **GET** /users/{user_id}/badges | Fetch all the badges a user has
 
 
 ## `createUserBadge()`
 
 ```php
-createUserBadge($user, $newUserBadgePayload): \Everyday\GmodStore\Sdk\Model\CreateUserBadgeResponse
+createUserBadge($userId, $userBadge): \Everyday\GmodStore\Sdk\Model\BadgeResponse
 ```
 
-Attach a badge to a user
+Give a user a badge
 
 ### Example
 
@@ -24,7 +24,7 @@ Attach a badge to a user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: PersonalAccessToken
+// Configure Bearer (API Key) authorization: bearerAuth
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -34,11 +34,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user = 'user_example'; // string
-$newUserBadgePayload = new \Everyday\GmodStore\Sdk\Model\NewUserBadgePayload(); // \Everyday\GmodStore\Sdk\Model\NewUserBadgePayload
+$userId = 56; // int | Id of the user
+$userBadge = new \Everyday\GmodStore\Sdk\Model\UserBadge(); // \Everyday\GmodStore\Sdk\Model\UserBadge
 
 try {
-    $result = $apiInstance->createUserBadge($user, $newUserBadgePayload);
+    $result = $apiInstance->createUserBadge($userId, $userBadge);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->createUserBadge: ', $e->getMessage(), PHP_EOL;
@@ -49,16 +49,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **string**|  |
- **newUserBadgePayload** | [**\Everyday\GmodStore\Sdk\Model\NewUserBadgePayload**](../Model/NewUserBadgePayload.md)|  | [optional]
+ **userId** | **int**| Id of the user |
+ **userBadge** | [**\Everyday\GmodStore\Sdk\Model\UserBadge**](../Model/UserBadge.md)|  |
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\CreateUserBadgeResponse**](../Model/CreateUserBadgeResponse.md)
+[**\Everyday\GmodStore\Sdk\Model\BadgeResponse**](../Model/BadgeResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../../README.md#PersonalAccessToken)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -72,10 +72,10 @@ Name | Type | Description  | Notes
 ## `deleteUserBadge()`
 
 ```php
-deleteUserBadge($user, $badge): \Everyday\GmodStore\Sdk\Model\DeleteUserBadgeResponse
+deleteUserBadge($userId, $badgeId)
 ```
 
-Detach a badge from a user
+Destroy a users's badge
 
 ### Example
 
@@ -84,7 +84,7 @@ Detach a badge from a user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: PersonalAccessToken
+// Configure Bearer (API Key) authorization: bearerAuth
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -94,12 +94,11 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user = 'user_example'; // string
-$badge = 'badge_example'; // string
+$userId = 56; // int | Id of the user
+$badgeId = 'badgeId_example'; // string | Id of the badge
 
 try {
-    $result = $apiInstance->deleteUserBadge($user, $badge);
-    print_r($result);
+    $apiInstance->deleteUserBadge($userId, $badgeId);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->deleteUserBadge: ', $e->getMessage(), PHP_EOL;
 }
@@ -109,16 +108,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **string**|  |
- **badge** | **string**|  |
+ **userId** | **int**| Id of the user |
+ **badgeId** | **string**| Id of the badge |
 
 ### Return type
 
-[**\Everyday\GmodStore\Sdk\Model\DeleteUserBadgeResponse**](../Model/DeleteUserBadgeResponse.md)
+void (empty response body)
 
 ### Authorization
 
-[PersonalAccessToken](../../README.md#PersonalAccessToken)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -132,10 +131,10 @@ Name | Type | Description  | Notes
 ## `listUserBadges()`
 
 ```php
-listUserBadges($user, $perPage, $cursor): object
+listUserBadges($userId): \Everyday\GmodStore\Sdk\Model\BadgeListResponse
 ```
 
-List all the specified user's badges
+Fetch all the badges a user has
 
 ### Example
 
@@ -144,7 +143,7 @@ List all the specified user's badges
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer authorization: PersonalAccessToken
+// Configure Bearer (API Key) authorization: bearerAuth
 $config = Everyday\GmodStore\Sdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -154,12 +153,10 @@ $apiInstance = new Everyday\GmodStore\Sdk\Api\UserBadgesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user = 'user_example'; // string
-$perPage = 24; // int
-$cursor = 'cursor_example'; // string | The cursor from which to return paginated results starting after
+$userId = 56; // int | Id of the user
 
 try {
-    $result = $apiInstance->listUserBadges($user, $perPage, $cursor);
+    $result = $apiInstance->listUserBadges($userId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserBadgesApi->listUserBadges: ', $e->getMessage(), PHP_EOL;
@@ -170,17 +167,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | **string**|  |
- **perPage** | **int**|  | [optional] [default to 24]
- **cursor** | **string**| The cursor from which to return paginated results starting after | [optional]
+ **userId** | **int**| Id of the user |
 
 ### Return type
 
-**object**
+[**\Everyday\GmodStore\Sdk\Model\BadgeListResponse**](../Model/BadgeListResponse.md)
 
 ### Authorization
 
-[PersonalAccessToken](../../README.md#PersonalAccessToken)
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
